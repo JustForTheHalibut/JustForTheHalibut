@@ -1,6 +1,10 @@
 angular.module('profile', ['ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
   .config(function($routeProvider, $authProvider) {
     $routeProvider
+    .when('/profile/main', {
+      templateUrl: 'profile/views/main.html',
+      controller: 'ProfileController',
+    })
       .when('/profile', {
         templateUrl: 'profile/views/profile.html',
         controller: 'ProfileController',
