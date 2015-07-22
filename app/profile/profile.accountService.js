@@ -7,8 +7,8 @@ angular.module('profile')
       updateProfile: function(profileData) {
         return $http.put('/api/me', profileData);
       },
-      updateAchievement: function(){
-        return $http.put('/api/achievement/achievement', {});
+      updateAchievement: function(achievementLevel){
+        return $http.put('/api/achievement/achievement', achievementLevel);
       }
     };
   });
