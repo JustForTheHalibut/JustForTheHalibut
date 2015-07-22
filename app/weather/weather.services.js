@@ -8,14 +8,14 @@
       var mapDataToUrls = function (collection) {
          return _.map(collection, function (obj) {
            return {
-             city: obj.city,
+             city: obj.data.city,
              };
          });
        };
 
       var getCurrentConditions = function () {
       var deferred = $q.defer();
-      var cache = cacheEngine.get('current coditions');
+      var cache = cacheEngine.get('current conditions');
         if(cache) {
           console.log('we are in our cache');
           deferred.resolve(cache);

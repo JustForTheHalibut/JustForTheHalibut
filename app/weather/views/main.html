@@ -47,8 +47,9 @@
     </div>
     <div class="col-sm-5 weatherBar">
       <div class="panel panel-default">
-        <div class="panel-body">
+        <div class="panel-body" ng-controller="LineCtrl">
           <h4>Tide Charts</h4>
+          <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
         </div>
       </div>
 </div>
