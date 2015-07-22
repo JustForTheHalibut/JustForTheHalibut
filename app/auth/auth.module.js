@@ -42,32 +42,32 @@ angular.module('auth', ['ngMessages', 'ngRoute', 'mgcrea.ngStrap', 'satellizer']
     $authProvider.google({
       clientId: '587791673437-u2c6ujn8ct3nihm0vaq9cb0f0ukd33f2.apps.googleusercontent.com'
     });
-
-    $authProvider.github({
-      clientId: '0ba2600b1dbdb756688b'
-    });
-
-    $authProvider.linkedin({
-      clientId: '77cw786yignpzj'
-    });
-
-    $authProvider.yahoo({
-      clientId: 'dj0yJmk9SDVkM2RhNWJSc2ZBJmQ9WVdrOWIzVlFRMWxzTXpZbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yYw--'
-    });
-
-    $authProvider.twitter({
-      url: '/auth/twitter'
-    });
-
-    $authProvider.live({
-      clientId: '000000004C12E68D'
-    });
-
-    $authProvider.oauth2({
-      name: 'foursquare',
-      url: '/auth/foursquare',
-      clientId: 'MTCEJ3NGW2PNNB31WOSBFDSAD4MTHYVAZ1UKIULXZ2CVFC2K',
-      redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
-      authorizationEndpoint: 'https://foursquare.com/oauth2/authenticate'
-    });
+    // 
+    // $authProvider.github({
+    //   clientId: '0ba2600b1dbdb756688b'
+    // });
+    //
+    // $authProvider.linkedin({
+    //   clientId: '77cw786yignpzj'
+    // });
+    //
+    // $authProvider.yahoo({
+    //   clientId: 'dj0yJmk9SDVkM2RhNWJSc2ZBJmQ9WVdrOWIzVlFRMWxzTXpZbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yYw--'
+    // });
+    //
+    // $authProvider.twitter({
+    //   url: '/auth/twitter'
+    // });
+    //
+    // $authProvider.live({
+    //   clientId: '000000004C12E68D'
+    // });
+    //
+    // $authProvider.oauth2({
+    //   name: 'foursquare',
+    //   url: '/auth/foursquare',
+    //   clientId: 'MTCEJ3NGW2PNNB31WOSBFDSAD4MTHYVAZ1UKIULXZ2CVFC2K',
+    //   redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+    //   authorizationEndpoint: 'https://foursquare.com/oauth2/authenticate'
+    // });
   });

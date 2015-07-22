@@ -9,13 +9,8 @@ var ensureAuthenticated = require('./helpers').ensureAuthenticated;
  | GET /api/me
  |--------------------------------------------------------------------------
  */
-router.route('/me')
+router.route('/achievement')
   .all(ensureAuthenticated)
-  .get(function(req, res) {
-    User.findById(req.user, function(err, user) {
-      res.send(user);
-    });
-  })
   .put(function(req, res) {
     User.findById(req.user, function(err, user) {
       if (!user) {
@@ -23,8 +18,6 @@ router.route('/me')
       }
       // add any new user properties here as well as entities/User.js and routes/profile.js
       // user.newProperty = req.body.newProperty || user.newProperty
-      user.displayName = req.body.displayName || user.displayName;
-      user.email = req.body.email || user.email;
       user.achievement = req.body.achievement || user.achievement;
       user.achievementPicture = req.body.achievementPicture || user.achievementPicture;
       user.save(function(err) {
