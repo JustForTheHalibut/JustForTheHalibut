@@ -1,12 +1,17 @@
 angular
   .module('profile')
   .controller('TabsController', function ($scope) {
-
   })
 
   .controller('ProgressController', function ($scope) {
   $scope.max = 200;
-})
+  })
+
+  .controller('PieCtrl', function ($scope) {
+      $scope.labels = ["Something", "Something", "Something"];
+      $scope.data = [300, 500, 100];
+  })
+
 
   .controller('ProfileController', function($scope, $auth, $alert, Account) {
 

@@ -9,7 +9,8 @@ angular.module('MyApp', [
   'weather',
   'ui.bootstrap',
   'uiGmapgoogle-maps',
-  'maps'
+  'maps',
+  'chart.js'
 ])
 
 .config(function($routeProvider) {

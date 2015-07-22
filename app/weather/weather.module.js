@@ -9,7 +9,6 @@
         .when('/weather', {
           templateUrl: 'weather/views/main.html'
         });
-
     });
-
+    
 })();
