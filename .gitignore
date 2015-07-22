@@ -1,2 +1,4 @@
 bower_components
-node_modules/
+node_modules
+app/vendor
+.DS_Store
