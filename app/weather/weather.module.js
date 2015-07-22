@@ -10,5 +10,5 @@
           templateUrl: 'weather/views/main.html'
         });
     });
-    
+
 })();
