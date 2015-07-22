@@ -8,6 +8,7 @@ angular.module('profile')
       Account.getProfile()
         .success(function(data) {
           $scope.user = data;
+          console.log(data);
         })
         .error(function(error) {
           $alert({

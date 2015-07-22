@@ -25,6 +25,8 @@ router.route('/me')
       // user.newProperty = req.body.newProperty || user.newProperty
       user.displayName = req.body.displayName || user.displayName;
       user.email = req.body.email || user.email;
+      user.achievement = req.body.achievement || user.achievement;
+      user.achievementPicture = req.body.achievementPicture || user.achievementPicture;
       user.save(function(err) {
         res.status(200).end();
       });
