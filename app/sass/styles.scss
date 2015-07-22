@@ -42,17 +42,17 @@ a {
 }
 
 .navbar-default {
-  color: #fff;
-  background: #fff;
+  color: #8DB986;
+  background: #8DB986;
 }
 
 .navbar-default .navbar-brand {
   color: #fff;
-  background-color: #ce832c;
+  background-color: #373737;
 }
 
 .navbar-default .navbar-brand:hover {
-  color: #ce832c;
+  color: #8DB986;
   background-color: #fff;
 }
 
@@ -155,10 +155,22 @@ a {
   outline: none;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
+.form-group, .buttonForm{
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+.control-label{
+  display: inline-block;
+}
 
 .profile-picture {
-  height: 100px;
+  height: 200px;
   display: block;
+}
+
+.profilePicBlock{
+  display:inline-block;
+  width: 40%;
 }
 
 .btn {
@@ -424,3 +436,5 @@ a {
     opacity: 1;
   }
 }
+
+/* #373737 #8DB986 #ACCE91 #BADB73 #EFEAE4*/
