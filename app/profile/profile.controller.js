@@ -1,16 +1,13 @@
-angular.module('profile')
-.controller('TabsDemoCtrl', function ($scope, $window) {
-$scope.tabs = [
-  { title:'Dynamic Title 1', content:'Dynamic content 1' },
-  { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
-];
+angular
+  .module('profile')
+  .controller('TabsController', function ($scope) {
 
-$scope.alertMe = function() {
-  setTimeout(function() {
-    $window.alert('You\'ve selected the alert tab!');
-  });
-};
+  })
+
+  .controller('ProgressController', function ($scope) {
+  $scope.max = 200;
 })
+
   .controller('ProfileController', function($scope, $auth, $alert, Account) {
 
     /**
