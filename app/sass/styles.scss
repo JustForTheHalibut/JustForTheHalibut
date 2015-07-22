@@ -343,16 +343,20 @@ a {
 }
 
 .weatherBar {
+  padding-top: 0;
   padding-left: .5rem;
   padding-right: 1rem;
+  padding-bottom: 0rem;
 }
 
 .mainMap {
+  padding-top: 0rem;
   padding-left: .5rem;
   padding-right: 1rem;
 }
 
 .leaderBoard {
+  padding-top: 0;
   padding-left: .5rem;
   padding-right: 1rem;
 }
@@ -364,6 +368,18 @@ a {
     margin: 1rem;
   }
 }
+
+.noShadow {
+  box-shadow: none;
+}
+
+/*********************
+* Maps
+*********************/
+
+.angular-google-map-container {
+  height: 400px;
+  }
 
 /*********************
 * Animations

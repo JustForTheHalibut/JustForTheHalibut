@@ -279,14 +279,18 @@ a {
   padding-right: .5rem; }
 
 .weatherBar {
+  padding-top: 0;
   padding-left: .5rem;
-  padding-right: 1rem; }
+  padding-right: 1rem;
+  padding-bottom: 0rem; }
 
 .mainMap {
+  padding-top: 0rem;
   padding-left: .5rem;
   padding-right: 1rem; }
 
 .leaderBoard {
+  padding-top: 0;
   padding-left: .5rem;
   padding-right: 1rem; }
 
@@ -295,6 +299,15 @@ a {
   .sideNav li {
     list-style: none;
     margin: 1rem; }
+
+.noShadow {
+  box-shadow: none; }
+
+/*********************
+* Maps
+*********************/
+.angular-google-map-container {
+  height: 400px; }
 
 /*********************
 * Animations

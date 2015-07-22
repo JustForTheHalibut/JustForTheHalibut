@@ -6,6 +6,7 @@ angular.module('MyApp', [
   'auth',
   'profile',
   'posts',
+  'weather',
   'ui.bootstrap',
   'uiGmapgoogle-maps',
   'maps'
