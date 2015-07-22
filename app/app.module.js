@@ -5,7 +5,10 @@ angular.module('MyApp', [
   'mgcrea.ngStrap',
   'auth',
   'profile',
-  'posts'
+  'posts',
+  'ui.bootstrap',
+  'uiGmapgoogle-maps',
+  'maps'
 ])
 
 .config(function($routeProvider) {
