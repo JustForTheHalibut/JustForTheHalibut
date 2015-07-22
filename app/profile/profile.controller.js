@@ -2,7 +2,12 @@ angular
   .module('profile')
   .controller('TabsController', function ($scope) {
 
+  })
+
+  .controller('ProgressController', function ($scope) {
+  $scope.max = 200;
 })
+
   .controller('ProfileController', function($scope, $auth, $alert, Account) {
 
     /**

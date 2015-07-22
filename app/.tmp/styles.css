@@ -300,6 +300,9 @@ a {
     list-style: none;
     margin: 1rem; }
 
+.progressBars {
+  width: 100%; }
+
 .noShadow {
   box-shadow: none; }
 
