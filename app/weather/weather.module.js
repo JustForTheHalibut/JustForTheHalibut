@@ -7,7 +7,8 @@
     .config(function($routeProvider){
       $routeProvider
         .when('/weather', {
-          templateUrl: 'weather/views/main.html'
+          templateUrl: 'weather/views/main.html',
+          controller: 'WeatherController'
         });
     });
 

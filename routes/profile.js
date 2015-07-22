@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../entities/User');
 var config = require('../config');
+var request = require('request');
 var ensureAuthenticated = require('./helpers').ensureAuthenticated;
 
 /*
@@ -32,5 +33,41 @@ router.route('/me')
       });
     });
   });
+
+router.route('/weather')
+  .get(function(req,res,next) {
+    var url = 'https://api.wunderground.com/api/5a8252229fd2895b/conditions/q/29464.json'
+
+    request.get({url: url}, function(err, response, data) {
+      res.send(JSON.parse(response.body));
+    })
+  })
+
+router.route('/hourly')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/hourly/q/29464.json'
+
+        request.get({url: url}, function(err, response, data) {
+          res.send(JSON.parse(response.body));
+        })
+      })
+
+router.route('/rawtide')
+  .get(function(req,res,next) {
+    var url = 'http://api.wunderground.com/api/5a8252229fd2895b/rawtide/q/29464.json'
+
+      request.get({url: url}, function(err, response, data) {
+        res.send(JSON.parse(response.body));
+      })
+    })
+
+router.route('/alerts')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/alerts/q/29464.json'
+
+      request.get({url: url}, function(err, response, data) {
+        res.send(JSON.parse(response.body));
+      })
+    })
 
 module.exports = router;

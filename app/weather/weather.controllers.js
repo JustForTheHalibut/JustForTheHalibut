@@ -11,19 +11,29 @@
           [65, 59, 80, 81, 56, 55, 40],
           [28, 48, 40, 19, 86, 27, 90]
         ];
-          $scope.onClick = function (points, evt) {
-          console.log(points, evt);
-        };
       })
 
     .controller('WeatherController', function($scope, WeatherService){
 
-      var vm = this;
-
       WeatherService.getCurrentConditions().then(function (currentConditions) {
         console.log(currentConditions);
-        vm.currentConditions = currentConditions;
-      });
+        $scope.currentConditions = currentConditions;
+     });
+
+     WeatherService.getRawTide().then(function (rawTide){
+       console.log(rawTide);
+       $scope.rawTide = rawTide;
+     });
+
+     WeatherService.getHourly().then(function (hourly){
+       console.log(hourly);
+       $scope.hourly = hourly;
+     });
+
+     WeatherService.getAlerts().then(function (alerts){
+       console.log(alerts);
+       $scope.alerts = alerts;
+     });
 
     });
 

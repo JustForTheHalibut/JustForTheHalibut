@@ -1,0 +1,15 @@
+<article data-id="{{w.id}}">
+<div class="row">
+  <div class="col-sm-6">
+<h4>{{w.city}}</h4>
+<h1>{{w.fahrenheit}}<span class="degrees"> 0</span>F</h1>
+<div>Feels Like {{w.feelsLike}}<span class="degreesTiny"> 0</span>F </div>
+humidity:{{w.humidity}}<br>
+weather:{{w.description}}<br>
+visability:{{w.visability}}<br>
+</div>
+<div class="col-sm-6">
+  <img ng-src="{{w.iconUrl}} " alt="" /> <br>
+</div>
+</div>
+</article>

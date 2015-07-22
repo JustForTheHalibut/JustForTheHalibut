@@ -41,7 +41,7 @@
         <div class="col-sm-4 weatherBar">
           <div class="panel panel-default">
             <div class="panel-body">
-              <h4>Todays Weather</h4>
+              <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
             </div>
           </div>
     </div>
@@ -56,7 +56,9 @@
       <div class="col-sm-3 mainMap">
         <div class="panel panel-default">
           <div class="panel-body">
-            Weather
+            Wind
+            wind direction:{{currentConditions.windDirection}}<br>
+            wind:{{currentConditions.windGust}}mph
         </div>
         </div>
       </div>
