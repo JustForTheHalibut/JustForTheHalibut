@@ -57,23 +57,25 @@
       <div class="col-sm-3 mainMap">
         <div class="panel panel-default">
           <div class="panel-body">
-            Wind
-            wind direction:{{currentConditions.windDirection}}<br>
-            wind:{{currentConditions.windGust}}mph
+            <h4>moon phase</h4>
+          {{astronomy.phaseofMoon}}
+          {{astronomy.sunRiseHour}}
+          {{astronomy.sunRiseMin}}
         </div>
         </div>
       </div>
       <div class="col-sm-3 mainMap">
         <div class="panel panel-default">
-          <div class="panel-body">
-            <hourly-directive h="hourly" data-id="{{h.id}}"></hourly-directive>
+          <div class="panel-body" ng-controller="WeatherController">
+            <h4>Hourly Forecast</h4>
+            <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
         </div>
         </div>
       </div>
       <div class="col-sm-3 mainMap">
         <div class="panel panel-default">
-          <div class="panel-body">
-            Weather
+          <div class="panel-body" ng-controller="WeatherController">
+            <h4>3 day Forecast</h4>
         </div>
         </div>
       </div>

@@ -17,10 +17,20 @@
                 windDirection: currentConditions.data.current_observation.wind_dir,
                 visability: currentConditions.data.current_observation.visibility_mi,
                 humidity: currentConditions.data.current_observation.relative_humidity
-
               }
           });
          }
+
+         var getAstronomy = function () {
+             return $http.get('/api/astronomy').then(function(astronomy){
+                console.log("astronomy", astronomy);
+                return {
+                phaseofMoon: astronomy.data.moon_phase.phaseofMoon,
+                sunRiseHour: astronomy.data.sun_phase.sunrise.hour,
+                sunRiseMin: astronomy.data.sun_phase.sunrise.hour
+                }
+            });
+           }
 
       var mapHourlyToUrls = function (collection) {
           return _.map(collection, function (obj) {
@@ -30,7 +40,7 @@
             iconUrl: obj.icon_url
             };
           });
-        };
+        }
 
       var getHourly = function(){
           return $http.get('api/hourly').then(function (hourly) {
@@ -40,12 +50,12 @@
           });
         }
 
-      // var getOneHourly = function (id) {
-      //     return $http.get('api/hourly').then(function (hourly) {
-      //       var narrowedDownArr = _.where(hourly.data.hourly_forecast);
-      //         return mapHourlyToUrls(narrowedDownArr)[0];
-      //       });
-      //     };
+      var getOneHourly = function (id) {
+          return $http.get('api/hourly').then(function (oneHourly) {
+            var narrowedDownArr = _.where(oneHourly.data.hourly_forecast);
+              return mapHourlyToUrls(narrowedDownArr)[0];
+            });
+          };
 
        var getAlerts = function() {
          return $http.get('api/alerts').then(function(alerts){
@@ -79,6 +89,13 @@
              });
            }
 
+          var getOneForecast = function (id) {
+              return $http.get('api/forecast').then(function (oneForecast) {
+                var narrowedDownArr = _.where(oneForecast.data.forecast.simpleforecast.forecastday);
+                  return mapForecastToUrls(narrowedDownArr)[0];
+                 });
+               };
+
            var mapRawTideToUrls = function (collection) {
                return _.map(collection, function (obj) {
                return {
@@ -97,10 +114,13 @@
 
       return {
         getCurrentConditions: getCurrentConditions,
+        getAstronomy: getAstronomy,
         getRawTide: getRawTide,
         getHourly: getHourly,
+        getOneHourly: getOneHourly,
         getAlerts: getAlerts,
-        getForecast: getForecast
+        getForecast: getForecast,
+        getOneForecast: getOneForecast
       };
     });
 })();

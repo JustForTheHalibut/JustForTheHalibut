@@ -31,5 +31,15 @@
               h: '=',
             }
           };
+        })
+        .directive('forecastDirective', function () {
+          return {
+            restrict: 'E',
+            templateUrl: 'weather/views/forecast.directive.html',
+            transclude: true,
+            scope: {
+              f: '=',
+            }
+          };
         });
 })();

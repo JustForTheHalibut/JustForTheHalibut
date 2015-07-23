@@ -13,36 +13,45 @@
         ];
       })
 
-    .controller('WeatherController', function($scope, WeatherService){
+    .controller('WeatherController', function($scope, WeatherService, $routeParams){
 
       WeatherService.getCurrentConditions().then(function (currentConditions) {
         console.log("currentConditions:", currentConditions);
         $scope.currentConditions = currentConditions;
-      });
+      })
+
+      WeatherService.getAstronomy().then(function (astronomy) {
+        console.log("astronomy:", astronomy);
+        $scope.astronomy = astronomy;
+      })
 
       WeatherService.getRawTide().then(function (rawtide){
         console.log("rawTide:", rawtide);
         $scope.rawtide = rawtide;
-      });
+      })
 
       WeatherService.getHourly().then(function (hourly){
         console.log("hourly:", hourly);
         $scope.hourly = hourly;
-      });
+      })
 
-    //   WeatherService.getOneHourly($routeParams.hourlyId).then(function (hourly) {
-    //    $scope.hourly = hourly;
-    //  });
+      WeatherService.getOneHourly($routeParams.oneHourlyId).then(function (oneHourly) {
+       $scope.oneHourly = oneHourly;
+     })
 
       WeatherService.getAlerts().then(function (alerts){
         console.log("alerts", alerts);
         $scope.alerts = alerts;
-      });
+      })
 
       WeatherService.getForecast().then(function (forecast){
         console.log("forecast", forecast);
         $scope.forecast = forecast;
-      });
+      })
+
+      WeatherService.getOneForecast($routeParams.oneForecastId).then(function (oneForecast) {
+       $scope.oneForecast = oneForecast;
+     });
 
     });
 

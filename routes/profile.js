@@ -79,4 +79,13 @@ router.route('/forecast')
         })
       })
 
+router.route('/astronomy')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/astronomy/q/29464.json'
+
+      request.get({url: url}, function(err, response, data) {
+        res.send(JSON.parse(response.body));
+        })
+      })
+
 module.exports = router;

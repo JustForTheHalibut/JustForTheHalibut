@@ -27,29 +27,9 @@
         <div class="col-sm-9 weatherBar">
           <div class="panel panel-default">
             <div class="panel-heading">Weather Bar</div>
-            <div class="panel-body">
+            <div class="panel-body" ng-controller="WeatherController">
               <div class="row">
-                <div class="col-sm-4">
-                  <div class="panel panel-default noShadow">
-                    <div class="panel-body">
-                    One
-                  </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="panel panel-default noShadow">
-                    <div class="panel-body">
-                  One
-                  </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="panel panel-default noShadow">
-                    <div class="panel-body">
-                  One
-                  </div>
-                  </div>
-                </div>
+                <forecast-directive ng-repeat="oneForecast in forecast" f="oneForecast" data-id="{{f.id}}"></forecast-directive>
               </div>
         </div>
       </div>
