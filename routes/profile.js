@@ -34,9 +34,11 @@ router.route('/me')
     });
   });
 
+
 router.route('/weather')
   .get(function(req,res,next) {
-    var url = 'https://api.wunderground.com/api/5a8252229fd2895b/conditions/q/29464.json'
+    console.log("zip code: ", req.query.zip);
+    var url = 'https://api.wunderground.com/api/5a8252229fd2895b/conditions/q/' + req.query.zip +'.json'
 
     request.get({url: url}, function(err, response, data) {
       res.send(JSON.parse(response.body));

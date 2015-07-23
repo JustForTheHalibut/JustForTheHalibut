@@ -38,53 +38,50 @@
         </div>
       </div>
         </div>
-        <div class="col-sm-4 weatherBar">
-          <div class="panel panel-default">
+        <div class="col-sm-9 weatherBar">
+
+        <div class="col-sm-5 weatherBar">
+          <div class="panel panel-default forecastBox">
             <div class="panel-body">
               <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
               <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
             </div>
           </div>
     </div>
-    <div class="col-sm-5 weatherBar">
+    <div class="col-sm-7 weatherBar">
       <div class="panel panel-default">
         <div class="panel-body" ng-controller="LineCtrl">
           <h4>Tide Charts</h4>
           <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
+          <h4>moon phase</h4>
+        {{astronomy.phaseofMoon}}
+        {{astronomy.sunRiseHour}}
+        {{astronomy.sunRiseMin}}
         </div>
       </div>
 </div>
-      <div class="col-sm-3 mainMap">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <h4>moon phase</h4>
-          {{astronomy.phaseofMoon}}
-          {{astronomy.sunRiseHour}}
-          {{astronomy.sunRiseMin}}
-        </div>
-        </div>
+    <div class="col-sm-4 mainMap">
+      <div class="panel panel-default">
+        <div class="panel-body" ng-controller="WeatherController">
+          <h4>Hourly Forecast</h4>
+          <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
       </div>
-      <div class="col-sm-3 mainMap">
-        <div class="panel panel-default">
-          <div class="panel-body" ng-controller="WeatherController">
-            <h4>Hourly Forecast</h4>
-            <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
-        </div>
-        </div>
       </div>
-      <div class="col-sm-3 mainMap">
+    </div>
+      <div class="col-sm-4 mainMap">
         <div class="panel panel-default">
           <div class="panel-body" ng-controller="WeatherController">
             <h4>3 day Forecast</h4>
         </div>
         </div>
       </div>
-      <div class="col-sm-3 mainMap">
+      <div class="col-sm-4 mainMap">
         <div class="panel panel-default">
-          <div class="panel-body">
-            Weather
+          <div class="panel-body" ng-controller="GeoController">
+            Your location is: {{coords}}
         </div>
         </div>
       </div>
+    </div>
   </div>
 </div>

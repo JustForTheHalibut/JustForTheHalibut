@@ -4,8 +4,8 @@
     .module('weather')
     .factory('WeatherService', function($http) {
 
-       var getCurrentConditions = function () {
-           return $http.get('/api/weather').then(function(currentConditions){
+       var getCurrentConditions = function (zip) {
+           return $http.get('/api/weather' + '/?zip=' + zip).then(function(currentConditions){
               console.log("current conditions", currentConditions);
               return {
                 fahrenheit: currentConditions.data.current_observation.temp_f,
@@ -20,6 +20,7 @@
               }
           });
          }
+
 
          var getAstronomy = function () {
              return $http.get('/api/astronomy').then(function(astronomy){
@@ -45,7 +46,7 @@
       var getHourly = function(){
           return $http.get('api/hourly').then(function (hourly) {
             console.log("hourly", hourly)
-            var hourlyArr = hourly.data.hourly_forecast;
+            var hourlyArr = hourly.data.hourly_forecast.slice(0,24);
             return mapHourlyToUrls(hourlyArr);
           });
         }
@@ -107,7 +108,7 @@
            var getRawTide = function(){
                return $http.get('api/rawtide').then(function (rawtide) {
                  console.log("rawTide", rawtide)
-                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,24);
+                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
                  return mapRawTideToUrls(rawTideArr);
                  });
                }

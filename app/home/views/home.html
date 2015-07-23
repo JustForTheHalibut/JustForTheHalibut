@@ -25,9 +25,8 @@
       </div>
         </div>
         <div class="col-sm-9 weatherBar">
-          <div class="panel panel-default">
-            <div class="panel-heading">Weather Bar</div>
-            <div class="panel-body" ng-controller="WeatherController">
+          <div class="panel panel-default forecastBox">
+            <div class="panel-body " ng-controller="WeatherController">
               <div class="row">
                 <forecast-directive ng-repeat="oneForecast in forecast" f="oneForecast" data-id="{{f.id}}"></forecast-directive>
               </div>

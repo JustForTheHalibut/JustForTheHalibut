@@ -326,7 +326,48 @@ a {
   width: 100%; }
 
 .noShadow {
-  box-shadow: none; }
+  box-shadow: none;
+  border: none; }
+
+.forecastBox {
+  background-color: #1D1F22; }
+
+.forecast {
+  padding-top: 0;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-bottom: 0;
+  border: none; }
+  .forecast h4 {
+    text-align: center; }
+  .forecast .high {
+    color: maroon;
+    font-size: 2.5rem; }
+  .forecast .low {
+    color: maroon;
+    font-size: 1.5rem; }
+
+.weatherDir h1 {
+  color: #DC2639; }
+.weatherDir h4 {
+  color: #87CDE2; }
+.weatherDir .iconWrap {
+  border-radius: 20px; }
+.weatherDir .feelsLike {
+  color: #747577;
+  font-weight: bold; }
+
+.leftFix {
+  padding-top: 0;
+  padding-left: 1rem;
+  padding-right: .5rem;
+  padding-bottom: 0; }
+
+.rightFix {
+  padding-top: 0;
+  padding-left: .5rem;
+  padding-right: 1rem;
+  padding-bottom: 0; }
 
 /*********************
 * Maps

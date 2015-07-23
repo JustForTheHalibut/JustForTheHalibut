@@ -10,7 +10,8 @@ angular.module('MyApp', [
   'ui.bootstrap',
   'uiGmapgoogle-maps',
   'maps',
-  'chart.js'
+  'chart.js',
+  'geolocation'
 ])
 
 .config(function($routeProvider) {
