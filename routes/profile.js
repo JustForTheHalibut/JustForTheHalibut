@@ -70,4 +70,13 @@ router.route('/alerts')
       })
     })
 
+router.route('/forecast')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/forecast/q/29464.json'
+
+      request.get({url: url}, function(err, response, data) {
+        res.send(JSON.parse(response.body));
+        })
+      })
+
 module.exports = router;

@@ -8,7 +8,8 @@
       $routeProvider
         .when('/weather', {
           templateUrl: 'weather/views/main.html',
-          controller: 'WeatherController'
+          controller: 'WeatherController',
+          controllerAs: 'WeatherCtrl'
         });
     });
 

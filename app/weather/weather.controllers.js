@@ -16,24 +16,33 @@
     .controller('WeatherController', function($scope, WeatherService){
 
       WeatherService.getCurrentConditions().then(function (currentConditions) {
-        console.log(currentConditions);
+        console.log("currentConditions:", currentConditions);
         $scope.currentConditions = currentConditions;
-     });
+      });
 
-     WeatherService.getRawTide().then(function (rawTide){
-       console.log(rawTide);
-       $scope.rawTide = rawTide;
-     });
+      WeatherService.getRawTide().then(function (rawtide){
+        console.log("rawTide:", rawtide);
+        $scope.rawtide = rawtide;
+      });
 
-     WeatherService.getHourly().then(function (hourly){
-       console.log(hourly);
-       $scope.hourly = hourly;
-     });
+      WeatherService.getHourly().then(function (hourly){
+        console.log("hourly:", hourly);
+        $scope.hourly = hourly;
+      });
 
-     WeatherService.getAlerts().then(function (alerts){
-       console.log(alerts);
-       $scope.alerts = alerts;
-     });
+    //   WeatherService.getOneHourly($routeParams.hourlyId).then(function (hourly) {
+    //    $scope.hourly = hourly;
+    //  });
+
+      WeatherService.getAlerts().then(function (alerts){
+        console.log("alerts", alerts);
+        $scope.alerts = alerts;
+      });
+
+      WeatherService.getForecast().then(function (forecast){
+        console.log("forecast", forecast);
+        $scope.forecast = forecast;
+      });
 
     });
 

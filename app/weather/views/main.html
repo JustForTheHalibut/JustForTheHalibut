@@ -42,6 +42,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
+              <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
             </div>
           </div>
     </div>
@@ -65,7 +66,7 @@
       <div class="col-sm-3 mainMap">
         <div class="panel panel-default">
           <div class="panel-body">
-            Weather
+            <hourly-directive h="hourly" data-id="{{h.id}}"></hourly-directive>
         </div>
         </div>
       </div>

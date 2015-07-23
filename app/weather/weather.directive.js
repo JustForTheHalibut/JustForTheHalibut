@@ -11,5 +11,25 @@
               w: '=',
             }
           };
+        })
+        .directive('alertsDirective', function () {
+          return {
+            restrict: 'E',
+            templateUrl: 'weather/views/alerts.directive.html',
+            transclude: true,
+            scope: {
+              a: '=',
+            }
+          };
+        })
+        .directive('hourlyDirective', function () {
+          return {
+            restrict: 'E',
+            templateUrl: 'weather/views/hourly.directive.html',
+            transclude: true,
+            scope: {
+              h: '=',
+            }
+          };
         });
 })();
