@@ -20,7 +20,7 @@
           return el.height;
         })
         $scope.rawtide = rawtide;
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+        $scope.labels = ["1"];
         $scope.series = ['Series A'];
         $scope.data = [
           newRawTide
@@ -29,6 +29,7 @@
       })
 
     .controller('WeatherController', function($scope, WeatherService, $routeParams){
+
 
       WeatherService.getCurrentConditions("28570").then(function (currentConditions) {
         console.log("currentConditions:", currentConditions);
@@ -56,7 +57,7 @@
    }
 
       WeatherService.getAlerts().then(function (alerts){
-        console.log("alerts", alerts);
+        // console.log("alerts", alerts);
         $scope.alerts = alerts;
       })
 

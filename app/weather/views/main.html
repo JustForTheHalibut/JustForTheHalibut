@@ -15,73 +15,107 @@
           </nav>
           <div class="panel panel-default">
             <div class="panel-body">
-              <p>
-                Weather Stuff
-              </p>
-              <p>
-                Weather Stuff
-              </p>
-              <p>
-                Weather Stuff
-              </p>
-              <p>
-                Weather Stuff
-              </p>
-              <p>
-                Weather Stuff
-              </p>
-              <p>
-                Weather Stuff
-              </p>
             </div>
           </div>
         </div>
       </div>
         </div>
-        <div class="col-sm-9 weatherBar">
-
+        <div class="col-sm-9 weatherBar weatherDir">
         <div class="col-sm-5 weatherBar">
           <div class="panel panel-default forecastBox">
             <div class="panel-body">
               <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
+
               <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
             </div>
           </div>
+            <div class="panel panel-default forecastBox">
+              <div class="panel-body">
+                <h4>moon phase</h4>
+                {{astronomy.phaseofMoon}}
+                {{astronomy.sunRiseHour}}
+                {{astronomy.sunRiseMin}}
+              </div>
+            </div>
     </div>
+
     <div class="col-sm-7 weatherBar">
-      <div class="panel panel-default">
-        <div class="panel-body" ng-controller="LineCtrl">
-          <h4>Tide Charts</h4>
-          <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
+      <div class="panel panel-default forecastBox">
+        <div class="panel-body">
           <h4>moon phase</h4>
-        {{astronomy.phaseofMoon}}
-        {{astronomy.sunRiseHour}}
-        {{astronomy.sunRiseMin}}
+          {{astronomy.phaseofMoon}}
+          {{astronomy.sunRiseHour}}
+          {{astronomy.sunRiseMin}}
         </div>
-      </div>
-</div>
-    <div class="col-sm-4 mainMap">
-      <div class="panel panel-default">
-        <div class="panel-body" ng-controller="WeatherController">
-          <h4>Hourly Forecast</h4>
-          <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
-      </div>
       </div>
     </div>
-      <div class="col-sm-4 mainMap">
-        <div class="panel panel-default">
-          <div class="panel-body" ng-controller="WeatherController">
-            <h4>3 day Forecast</h4>
-        </div>
-        </div>
+
+  <div class="col-sm-7 weatherBar">
+    <div class="panel panel-default redBox">
+      <div class="panel-body" ng-controller="LineCtrl">
+        <h4>Tide Charts</h4>
+        <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
       </div>
-      <div class="col-sm-4 mainMap">
-        <div class="panel panel-default">
-          <div class="panel-body" ng-controller="GeoController">
-            Your location is: {{coords}}
-        </div>
-        </div>
-      </div>
+    </div>
+</div>
+
+
+
+    <div class="col-sm-12 weatherBar">
+      <div ng-controller="TabsController">
+      <tabset>
+        <tab heading="Hourly">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="row hourBoxLabel">
+                <div class="col-sm-1">
+                  Time
+                  </div>
+                  <div class="col-sm-2">
+                    Cond
+                  </div>
+                  <div class="col-sm-2">
+                    Temp
+                </div>
+                <div class="col-sm-2">
+                  Description
+                </div>
+                <div class="col-sm-2">
+                  Precip
+                </div>
+                <div class="col-sm-1">
+                  Humidity
+                </div>
+                <div class="col-sm-2">
+                  Wind
+                </div>
+              </div>
+              <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
+            </div>
+          </div>
+           </tab>
+        <tab heading="10 Day">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div ng-controller="GeoController">
+                Your location is: {{coords}}
+              </div>
+            </div>
+          </div>
+          </tab>
+        <tab heading="Something">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            </div>
+          </div>
+          </tab>
+      </tabset>
+    </div>
+
+</div>
+
+
+
     </div>
   </div>
 </div>

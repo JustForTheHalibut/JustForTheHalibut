@@ -43,12 +43,12 @@ a {
 
 .navbar-default {
   color: #8DB986;
-  background: #8DB986;
+  background-color: white;
 }
 
 .navbar-default .navbar-brand {
   color: #fff;
-  background-color: #373737;
+  background-color: #639BB4;
 }
 
 .navbar-default .navbar-brand:hover {
@@ -342,20 +342,6 @@ a {
 }
 
 /*********************
-* Weather
-*********************/
-
-.degrees {
-  font-size: 1.5rem;
-  vertical-align: top;
-}
-
-.degreesTiny {
-  font-size: .5rem;
-  vertical-align: top;
-}
-
-/*********************
 * Home
 *********************/
 
@@ -401,11 +387,19 @@ a {
 
 .noShadow {
   box-shadow: none;
-  border: none;
 }
 
 .forecastBox {
-  background-color: #1D1F22;
+  background-color: #E1E3E4;
+}
+
+.clearTop {
+  float: left;
+  clear: both;
+}
+
+.clearChart {
+  float: right;
 }
 
 .forecast {
@@ -413,7 +407,6 @@ a {
   padding-left: .5rem;
   padding-right: .5rem;
   padding-bottom: 0;
-  border: none;
   h4 {
     text-align: center;
   }
@@ -436,12 +429,26 @@ a {
   h4 {
     color: #87CDE2;
   }
-  .iconWrap {
-    border-radius: 20px;
-  }
+
   .feelsLike {
+    margin-top: .5rem;
     color: #747577;
     font-weight: bold;
+  }
+  .degrees {
+    font-size: 1.5rem;
+    vertical-align: top;
+  }
+  .degreesF {
+    font-size: 2rem;
+    vertical-align: top;
+    margin-left: .1rem;
+    font-weight: normal;
+  }
+
+  .degreesTiny {
+    font-size: .5rem;
+    vertical-align: top;
   }
 }
 
@@ -457,6 +464,21 @@ a {
   padding-left: .5rem;
   padding-right: 1rem;
   padding-bottom: 0;
+}
+
+.hourBoxLabel {
+  background-color: black;
+  margin-top: 0;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.hourBox {
+  border: 1px solid black;
+  .dets{
+    text-align: center;
+  }
 }
 
 /*********************

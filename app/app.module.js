@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 angular.module('MyApp', [
   'ngMessages',
   'ngRoute',
@@ -26,3 +29,10 @@ angular.module('MyApp', [
       redirectTo: '/404'
     });
 });
+
+angular
+    .module('underscore', [])
+    .factory('_', function ($window) {
+      return $window._;
+    });
+})();

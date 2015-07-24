@@ -1,15 +1,18 @@
-<div class="weatherDir" data-id="{{w.id}}">
+<div data-id="{{w.id}}">
   <div class="row">
     <div class="col-sm-6">
         <h4>{{w.city}}</h4>
-        <h1>{{w.fahrenheit}}<span class="degrees"> 0</span>F</h1>
-        <div class="feelsLike">Feels Like {{w.feelsLike}}<span class="degreesTiny"> 0</span>F </div>
-        weather:{{w.description}}<br>
+        <h1>{{w.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
+        <div class="feelsLike">Feels Like {{w.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
+        <h3>{{w.description}}</h3>
         visability:{{w.visability}}<br>
     </div>
   <div class="col-sm-6">
-    <img class="iconWrap" ng-src="{{w.iconUrl}} " alt="" /> <br>
-    {{w.humidity}}<br>
+    <img class="icon" ng-src="{{w.iconUrl}} " alt="" /> <br>
+    <h5>Humidity</h5>
+    {{w.humidity}}
+    <h5>Wind</h5>
+    {{w.windDirection}} {{w.wind}} mph
 </div>
 </div>
 </div>

@@ -1,7 +1,23 @@
-<article data-id="{{h.id}}">
-<div>
-  {{h.condition}}
-  <img ng-src="{{h.iconUrl}}" alt="" />
+<div class="row hourBox" data-id="{{h.id}}">
+<div class="col-sm-1 dets">
   {{h.time}}
+  </div>
+  <div class="col-sm-2 dets">
+    <img ng-src="{{h.iconUrl}}" alt="" />
+  </div>
+  <div class="col-sm-2 dets">
+  {{h.temp}}
 </div>
-</article>
+<div class="col-sm-2 dets">
+  {{h.condition}}
+</div>
+<div class="col-sm-2 dets">
+  <i class="fa fa-tint"></i>{{h.pop}}%
+</div>
+<div class="col-sm-1 dets">
+  {{h.humidity}}%
+</div>
+<div class="col-sm-2 dets">
+{{h.windDir}} {{h.windspeed}} mph
+</div>
+</div>
