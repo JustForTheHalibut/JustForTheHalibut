@@ -20,7 +20,7 @@
           return el.height;
         })
         $scope.rawtide = rawtide;
-        $scope.labels = ["1"];
+        $scope.labels = ["1","1","1","1","1","1","1","1","1",];
         $scope.series = ['Series A'];
         $scope.data = [
           newRawTide
@@ -31,7 +31,7 @@
     .controller('WeatherController', function($scope, WeatherService, $routeParams){
 
 
-      WeatherService.getCurrentConditions("28570").then(function (currentConditions) {
+      WeatherService.getCurrentConditions('84124').then(function (currentConditions) {
         console.log("currentConditions:", currentConditions);
         $scope.currentConditions = currentConditions;
       })
@@ -60,6 +60,15 @@
         // console.log("alerts", alerts);
         $scope.alerts = alerts;
       })
+
+      WeatherService.getTenDayForecast().then(function (tenDayForecast){
+        console.log("tenDayForecast", tenDayForecast);
+        $scope.tenDayForecast = tenDayForecast;
+      })
+
+      WeatherService.getOneTenDayForecast($routeParams.oneTenDayForecastId).then(function (oneTenDayForecast) {
+       $scope.oneTenDayForecast = oneTenDayForecast;
+     });
 
       WeatherService.getForecast().then(function (forecast){
         console.log("forecast", forecast);

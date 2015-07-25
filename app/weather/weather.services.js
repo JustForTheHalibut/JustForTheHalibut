@@ -12,6 +12,7 @@
                     feelsLike: currentConditions.data.current_observation.feelslike_f,
                     iconUrl: currentConditions.data.current_observation.icon_url,
                     city: currentConditions.data.current_observation.display_location.city,
+                    state: currentConditions.data.current_observation.display_location.state,
                     description: currentConditions.data.current_observation.weather,
                     windGust: currentConditions.data.current_observation.wind_gust_mph,
                     wind: currentConditions.data.current_observation.wind_mph,
@@ -113,6 +114,40 @@
                  });
                };
 
+
+          var mapTenDayForecastToUrls = function (collection) {
+               return _.map(collection, function (obj) {
+                  return {
+                    conditions: obj.conditions,
+                    month: obj.date.monthname,
+                    day: obj.date.day,
+                    iconUrl: obj.icon_url,
+                    high: obj.high.fahrenheit,
+                    low: obj.low.fahrenheit,
+                    pop: obj.pop,
+                    aveWind: obj.avewind.mph,
+                    aveWindDir: obj.avewind.dir,
+                    aveHum: obj.avehumidity
+                      };
+                });
+          };
+
+
+          var getTenDayForecast = function(){
+               return $http.get('api/tendayforecast').then(function (tenDayForecast) {
+                  console.log("tenDayForecast", tenDayForecast)
+                  var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday;
+                  return mapTenDayForecastToUrls(tenDayForecastArr);
+                  });
+              }
+
+           var getOneTenDayForecast = function (id) {
+                return $http.get('api/tendayforecast').then(function (oneTenDayForecast) {
+                    var narrowedDownArr = _.where(oneTenDayForecast.data.forecast.simpleforecast.forecastday);
+                    return mapTenDayForecastToUrls(narrowedDownArr)[0];
+                    });
+                };
+
            var mapRawTideToUrls = function (collection) {
                return _.map(collection, function (obj) {
                return {
@@ -121,10 +156,14 @@
                });
              };
 
+
            var getRawTide = function(){
                return $http.get('api/rawtide').then(function (rawtide) {
                 //  console.log("rawTide", rawtide)
-                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
+                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,50);
+                 //  var evens = _.filter(rawTideArr, function(num){
+                 //    return num >= 0;
+                 //    });
                  return mapRawTideToUrls(rawTideArr);
                  });
                }
@@ -137,7 +176,9 @@
         getOneHourly: getOneHourly,
         getAlerts: getAlerts,
         getForecast: getForecast,
-        getOneForecast: getOneForecast
+        getOneForecast: getOneForecast,
+        getTenDayForecast: getTenDayForecast,
+        getOneTenDayForecast: getOneTenDayForecast,
       };
     });
 })();

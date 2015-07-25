@@ -38,7 +38,7 @@ router.route('/me')
 router.route('/weather')
   .get(function(req,res,next) {
     console.log("zip code: ", req.query.zip);
-    var url = 'https://api.wunderground.com/api/5a8252229fd2895b/conditions/q/' + req.query.zip +'.json'
+    var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.query.zip +'.json'
 
     request.get({url: url}, function(err, response, data) {
       res.send(JSON.parse(response.body));
@@ -47,7 +47,7 @@ router.route('/weather')
 
 router.route('/hourly')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/hourly/q/29464.json'
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/hourly/q/29464.json'
 
         request.get({url: url}, function(err, response, data) {
           res.send(JSON.parse(response.body));
@@ -56,7 +56,7 @@ router.route('/hourly')
 
 router.route('/rawtide')
   .get(function(req,res,next) {
-    var url = 'http://api.wunderground.com/api/5a8252229fd2895b/rawtide/q/29464.json'
+    var url = 'http://api.wunderground.com/api/01019dd17955e688/rawtide/q/29464.json'
 
       request.get({url: url}, function(err, response, data) {
         res.send(JSON.parse(response.body));
@@ -65,7 +65,7 @@ router.route('/rawtide')
 
 router.route('/alerts')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/alerts/q/29464.json'
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/alerts/q/29464.json'
 
       request.get({url: url}, function(err, response, data) {
         res.send(JSON.parse(response.body));
@@ -74,16 +74,25 @@ router.route('/alerts')
 
 router.route('/forecast')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/forecast/q/29464.json'
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/forecast/q/29464.json'
 
       request.get({url: url}, function(err, response, data) {
         res.send(JSON.parse(response.body));
         })
       })
 
+router.route('/tendayforecast')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/forecast10day/q/29464.json'
+
+        request.get({url: url}, function(err, response, data) {
+          res.send(JSON.parse(response.body));
+          })
+        })
+
 router.route('/astronomy')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/5a8252229fd2895b/astronomy/q/29464.json'
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/astronomy/q/29464.json'
 
       request.get({url: url}, function(err, response, data) {
         res.send(JSON.parse(response.body));

@@ -1,18 +1,20 @@
 <div data-id="{{w.id}}">
   <div class="row">
     <div class="col-sm-6">
-        <h4>{{w.city}}</h4>
+        <h4>{{w.city}}, {{w.state}}</h4>
         <h1>{{w.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
         <div class="feelsLike">Feels Like {{w.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
-        <h3>{{w.description}}</h3>
-        visability:{{w.visability}}<br>
     </div>
   <div class="col-sm-6">
-    <img class="icon" ng-src="{{w.iconUrl}} " alt="" /> <br>
-    <h5>Humidity</h5>
+    <img class="icon" ng-src="{{w.iconUrl}} " alt="" />
+    <div class="weatherPH">
+    <i class="fa fa-tint tint"></i> {{w.rain}}%  |
+    <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
     {{w.humidity}}
-    <h5>Wind</h5>
-    {{w.windDirection}} {{w.wind}} mph
+  </div>
+  <div class="weatherPH">
+    <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /> {{w.windDirection}} {{w.wind}} mph
+  </div>
 </div>
 </div>
 </div>

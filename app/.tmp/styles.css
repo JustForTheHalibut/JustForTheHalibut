@@ -318,7 +318,7 @@ a {
   box-shadow: none; }
 
 .forecastBox {
-  background-color: #E1E3E4; }
+  background-color: black; }
 
 .clearTop {
   float: left;
@@ -341,25 +341,29 @@ a {
     color: maroon;
     font-size: 1.5rem; }
 
-.weatherDir h1 {
-  color: #DC2639; }
-.weatherDir h4 {
-  color: #87CDE2; }
-.weatherDir .feelsLike {
-  margin-top: .5rem;
-  color: #747577;
-  font-weight: bold; }
-.weatherDir .degrees {
-  font-size: 1.5rem;
-  vertical-align: top; }
-.weatherDir .degreesF {
-  font-size: 2rem;
-  vertical-align: top;
-  margin-left: .1rem;
-  font-weight: normal; }
-.weatherDir .degreesTiny {
-  font-size: .5rem;
-  vertical-align: top; }
+.weatherDir {
+  color: white; }
+  .weatherDir h1 {
+    color: #DC2639; }
+  .weatherDir h4 {
+    color: #87CDE2; }
+  .weatherDir .testingBox {
+    color: black; }
+  .weatherDir .feelsLike {
+    margin-top: .5rem;
+    color: #747577;
+    font-weight: bold; }
+  .weatherDir .degrees {
+    font-size: 1.5rem;
+    vertical-align: top; }
+  .weatherDir .degreesF {
+    font-size: 2rem;
+    vertical-align: top;
+    margin-left: .1rem;
+    font-weight: normal; }
+  .weatherDir .degreesTiny {
+    font-size: .5rem;
+    vertical-align: top; }
 
 .leftFix {
   padding-top: 0;
@@ -381,9 +385,241 @@ a {
   text-align: center; }
 
 .hourBox {
+  color: black;
   border: 1px solid black; }
   .hourBox .dets {
     text-align: center; }
+  .hourBox .temp {
+    font-size: 3rem; }
+  .hourBox .low {
+    font-size: 1rem; }
+
+.tint {
+  color: #4EB8DB;
+  margin: .2rem; }
+
+.wind {
+  height: 2rem;
+  width: 2rem; }
+
+.humidity {
+  width: 1.5rem;
+  height: 1.5rem; }
+
+.sunRise {
+  height: 5rem;
+  width: 5rem;
+  margin-left: 2.5rem;
+  margin-bottom: 0; }
+
+.weatherPH {
+  margin: 1rem;
+  font-size: 1.7rem; }
+
+.sunRiseTitle {
+  margin-top: 0; }
+
+.icon {
+  margin-left: 3rem; }
+
+.tabset {
+  background-color: black; }
+
+.tab {
+  text-align: center;
+  width: 33%;
+  background-color: black; }
+
+.darrow {
+  height: 4rem;
+  width: 10rem;
+  position: absolute;
+  left: 35%;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1); }
+
+/*********************
+* Moon Phases
+*********************/
+.moon1 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon1.png");
+  background-size: cover; }
+
+.moon2 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon2.png");
+  background-size: cover; }
+
+.moon3 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon3.png");
+  background-size: cover; }
+
+.moon4 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon4.png");
+  background-size: cover; }
+
+.moon5 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon5.png");
+  background-size: cover; }
+
+.moon6 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon6.png");
+  background-size: cover; }
+
+.moon7 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon7.png");
+  background-size: cover; }
+
+.moon8 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon8.png");
+  background-size: cover; }
+
+.moon9 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon9.png");
+  background-size: cover; }
+
+.moon10 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon10.png");
+  background-size: cover; }
+
+.moon11 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon11.png");
+  background-size: cover; }
+
+.moon12 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon12.png");
+  background-size: cover; }
+
+.moon13 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon13.png");
+  background-size: cover; }
+
+.moon14 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon14.png");
+  background-size: cover; }
+
+.moon15 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon15.png");
+  background-size: cover; }
+
+.moon16 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon16.png");
+  background-size: cover; }
+
+.moon17 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon17.png");
+  background-size: cover; }
+
+.moon18 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon18.png");
+  background-size: cover; }
+
+.moon19 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon19.png");
+  background-size: cover; }
+
+.moon20 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon20.png");
+  background-size: cover; }
+
+.moon21 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon21.png");
+  background-size: cover; }
+
+.moon22 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon22.png");
+  background-size: cover; }
+
+.moon23 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon23.png");
+  background-size: cover; }
+
+.moon24 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon24.png");
+  background-size: cover; }
+
+.moon25 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon25.png");
+  background-size: cover; }
+
+.moon26 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon26.png");
+  background-size: cover; }
+
+.moon27 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon27.png");
+  background-size: cover; }
+
+.moon28 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon28.png");
+  background-size: cover; }
+
+.moon29 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon29.png");
+  background-size: cover; }
+
+.moon30 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon30.png");
+  background-size: cover; }
 
 /*********************
 * Maps

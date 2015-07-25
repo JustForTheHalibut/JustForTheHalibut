@@ -41,5 +41,15 @@
               f: '=',
             }
           };
+        })
+        .directive('tendayDirective', function () {
+          return {
+            restrict: 'E',
+            templateUrl: 'weather/views/tenday.directive.html',
+            transclude: true,
+            scope: {
+              t: '=',
+            }
+          };
         });
 })();
