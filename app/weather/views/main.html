@@ -23,16 +23,16 @@
 
 
         <div class="col-sm-9 weatherBar weatherDir">
-          <div class="panel panel-default forecastBox">
+          <div class="panel panel-default">
             <div class="panel-body">
         <div class="col-sm-5 weatherBar">
-          <div class="panel panel-default forecastBox">
+          <div class="panel panel-default">
             <div class="panel-body">
               <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
               <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
             </div>
           </div>
-            <div class="panel panel-default forecastBox">
+            <div class="panel panel-default">
               <div class="panel-body">
                 <div class="row">
                   <img class="darrow" src="http://cliparts.co/cliparts/8cx/KjE/8cxKjEdji.png" alt="" />
@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default forecastBox">
+          <div class="panel panel-default">
             <div class="panel-body">
               <div class="row">
                 <div class="col-sm-4">
@@ -56,10 +56,6 @@
 
           </div>
           <div class="col-sm-8">
-            <div ng-controller="WeatherController">
-       <input type="text" ng-model="searchZip" placeholder="Enter something" />
-       <input type="button" ng-click="getCurrentConditions()" value="Send" ng-disabled="searchZip == null" />
-            </div>
             {{astronomy.phaseofMoon}}
           </div>
             </div>
@@ -70,7 +66,7 @@
     <div ng-controller="TabsController">
     <tabset class="tabset">
       <tab class="tab" heading="Tides">
-    <div class="panel panel-default forecastBox">
+    <div class="panel panel-default">
       <div class="panel-body" ng-controller="LineCtrl">
         <h4>Tide Charts</h4>
         <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
@@ -80,113 +76,6 @@
 </tabset>
 </div>
 </div>
-
-
-    <div class="col-sm-12 testingBox">
-      <div ng-controller="TabsController">
-      <tabset>
-        <tab heading="Hourly">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="col-sm-5 weatherBar">
-                <div class="panel panel-default">
-                  <div class="panel-body">
-                    <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
-                    <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
-                  </div>
-                </div>
-                  <div class="panel panel-default">
-                    <div class="panel-body">
-                      <div class="row">
-                        <img class="darrow" src="http://cliparts.co/cliparts/8cx/KjE/8cxKjEdji.png" alt="" />
-                        <div class="col-sm-6">
-                      <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
-                    <h5 class="sunRiseTitle">{{astronomy.sunRiseHour}}:{{astronomy.sunRiseMin}} am Sunrise</h5>
-
-                    </div>
-                    <div class="col-sm-6">
-                      <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
-                    <h5 class="sunRiseTitle">{{astronomy.sunSetHour}}:{{astronomy.sunSetMin}} pm Sunset</h5>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default forecastBox">
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="col-sm-4">
-            <div class="moon{{astronomy.ageOfMoon}}"></div>
-
-                </div>
-                <div class="col-sm-8">
-                  <div ng-controller="WeatherController">
-             <input type="text" ng-model="searchZip" placeholder="Enter something" />
-             <input type="button" ng-click="getCurrentConditions()" value="Send" ng-disabled="searchZip == null" />
-                  </div>
-                  {{astronomy.phaseofMoon}}
-                </div>
-                  </div>
-                  </div>
-                </div>
-          </div>
-        <div class="col-sm-7 weatherBar">
-          <div ng-controller="TabsController">
-          <tabset class="tabset">
-            <tab class="tab" heading="Tides">
-          <div class="panel panel-default">
-            <div class="panel-body" ng-controller="LineCtrl">
-              <h4>Tide Charts</h4>
-              <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
-            </div>
-          </div>
-        </tab>
-      </tabset>
-      </div>
-      </div>
-
-            </div>
-          </div>
-           </tab>
-        <tab heading="10 Day">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="row hourBoxLabel">
-                <div class="col-sm-1">Date</div>
-                  <div class="col-sm-2">Cond</div>
-                    <div class="col-sm-2">Temp</div>
-                  <div class="col-sm-2">Description</div>
-                <div class="col-sm-2">Precip</div>
-              <div class="col-sm-1">Humidity</div>
-            <div class="col-sm-2">Wind</div>
-          </div>
-          <tenday-directive ng-repeat="oneTenDayForecast in tenDayForecast" t="oneTenDayForecast" data-id="{{t.id}}"></tenday-directive>
-            </div>
-          </div>
-          </tab>
-        <tab heading="Something">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="row hourBoxLabel">
-                <div class="col-sm-1">Time</div>
-                  <div class="col-sm-2">Cond</div>
-                    <div class="col-sm-2">Temp</div>
-                  <div class="col-sm-2">Description</div>
-                <div class="col-sm-2">Precip</div>
-              <div class="col-sm-1">Humidity</div>
-            <div class="col-sm-2">Wind</div>
-          </div>
-          <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
-              <div ng-controller="GeoController">
-                Your location is: {{coords}}
-              </div>
-            </div>
-          </div>
-          </tab>
-      </tabset>
-    </div>
-
-</div>
-
 </div>
       </div>
     </div>

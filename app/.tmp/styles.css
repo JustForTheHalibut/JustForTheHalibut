@@ -18,7 +18,9 @@ a {
 
 .navbar-header {
   float: left;
-  padding-left: 15px; }
+  padding-left: 15px;
+  margin-bottom: 0;
+  padding-bottom: 0rem; }
 
 .navbar-nav {
   float: left;
@@ -46,6 +48,9 @@ a {
   margin-left: -15px;
   -webkit-transition: 0.25s all;
           transition: 0.25s all; }
+
+.addCatch {
+  margin-bottom: 2%; }
 
 .panel {
   border-color: #cfd9D7;
@@ -283,7 +288,9 @@ a {
 * Home
 *********************/
 .mainCont {
-  width: 100%; }
+  width: 100%;
+  margin-top: -2rem;
+  padding-top: 0rem; }
 
 .leftAside {
   padding-left: 1rem;
@@ -342,7 +349,7 @@ a {
     font-size: 1.5rem; }
 
 .weatherDir {
-  color: white; }
+  color: black; }
   .weatherDir h1 {
     color: #DC2639; }
   .weatherDir h4 {
@@ -422,14 +429,6 @@ a {
 .icon {
   margin-left: 3rem; }
 
-.tabset {
-  background-color: black; }
-
-.tab {
-  text-align: center;
-  width: 33%;
-  background-color: black; }
-
 .darrow {
   height: 4rem;
   width: 10rem;
@@ -439,7 +438,10 @@ a {
           transform: scaleX(-1); }
 
 .leafMap {
-  height: 400px; }
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover; }
 
 /*********************
 * Moon Phases
@@ -664,3 +666,10 @@ a {
   50% {
     opacity: 1; } }
 /* #373737 #8DB986 #ACCE91 #BADB73 #EFEAE4*/
+/* catchAdded */
+.catchSpecs {
+  list-style: none;
+  padding-left: 0; }
+
+.catchTitle {
+  display: inline-block; }

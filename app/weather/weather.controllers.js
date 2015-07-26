@@ -3,15 +3,6 @@
   angular
     .module('weather')
 
-    .controller('GeoController', function ($scope,geolocation) {
-        geolocation.getLocation().then(function(data){
-        $scope.coords = {
-          lat:data.coords.latitude,
-          long:data.coords.longitude
-          };
-      });
-    })
-
     .controller("LineCtrl", function ($scope, WeatherService) {
 
         WeatherService.getRawTide().then(function(rawtide){
@@ -28,12 +19,19 @@
         })
       })
 
-    .controller('WeatherController', function($scope, WeatherService, $routeParams){
+    .controller('WeatherController', function($scope, WeatherService, $routeParams, $geolocation){
+
+      navigator.geolocation.getCurrentPosition(function(position){
+        console.log("geo Position", position);
+
+          $scope.latitude = position.coords.latitude;
+          $scope.longitude = position.coords.longitude;
 
 
-      WeatherService.getCurrentConditions('84124').then(function (currentConditions) {
+      WeatherService.getCurrentConditions($scope.latitude, $scope.longitude).then(function (currentConditions) {
         console.log("currentConditions:", currentConditions);
         $scope.currentConditions = currentConditions;
+        })
       })
 
       WeatherService.getAstronomy().then(function (astronomy) {
@@ -41,10 +39,10 @@
         $scope.astronomy = astronomy;
       })
 
-      // WeatherService.getRawTide().then(function (rawtide){
-      //   console.log("rawTide:", rawtide);
-      //   $scope.rawtide = rawtide;
-      // })
+      WeatherService.getRawTide().then(function (rawtide){
+        console.log("rawTide:", rawtide);
+        $scope.rawtide = rawtide;
+      })
 
       WeatherService.getHourly().then(function (hourly){
         console.log("hourly:", hourly);

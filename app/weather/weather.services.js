@@ -4,8 +4,8 @@
     .module('weather')
     .factory('WeatherService', function($http) {
 
-       var getCurrentConditions = function (zip) {
-           return $http.get('/api/weather' + '/?zip=' + zip).then(function(currentConditions){
+       var getCurrentConditions = function (lat, long) {
+           return $http.get('/api/weather/' + lat + ',' + long).then(function(currentConditions){
               console.log("current conditions", currentConditions);
               return {
                     fahrenheit: currentConditions.data.current_observation.temp_f,
@@ -159,8 +159,8 @@
 
            var getRawTide = function(){
                return $http.get('api/rawtide').then(function (rawtide) {
-                //  console.log("rawTide", rawtide)
-                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,50);
+                 console.log("rawTide", rawtide)
+                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
                  //  var evens = _.filter(rawTideArr, function(num){
                  //    return num >= 0;
                  //    });

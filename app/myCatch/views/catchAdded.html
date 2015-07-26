@@ -1,0 +1,83 @@
+<div class="container mainCont">
+      <div class="row">
+        <div class="col-sm-3 leftAside">
+          <div class="panel panel-default">
+                <div class="panel-heading">Side Nav</div>
+            <div class="panel-body">
+              <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+
+          <h2>{{user.displayName}}</h2>
+          <nav class="sideNav">
+            <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
+            <li><a class="btn btn-primary" href="#/profile/main">Achievements</a></li>
+            <li><a class="btn btn-primary" href="#/profile/main">Weather</a></li>
+            <li><a class="btn btn-primary" href="#/profile/main">Recipes</a></li>
+          </nav>
+          <div class="panel panel-default noShadow">
+            <div class="panel-body">
+              Fish Sightings
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="col-sm-9 weatherBar">
+          <div ng-controller="TabsController">
+          <tabset>
+            <tab heading="My New Catch"> <!-- ng-click here -->
+<!--             // <script type="text/javascript">
+//     $(function() {
+//       $('#upload-form').transloadit({
+//         wait: true,
+//         triggerUploadOnFileSelection: true,
+//         params: {
+//           auth: {
+//             // This is your API key.
+//             key: "fc73a980313e11e58e2a1d428cc06c07"
+//           },
+//           steps: {
+//             //Resizes the uploaded image to 100x100 px
+//             resize_to_100: {
+//               robot: "/image/resize",
+//               use: ":original",
+//               width: 100,
+//               height: 100,
+//               debug: true
+//             },
+//           }
+//         }
+//       });
+//    });
+// </script> -->
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="panel panel-default"> <!-- ng-repeat here -->
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <img ng-src="http://placehold.it/100x100"><br><br>
+                        </div>
+                        <div class="col-sm-9">
+                          <strong> Successfully added catch!!! </strong>
+                          <ul class="catchSpecs">
+                            <li><h5 class="catchTitle">Fish Kind: </h5>{{catch.kind}}</li>
+                            <li><h5 class="catchTitle">Fish Weight: </h5>{{catch.weight}}</li>
+                            <li><h5 class="catchTitle">Fish Length: </h5>{{catch.length}}</li>
+                            <li><h5 class="catchTitle">Location Caught: </h5>{{catch.location}}</li>
+                            <li><h5 class="catchTitle">Tackle Used: </h5>{{catch.tackle}}</li>
+                            <li><h5 class="catchTitle">Bait Used: </h5>{{catch.bait}}</li>
+                            <li><button type="button" name="button" ng-click="deleteCatch(catch._id)">Delete</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               </tab>
+        </tabset>
+        </div>
+
+    </div>
+  </div>
+</div>

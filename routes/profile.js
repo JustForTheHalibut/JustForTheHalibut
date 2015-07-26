@@ -10,6 +10,17 @@ var ensureAuthenticated = require('./helpers').ensureAuthenticated;
  | GET /api/me
  |--------------------------------------------------------------------------
  */
+router.route('/signature')
+  .get(function (req, res) {
+    res.send("Hello Tiffany");
+  });
+ router.route('/allUsers')
+  .get(function (req, res) {
+    User.find({}, function (err, users) {
+      res.send(users);
+    });
+  });
+
 router.route('/me')
   .all(ensureAuthenticated)
   .get(function(req, res) {
@@ -37,8 +48,9 @@ router.route('/me')
 
 router.route('/weather')
   .get(function(req,res,next) {
-    console.log("zip code: ", req.query.zip);
-    var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.query.zip +'.json'
+    console.log("lat: ", req.query.lat);
+    console.log("long: ", req.query.long);
+    var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.query.lat + ',' + req.query.long +'.json'
 
     request.get({url: url}, function(err, response, data) {
       res.send(JSON.parse(response.body));

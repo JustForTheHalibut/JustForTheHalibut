@@ -13,10 +13,10 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
   <link href="vendor/leaflet/dist/leaflet.css" rel="stylesheet">
-
-
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- bower:css -->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
   <!-- endbower -->
 
   <!-- inject:css -->
@@ -32,6 +32,7 @@
   <div ng-view class="fadeZoom"></div>
 
   <!-- bower:js -->
+  <script src="vendor/jquery/dist/jquery.js"></script>
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-animate/angular-animate.js"></script>
   <script src="vendor/angular-messages/angular-messages.js"></script>
@@ -48,7 +49,10 @@
   <script src="vendor/angularjs-geolocation/src/geolocation.js"></script>
   <script src="vendor/underscore/underscore.js"></script>
   <script src="vendor/leaflet/dist/leaflet.js"></script>
-  <script src="vendor/angular-leaflet/dist/angular-leaflet-directive.min.js"></script>
+  <script src="vendor/leaflet/dist/leaflet-src.js"></script>
+  <script src="vendor/angular-leaflet/dist/angular-leaflet-directive.js"></script>
+  <script src="vendor/ngUpload/ng-upload.js"></script>
+  <script src="vendor/ngGeolocation/ngGeolocation.js"></script>
   <!-- endbower -->
 
   <!-- Application Code -->
@@ -66,11 +70,15 @@
   <script src="posts/posts.module.js"></script>
   <script src="posts/posts.postService.js"></script>
   <script src="posts/posts.controller.js"></script>
+  <script src="myCatch/myCatch.module.js"></script>
+  <script src="myCatch/myCatch.service.js"></script>
+  <script src="myCatch/myCatch.controller.js"></script>
   <script src="maps/maps.module.js"></script>
   <script src="maps/maps.services.js"></script>
   <script src="maps/maps.controllers.js"></script>
   <script src="app.module.js"></script>
   <script src="home/navbar.js"></script>
+  <script src="home/home.controller.js"></script>
   <script src="controllers/navbar.js"></script>
   <script src="auth/auth.signup.js"></script>
   <script src="auth/auth.logout.js"></script>

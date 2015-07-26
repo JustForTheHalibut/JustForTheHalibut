@@ -7,6 +7,8 @@ angular.module('auth')
         })
         .then(function(res) {
           console.log(res.data);
+          // $rootScope.user= res.data;
+          // console.log("rootScope: ", $rootScope.user);
           $alert({
             content: 'You have successfully logged in',
             animation: 'fadeZoomFadeDown',
