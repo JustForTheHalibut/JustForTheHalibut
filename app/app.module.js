@@ -15,6 +15,7 @@ angular.module('MyApp', [
   'maps',
   'chart.js',
   'geolocation',
+  'leaflet-directive'
 ])
 
 .config(function($routeProvider) {

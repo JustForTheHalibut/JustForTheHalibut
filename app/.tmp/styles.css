@@ -438,6 +438,9 @@ a {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1); }
 
+.leafMap {
+  height: 400px; }
+
 /*********************
 * Moon Phases
 *********************/
