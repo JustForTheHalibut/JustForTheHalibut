@@ -20,7 +20,7 @@
 
     .controller("LeafController", [ '$scope', function($scope) {
       angular.extend($scope, {
-        eeuu: {
+        merica: {
             lat: 39,
             lng: -100,
             zoom: 4
