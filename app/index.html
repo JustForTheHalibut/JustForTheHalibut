@@ -12,6 +12,7 @@
   <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 
   <!-- bower:css -->
   <!-- endbower -->
@@ -29,6 +30,7 @@
   <div ng-view class="fadeZoom"></div>
 
   <!-- bower:js -->
+  <script src="vendor/jquery/dist/jquery.js"></script>
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-animate/angular-animate.js"></script>
   <script src="vendor/angular-messages/angular-messages.js"></script>
@@ -37,16 +39,13 @@
   <script src="vendor/angular-strap/dist/angular-strap.tpl.js"></script>
   <script src="vendor/satellizer/satellizer.js"></script>
   <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
-  <script src="vendor/lodash/lodash.min.js"></script>
-  <script src="vendor/angular-google-maps/dist/angular-google-maps.js"></script>
-
-  <!-- Angular Boostrap -->
-  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
-  <!-- Charts -->
-  <script src="vendor/Chart.js/Chart.min.js"></script>
+  <script src="vendor/Chart.js/Chart.js"></script>
   <script src="vendor/angular-chart.js/dist/angular-chart.js"></script>
-
+  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="vendor/lodash/lodash.js"></script>
+  <script src="vendor/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="vendor/ngUpload/ng-upload.js"></script>
+  <script src="vendor/ngGeolocation/ngGeolocation.js"></script>
   <!-- endbower -->
 
 
@@ -55,12 +54,18 @@
   <script src="auth/auth.module.js"></script>
   <script src="auth/directives/passwordStrength.js"></script>
   <script src="auth/directives/passwordMatch.js"></script>
+  <script src="weather/weather.module.js"></script>
+  <script src="weather/weather.services.js"></script>
+  <script src="weather/weather.controllers.js"></script>
   <script src="profile/profile.module.js"></script>
   <script src="profile/profile.controller.js"></script>
   <script src="profile/profile.accountService.js"></script>
   <script src="posts/posts.module.js"></script>
   <script src="posts/posts.postService.js"></script>
   <script src="posts/posts.controller.js"></script>
+  <script src="myCatch/myCatch.module.js"></script>
+  <script src="myCatch/myCatch.service.js"></script>
+  <script src="myCatch/myCatch.controller.js"></script>
   <script src="maps/maps.module.js"></script>
   <script src="maps/maps.services.js"></script>
   <script src="maps/maps.controllers.js"></script>
@@ -70,11 +75,7 @@
   <script src="auth/auth.signup.js"></script>
   <script src="auth/auth.logout.js"></script>
   <script src="auth/auth.login.js"></script>
-
-  <script src="controllers/navbar.js"></script>
-  <script src="weather/weather.module.js"></script>
-  <script src="weather/weather.services.js"></script>
-  <script src="weather/weather.controllers.js"></script>
+    <script src="home/home.controller.js"></script>
   <!-- endinject -->
 
   <!-- Maps -->

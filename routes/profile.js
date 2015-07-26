@@ -9,6 +9,17 @@ var ensureAuthenticated = require('./helpers').ensureAuthenticated;
  | GET /api/me
  |--------------------------------------------------------------------------
  */
+router.route('/signature')
+  .get(function (req, res) {
+    res.send("Hello Tiffany");
+  });
+ router.route('/allUsers')
+  .get(function (req, res) {
+    User.find({}, function (err, users) {
+      res.send(users);
+    });
+  });
+
 router.route('/me')
   .all(ensureAuthenticated)
   .get(function(req, res) {

@@ -24,6 +24,12 @@
     "angular-strap": "~2.2.0",
     "satellizer": "~0.11.2",
     "angular-sanitize": "~1.3.14",
-    "angular-chart.js": "~0.7.2"
+    "angular-chart.js": "~0.7.2",
+    "angular-bootstrap": "~0.13.0",
+    "angular-google-maps": "~2.1.5",
+    "jquery-transloadit": "~2.7.1",
+    "jquery": "~2.1.4",
+    "ngUpload": "~0.5.17",
+    "ngGeolocation": "~0.0.7"
   }
 }

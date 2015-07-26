@@ -61,6 +61,9 @@ a {
   transition: 0.25s all;
 }
 
+.addCatch{
+  margin-bottom: 2%;
+}
 .panel {
   border-color: #cfd9D7;
   border-radius: 2px;
@@ -438,3 +441,14 @@ a {
 }
 
 /* #373737 #8DB986 #ACCE91 #BADB73 #EFEAE4*/
+
+/* catchAdded */
+
+.catchSpecs{
+  list-style: none;
+  padding-left: 0;
+}
+
+.catchTitle{
+  display: inline-block;
+}

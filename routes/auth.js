@@ -63,6 +63,9 @@ router.route('/login')
         displayName: req.body.displayName,
         email: req.body.email,
         password: req.body.password,
+        achievement: req.body.achievement,
+        achievementPicture: req.body.achievementPicture,
+        location: req.body.location
       });
       user.save(function() {
         res.send({ token: createToken(user) });

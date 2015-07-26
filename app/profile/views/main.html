@@ -6,7 +6,7 @@
             <div class="panel-body">
               <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
 
-          <h2>Username</h2>
+          <h2>{{user.displayName}}</h2>
           <nav class="sideNav">
             <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
             <li><a class="btn btn-primary" href="#/profile/main">Achievements</a></li>
@@ -24,10 +24,11 @@
         <div class="col-sm-9 weatherBar">
           <div ng-controller="TabsController">
           <tabset>
-            <tab heading="My Catches">
+            <tab heading="My Catches"> <!-- ng-click here -->
               <div class="panel panel-default">
                 <div class="panel-body">
-                  <div class="panel panel-default">
+                  <button type="button" class="btn btn-primary addCatch" ng-click="addCatch()" name="button">Add New Catch</button>
+                  <div class="panel panel-default"> <!-- ng-repeat here -->
                     <div class="panel-body">
                       <div class="row">
                         <div class="col-sm-3">
@@ -81,7 +82,7 @@
             </div>
             <div class="col-sm-4">
               <canvas id="pie" class="chart chart-pie" data="data" labels="labels"></canvas>
- 
+
            </div>
     <div class="col-sm-4">
   <div class="panel panel-default">
