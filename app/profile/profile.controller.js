@@ -8,7 +8,7 @@ angular
   $scope.max = 200;
   })
 
-  .controller('ProfileController', function($scope, $auth, $alert, Account) {
+  .controller('ProfileController', function($scope, $auth, $alert, Account, $location) {
 
     /**
      * Get user's profile information.
@@ -28,6 +28,10 @@ angular
           });
         });
     };
+
+    $scope.addCatch= function(){
+      $location.path('/addCatch');
+    }
 
 
     /**
