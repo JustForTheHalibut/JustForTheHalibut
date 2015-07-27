@@ -34,6 +34,7 @@
     "jquery-transloadit": "~2.7.1",
     "jquery": "~2.1.4",
     "ngUpload": "~0.5.17",
-    "ngGeolocation": "~0.0.7"
+    "ngGeolocation": "~0.0.7",
+    "Chart.js": "~1.0.2"
   }
 }

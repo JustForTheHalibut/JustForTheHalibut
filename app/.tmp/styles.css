@@ -51,6 +51,9 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 );
   /* IE6-9 */ }
 
+.mainAnchor {
+  color: white; }
+
 .navbar-default .navbar-brand {
   color: #fff;
   background-color: #639BB4; }
@@ -157,7 +160,7 @@ a {
   display: inline-block; }
 
 .profile-picture {
-  height: 200px;
+  width: 100%;
   display: block; }
 
 .profilePicBlock {
@@ -310,21 +313,33 @@ a {
   padding-right: 1rem; }
 
 .leftAside {
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-right: .5rem; }
-  .leftAside h2 {
-    color: white;
-    text-align: center; }
+  .leftAside h3 {
+    color: white; }
+  .leftAside h5 {
+    color: #F47F20; }
 
 .weatherBar {
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-left: .5rem;
   padding-right: .5rem;
   padding-bottom: 0rem; }
 
-.leaderBoard {
-  padding-top: 3rem;
+/*********************
+* recentCatches
+*********************/
+.recentCatches {
+  padding-top: 2rem;
   padding-left: .5rem; }
+  .recentCatches .fishHome {
+    margin-top: 1rem;
+    color: white;
+    opacity: 1; }
+  .recentCatches .fishPic {
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem; }
 
 .sideNav {
   width: 100%; }
@@ -364,21 +379,24 @@ a {
 
 .weatherDir {
   color: white; }
-  .weatherDir h1 {
+  .weatherDir h2 {
     color: #F47F20;
     text-align: center;
     margin: .1rem;
     margin-top: .4rem;
-    font-size: 4rem; }
-  .weatherDir h4 {
+    font-size: 3rem;
+    padding: 0rem 1rem; }
+  .weatherDir h5 {
     text-align: center;
-    color: #87CDE2; }
+    color: #639BB4; }
   .weatherDir .testingBox {
     color: black; }
   .weatherDir .feelsLike {
     margin-top: .5rem;
     color: #747577;
-    font-weight: bold; }
+    font-weight: bold;
+    text-align: center;
+    padding: 0rem 1rem; }
   .weatherDir .degrees {
     font-size: 1.5rem;
     vertical-align: top; }
@@ -390,6 +408,12 @@ a {
   .weatherDir .degreesTiny {
     font-size: .5rem;
     vertical-align: top; }
+  .weatherDir .weatherDets {
+    margin: 0rem;
+    padding: 1rem; }
+  .weatherDir .value {
+    color: white;
+    font-size: 1.5rem; }
 
 .leftFix {
   padding-top: 0;
@@ -450,7 +474,9 @@ a {
   margin-top: 0; }
 
 .icon {
-  text-align: left; }
+  text-align: center;
+  margin-left: 3rem;
+  padding: 0rem 1rem; }
 
 .darrow {
   height: 4rem;
@@ -460,7 +486,15 @@ a {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1); }
 
+.whitePanel {
+  margin: 0;
+  padding: 0; }
+
+.tabBox {
+  max-height: 40rem; }
+
 .blackPanel {
+  padding: .7rem;
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0.4)));
   /* Chrome,Safari4+ */
@@ -486,14 +520,9 @@ a {
     background-color: black; }
   .blackPanel .location {
     color: white; }
-
-.fishHome {
-  margin-top: 1rem;
-  color: white;
-  opacity: 1; }
-  .fishHome .fishPic {
-    height: 120px;
-    width: 120px; }
+  .blackPanel .inside {
+    padding: 0;
+    margin: 0; }
 
 /*********************
 * Footer

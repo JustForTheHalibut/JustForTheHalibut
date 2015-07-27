@@ -18,7 +18,7 @@
     //
     //   })
 
-    .controller("LeafController", [ '$scope', function($scope) {
+    .controller("LeafController", [ '$scope', function($scope, LeafService) {
       angular.extend($scope, {
              center: {
                  lat: 39,
@@ -36,6 +36,18 @@
             charleston: {
                 lat: 32.718714,
                 lng: -79.734598,
+                focus: true,
+                draggable: false
+            },
+            ocean: {
+                lat: 29.245501,
+                lng: -87.927439,
+                focus: true,
+                draggable: false
+            },
+            west: {
+                lat: 37.315417,
+                lng: -123.611034,
                 focus: true,
                 draggable: false
             }
@@ -63,6 +75,7 @@
                 //  }
              }
          });
+
     }]);
 
 })();

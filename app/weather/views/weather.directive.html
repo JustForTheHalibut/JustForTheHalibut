@@ -1,4 +1,4 @@
-<div class="weatherDir" data-id="{{w.id}}">
+<!-- <div class="weatherDir" data-id="{{w.id}}">
   <div class="row">
     <div class="col-sm-12">
         <h4 class="location">{{w.city}}, {{w.state}}</h4>
@@ -10,24 +10,27 @@
     <img class="icon" ng-src="{{w.iconUrl}} " alt="" />
 </div>
 </div>
-</div>
-<!-- <div data-id="{{w.id}}">
+</div> -->
+ <div class="weatherDir" data-id="{{w.id}}">
   <div class="row">
-    <div class="col-sm-6">
-        <h4>{{w.city}}, {{w.state}}</h4>
-        <h1>{{w.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
+    <div class="col-sm-12">
+        <h5>{{w.city}}, {{w.state}}</h5>
+      </div>
+      <div class="col-sm-6 weatherDets">
+        <h2>{{w.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h2>
         <div class="feelsLike">Feels Like {{w.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
-    </div>
-  <div class="col-sm-6">
+        <div class="weatherPH">
+          <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /><span class="value"> {{w.windDirection}} {{w.wind}} mph</span>
+        </div>
+  </div>
+  <div class="col-sm-6 weatherDets">
     <img class="icon" ng-src="{{w.iconUrl}} " alt="" />
     <div class="weatherPH">
-    <i class="fa fa-tint tint"></i> {{w.rain}}%  |
+    <i class="fa fa-tint tint"></i><span class="value"> {{w.rain}}%  |</span>
     <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
-    {{w.humidity}}
+  <span class="value">{{w.humidity}}</span>
   </div>
-  <div class="weatherPH">
-    <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /> {{w.windDirection}} {{w.wind}} mph
-  </div>
+
 </div>
 </div>
-</div> -->
+</div>

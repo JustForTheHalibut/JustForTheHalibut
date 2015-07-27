@@ -11,7 +11,7 @@
           return el.height;
         })
         $scope.rawtide = rawtide;
-        $scope.labels = ["1","1","1","1","1","1","1","1","1",];
+        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
         $scope.series = ['Series A'];
         $scope.data = [
           newRawTide
@@ -32,7 +32,6 @@
         console.log("currentConditions:", currentConditions);
         $scope.currentConditions = currentConditions;
         })
-
 
       WeatherService.getAstronomy().then(function (astronomy) {
         console.log("astronomy:", astronomy);

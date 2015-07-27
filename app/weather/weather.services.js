@@ -161,11 +161,8 @@
                return $http.get('api/rawtide').then(function (rawtide) {
                  console.log("rawTide", rawtide)
                  var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
-                 //  var evens = _.filter(rawTideArr, function(num){
-                 //    return num >= 0;
-                 //    });
                  return mapRawTideToUrls(rawTideArr);
-                 });
+                 })
                }
 
       return {

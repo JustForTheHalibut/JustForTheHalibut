@@ -59,6 +59,10 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
 }
 
+.mainAnchor {
+  color: white;
+}
+
 .navbar-default .navbar-brand {
   color: #fff;
   background-color: #639BB4;
@@ -180,7 +184,7 @@ a {
 }
 
 .profile-picture {
-  height: 200px;
+  width: 100%;
   display: block;
 }
 
@@ -370,24 +374,43 @@ a {
 }
 
 .leftAside {
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-right: .5rem;
-  h2 {
+  h3 {
     color: white;
-    text-align: center;
+  }
+  h5 {
+    color: #F47F20;
   }
 }
 
 .weatherBar {
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-left: .5rem;
   padding-right: .5rem;
   padding-bottom: 0rem;
 }
 
-.leaderBoard {
-  padding-top: 3rem;
+
+/*********************
+* recentCatches
+*********************/
+
+.recentCatches {
+  padding-top: 2rem;
   padding-left: .5rem;
+  .fishHome {
+    margin-top: 1rem;
+    color: white;
+    opacity: 1;
+  }
+  .fishPicBox {
+  }
+  .fishPic {
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem;
+  }
 }
 
 
@@ -439,30 +462,28 @@ a {
 }
 
 .weatherDir {
-
   color: white;
-
-  h1 {
+  h2 {
     color: #F47F20;
     text-align: center;
     margin: .1rem;
     margin-top: .4rem;
-    font-size: 4rem;
+    font-size: 3rem;
+    padding: 0rem 1rem;
   }
-
-  h4 {
+  h5 {
     text-align: center;
-    color: #87CDE2;
+    color: #639BB4;
   }
-
   .testingBox {
     color: black;
   }
-
   .feelsLike {
     margin-top: .5rem;
     color: #747577;
     font-weight: bold;
+    text-align: center;
+    padding: 0rem 1rem;
   }
   .degrees {
     font-size: 1.5rem;
@@ -474,12 +495,20 @@ a {
     margin-left: .1rem;
     font-weight: normal;
   }
-
   .degreesTiny {
     font-size: .5rem;
     vertical-align: top;
   }
+  .weatherDets {
+    margin: 0rem;
+    padding: 1rem;
+  }
+  .value {
+    color: white;
+    font-size: 1.5rem;
+  }
 }
+
 
 .leftFix {
   padding-top: 0;
@@ -554,7 +583,9 @@ a {
 }
 
 .icon {
-  text-align: left;
+  text-align: center;
+  margin-left: 3rem;
+  padding: 0rem 1rem;
 }
 
 .darrow {
@@ -565,7 +596,17 @@ a {
   transform: scaleX(-1);
 }
 
+.whitePanel {
+margin: 0;
+padding: 0;
+}
+
+.tabBox {
+  max-height: 40rem;
+}
+
 .blackPanel {
+  padding: .7rem;
   background: -moz-linear-gradient(top,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
@@ -573,7 +614,6 @@ a {
   background: -ms-linear-gradient(top,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
   background: linear-gradient(to bottom,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
-
   border: none;
   h4 {
     text-align: center;
@@ -592,15 +632,9 @@ a {
   .location {
     color: white;
   }
-}
-
-.fishHome {
-  margin-top: 1rem;
-  color: white;
-  opacity: 1;
-  .fishPic {
-    height: 120px;
-    width: 120px;
+  .inside {
+    padding: 0;
+    margin: 0;
   }
 }
 
