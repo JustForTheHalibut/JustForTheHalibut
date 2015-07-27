@@ -2,37 +2,54 @@
 <div class="container mainCont">
       <div class="row">
         <div class="col-sm-3 leftAside">
-          <div class="panel panel-default">
+          <div class="panel panel-default blackPanel">
                 <div class="panel-heading">Side Nav</div>
             <div class="panel-body">
               <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
 
           <h2>Username</h2>
           <nav class="sideNav">
-            <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
-            <li><a class="btn btn-primary" href="#">Achievements</a></li>
-            <li><a class="btn btn-primary" href="#">Recipes</a></li>
+            <li><a class="btn btn-primary" href="#/weather/hourly">Hourly</a></li>
+            <li><a class="btn btn-primary" href="#/weather/tenday">10 Day</a></li>
           </nav>
-          <div class="panel panel-default">
-            <div class="panel-body">
-            </div>
-          </div>
         </div>
       </div>
         </div>
 
 
         <div class="col-sm-9 weatherBar weatherDir">
-          <div class="panel panel-default">
+          <div class="panel panel-default blackPanel">
             <div class="panel-body">
         <div class="col-sm-5 weatherBar">
-          <div class="panel panel-default">
-            <div class="panel-body">
+          <div class="panel panel-default blackPanel">
+            <div class="panel-body" ng-controller="WeatherController" w="currentConditions" data-id="{{w.id}}">
+
+              <div data-id="{{weather.id}}">
+                <div class="row">
+                  <div class="col-sm-6">
+                      <h4>{{w.city}}, {{w.state}}</h4>
+                      <h1>{{weather.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
+                      <div class="feelsLike">Feels Like {{weather.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
+                  </div>
+                <div class="col-sm-6">
+                  <img class="icon" ng-src="{{weather.iconUrl}} " alt="" />
+                  <div class="weatherPH">
+                  <i class="fa fa-tint tint"></i> {{weather.rain}}%  |
+                  <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
+                  {{weather.humidity}}
+                </div>
+                <div class="weatherPH">
+                  <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /> {{weather.windDirection}} {{weather.wind}} mph
+                </div>
+              </div>
+              </div>
+              </div>
+
               <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
               <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
             </div>
           </div>
-            <div class="panel panel-default">
+            <div class="panel panel-default blackPanel">
               <div class="panel-body">
                 <div class="row">
                   <img class="darrow" src="http://cliparts.co/cliparts/8cx/KjE/8cxKjEdji.png" alt="" />
@@ -48,7 +65,7 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
+          <div class="panel panel-default blackPanel">
             <div class="panel-body">
               <div class="row">
                 <div class="col-sm-4">
@@ -66,7 +83,7 @@
     <div ng-controller="TabsController">
     <tabset class="tabset">
       <tab class="tab" heading="Tides">
-    <div class="panel panel-default">
+    <div class="panel panel-default blackPanel">
       <div class="panel-body" ng-controller="LineCtrl">
         <h4>Tide Charts</h4>
         <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>

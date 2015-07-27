@@ -23,8 +23,23 @@
              center: {
                  lat: 39,
                  lng: -100,
-                 zoom: 4
+                 zoom: 4,
              },
+             defaults: {
+               minZoom: 4,
+               maxZoom: 4,
+               zoomControl: false,
+               scrollWheelZoom: false
+
+             },
+             markers: {
+            charleston: {
+                lat: 32.718714,
+                lng: -79.734598,
+                focus: true,
+                draggable: false
+            }
+        },
              layers: {
                  baselayers: {
                      xyz: {
@@ -33,19 +48,19 @@
                          type: 'xyz'
                      }
                  },
-                 overlays: {
-                     wms: {
-                         name: 'EEUU States (WMS)',
-                         type: 'wms',
-                         visible: true,
-                         url: 'http://suite.opengeo.org/geoserver/usa/wms',
-                         layerParams: {
-                             layers: 'usa:states',
-                             format: 'image/png',
-                             transparent: true
-                         }
-                     }
-                 }
+                //  overlays: {
+                //      wms: {
+                //          name: 'EEUU States (WMS)',
+                //          type: 'wms',
+                //          visible: true,
+                //          url: 'http://suite.opengeo.org/geoserver/usa/wms',
+                //          layerParams: {
+                //              layers: 'usa:states',
+                //              format: 'image/png',
+                //              transparent: true
+                //          }
+                //      }
+                //  }
              }
          });
     }]);

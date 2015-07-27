@@ -13,6 +13,7 @@ a {
   color: #90939a; }
 
 .navbar {
+  color: #fff;
   border: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
@@ -20,28 +21,42 @@ a {
   float: left;
   padding-left: 15px;
   margin-bottom: 0;
-  padding-bottom: 0rem; }
+  padding-bottom: 0rem;
+  color: #fff; }
 
 .navbar-nav {
-  float: left;
+  color: #fff;
+  float: right;
   margin: 0; }
 
 .navbar-nav > li {
+  color: #fff;
   float: left; }
 
 .navbar-nav > li > a {
+  color: #fff;
   padding: 15px; }
 
 .navbar-default {
-  color: #8DB986;
-  background-color: white; }
+  color: #fff;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0.4)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 );
+  /* IE6-9 */ }
 
 .navbar-default .navbar-brand {
   color: #fff;
   background-color: #639BB4; }
 
 .navbar-default .navbar-brand:hover {
-  color: #8DB986;
+  color: #fff;
   background-color: #fff; }
 
 .navbar-brand {
@@ -290,27 +305,26 @@ a {
 .mainCont {
   width: 100%;
   margin-top: -2rem;
-  padding-top: 0rem; }
+  padding-top: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
 .leftAside {
-  padding-left: 1rem;
+  padding-top: 3rem;
   padding-right: .5rem; }
+  .leftAside h2 {
+    color: white;
+    text-align: center; }
 
 .weatherBar {
-  padding-top: 0;
+  padding-top: 3rem;
   padding-left: .5rem;
-  padding-right: 1rem;
+  padding-right: .5rem;
   padding-bottom: 0rem; }
 
-.mainMap {
-  padding-top: 0rem;
-  padding-left: .5rem;
-  padding-right: 1rem; }
-
 .leaderBoard {
-  padding-top: 0;
-  padding-left: .5rem;
-  padding-right: 1rem; }
+  padding-top: 3rem;
+  padding-left: .5rem; }
 
 .sideNav {
   width: 100%; }
@@ -349,10 +363,15 @@ a {
     font-size: 1.5rem; }
 
 .weatherDir {
-  color: black; }
+  color: white; }
   .weatherDir h1 {
-    color: #DC2639; }
+    color: #F47F20;
+    text-align: center;
+    margin: .1rem;
+    margin-top: .4rem;
+    font-size: 4rem; }
   .weatherDir h4 {
+    text-align: center;
     color: #87CDE2; }
   .weatherDir .testingBox {
     color: black; }
@@ -392,7 +411,7 @@ a {
   text-align: center; }
 
 .hourBox {
-  color: black;
+  color: white;
   border: 1px solid black; }
   .hourBox .dets {
     text-align: center; }
@@ -423,11 +442,15 @@ a {
   margin: 1rem;
   font-size: 1.7rem; }
 
+.weatherFlow {
+  height: 54rem;
+  overflow: scroll; }
+
 .sunRiseTitle {
   margin-top: 0; }
 
 .icon {
-  margin-left: 3rem; }
+  text-align: left; }
 
 .darrow {
   height: 4rem;
@@ -437,11 +460,61 @@ a {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1); }
 
-.leafMap {
-  height: 100%;
+.blackPanel {
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0.4)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 );
+  /* IE6-9 */
+  border: none; }
+  .blackPanel h4 {
+    text-align: center;
+    margin: .5rem;
+    color: #F47B36;
+    opacity: 1; }
+  .blackPanel p {
+    margin: .5rem;
+    color: grey;
+    opacity: 1; }
+  .blackPanel .panel-heading {
+    background-color: black; }
+  .blackPanel .location {
+    color: white; }
+
+.fishHome {
+  margin-top: 1rem;
+  color: white;
+  opacity: 1; }
+  .fishHome .fishPic {
+    height: 120px;
+    width: 120px; }
+
+/*********************
+* Footer
+*********************/
+footer {
   width: 100%;
+  background-color: black;
+  height: 5rem;
   position: absolute;
-  background-size: cover; }
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  opacity: .7; }
+
+.footerNav {
+  position: absolute;
+  text-align: center;
+  left: 30%; }
+  .footerNav li {
+    margin-left: 3rem; }
 
 /*********************
 * Moon Phases
@@ -629,8 +702,24 @@ a {
 /*********************
 * Maps
 *********************/
-.angular-google-map-container {
-  height: 400px; }
+.leafMap {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover; }
+
+.leaflet-control-layers.leaflet-control {
+  display: none; }
+
+.gradient {
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 63, 89, 0.4);
+  background: -webkit-linear-gradient(rgba(4, 63, 89, 0.4) 0%, rgba(40, 89, 84, 0.4) 53%, rgba(87, 121, 76, 0.4) 71%, rgba(182, 188, 60, 0.4) 100%);
+  background: linear-gradient(rgba(4, 63, 89, 0.4) 0%, rgba(40, 89, 84, 0.4) 53%, rgba(87, 121, 76, 0.4) 71%, rgba(182, 188, 60, 0.4) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#043f59', endColorstr='#b6bc3c', GradientType=0 ); }
 
 /*********************
 * Animations

@@ -1,4 +1,17 @@
-<div data-id="{{w.id}}">
+<div class="weatherDir" data-id="{{w.id}}">
+  <div class="row">
+    <div class="col-sm-12">
+        <h4 class="location">{{w.city}}, {{w.state}}</h4>
+      </div>
+      <div class="col-sm-8">
+        <h1>{{w.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
+    </div>
+  <div class="col-sm-4">
+    <img class="icon" ng-src="{{w.iconUrl}} " alt="" />
+</div>
+</div>
+</div>
+<!-- <div data-id="{{w.id}}">
   <div class="row">
     <div class="col-sm-6">
         <h4>{{w.city}}, {{w.state}}</h4>
@@ -17,4 +30,4 @@
   </div>
 </div>
 </div>
-</div>
+</div> -->

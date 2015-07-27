@@ -4,8 +4,8 @@
     .module('weather')
     .factory('WeatherService', function($http) {
 
-       var getCurrentConditions = function (lat, long) {
-           return $http.get('/api/weather/' + lat + ',' + long).then(function(currentConditions){
+       var getCurrentConditions = function (lat) {
+           return $http.get('/api/weather/' + '/?lat=' + lat).then(function(currentConditions){
               console.log("current conditions", currentConditions);
               return {
                     fahrenheit: currentConditions.data.current_observation.temp_f,
