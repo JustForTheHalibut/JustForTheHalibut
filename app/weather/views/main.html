@@ -63,6 +63,7 @@
               </tab>
                 <tab heading="Hourly">
                   <div class="panel panel-default blackPanel tabBox">
+                    <div class="panel panel-default blackPanel inside">
                     <div class="panel-body">
                       <div class="row hourBoxLabel">
                         <div class="col-sm-1">Time</div>
@@ -76,9 +77,11 @@
                     <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
                 </div>
               </div>
+              </div>
             </tab>
               <tab heading="10 Hour">
                 <div class="panel panel-default blackPanel tabBox">
+                  <div class="panel panel-default blackPanel inside">
                   <div class="panel-body">
                     <div class="row hourBoxLabel">
                       <div class="col-sm-1">Date</div>
@@ -92,6 +95,7 @@
                 <tenday-directive ng-repeat="oneTenDayForecast in tenDayForecast" t="oneTenDayForecast" data-id="{{t.id}}"></tenday-directive>
                   </div>
                 </div>
+              </div>
               </tab>
             </tabset>
           </div>

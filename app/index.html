@@ -29,10 +29,10 @@
 
 <body>
   <div ng-controller="LeafController">
-  <leaflet class="leafMap" center="center" markers="markers" layers="layers" defaults="defaults"></leaflet>
+  <leaflet class="leafMap" center="center" controls="controls" tiles="tiles" markers="markers" layers="layers" defaults="defaults"></leaflet>
   </div>
-  <div class="gradient"></div>
-
+   <div class="gradient"></div>
+ 
   <ng-include src="'home/views/navbar.html'"></ng-include>
 
   <div ng-view class="fadeZoom"></div>

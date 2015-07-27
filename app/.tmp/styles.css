@@ -491,7 +491,8 @@ a {
   padding: 0; }
 
 .tabBox {
-  max-height: 40rem; }
+  max-height: 40rem;
+  overflow: scroll; }
 
 .blackPanel {
   padding: .7rem;

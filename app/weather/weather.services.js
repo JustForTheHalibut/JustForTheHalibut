@@ -4,9 +4,9 @@
     .module('weather')
     .factory('WeatherService', function($http) {
 
-       var getCurrentConditions = function (lat) {
-           return $http.get('/api/weather/' + '/?lat=' + lat).then(function(currentConditions){
-              console.log("current conditions", currentConditions);
+       var getCurrentConditions = function (latitude,longitude) {
+           return $http.get('/api/weather/' + latitude + '/' + longitude).then(function(currentConditions){
+              console.log("current conditions from SERVICE", currentConditions);
               return {
                     fahrenheit: currentConditions.data.current_observation.temp_f,
                     feelsLike: currentConditions.data.current_observation.feelslike_f,
@@ -30,7 +30,7 @@
 
          var getAstronomy = function () {
              return $http.get('/api/astronomy').then(function(astronomy){
-                console.log("astronomy", astronomy);
+                // console.log("astronomy", astronomy);
                 return {
                       phaseofMoon: astronomy.data.moon_phase.phaseofMoon,
                       ageOfMoon: astronomy.data.moon_phase.ageOfMoon,
@@ -61,7 +61,7 @@
 
           var getHourly = function(){
               return $http.get('api/hourly').then(function (hourly) {
-              console.log("hourly", hourly)
+              // console.log("hourly", hourly)
               var hourlyArr = hourly.data.hourly_forecast.slice(0,12);
               return mapHourlyToUrls(hourlyArr);
           });
@@ -101,7 +101,7 @@
 
           var getForecast = function(){
               return $http.get('api/forecast').then(function (forecast) {
-               console.log("forecast", forecast)
+              //  console.log("forecast", forecast)
                var forecastArr = forecast.data.forecast.simpleforecast.forecastday;
                return mapForecastToUrls(forecastArr);
              });
@@ -135,7 +135,7 @@
 
           var getTenDayForecast = function(){
                return $http.get('api/tendayforecast').then(function (tenDayForecast) {
-                  console.log("tenDayForecast", tenDayForecast)
+                  // console.log("tenDayForecast", tenDayForecast)
                   var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday;
                   return mapTenDayForecastToUrls(tenDayForecastArr);
                   });
@@ -159,7 +159,7 @@
 
            var getRawTide = function(){
                return $http.get('api/rawtide').then(function (rawtide) {
-                 console.log("rawTide", rawtide)
+                //  console.log("rawTide", rawtide)
                  var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
                  return mapRawTideToUrls(rawTideArr);
                  })

@@ -46,11 +46,10 @@ router.route('/me')
   });
 
 
-router.route('/weather')
+router.route('/weather/:latitude/:longitude')
   .get(function(req,res,next) {
-    console.log("lat: ", req.query.lat);
-    var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.query.lat +'.json'
 
+    var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
     request.get({url: url}, function(err, response, data) {
       res.send(JSON.parse(response.body));
     })

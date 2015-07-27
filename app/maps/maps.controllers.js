@@ -2,23 +2,7 @@
   angular
     .module('maps')
 
-    // .controller("MapController", function($scope, uiGmapGoogleMapApi) {
-    //   // Do stuff with $scope.
-    //   $scope.map = {
-    //     center: {
-    //       latitude: 40.322087,
-    //       longitude: -99.757181
-    //       },
-    //       zoom: 3
-    //       };
-    //
-    //   uiGmapGoogleMapApi.then(function(maps) {
-    //
-    //     });
-    //
-    //   })
-
-    .controller("LeafController", [ '$scope', function($scope, LeafService) {
+    .controller("LeafController", [ '$scope', 'leafletData', function($scope) {
       angular.extend($scope, {
              center: {
                  lat: 39,
