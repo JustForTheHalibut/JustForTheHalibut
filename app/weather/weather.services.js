@@ -6,7 +6,6 @@
 
        var getCurrentConditions = function (latitude,longitude) {
            return $http.get('/api/weather/' + latitude + '/' + longitude).then(function(currentConditions){
-              console.log("current conditions from SERVICE", currentConditions);
               return {
                     fahrenheit: currentConditions.data.current_observation.temp_f,
                     feelsLike: currentConditions.data.current_observation.feelslike_f,
@@ -27,10 +26,8 @@
               });
          }
 
-
-         var getAstronomy = function () {
-             return $http.get('/api/astronomy').then(function(astronomy){
-                // console.log("astronomy", astronomy);
+         var getAstronomy = function (latitude,longitude) {
+             return $http.get('/api/astronomy/' + latitude + '/' + longitude).then(function(astronomy){
                 return {
                       phaseofMoon: astronomy.data.moon_phase.phaseofMoon,
                       ageOfMoon: astronomy.data.moon_phase.ageOfMoon,
@@ -59,30 +56,20 @@
               });
           }
 
-          var getHourly = function(){
-              return $http.get('api/hourly').then(function (hourly) {
-              // console.log("hourly", hourly)
+          var getHourly = function(latitude,longitude){
+              return $http.get('api/hourly/' + latitude + '/' + longitude).then(function (hourly) {
+              // console.log("hourly from SERVICE", hourly)
               var hourlyArr = hourly.data.hourly_forecast.slice(0,12);
               return mapHourlyToUrls(hourlyArr);
           });
         }
 
-         var getOneHourly = function (id) {
-           return $http.get('api/hourly').then(function (oneHourly) {
+         var getOneHourly = function (id,latitude,longitude) {
+           return $http.get('api/hourly/' + latitude + '/' + longitude).then(function (oneHourly) {
              var narrowedDownArr = _.where(oneHourly.data.hourly_forecast);
                 return mapHourlyToUrls(narrowedDownArr)[0];
             });
           };
-
-          var getAlerts = function() {
-              return $http.get('api/alerts').then(function(alerts){
-                //  console.log("alerts", alerts);
-                return {
-                    alert: alerts.data.alerts.data
-                  }
-            });
-       }
-
 
           var mapForecastToUrls = function (collection) {
               return _.map(collection, function (obj) {
@@ -99,16 +86,16 @@
               });
          };
 
-          var getForecast = function(){
-              return $http.get('api/forecast').then(function (forecast) {
-              //  console.log("forecast", forecast)
+          var getForecast = function(latitude,longitude){
+              return $http.get('api/forecast/' + latitude + '/' + longitude).then(function (forecast) {
+               console.log("forecast from SERVICE", forecast)
                var forecastArr = forecast.data.forecast.simpleforecast.forecastday;
                return mapForecastToUrls(forecastArr);
              });
            }
 
-          var getOneForecast = function (id) {
-              return $http.get('api/forecast').then(function (oneForecast) {
+          var getOneForecast = function (id,latitude,longitude) {
+              return $http.get('api/forecast/' + latitude + '/' + longitude).then(function (oneForecast) {
                 var narrowedDownArr = _.where(oneForecast.data.forecast.simpleforecast.forecastday);
                   return mapForecastToUrls(narrowedDownArr)[0];
                  });
@@ -133,20 +120,30 @@
           };
 
 
-          var getTenDayForecast = function(){
-               return $http.get('api/tendayforecast').then(function (tenDayForecast) {
-                  // console.log("tenDayForecast", tenDayForecast)
+          var getTenDayForecast = function(latitude,longitude){
+               return $http.get('api/tendayforecast/' + latitude + '/' + longitude).then(function (tenDayForecast) {
+                  // console.log("tenDayForecast from SERVICE", tenDayForecast)
                   var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday;
                   return mapTenDayForecastToUrls(tenDayForecastArr);
                   });
               }
 
-           var getOneTenDayForecast = function (id) {
-                return $http.get('api/tendayforecast').then(function (oneTenDayForecast) {
+           var getOneTenDayForecast = function (id,latitude,longitude) {
+                return $http.get('api/tendayforecast/' + latitude + '/' + longitude).then(function (oneTenDayForecast) {
                     var narrowedDownArr = _.where(oneTenDayForecast.data.forecast.simpleforecast.forecastday);
                     return mapTenDayForecastToUrls(narrowedDownArr)[0];
                     });
                 };
+
+
+          var getAlerts = function(latitude,longitude) {
+              return $http.get('api/alerts/' + latitude + '/' + longitude).then(function(alerts){
+               console.log("alerts from SERVICE", alerts);
+              return {
+                  alert: alerts.data.alerts.data
+                      }
+                    });
+                  }
 
            var mapRawTideToUrls = function (collection) {
                return _.map(collection, function (obj) {
