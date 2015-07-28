@@ -14,6 +14,7 @@ router.route('/signature')
   .get(function (req, res) {
     res.send("3f748c71a3f6530924e5f60b5269f44c8ec19bd2");
   });
+  
  router.route('/allUsers')
   .get(function (req, res) {
     User.find({}, function (err, users) {

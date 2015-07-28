@@ -38,7 +38,7 @@ angular
     .factory('Transloadit', ['$http', '$rootScope', '$timeout', function($http, $rootScope, $timeout) {
       $scope = $rootScope.$new();
 
-      var TRANSLOADIT_API = 'https://api2-eu-west-1.transloadit.com/assemblies';
+      var TRANSLOADIT_API = 'http://api2.transloadit.com/assemblies';
 
       function getExpiryDate() {
         var date = new Date();
@@ -91,10 +91,14 @@ angular
 
           options.signature(function(signatureValue) {
             var paramsValue = angular.toJson(options.params);
+            var modifiedSigValue = {
+              key: signatureValue,
+              expires: getExpiryDate
+            };
 
             var formData = new FormData();
             formData.append('params', paramsValue);
-            formData.append('signature', signatureValue);
+            formData.append('signature', JSON.stringify(modifiedSigValue));
             formData.append(file.name, file);
 
             xhr.open('POST', TRANSLOADIT_API, true);

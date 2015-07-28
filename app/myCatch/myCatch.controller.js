@@ -106,7 +106,7 @@
   // }
 
   $scope.submitCatch = function(file){
-    var image = document.getElementById("my_file").value;
+    var image = document.getElementById("my_file").files[0];
     console.log("this is the image: ", image);
     Transloadit.upload(image, {
       params: {
