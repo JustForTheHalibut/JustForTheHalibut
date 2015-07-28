@@ -1,4 +1,4 @@
-angular.module('MyApp', [
+  angular.module('MyApp', [
   'ngMessages',
   'ngRoute',
   'ngSanitize',
@@ -13,6 +13,8 @@ angular.module('MyApp', [
   'ngGeolocation',
   'maps',
   'chart.js',
+  'geolocation',
+  'leaflet-directive',
   'catch'
 ])
 

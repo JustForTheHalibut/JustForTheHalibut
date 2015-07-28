@@ -12,9 +12,13 @@
   <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link href="vendor/leaflet/dist/leaflet.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/angular-chart.js/dist/angular-chart.css" rel="stylesheet">
+  <link href="vendor/leaflet-minimap/dist/Control.MiniMap.min.css" rel="stylesheet">
 
   <!-- bower:css -->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
   <!-- endbower -->
 
   <!-- inject:css -->
@@ -24,10 +28,25 @@
 </head>
 
 <body>
+  <div ng-controller="LeafController">
+  <leaflet class="leafMap" center="center" markers="markers" layers="layers" defaults="defaults"></leaflet>
+  </div>
+   <div class="gradient"></div>
 
   <ng-include src="'home/views/navbar.html'"></ng-include>
 
   <div ng-view class="fadeZoom"></div>
+
+<footer>
+  <div class="footerNav">
+    <ul class="nav navbar-nav">
+      <li><a href="/#/profile/main">Profile</a></li>
+      <li><a href="/#/profile/main">Achievements</a></li>
+      <li><a href="/#/profile/main">Recipes</a></li>
+      <li><a href="/#/weather">Weather</a></li>
+    </ul>
+  </div>
+</footer>
 
   <!-- bower:js -->
   <script src="vendor/jquery/dist/jquery.js"></script>
@@ -44,10 +63,14 @@
   <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="vendor/lodash/lodash.js"></script>
   <script src="vendor/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="vendor/angularjs-geolocation/src/geolocation.js"></script>
+  <script src="vendor/underscore/underscore.js"></script>
+  <script src="vendor/leaflet/dist/leaflet.js"></script>
+  <script src="vendor/leaflet/dist/leaflet-src.js"></script>
+  <script src="vendor/angular-leaflet/dist/angular-leaflet-directive.js"></script>
   <script src="vendor/ngUpload/ng-upload.js"></script>
   <script src="vendor/ngGeolocation/ngGeolocation.js"></script>
   <!-- endbower -->
-
 
   <!-- Application Code -->
   <!-- inject:js -->
@@ -56,6 +79,7 @@
   <script src="auth/directives/passwordMatch.js"></script>
   <script src="weather/weather.module.js"></script>
   <script src="weather/weather.services.js"></script>
+  <script src="weather/weather.directive.js"></script>
   <script src="weather/weather.controllers.js"></script>
   <script src="profile/profile.module.js"></script>
   <script src="profile/profile.controller.js"></script>
@@ -71,11 +95,11 @@
   <script src="maps/maps.controllers.js"></script>
   <script src="app.module.js"></script>
   <script src="home/navbar.js"></script>
+  <script src="home/home.controller.js"></script>
   <script src="controllers/navbar.js"></script>
   <script src="auth/auth.signup.js"></script>
   <script src="auth/auth.logout.js"></script>
   <script src="auth/auth.login.js"></script>
-    <script src="home/home.controller.js"></script>
   <!-- endinject -->
 
   <!-- Maps -->
