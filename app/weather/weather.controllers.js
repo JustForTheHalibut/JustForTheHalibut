@@ -26,17 +26,14 @@
           $scope.longitude = position.coords.longitude;
 
           WeatherService.getCurrentConditions($scope.latitude, $scope.longitude).then(function(currentConditions) {
-            // console.log("currentConditions FROM CONTROLLER:", currentConditions);
             $scope.currentConditions = currentConditions;
           })
 
           WeatherService.getAstronomy($scope.latitude, $scope.longitude).then(function (astronomy) {
-            // console.log("astronomy from CONTROLLER:", astronomy);
             $scope.astronomy = astronomy;
           })
 
           WeatherService.getHourly($scope.latitude, $scope.longitude).then(function (hourly){
-            console.log("hourly from CONTROLLER:", hourly);
             $scope.hourly = hourly;
           })
 
@@ -47,7 +44,6 @@
          }
 
          WeatherService.getForecast($scope.latitude, $scope.longitude).then(function (forecast){
-           console.log("forecast from CONTROLLER", forecast);
            $scope.forecast = forecast;
          })
 
@@ -58,7 +54,6 @@
       }
 
         WeatherService.getTenDayForecast($scope.latitude, $scope.longitude).then(function (tenDayForecast){
-          console.log("tenDayForecast from CONTROLLER", tenDayForecast);
           $scope.tenDayForecast = tenDayForecast;
         })
 
@@ -69,7 +64,6 @@
       }
 
         WeatherService.getAlerts($scope.latitude, $scope.longitude).then(function (alerts){
-          console.log("alerts from CONTROLLER", alerts);
           $scope.alerts = alerts;
         })
     })
@@ -79,8 +73,6 @@
         // console.log("rawTide:", rawtide);
         $scope.rawtide = rawtide;
       })
-
-
 
     });
 

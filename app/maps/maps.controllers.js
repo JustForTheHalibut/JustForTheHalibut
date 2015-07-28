@@ -2,7 +2,7 @@
   angular
     .module('maps')
 
-    .controller("LeafController", [ '$scope', 'leafletData', function($scope) {
+    .controller("LeafController", [ '$scope', function($scope) {
       angular.extend($scope, {
              center: {
                  lat: 39,
