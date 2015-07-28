@@ -18,10 +18,7 @@
         latitude: 32.792447,
         longitude: -79.936134
         },
-        zoom: 8,
-        options: {
-          mapTypeId: maps.MapTypeId.SATELLITE
-          }
+        zoom: 8
         };
 
         $scope.markers = [];
