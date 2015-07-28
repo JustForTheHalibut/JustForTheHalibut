@@ -2,7 +2,24 @@
   angular
     .module('maps')
 
-    .controller("LeafController", [ '$scope', function($scope) {
+//     .controller("MapController", function($scope, uiGmapGoogleMapApi) {
+//
+//       $scope.map = {
+//         center: {
+//           latitude: 45,
+//           longitude: -73
+//           },
+//           zoom: 8
+//           };
+//
+//
+//     uiGmapGoogleMapApi.then(function(maps) {
+//
+//     });
+// });
+
+
+    .controller("LeafController", [ '$scope', function($scope, LeafService) {
       angular.extend($scope, {
              center: {
                  lat: 39,
@@ -14,52 +31,45 @@
                maxZoom: 4,
                zoomControl: false,
                scrollWheelZoom: false
-
              },
-             markers: {
-            charleston: {
-                lat: 32.718714,
-                lng: -79.734598,
-                focus: true,
-                draggable: false
-            },
-            ocean: {
-                lat: 29.245501,
-                lng: -87.927439,
-                focus: true,
-                draggable: false
-            },
-            west: {
-                lat: 37.315417,
-                lng: -123.611034,
-                focus: true,
-                draggable: false
-            }
-        },
+             markers: {},
              layers: {
                  baselayers: {
                      xyz: {
                          name: 'OpenStreetMap (XYZ)',
-                         url: 'http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+                         url: 'http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png',
                          type: 'xyz'
                      }
                  },
-                //  overlays: {
-                //      wms: {
-                //          name: 'EEUU States (WMS)',
-                //          type: 'wms',
-                //          visible: true,
-                //          url: 'http://suite.opengeo.org/geoserver/usa/wms',
-                //          layerParams: {
-                //              layers: 'usa:states',
-                //              format: 'image/png',
-                //              transparent: true
-                //          }
-                //      }
-                //  }
              }
          });
 
+        //  LeafService.getMarkers().then(function(fishLocation) {
+        //   $scope.createMarkers(fishLocation);
+        // });
+        // $scope.createMarker = function(location) {
+        //   var marker = {
+        //     idKey: location._id,
+        //     coords: {
+        //       latitude: location.latitude,
+        //       longitude: location.longitude
+        //     },
+        //     userName: location.displayName
+        //   };
+        //   return marker;
+        // };
+        //
+        // $scope.createMarkers = function(fishLocation) {
+        //   for (var i = 0; i < fishLocation.data.length; i++) {
+        //     var marker = $scope.createMarker(fishLocation.data[i]);
+        //     $scope.markers.push(marker);
+        //   }
+        //   console.log($scope.markers);
+        // };
+
     }]);
+
+
+
 
 })();

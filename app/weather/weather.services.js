@@ -185,26 +185,27 @@
                   });
                 }
 
-          var mapRawTideToUrls = function (collection) {
+          var mapTideToUrls = function (collection) {
              return _.map(collection, function (obj) {
                return {
-                      height: obj.height
+                      height: obj.data.height,
+                      type: obj.data.type
                       }
                   });
                }
 
-           var getRawTide = function(){
-               return $http.get('api/rawtide').then(function (rawtide) {
-                //  console.log("rawTide", rawtide)
-                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
-                 return mapRawTideToUrls(rawTideArr);
+           var getTide = function(){
+               return $http.get('api/tide').then(function (tide) {
+                 console.log("tide", tide)
+                 var tideArr = tide.data.tide.tideSummary;
+                 return mapTideToUrls(tideArr);
                  })
                }
 
         return {
                 getCurrentConditions: getCurrentConditions,
                 getAstronomy: getAstronomy,
-                getRawTide: getRawTide,
+                getTide: getTide,
                 getHourly: getHourly,
                 getOneHourly: getOneHourly,
                 getAlerts: getAlerts,

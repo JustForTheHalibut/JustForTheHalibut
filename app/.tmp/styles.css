@@ -732,6 +732,13 @@ footer {
 /*********************
 * Maps
 *********************/
+.angular-google-map-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  z-index: -5; }
+
 .leafMap {
   height: 100%;
   width: 100%;
