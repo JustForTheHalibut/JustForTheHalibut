@@ -54,6 +54,12 @@ angular
     $scope.addCatch= function(){
       $location.path('/addCatch');
     }
+    
+    $scope.deleteCatch = function(id){
+      var user = $rootScope.user.displayName.toLowerCase();
+      catchService.deleteCatch(user, id);
+      $location.path("/profile/main");
+    }
 
 
     /**

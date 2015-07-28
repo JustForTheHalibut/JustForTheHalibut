@@ -158,6 +158,23 @@
     $location.path("/profile/main");
   }
 
+  $scope.saveRecipe = function(recipe){
+    console.log("trying to save recipe");
+      var user =  $rootScope.user.displayName;
+      var recipe2save= {
+        f2f_url : recipe.f2f_url,
+        image_url : recipe.image_url,
+        recipe_id : recipe.recipe_id,
+        title : recipe.title
+      }
+      console.log("trying to save recipe");
+      recipesService.addToFavs(user, recipe2save).then(function(returned){
+        console.log("returned");
+      })
+
+
+  };
+
 
 
   });
