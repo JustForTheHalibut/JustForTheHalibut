@@ -1,4 +1,4 @@
-angular.module('MyApp', [
+  angular.module('MyApp', [
   'ngMessages',
   'ngRoute',
   'ngSanitize',
@@ -13,8 +13,10 @@ angular.module('MyApp', [
   'ngGeolocation',
   'maps',
   'chart.js',
-  'catch',
-  'recipes'
+  'recipes',
+  'geolocation',
+  'leaflet-directive',
+  'catch'
 ])
 
 .config(function($routeProvider) {

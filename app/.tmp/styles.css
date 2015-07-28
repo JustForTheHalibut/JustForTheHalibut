@@ -13,33 +13,53 @@ a {
   color: #90939a; }
 
 .navbar {
+  color: #fff;
   border: 0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); }
 
 .navbar-header {
   float: left;
-  padding-left: 15px; }
+  padding-left: 15px;
+  margin-bottom: 0;
+  padding-bottom: 0rem;
+  color: #fff; }
 
 .navbar-nav {
-  float: left;
+  color: #fff;
+  float: right;
   margin: 0; }
 
 .navbar-nav > li {
+  color: #fff;
   float: left; }
 
 .navbar-nav > li > a {
+  color: #fff;
   padding: 15px; }
 
 .navbar-default {
-  color: #8DB986;
-  background: #8DB986; }
+  color: #fff;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0.4)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 );
+  /* IE6-9 */ }
+
+.mainAnchor {
+  color: white; }
 
 .navbar-default .navbar-brand {
   color: #fff;
-  background-color: #373737; }
+  background-color: #639BB4; }
 
 .navbar-default .navbar-brand:hover {
-  color: #8DB986;
+  color: #fff;
   background-color: #fff; }
 
 .navbar-brand {
@@ -140,7 +160,7 @@ a {
   display: inline-block; }
 
 .profile-picture {
-  height: 200px;
+  width: 100%;
   display: block; }
 
 .profilePicBlock {
@@ -286,27 +306,40 @@ a {
 * Home
 *********************/
 .mainCont {
-  width: 100%; }
+  width: 100%;
+  margin-top: -2rem;
+  padding-top: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
 .leftAside {
-  padding-left: 1rem;
+  padding-top: 2rem;
   padding-right: .5rem; }
+  .leftAside h3 {
+    color: white; }
+  .leftAside h5 {
+    color: #F47F20; }
 
 .weatherBar {
-  padding-top: 0;
+  padding-top: 2rem;
   padding-left: .5rem;
-  padding-right: 1rem;
+  padding-right: .5rem;
   padding-bottom: 0rem; }
 
-.mainMap {
-  padding-top: 0rem;
-  padding-left: .5rem;
-  padding-right: 1rem; }
-
-.leaderBoard {
-  padding-top: 0;
-  padding-left: .5rem;
-  padding-right: 1rem; }
+/*********************
+* recentCatches
+*********************/
+.recentCatches {
+  padding-top: 2rem;
+  padding-left: .5rem; }
+  .recentCatches .fishHome {
+    margin-top: 1rem;
+    color: white;
+    opacity: 1; }
+  .recentCatches .fishPic {
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem; }
 
 .sideNav {
   width: 100%; }
@@ -320,11 +353,403 @@ a {
 .noShadow {
   box-shadow: none; }
 
+.forecastBox {
+  background-color: black; }
+
+.clearTop {
+  float: left;
+  clear: both; }
+
+.clearChart {
+  float: right; }
+
+.forecast {
+  padding-top: 0;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-bottom: 0; }
+  .forecast h4 {
+    text-align: center; }
+  .forecast .high {
+    color: maroon;
+    font-size: 2.5rem; }
+  .forecast .low {
+    color: maroon;
+    font-size: 1.5rem; }
+
+.weatherDir {
+  color: white; }
+  .weatherDir h2 {
+    color: #F47F20;
+    text-align: center;
+    margin: .1rem;
+    margin-top: .4rem;
+    font-size: 3rem;
+    padding: 0rem 1rem; }
+  .weatherDir h5 {
+    text-align: center;
+    color: #639BB4; }
+  .weatherDir .testingBox {
+    color: black; }
+  .weatherDir .feelsLike {
+    margin-top: .5rem;
+    color: #747577;
+    font-weight: bold;
+    text-align: center;
+    padding: 0rem 1rem; }
+  .weatherDir .degrees {
+    font-size: 1.5rem;
+    vertical-align: top; }
+  .weatherDir .degreesF {
+    font-size: 2rem;
+    vertical-align: top;
+    margin-left: .1rem;
+    font-weight: normal; }
+  .weatherDir .degreesTiny {
+    font-size: .5rem;
+    vertical-align: top; }
+  .weatherDir .weatherDets {
+    margin: 0rem;
+    padding: 1rem; }
+  .weatherDir .value {
+    color: white;
+    font-size: 1.5rem; }
+
+.leftFix {
+  padding-top: 0;
+  padding-left: 1rem;
+  padding-right: .5rem;
+  padding-bottom: 0; }
+
+.rightFix {
+  padding-top: 0;
+  padding-left: .5rem;
+  padding-right: 1rem;
+  padding-bottom: 0; }
+
+.hourBoxLabel {
+  background-color: black;
+  margin-top: 0;
+  padding: 1rem;
+  color: white;
+  text-align: center; }
+
+.hourBox {
+  color: white;
+  border: 1px solid black; }
+  .hourBox .dets {
+    text-align: center; }
+  .hourBox .temp {
+    font-size: 3rem; }
+  .hourBox .low {
+    font-size: 1rem; }
+
+.tint {
+  color: #4EB8DB;
+  margin: .2rem; }
+
+.wind {
+  height: 2rem;
+  width: 2rem; }
+
+.humidity {
+  width: 1.5rem;
+  height: 1.5rem; }
+
+.sunRise {
+  height: 5rem;
+  width: 5rem;
+  margin-left: 2.5rem;
+  margin-bottom: 0; }
+
+.weatherPH {
+  margin: 1rem;
+  font-size: 1.7rem; }
+
+.weatherFlow {
+  height: 54rem;
+  overflow: scroll; }
+
+.sunRiseTitle {
+  margin-top: 0; }
+
+.icon {
+  text-align: center;
+  margin-left: 3rem;
+  padding: 0rem 1rem; }
+
+.darrow {
+  height: 4rem;
+  width: 10rem;
+  position: absolute;
+  left: 35%;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1); }
+
+.whitePanel {
+  margin: 0;
+  padding: 0; }
+
+.tabBox {
+  max-height: 40rem;
+  overflow: scroll; }
+
+.blackPanel {
+  padding: .7rem;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0.4)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=0 );
+  /* IE6-9 */
+  border: none; }
+  .blackPanel h4 {
+    text-align: center;
+    margin: .5rem;
+    color: #F47B36;
+    opacity: 1; }
+  .blackPanel p {
+    margin: .5rem;
+    color: grey;
+    opacity: 1; }
+  .blackPanel .panel-heading {
+    background-color: black; }
+  .blackPanel .location {
+    color: white; }
+  .blackPanel .inside {
+    padding: 0;
+    margin: 0; }
+
+/*********************
+* Footer
+*********************/
+footer {
+  width: 100%;
+  background-color: black;
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  opacity: .7; }
+
+.footerNav {
+  position: absolute;
+  text-align: center;
+  left: 30%; }
+  .footerNav li {
+    margin-left: 3rem; }
+
+/*********************
+* Moon Phases
+*********************/
+.moon1 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon1.png");
+  background-size: cover; }
+
+.moon2 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon2.png");
+  background-size: cover; }
+
+.moon3 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon3.png");
+  background-size: cover; }
+
+.moon4 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon4.png");
+  background-size: cover; }
+
+.moon5 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon5.png");
+  background-size: cover; }
+
+.moon6 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon6.png");
+  background-size: cover; }
+
+.moon7 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon7.png");
+  background-size: cover; }
+
+.moon8 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon8.png");
+  background-size: cover; }
+
+.moon9 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon9.png");
+  background-size: cover; }
+
+.moon10 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon10.png");
+  background-size: cover; }
+
+.moon11 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon11.png");
+  background-size: cover; }
+
+.moon12 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon12.png");
+  background-size: cover; }
+
+.moon13 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon13.png");
+  background-size: cover; }
+
+.moon14 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon14.png");
+  background-size: cover; }
+
+.moon15 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon15.png");
+  background-size: cover; }
+
+.moon16 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon16.png");
+  background-size: cover; }
+
+.moon17 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon17.png");
+  background-size: cover; }
+
+.moon18 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon18.png");
+  background-size: cover; }
+
+.moon19 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon19.png");
+  background-size: cover; }
+
+.moon20 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon20.png");
+  background-size: cover; }
+
+.moon21 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon21.png");
+  background-size: cover; }
+
+.moon22 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon22.png");
+  background-size: cover; }
+
+.moon23 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon23.png");
+  background-size: cover; }
+
+.moon24 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon24.png");
+  background-size: cover; }
+
+.moon25 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon25.png");
+  background-size: cover; }
+
+.moon26 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon26.png");
+  background-size: cover; }
+
+.moon27 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon27.png");
+  background-size: cover; }
+
+.moon28 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon28.png");
+  background-size: cover; }
+
+.moon29 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon29.png");
+  background-size: cover; }
+
+.moon30 {
+  width: 6rem;
+  height: 6rem;
+  background-image: url("/assets/moon30.png");
+  background-size: cover; }
+
 /*********************
 * Maps
 *********************/
-.angular-google-map-container {
-  height: 400px; }
+.leafMap {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover; }
+
+.leaflet-control-layers.leaflet-control {
+  display: none; }
+
+.gradient {
+  position: absolute;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background: rgba(4, 63, 89, 0.4);
+  background: -webkit-linear-gradient(rgba(4, 63, 89, 0.4) 0%, rgba(40, 89, 84, 0.4) 53%, rgba(87, 121, 76, 0.4) 71%, rgba(182, 188, 60, 0.4) 100%);
+  background: linear-gradient(rgba(4, 63, 89, 0.4) 0%, rgba(40, 89, 84, 0.4) 53%, rgba(87, 121, 76, 0.4) 71%, rgba(182, 188, 60, 0.4) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#043f59', endColorstr='#b6bc3c', GradientType=0 ); }
 
 /*********************
 * Animations

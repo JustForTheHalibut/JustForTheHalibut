@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../entities/User');
 var config = require('../config');
+var request = require('request');
 var ensureAuthenticated = require('./helpers').ensureAuthenticated;
 
 /*
@@ -51,5 +52,61 @@ router.route('/me')
       res.send(JSON.parse(response.body));
     })
   })
+
+router.route('/weather/:latitude/:longitude')
+  .get(function(req,res,next) {
+    var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+    request.get({url: url}, function(err, response, data) {
+      res.send(JSON.parse(response.body));
+    })
+  })
+
+router.route('/astronomy/:latitude/:longitude')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/astronomy/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+      request.get({url: url}, function(err, response, data) {
+        res.send(JSON.parse(response.body));
+      })
+    })
+
+router.route('/hourly/:latitude/:longitude')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/hourly/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+        request.get({url: url}, function(err, response, data) {
+          res.send(JSON.parse(response.body));
+        })
+      })
+
+router.route('/forecast/:latitude/:longitude')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/forecast/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+        request.get({url: url}, function(err, response, data) {
+          res.send(JSON.parse(response.body));
+        })
+      })
+
+router.route('/tendayforecast/:latitude/:longitude')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/forecast10day/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+        request.get({url: url}, function(err, response, data) {
+          res.send(JSON.parse(response.body));
+        })
+      })
+
+router.route('/alerts/:latitude/:longitude')
+    .get(function(req,res,next) {
+      var url = 'http://api.wunderground.com/api/01019dd17955e688/alerts/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+        request.get({url: url}, function(err, response, data) {
+          res.send(JSON.parse(response.body));
+        })
+      })
+
+router.route('/rawtide')
+  .get(function(req,res,next) {
+    var url = 'http://api.wunderground.com/api/01019dd17955e688/rawtide/q/29464.json'
+      request.get({url: url}, function(err, response, data) {
+        res.send(JSON.parse(response.body));
+      })
+    })
 
 module.exports = router;
