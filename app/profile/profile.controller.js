@@ -8,7 +8,7 @@ angular
   $scope.max = 200;
   })
 
-  .controller('ProfileController', function($scope, $auth, $alert, Account, $location) {
+  .controller('ProfileController', function($scope, $auth, $alert, Account, $location, catchService, $rootScope) {
 
     /**
      * Get user's profile information.
@@ -16,7 +16,7 @@ angular
     $scope.getProfile = function() {
       Account.getProfile()
         .success(function(data) {
-          $scope.user = data;
+          $rootScope.user = data;
           console.log(data);
         })
         .error(function(error) {
@@ -28,6 +28,28 @@ angular
           });
         });
     };
+
+    if($location.path() === '/profile/main'){
+      if($rootScope.user === undefined){
+          Account.getProfile()
+            .success(function(data) {
+              $scope.user = data;
+              $rootScope.user = data;
+              console.log($rootScope.user);
+              catchService.getAllCatch($rootScope.user.displayName).then(function(data){
+                console.log("these are the fish: ", data.data);
+                $rootScope.fish = data.data;
+              });
+            })
+      }
+      else{
+        catchService.getAllCatch($rootScope.user.displayName).then(function(data){
+          console.log("these are the fish: ", data.data);
+          $rootScope.fish = data.data;
+        });
+      }
+    }
+
 
     $scope.addCatch= function(){
       $location.path('/addCatch');
@@ -104,5 +126,6 @@ angular
     };
 
     $scope.getProfile();
+
 
   });
