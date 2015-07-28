@@ -196,7 +196,7 @@
 
            var getTide = function(){
                return $http.get('api/tide').then(function (tide) {
-                 console.log("tide", tide)
+                //  console.log("tide", tide)
                  var tideArr = tide.data.tide.tideSummary;
                  return mapTideToUrls(tideArr);
                  })

@@ -15,7 +15,7 @@
   'chart.js',
   'recipes',
   'geolocation',
-  'leaflet-directive',
+  // 'leaflet-directive',
   'catch'
 ])
 

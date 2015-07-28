@@ -53,7 +53,7 @@
     })
 
       WeatherService.getTide().then(function(tide){
-      console.log("tide chart", tide)
+      // console.log("tide chart", tide)
       var newTide = tide.map(function (el) {
         return el.height;
       })

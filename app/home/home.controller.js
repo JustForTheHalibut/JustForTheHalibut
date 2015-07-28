@@ -3,9 +3,8 @@
 
   angular
     .module('MyApp')
-    .controller('homeController', function ($scope,$http, $window, $rootScope, $location, Account) {
+    .controller('homeController', function ($scope,$http, $window, $rootScope, $location, LeafService, Account) {
         if($rootScope.user === undefined){
-            console.log("this is the user: ", $rootScope.user);
             Account.getProfile()
               .success(function(data) {
                 $scope.user = data;
@@ -13,8 +12,6 @@
                 console.log(data);
               })
         }
-
-
 
   });
 
