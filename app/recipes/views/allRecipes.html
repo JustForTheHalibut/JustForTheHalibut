@@ -24,25 +24,21 @@
         <div class="col-sm-9 weatherBar">
           <div ng-controller="TabsController">
           <tabset>
-            <tab heading="Fish Caught"> <!-- ng-click here -->
+            <tab heading="Recipes"> <!-- ng-click here -->
               <div class="panel panel-default">
                 <div class="panel-body">
-                  <a class="btn btn-primary" href="#/addCatch">Add Catch</a><br><br>
-                  <div class="panel panel-default" ng-repeat= "one in fish"> <!-- ng-repeat here -->
+                  <div class="panel panel-default" ng-repeat= "recipe in Favorites"> <!-- Recipe Here -->
                     <div class="panel-body">
                       <div class="row">
                         <div class="col-sm-3">
-                          <img ng-src="http://placehold.it/100x100"><br><br>
+                          <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 100></a><br><br>
                         </div>
                         <div class="col-sm-9">
                           <ul class="catchSpecs">
-                            <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
-                            <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
-                            <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
-                            <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>
-                            <li><h5 class="catchTitle">Tackle Used: </h5>{{one.tackle}}</li>
-                            <li><h5 class="catchTitle">Bait Used: </h5>{{one.bait}}</li>
-                            <li><button type="button" name="button" ng-click="deleteCatch(one._id)">Delete</button></li>
+                            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+                            <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+                            <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
+                            <li><button type="button" name="button" ng-click="deleteRecipe(recipe._id)">Delete From Favorites</button></li>
                           </ul>
                         </div>
                       </div>

@@ -25,30 +25,6 @@
           <div ng-controller="TabsController">
           <tabset>
             <tab heading="My New Catch"> <!-- ng-click here -->
-<!--             // <script type="text/javascript">
-//     $(function() {
-//       $('#upload-form').transloadit({
-//         wait: true,
-//         triggerUploadOnFileSelection: true,
-//         params: {
-//           auth: {
-//             // This is your API key.
-//             key: "fc73a980313e11e58e2a1d428cc06c07"
-//           },
-//           steps: {
-//             //Resizes the uploaded image to 100x100 px
-//             resize_to_100: {
-//               robot: "/image/resize",
-//               use: ":original",
-//               width: 100,
-//               height: 100,
-//               debug: true
-//             },
-//           }
-//         }
-//       });
-//    });
-// </script> -->
               <div class="panel panel-default">
                 <div class="panel-body">
                   <div class="panel panel-default"> <!-- ng-repeat here -->
@@ -72,6 +48,36 @@
                       </div>
                     </div>
                   </div>
+<!--                   f2f_url: "http://food2fork.com/view/35144"
+publisher: "Closet Cooking"
+publisher_url: "http://closetcooking.com"
+recipe_id: "35144"
+social_rank: 99.97622895864001
+source_url: "http://www.closetcooking.com/2012/04/blackened-catfish-tacos.html"
+title: "Blackened Catfish Tacos" -->
+                  <h4> Suggested Recipes for this Catch! </h4>
+                  <div class="panel panel-default" ng-repeat= "recipe in recipes"> <!-- Recipe Here -->
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 100></a><br><br>
+                        </div>
+                        <div class="col-sm-9">
+                          <ul class="catchSpecs">
+                            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+                            <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+                            <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
+                            <li><button type="button" name="button" ng-click="saveRecipe(recipe.recipe_id)">Add To Favorites</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
                 </div>
               </div>
                </tab>
