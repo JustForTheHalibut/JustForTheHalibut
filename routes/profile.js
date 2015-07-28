@@ -53,6 +53,13 @@ router.route('/me')
     })
   })
 
+  router.route('/recipeDetails/:rId')
+  .get(function(req,res,next) {
+    var url = 'http://food2fork.com/api/get?key=3e9166ad629eca6587a5e501e4e30961&rId=' + req.params.rId
+    request.get({url: url}, function(err, response, data) {
+      res.send(JSON.parse(response.body));
+    })
+  })
 router.route('/weather/:latitude/:longitude')
   .get(function(req,res,next) {
     var url = 'https://api.wunderground.com/api/01019dd17955e688/conditions/q/' + req.params.latitude + ',' + req.params.longitude + '.json'

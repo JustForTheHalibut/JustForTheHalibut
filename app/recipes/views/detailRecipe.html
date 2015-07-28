@@ -1,0 +1,57 @@
+<div class="container mainCont">
+      <div class="row">
+        <div class="col-sm-3 leftAside">
+          <div class="panel panel-default">
+                <div class="panel-heading">Side Nav</div>
+            <div class="panel-body">
+              <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+
+          <h2>{{user.displayName}}</h2>
+          <nav class="sideNav">
+            <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
+            <li><a class="btn btn-primary" href="#/profile/main">Achievements</a></li>
+            <li><a class="btn btn-primary" href="#/profile/main">Weather</a></li>
+            <li><a class="btn btn-primary" href="#/profile/main">Recipes</a></li>
+          </nav>
+          <div class="panel panel-default noShadow">
+            <div class="panel-body">
+              Recipe
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="col-sm-9 weatherBar">
+          <div ng-controller="TabsController">
+          <tabset>
+            <tab heading="My New Catch"> <!-- ng-click here -->
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="panel panel-default"> <!-- Recipe Here -->
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 150></a><br><br>
+                          <button type="button" name="goBack" ng-click="goBack()">-Go Back-</button>
+                        </div>
+                        <div class="col-sm-9">
+                          <ul class="catchSpecs">
+                            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+                            <li><h5 class="catchTitle">Ingredients: </h5><div ng-repeat="item in recipe.ingredients"> <p>{{item}}</p></div></li>
+                            <li><h5 class="catchTitle">View Recipe: </h5><a href="{{recipe.f2f_url}}">click here</a></li>
+                            <li><button type="button" name="button" ng-click="saveRecipe(recipe.recipe_id)">Add To Favorites</button></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+               </tab>
+        </tabset>
+        </div>
+
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
 
   angular
     .module('catch')
-    .controller('catchController', function ($scope,$http, $geolocation, catchService, Account, $rootScope, $location, Transloadit) {
+    .controller('catchController', function ($scope,$http, $geolocation, recipesService, catchService, Account, $rootScope, $location, Transloadit) {
 
     if($rootScope.user === undefined){
         Account.getProfile()
@@ -28,10 +28,27 @@
           })
     }
 
-    console.log("we are here: ", $location.path());
     if($location.path() === '/addCatch'){
       console.log("we are resetting the form!");
       $scope.catch = defaultCatch;
+    }
+
+    if($location.path() === '/catchAdded'){
+      var fishType = $scope.catch.kind;
+      var test = fishType.split(' ');
+      fishType = test.join('');
+      console.log("we want recipes for: ", fishType);
+      recipesService.getRecipes(fishType).then(function(returned){
+        var recipes = returned.data.recipes;
+        var fewRecipes = [];
+        for (var i = 0; i < 3; i++) { //add a random number generator to pick random recipes
+          var next = recipes[i];
+          fewRecipes.push(next);
+        }
+        $scope.recipes = fewRecipes;
+        console.log("three: ", $scope.recipes.image_url);
+
+      });
     }
 
     var defaultCatch= {
