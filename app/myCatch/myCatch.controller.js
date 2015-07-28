@@ -87,68 +87,69 @@
       $scope.longitude = position.coords.longitude;
     });
 
-  $scope.submitCatch = function(file) {
-      file.coord = {
-        latitude : $scope.latitude,
-        longitude : $scope.longitude
-      };
-      var now = new moment().format();
-      file.submitTime = now;
-      console.log("this is the time: ", file.submitTime);
+  // $scope.submitCatch = function(file) {
+  //     file.coord = {
+  //       latitude : $scope.latitude,
+  //       longitude : $scope.longitude
+  //     };
+  //     var now = new moment().format();
+  //     file.submitTime = now;
+  //     console.log("this is the time: ", file.submitTime);
+  //
+  //     file.displayName = $rootScope.user.displayName.toLowerCase();
+  //     console.log("displayName: ", file.displayName);
+  //     catchService.fishData(file);
+  //     catchService.createCatch(file).success(function(data){
+  //       $location.path('/catchAdded');
+  //     });
+  //
+  // }
 
-      file.displayName = $rootScope.user.displayName.toLowerCase();
-      console.log("displayName: ", file.displayName);
-      catchService.fishData(file);
-      catchService.createCatch(file).success(function(data){
-        $location.path('/catchAdded');
-      });
+  $scope.submitCatch = function(file){
+    var image = document.getElementById("my_file").value;
+    console.log("this is the image: ", image);
+    Transloadit.upload(image, {
+      params: {
+        auth: {
+          key: 'fc73a980313e11e58e2a1d428cc06c07'
+        },
+
+        steps: {
+         //Resizes the uploaded image to 100x100 px
+         resize_to_100: {
+           robot: "/image/resize",
+           use: ":original",
+           width: 100,
+           height: 100,
+           debug: true
+         },
+       }
+     },
+
+      signature: function(callback) {
+        // ideally you would be generating this on the fly somewhere
+        $http.get('/api/signature').success(callback);
+      },
+
+      progress: function(loaded, total) {
+        console.log(loaded + 'bytes loaded');
+        console.log(total + ' bytes total');
+      },
+
+      processing: function() {
+        console.log('done uploading, started processing');
+      },
+
+      uploaded: function(assemblyJson) {
+        console.log(assemblyJson);
+      },
+
+      error: function(error) {
+        console.log(error);
+      }
 
 
-
-
-
-    // Transloadit.upload(file, {
-    //   params: {
-    //     auth: {
-    //       key: 'fc73a980313e11e58e2a1d428cc06c07'
-    //     },
-    //
-    //     steps: {
-    //      //Resizes the uploaded image to 100x100 px
-    //      resize_to_100: {
-    //        robot: "/image/resize",
-    //        use: ":original",
-    //        width: 100,
-    //        height: 100,
-    //        debug: true
-    //      },
-    //    }
-    //  },
-    //
-    //   signature: function(callback) {
-    //     // ideally you would be generating this on the fly somewhere
-    //     $http.get('/api/signature').success(callback);
-    //   },
-    //
-    //   progress: function(loaded, total) {
-    //     console.log(loaded + 'bytes loaded');
-    //     console.log(total + ' bytes total');
-    //   },
-    //
-    //   processing: function() {
-    //     console.log('done uploading, started processing');
-    //   },
-    //
-    //   uploaded: function(assemblyJson) {
-    //     console.log(assemblyJson);
-    //   },
-    //
-    //   error: function(error) {
-    //     console.log(error);
-    //   }
-    //
-    //
-    // });
+    });
   }
 
 

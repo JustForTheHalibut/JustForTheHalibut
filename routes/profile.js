@@ -12,7 +12,7 @@ var ensureAuthenticated = require('./helpers').ensureAuthenticated;
  */
 router.route('/signature')
   .get(function (req, res) {
-    res.send("Hello Tiffany");
+    res.send("3f748c71a3f6530924e5f60b5269f44c8ec19bd2");
   });
  router.route('/allUsers')
   .get(function (req, res) {
