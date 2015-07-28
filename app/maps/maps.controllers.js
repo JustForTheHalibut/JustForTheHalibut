@@ -3,7 +3,7 @@
   angular
     .module('maps')
 
-    .controller("MapController", function($scope, Account, LeafService, $rootScope, $http, $window, $location) {
+    .controller("MapController", function($scope, uiGmapGoogleMapApi, Account, LeafService, $rootScope, $http, $window, $location) {
     if($rootScope.user === undefined){
         Account.getProfile()
           .success(function(data) {
@@ -18,7 +18,10 @@
         latitude: 32.792447,
         longitude: -79.936134
         },
-        zoom: 8
+        zoom: 8,
+        options: {
+          mapTypeId: maps.MapTypeId.SATELLITE
+          }
         };
 
         $scope.markers = [];
@@ -47,8 +50,12 @@
                 $scope.createMarkers(userData);
               //  console.log("this is bob: ", userData.data);
              })
+             uiGmapGoogleMapApi.then(function(maps) {
 
-           })
+        });
+
+    })
+
 
 
 })();

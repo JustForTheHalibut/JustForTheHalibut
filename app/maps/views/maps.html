@@ -1,7 +1,7 @@
 <!-- <leaflet class="leafMap" ng-repeat="marker in markers" center="center" marker="marker" defaults="defaults" userName="marker.userName"></leaflet>
  -->
 
-<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+<ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options">
 <ui-gmap-marker ng-repeat="marker in markers | filter:search:strict" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.idKey" userName="marker.userName">
 <ui-gmap-window isIconVisibleOnClick="true" coords="marker.coords">
 <p>{{marker.userName}}</p>

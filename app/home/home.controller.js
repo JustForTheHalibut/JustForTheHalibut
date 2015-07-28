@@ -3,7 +3,7 @@
 
   angular
     .module('MyApp')
-    .controller('homeController', function ($scope,$http, $window, $rootScope, $location, LeafService, Account) {
+    .controller('homeController', function ($scope,$http, $window, $rootScope, $location, Account) {
         if($rootScope.user === undefined){
             Account.getProfile()
               .success(function(data) {
