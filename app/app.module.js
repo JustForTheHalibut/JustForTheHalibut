@@ -13,7 +13,8 @@ angular.module('MyApp', [
   'ngGeolocation',
   'maps',
   'chart.js',
-  'catch'
+  'catch',
+  'recipes'
 ])
 
 .config(function($routeProvider) {

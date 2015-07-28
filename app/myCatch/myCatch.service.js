@@ -22,7 +22,7 @@
         var name = newCatch.displayName.toLowerCase();
         console.log("name: ", name);
         console.log("this is what we will post: ", newCatch);
-        $http.post('api/collections/' + name,  newCatch).success(function (response) {
+        return $http.post('api/collections/' + name,  newCatch).success(function (response) {
               $rootScope.$broadcast('catch:created');
               $rootScope.catch= response;
               console.log(response);
@@ -33,6 +33,7 @@
 
       var deleteCatch= function(user, catchId) {
         var name = user.toLowerCase();
+        var name = user;
         console.log("name: ", name);
         $http.delete('api/collections/' + name + '/' + catchId).then(function(res) {
           $rootScope.$broadcast('catch:deleted');

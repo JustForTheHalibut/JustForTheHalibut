@@ -44,4 +44,12 @@ router.route('/me')
     });
   });
 
+  router.route('/recipes/:fish')
+  .get(function(req,res,next) {
+    var url = 'http://food2fork.com/api/search?key=3e093f219fcfb4680956efc732f0965c&q=' + req.params.fish
+    request.get({url: url}, function(err, response, data) {
+      res.send(JSON.parse(response.body));
+    })
+  })
+
 module.exports = router;

@@ -5,29 +5,44 @@
     .module('catch')
     .controller('catchController', function ($scope,$http, $geolocation, catchService, Account, $rootScope, $location, Transloadit) {
 
-
     if($rootScope.user === undefined){
         Account.getProfile()
           .success(function(data) {
             $scope.user = data;
             $rootScope.user = data;
             console.log($rootScope.user);
-            // var user = $rootScope.user.displayName;
-            // catchService.deleteCatch(user, '55b3c97cdce66f591a60eabe');
-            // catchService.deleteCatch(user, '55b3c91bdce66f591a60eabd');
-            // catchService.deleteCatch(user, '55b3c56f66a125cefd161305');
-            // catchService.deleteCatch(user, '55b3c43f66a125cefd161304');
-            // catchService.deleteCatch(user, '55b38bac66a125cefd161303');
-            // catchService.deleteCatch(user, '55b389b466a125cefd161301');
-            // catchService.deleteCatch(user, '55b3895f8bcf1d76fdb7f9e5');
-            // catchService.deleteCatch(user, '55b38932496be939fd4a2e43');
-            // catchService.deleteCatch(user, '55b3888c79b58c8ffca251d5');
+            // var user = 'Ginger';
+            // catchService.deleteCatch(user, '55b3cfaf9c2b1192286e704f');
+            // catchService.deleteCatch(user, '55b3cfaf9c2b1192286e704f');
+            // catchService.deleteCatch(user, '55b26faaec5596d4cd9a1a7c');
+            // catchService.deleteCatch(user, '55b1a1876386cd3abb4e82f7');
+            // catchService.deleteCatch(user, '55b1a0e9c7848f8eba25aa8a');
+            // catchService.deleteCatch(user, '55b50103e7d534593f1e0458');
+            // catchService.deleteCatch(user, '55b503497d2bccec418b6f57');
+            // catchService.deleteCatch(user, '55b5039a8150892b4256cfd0');
+            // catchService.deleteCatch(user, '55b503e4a4fa6b7c427ad337');
             // catchService.deleteCatch(user, '55b388446a715d41fc05e210');
             // catchService.deleteCatch(user, '55b3881726119514fc598e2b');
             // catchService.deleteCatch(user, '55b387c279892d3dfb8155b2');
             // catchService.deleteCatch(user, '55b3874f79892d3dfb8155b1');
           })
     }
+
+    console.log("we are here: ", $location.path());
+    if($location.path() === '/addCatch'){
+      console.log("we are resetting the form!");
+      $scope.catch = defaultCatch;
+    }
+
+    var defaultCatch= {
+        kind: "",
+        weight: "",
+        length: "",
+        location: "",
+        tackle: "",
+        bait: "",
+        image: ""
+      }
 
     $scope.uploadComplete = function (content) {
         $scope.response = JSON.parse(content); // Presumed content is a json string!
@@ -36,6 +51,7 @@
           "font-weight": "bold"
         };
       }
+
 
 
     // $scope.submitCatch = function(input){
@@ -59,12 +75,17 @@
         latitude : $scope.latitude,
         longitude : $scope.longitude
       };
+      var now = new moment().format();
+      file.submitTime = now;
+      console.log("this is the time: ", file.submitTime);
 
       file.displayName = $rootScope.user.displayName.toLowerCase();
       console.log("displayName: ", file.displayName);
       catchService.fishData(file);
-      catchService.createCatch(file);
-      $location.path('/catchAdded');
+      catchService.createCatch(file).success(function(data){
+        $location.path('/catchAdded');
+      });
+
 
 
 
