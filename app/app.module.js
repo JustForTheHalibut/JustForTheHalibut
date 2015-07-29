@@ -38,7 +38,7 @@ angular
     .factory('Transloadit', ['$http', '$rootScope', '$timeout', function($http, $rootScope, $timeout) {
       $scope = $rootScope.$new();
 
-      var TRANSLOADIT_API = 'http://api2.transloadit.com/assemblies';
+      var TRANSLOADIT_API = 'https://api2-eu-west-1.transloadit.com/assemblies';
 
       function getExpiryDate() {
         var date = new Date();
@@ -47,7 +47,6 @@ angular
         var year = date.getUTCFullYear();
         var month = zeroFill(date.getUTCMonth() + 1, 2);
         var day = zeroFill(date.getUTCDate(), 2);
-
         var hours = zeroFill(date.getUTCHours(), 2);
         var minutes = zeroFill(date.getUTCMinutes(), 2);
         var seconds = zeroFill(date.getUTCSeconds(), 2);
@@ -90,22 +89,22 @@ angular
           }
 
           options.signature(function(signatureValue) {
+            console.log("sigValue: ", signatureValue);
             var paramsValue = angular.toJson(options.params);
-            var modifiedSigValue = {
-              key: signatureValue,
-              expires: getExpiryDate
-            };
+            console.log("paramsValue: ", paramsValue);
 
             var formData = new FormData();
             formData.append('params', paramsValue);
-            formData.append('signature', JSON.stringify(modifiedSigValue));
+            formData.append('signature', signatureValue);
+            console.log("file ", file.name);
             formData.append(file.name, file);
+
 
             xhr.open('POST', TRANSLOADIT_API, true);
             xhr.onload = function(response) {
               var results = angular.fromJson(this.response);
               options.processing();
-
+              console.log("results: ", results);
               check(results.assembly_ssl_url);
             };
 

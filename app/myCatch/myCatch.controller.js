@@ -105,30 +105,22 @@
   //
   // }
 
-  $scope.submitCatch = function(file){
-    var image = document.getElementById("my_file").files[0];
-    console.log("this is the image: ", image);
-    Transloadit.upload(image, {
+  $scope.submitCatch = function(stuff){
+    var file = document.getElementById("my_file").files[0];
+    console.log("this is the image: ", file);
+    Transloadit.upload(file, {
       params: {
         auth: {
           key: 'fc73a980313e11e58e2a1d428cc06c07'
         },
 
-        steps: {
-         //Resizes the uploaded image to 100x100 px
-         resize_to_100: {
-           robot: "/image/resize",
-           use: ":original",
-           width: 100,
-           height: 100,
-           debug: true
-         },
-       }
+         template_id: '4c370e3035fe11e58282c51c26a58cc0'
      },
 
       signature: function(callback) {
         // ideally you would be generating this on the fly somewhere
         $http.get('/api/signature').success(callback);
+        console.log("callback: ", callback)
       },
 
       progress: function(loaded, total) {

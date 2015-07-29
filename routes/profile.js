@@ -4,6 +4,7 @@ var User = require('../entities/User');
 var config = require('../config');
 var request = require('request');
 var ensureAuthenticated = require('./helpers').ensureAuthenticated;
+var crypto = require('crypto');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,9 +13,67 @@ var ensureAuthenticated = require('./helpers').ensureAuthenticated;
  */
 router.route('/signature')
   .get(function (req, res) {
-    res.send("3f748c71a3f6530924e5f60b5269f44c8ec19bd2");
+    utcDateString = function(time) {
+        function pad(val, len) {
+          val = String(val);
+          len = len || 2;
+          while (val.length < len) val = "0" + val;
+          return val;
+        }
+
+        var now = new Date();
+        now.setTime(time);
+
+        var utc = new Date(
+          Date.UTC(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate(),
+            now.getHours(),
+            now.getMinutes(),
+            now.getSeconds()
+          )
+        );
+
+        var cDate  = utc.getDate();
+        var cMonth = utc.getMonth();
+        var cYear  = utc.getFullYear();
+        var cHour  = utc.getHours();
+        var cMin   = utc.getMinutes();
+        var cSec   = utc.getSeconds();
+
+        var result = cYear + '/' + pad((cMonth + 1)) + '/' + pad(cDate);
+        result += ' ' + pad(cHour) + ':' + pad(cMin) + ':' + pad(cSec) + '+00:00';
+
+        return result;
+      };
+
+      // 3 hours from now (this must be milliseconds)
+      var expiresIn  = 3 * 60 * 60 * 1000;
+      var expires    = utcDateString((+new Date()) + expiresIn);
+
+      var authKey    = 'fc73a980313e11e58e2a1d428cc06c07';
+      var authSecret = '3f748c71a3f6530924e5f60b5269f44c8ec19bd2';
+
+      var params = {
+        'auth': {
+          'key': authKey,
+          'expires': expires
+        },
+        template_id: '4c370e3035fe11e58282c51c26a58cc0'
+        // your other params like template_id, notify_url, etc.
+      };
+      var paramsString = JSON.stringify(params);
+
+      var signature = crypto
+          .createHmac('sha1', authSecret)
+          .update(new Buffer(paramsString, 'utf-8'))
+          .digest('hex');
+
+    console.log(signature);
+    res.send(JSON.stringify(signature));
   });
-  
+
  router.route('/allUsers')
   .get(function (req, res) {
     User.find({}, function (err, users) {
