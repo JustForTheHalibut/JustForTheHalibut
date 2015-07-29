@@ -11,16 +11,12 @@
 <div class="mainCont">
   <div class="row">
     <div class="col-sm-3 leftAside">
-      <div class="panel panel-default blackPanel">
-        <div class="panel panel-default blackPanel inside">
-          <div class="panel-body">
-            <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-              <h3>{{user.displayName}}</h3>
-              <h5>Fish Caught: 77</h5>
-              <h5>Species: 9</h5>
-         </div>
-      </div>
-   </div>
+      <div class="flexProfile">
+        <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+        <h3>{{user.displayName}}</h3>
+        <h5>Fish Caught: 77</h5>
+        <h5>Species: 9</h5>
+    </div>
       <div class="panel panel-default blackPanel">
         <div class="panel panel-default blackPanel inside">
           <div class="weatherDir">
@@ -30,6 +26,7 @@
         </div>
      </div>
   </div>
+
 </div>
    <div class="col-sm-6 weatherBar"></div>
      <div class="col-sm-3 recentCatches">

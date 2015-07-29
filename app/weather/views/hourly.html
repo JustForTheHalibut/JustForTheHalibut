@@ -1,38 +1,60 @@
+<div class="page-wrap">
 <div class="mainCont">
     <div class="row">
         <div class="col-sm-3 leftAside">
-           <div class="panel panel-default blackPanel">
-              <div class="panel-heading">Side Nav</div>
-                 <div class="panel-body">
-                   <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
-                     <h2>Username</h2>
-                        <nav class="sideNav">
-                          <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
-                          <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
-                       </nav>
-                          <div class="panel panel-default">
-                            <div class="panel-body">
-                          </div>
-                     </div>
-                </div>
-           </div>
+           <div class="flexProfile">
+             <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+             <h2>{{user.displayName}}</h2>
+             <nav class="sideNav">
+               <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
+               <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
+            </nav>
+            </div>
       </div>
 
         <div class="col-sm-9 weatherBar weatherDir weatherFlow">
-          <div class="panel panel-default blackPanel">
-            <div class="panel-body">
-              <div class="row hourBoxLabel">
-                <div class="col-sm-1">Time</div>
-                  <div class="col-sm-2">Cond</div>
-                    <div class="col-sm-2">Temp</div>
-                  <div class="col-sm-2">Description</div>
-                <div class="col-sm-2">Precip</div>
-              <div class="col-sm-1">Humidity</div>
-            <div class="col-sm-2">Wind</div>
-          </div>
-            <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
-        </div>
-      </div>
+      <div class="flexBigBoxer">
+        <div class="flexBigBoxer">
+          <div class="col-sm-1">Time</div>
+            <div class="col-sm-2">Cond</div>
+              <div class="col-sm-2">Temp</div>
+            <div class="col-sm-2">Description</div>
+          <div class="col-sm-2">Precip</div>
+        <div class="col-sm-1">Humidity</div>
+      <div class="col-sm-2">Wind</div>
+    </div>
+<!--     <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
+ -->
+       </div>
     </div>
   </div>
+
+  <div class="row">
+      <div class="col-sm-3 leftAside">
+         <div class="flexProfile">
+           <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+           <h2>{{user.displayName}}</h2>
+           <nav class="sideNav">
+             <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
+             <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
+          </nav>
+          </div>
+    </div>
+
+      <div class="col-sm-9 weatherBar weatherDir weatherFlow">
+    <div class="flexBigBoxer">
+      <div class="flexSideWeatherSmall">
+        stuf
+      </div>
+      <div class="flexSideWeather">
+        stuff
+      </div>
+      <div class="flexWeather">
+        <h2>The City</h2>
+  </div>
+     </div>
+  </div>
+</div>
+
+</div>
 </div>
