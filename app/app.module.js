@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 angular.module('MyApp', [
 'ngMessages',
 'ngRoute',

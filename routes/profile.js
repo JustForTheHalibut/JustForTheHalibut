@@ -84,7 +84,7 @@ router.route('/me')
   })
 router.route('/weather/:latitude/:longitude')
   .get(function(req,res,next) {
-    var url = 'https://api.wunderground.com/api/4cafbeade14505cc/conditions/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+    var url = 'https://api.wunderground.com/api/7ec67d9215b3669e/conditions/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
     request.get({url: url}, function(err, response, data) {
       res.send(JSON.parse(response.body));
     })
@@ -130,7 +130,7 @@ router.route('/alerts/:latitude/:longitude')
         })
       })
 
-router.route('/rawtide')
+router.route('/tide')
   .get(function(req,res,next) {
     var url = 'http://api.wunderground.com/api/4cafbeade14505cc/rawtide/q/29464.json'
       request.get({url: url}, function(err, response, data) {

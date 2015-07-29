@@ -1,68 +1,83 @@
+<div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
 <div class="mainCont">
-  <div class="row">
-    <div class="col-sm-3 leftAside">
-      <div class="panel panel-default blackPanel">
-        <div class="panel panel-default blackPanel inside">
-          <div class="panel-body">
-            <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-              <h3>{{user.displayName}}</h3>
-              <h5>Fish Caught: 77</h5>
-              <h5>Species: 9</h5>
-         </div>
-      </div>
-   </div>
-      <div class="panel panel-default blackPanel">
-        <div class="panel panel-default blackPanel inside">
-          <div class="weatherDir">
-            <div ng-controller="WeatherController">
-              <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
-          </div>
-        </div>
-     </div>
+<div class="row bump">
+<div class="col-sm-9 myReset flexMap">
+<div ng-controller="MapController">
+<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+<ui-gmap-marker ng-repeat="marker in markers | filter:search:strict" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.idKey" userName="marker.userName">
+<ui-gmap-window isIconVisibleOnClick="true" coords="marker.coords">
+<p>{{marker.userName}}</p>
+</ui-gmap-window>
+</ui-gmap-marker>
+</ui-gmap-google-map>
+</div>
+</div>
+<div class="col-sm-3 myReset flexMap">
+  <div class="homeAside">
+    <div class="profileCard">
+  <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+  <h3>{{user.displayName}}</h3>
+  <h4>Fish Caught: 46</h4>
+  <h4>Species: 10</h4>
+</div>
+      <div class="weatherDir homeWeather">
+        <div ng-controller="WeatherController">
+          <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
+       </div>
+    </div>
   </div>
 </div>
-   <div class="col-sm-6 weatherBar"></div>
-     <div class="col-sm-3 recentCatches">
-        <div class="panel panel-default blackPanel">
-           <div class="panel-heading"><h4>Recent Catches</h4></div>
-             <div class="panel panel-default blackPanel inside">
-                <div class="panel-body">
-                  <div class="row fishHome">
-                    <div class="col-sm-6">
-                      <img class="fishPic" ng-src="http://www.iwallscreen.com/stock/fishing-marlin-fish-hd.jpg">
-                  </div>
-                    <div class="col-sm-6">
-                      <h5>Fish: Salmon</h5>
-                      <h5>Location: Charleston, SC</h5>
-                      <p>3 mins ago</p>
-                  </div>
-                </div>
-                    <div class="row fishHome">
-                      <div class="col-sm-6">
-                        <img class="fishPic" ng-src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQivKlskqTWLMZKcoLaJSwedkjFdxmSG_JRUlWqmo55aTQzcu9W">
-                    </div>
-                        <div class="col-sm-6">
-                          <h5>Fish: Shark</h5>
-                          <h5>Location: Miami, FL</h5>
-                          <p>10 mins ago</p>
-                      </div>
-                    </div>
-                       <div class="row fishHome">
-                          <div class="col-sm-6">
-                            <img class="fishPic" ng-src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQX5Hu3C-bJnIiHyrmt_uNhXEr-674jhbhPYeOKC6pgtrB0dcsxVg">
-                        </div>
-                          <div class="col-sm-6">
-                            <h5>Fish: Halibut</h5>
-                            <h5>Location: Seattle, WA</h5>
-                            <p>15mins ago</p>
-                        </div>
-                     </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+</div>
+</div>
 
+
+
+    <!--  <div class="col-sm-3 recentCatches">
+       <div class="panel panel-default blackPanel">
+          <div class="panel-heading"><h4>Recent Catches</h4></div>
+            <div class="panel panel-default blackPanel inside">
+               <div class="panel-body">
+                 <div class="row fishHome">
+                   <div class="col-sm-6">
+                     <img class="fishPic" ng-src="http://www.iwallscreen.com/stock/fishing-marlin-fish-hd.jpg">
+                 </div>
+                   <div class="col-sm-6">
+                     <h5>Fish: Salmon</h5>
+                     <h5>Location: Charleston, SC</h5>
+                     <p>3 mins ago</p>
+                 </div>
+               </div>
+                   <div class="row fishHome">
+                     <div class="col-sm-6">
+                       <img class="fishPic" ng-src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQivKlskqTWLMZKcoLaJSwedkjFdxmSG_JRUlWqmo55aTQzcu9W">
+                   </div>
+                       <div class="col-sm-6">
+                         <h5>Fish: Shark</h5>
+                         <h5>Location: Miami, FL</h5>
+                         <p>10 mins ago</p>
+                     </div>
+                   </div>
+                      <div class="row fishHome">
+                         <div class="col-sm-6">
+                           <img class="fishPic" ng-src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQX5Hu3C-bJnIiHyrmt_uNhXEr-674jhbhPYeOKC6pgtrB0dcsxVg">
+                       </div>
+                         <div class="col-sm-6">
+                           <h5>Fish: Halibut</h5>
+                           <h5>Location: Seattle, WA</h5>
+                           <p>15mins ago</p>
+                       </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+     </div> -->
   <!-- For 3 day forcast
   <div class="panel panel-default forecastBox">
     <div class="panel-body " ng-controller="WeatherController">

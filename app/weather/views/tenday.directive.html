@@ -1,4 +1,4 @@
-<div class="row hourBox" data-id="{{t.id}}">
+<!-- <div class="row hourBox" data-id="{{t.id}}">
 <div class="col-sm-1 dets">
   <h5>{{t.month}} {{t.day}}</h5>
   </div>
@@ -20,4 +20,10 @@
 <div class="col-sm-2 dets">
 <h5>{{t.aveWindDir}} {{t.aveWind}} mph</h5>
 </div>
+</div> -->
+
+
+<div class="flexWeatherOne">
+  <img ng-src="{{t.iconUrl}}" alt="" />
+  <h5><span class="tempDay">{{t.high}}</span><span class="degreesDay"> o</span><span class="degreesDayF">F</span> <span class="tempLow">{{t.low}}</span><span class="degreesLow"> o</span><span class="degreesLowF">F</span></h5>
 </div>
