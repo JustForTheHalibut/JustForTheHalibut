@@ -424,14 +424,16 @@ a {
   -webkit-transition: 0.4s;
           transition: 0.4s; }
 
-.flexWeatherDir .icon {
-  position: relative;
-  left: 30%;
-  height: 10rem;
-  width: 10rem;
-  margin-top: 2rem; }
-.flexWeatherDir .tides {
-  padding: 3rem; }
+.flexWeatherDir {
+  color: black; }
+  .flexWeatherDir .icon {
+    position: relative;
+    left: 30%;
+    height: 10rem;
+    width: 10rem;
+    margin-top: 2rem; }
+  .flexWeatherDir .tides {
+    padding: 3rem; }
 
 .redTop {
   background-color: #DA1A2E;
@@ -458,12 +460,12 @@ a {
   height: 1rem; }
 
 .profileCard {
-  background: lightblue;
+  background-color: white;
   padding: .5rem;
-  margin-bottom: .5rem; }
+  margin-bottom: 1rem; }
 
 .homeWeather {
-  background: lightblue; }
+  background-color: white; }
 
 .flexWeatherTides {
   width: 100%;
@@ -608,7 +610,7 @@ a {
     font-size: 1.5rem; }
 
 .weatherDir {
-  color: white; }
+  color: black; }
   .weatherDir h2 {
     color: #F47F20;
     text-align: center;
@@ -642,7 +644,7 @@ a {
     margin: 0rem;
     padding: 1rem; }
   .weatherDir .value {
-    color: white;
+    color: black;
     font-size: 1.5rem; }
 
 .leftFix {
@@ -693,6 +695,7 @@ a {
   margin-bottom: 0; }
 
 .weatherPH {
+  color: black;
   margin: 1rem;
   font-size: 1.7rem; }
 

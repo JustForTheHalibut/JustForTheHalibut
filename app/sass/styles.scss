@@ -496,6 +496,7 @@ a {
 }
 
 .flexWeatherDir {
+  color: black;
   .icon {
     position: relative;
     left: 30%;
@@ -539,13 +540,13 @@ a {
 }
 
 .profileCard {
-  background: lightblue;
+  background-color: white;
   padding: .5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .homeWeather {
-  background: lightblue;
+  background-color: white;
 }
 
 .flexWeatherTides {
@@ -736,7 +737,7 @@ a {
 }
 
 .weatherDir {
-  color: white;
+  color: black;
   h2 {
     color: #F47F20;
     text-align: center;
@@ -778,7 +779,7 @@ a {
     padding: 1rem;
   }
   .value {
-    color: white;
+    color: black;
     font-size: 1.5rem;
   }
 }
@@ -843,6 +844,7 @@ a {
 }
 
 .weatherPH {
+  color: black;
   margin: 1rem;
   font-size: 1.7rem;
 }
