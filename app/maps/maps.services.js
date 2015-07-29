@@ -1,21 +1,15 @@
-(function () {
-'use strict';
+(function() {
   angular
         .module('maps')
         .factory('LeafService', function($http) {
 
-          var fishDataUrl = "http://localhost:3000/api/collections/" + lat + long
+        var getProfile = function(user){
+        var name = user.toLowerCase();
+        return $http.get('/api/collections/' + name);
+        }
 
-
-          var getMarkers = function() {
-            return $http.get(fishDataUrl).then(function(fishData){
-              return fishData.data;
-            })
-          };
-
-          return {
-            getMarkers: getMarkers,
-          }
-
-    });
+        return {
+          getProfile: getProfile
+        }
+      })
 })();

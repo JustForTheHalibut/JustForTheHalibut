@@ -3,22 +3,6 @@
   angular
     .module('weather')
 
-    .controller("LineCtrl", function ($scope, WeatherService) {
-
-        WeatherService.getRawTide().then(function(rawtide){
-        console.log("rawtide chart", rawtide)
-        var newRawTide = rawtide.map(function (el) {
-          return el.height;
-        })
-        $scope.rawtide = rawtide;
-        $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-        $scope.series = ['Series A'];
-        $scope.data = [
-          newRawTide
-          ];
-        })
-      })
-
     .controller('WeatherController', function($scope, WeatherService, $routeParams, $geolocation){
 
       navigator.geolocation.getCurrentPosition(function(position){
@@ -26,6 +10,7 @@
           $scope.longitude = position.coords.longitude;
 
           WeatherService.getCurrentConditions($scope.latitude, $scope.longitude).then(function(currentConditions) {
+            console.log('current', currentConditions);
             $scope.currentConditions = currentConditions;
           })
 
@@ -68,10 +53,17 @@
         })
     })
 
-
-      WeatherService.getRawTide().then(function (rawtide){
-        // console.log("rawTide:", rawtide);
-        $scope.rawtide = rawtide;
+      WeatherService.getTide().then(function(tide){
+      // console.log("tide chart", tide)
+      var newTide = tide.map(function (el) {
+        return el.height;
+      })
+      $scope.tide = tide;
+      $scope.labels = ['high','nothing','low','high','nothing','low'];
+      $scope.series = ['Series A'];
+      $scope.data = [
+        newTide
+        ];
       })
 
     });

@@ -1,3 +1,52 @@
+ <div class="page-wrap">
+   <div class="flexRower">
+     <div class="flexBoxer">
+        stuff 1
+      </div>
+      <div class="flexBoxer">
+         stuff 1
+       </div>
+       <div class="flexBoxer">
+          stuff 1
+        </div>
+      </div>
+              <div class="flexRower">
+                <div class="flexBoxer">
+                   stuff 1
+                 </div>
+                 <div class="flexBoxer">
+                    stuff 1
+                  </div>
+                  <div class="flexBoxer">
+                     stuff 1
+                   </div>
+                 </div>
+                 <div class="flexRower">
+                   <div class="flexBoxerFour">
+                      stuff 1
+                    </div>
+                    <div class="flexBoxerFour">
+                       stuff 1
+                     </div>
+                     <div class="flexBoxerFour">
+                        stuff 1
+                      </div>
+                      <div class="flexBoxerFour">
+                         stuff 1
+                       </div>
+                    </div>
+               <div class="main-content">
+                  <main class="main-content--articles">
+
+                              </main>
+                               <aside class="main-content--sidebar">
+
+                                    </aside>
+                                    </div>
+                                    </div>
+
+
+
 <div class="container mainCont">
   <div class="row">
     <div class="col-sm-3 leftAside">
@@ -52,9 +101,9 @@
 
                       <div class="col-sm-7 weatherBar">
                         <div class="panel panel-default blackPanel">
-                          <div class="panel-body" ng-controller="LineCtrl">
+                          <div class="panel-body">
                             <h4>Tide Charts</h4>
-                              <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
+                              <canvas id="line" class="chart chart-line" data="data" labels="labels" series="series"></canvas>
                         </div>
                       </div>
                     </div>
@@ -100,5 +149,32 @@
             </tabset>
           </div>
         </div>
+    </div>
+</div>
+
+
+
+<div class="page-wrap flexWeatherDir">
+<div class="mainCont">
+  <div class="row">
+    <div class="col-sm-3 leftAside">
+       <div class="flexProfile">
+         <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+         <h2>{{user.displayName}}</h2>
+         <nav class="sideNav">
+           <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
+           <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
+        </nav>
+        </div>
+      </div>
+        <div class="col-sm-9 weatherBar flexWeatherDir">
+        <div class="flexWeatherTides">
+          <div class="tides">
+          <h4>Tide Charts</h4>
+            <canvas id="line" class="chart chart-line" data="data" labels="labels" series="series"></canvas>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
 </div>

@@ -8,9 +8,11 @@
 
       var getCurrentConditions = function (latitude,longitude) {
         return $http.get('/api/weather/' + latitude + '/' + longitude).then(function(currentConditions){
+          console.log(currentConditions);
             return {
                     fahrenheit: currentConditions.data.current_observation.temp_f,
                     feelsLike: currentConditions.data.current_observation.feelslike_f,
+                    icon: currentConditions.data.current_observation.icon,
                     iconUrl: currentConditions.data.current_observation.icon_url,
                     city: currentConditions.data.current_observation.display_location.city,
                     state: currentConditions.data.current_observation.display_location.state,
@@ -155,7 +157,7 @@
                 deferred.resolve(cache);
               }else{
                 $http.get('api/tendayforecast/' + latitude + '/' + longitude).then(function (tenDayForecast) {
-                var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday;
+                var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday.slice(0,7);
                 cacheEngine.put('tenDayForecast', mapTenDayForecastToUrls(tenDayForecastArr));
                 deferred.resolve(mapTenDayForecastToUrls(tenDayForecastArr));
               });
@@ -185,26 +187,27 @@
                   });
                 }
 
-          var mapRawTideToUrls = function (collection) {
+          var mapTideToUrls = function (collection) {
              return _.map(collection, function (obj) {
                return {
-                      height: obj.height
+                      height: obj.data.height,
+                      type: obj.data.type
                       }
                   });
                }
 
-           var getRawTide = function(){
-               return $http.get('api/rawtide').then(function (rawtide) {
-                //  console.log("rawTide", rawtide)
-                 var rawTideArr = rawtide.data.rawtide.rawTideObs.slice(0,10);
-                 return mapRawTideToUrls(rawTideArr);
+           var getTide = function(){
+               return $http.get('api/tide').then(function (tide) {
+                //  console.log("tide", tide)
+                 var tideArr = tide.data.tide.tideSummary;
+                 return mapTideToUrls(tideArr);
                  })
                }
 
         return {
                 getCurrentConditions: getCurrentConditions,
                 getAstronomy: getAstronomy,
-                getRawTide: getRawTide,
+                getTide: getTide,
                 getHourly: getHourly,
                 getOneHourly: getOneHourly,
                 getAlerts: getAlerts,

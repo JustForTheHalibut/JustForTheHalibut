@@ -11,26 +11,28 @@
 </div>
 </div>
 </div> -->
- <div class="weatherDir" data-id="{{w.id}}">
+ <div class="flexWeatherDir" data-id="{{w.id}}">
   <div class="row">
     <div class="col-sm-12">
-        <h5>{{w.city}}, {{w.state}}</h5>
+      <img class="icon" ng-src="http://icons.wxug.com/i/c/i/{{w.icon}}.gif" alt="" />
       </div>
       <div class="col-sm-6 weatherDets">
         <h2>{{w.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h2>
         <div class="feelsLike">Feels Like {{w.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
-        <div class="weatherPH">
-          <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /><span class="value"> {{w.windDirection}} {{w.wind}} mph</span>
-        </div>
+
   </div>
   <div class="col-sm-6 weatherDets">
-    <img class="icon" ng-src="{{w.iconUrl}} " alt="" />
     <div class="weatherPH">
     <i class="fa fa-tint tint"></i><span class="value"> {{w.rain}}%  |</span>
     <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
   <span class="value">{{w.humidity}}</span>
   </div>
+  <div class="weatherPH">
+    <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /><span class="value"> {{w.windDirection}} {{w.wind}} mph</span>
+  </div>
 
 </div>
+<h2 class="city">{{w.city}}</h2>
+
 </div>
 </div>
