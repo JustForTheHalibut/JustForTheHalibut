@@ -106,20 +106,45 @@
   // }
 
   $scope.submitCatch = function(stuff){
+    function getExpiryDate() {
+      var date = new Date();
+      date.setHours(date.getHours() + 12);
+
+      var year = date.getUTCFullYear();
+      var month = zeroFill(date.getUTCMonth() + 1, 2);
+      var day = zeroFill(date.getUTCDate(), 2);
+      var hours = zeroFill(date.getUTCHours(), 2);
+      var minutes = zeroFill(date.getUTCMinutes(), 2);
+      var seconds = zeroFill(date.getUTCSeconds(), 2);
+
+      return year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds + '+00:00';
+    }
+
+    function zeroFill(number, width) {
+      width -= number.toString().length;
+      if (width > 0) {
+        return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+      }
+
+      return number + ""; // always return a string
+    }
+
     var file = document.getElementById("my_file").files[0];
     console.log("this is the image: ", file);
+    console.log("this is stuff: ", stuff);
+    $rootScope.catch = stuff;
     Transloadit.upload(file, {
       params: {
         auth: {
           key: 'fc73a980313e11e58e2a1d428cc06c07'
         },
-
-         template_id: '4c370e3035fe11e58282c51c26a58cc0'
+        template_id: '4c370e3035fe11e58282c51c26a58cc0'
      },
 
       signature: function(callback) {
         // ideally you would be generating this on the fly somewhere
-        $http.get('/api/signature').success(callback);
+        // we need to send the expiry date to the server, so that it can generate a correct signature
+        return $http.post('/api/signature', {expiry: getExpiryDate() }).success(callback);
         console.log("callback: ", callback)
       },
 
@@ -133,13 +158,12 @@
       },
 
       uploaded: function(assemblyJson) {
-        console.log(assemblyJson);
+        console.log("here it is: ", assemblyJson);
       },
 
       error: function(error) {
         console.log(error);
       }
-
 
     });
   }
