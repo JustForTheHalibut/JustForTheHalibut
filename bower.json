@@ -29,8 +29,6 @@
     "angular-google-maps": "~2.1.5",
     "angularjs-geolocation": "~0.1.1",
     "underscore": "~1.8.3",
-    "leaflet": "~0.7.3",
-    "angular-leaflet": "~0.8.5",
     "jquery-transloadit": "~2.7.1",
     "jquery": "~2.1.4",
     "ngUpload": "~0.5.17",
