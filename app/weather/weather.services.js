@@ -8,9 +8,11 @@
 
       var getCurrentConditions = function (latitude,longitude) {
         return $http.get('/api/weather/' + latitude + '/' + longitude).then(function(currentConditions){
+          console.log(currentConditions);
             return {
                     fahrenheit: currentConditions.data.current_observation.temp_f,
                     feelsLike: currentConditions.data.current_observation.feelslike_f,
+                    icon: currentConditions.data.current_observation.icon,
                     iconUrl: currentConditions.data.current_observation.icon_url,
                     city: currentConditions.data.current_observation.display_location.city,
                     state: currentConditions.data.current_observation.display_location.state,
@@ -155,7 +157,7 @@
                 deferred.resolve(cache);
               }else{
                 $http.get('api/tendayforecast/' + latitude + '/' + longitude).then(function (tenDayForecast) {
-                var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday;
+                var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday.slice(0,7);
                 cacheEngine.put('tenDayForecast', mapTenDayForecastToUrls(tenDayForecastArr));
                 deferred.resolve(mapTenDayForecastToUrls(tenDayForecastArr));
               });

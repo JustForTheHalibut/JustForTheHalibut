@@ -10,6 +10,7 @@
           $scope.longitude = position.coords.longitude;
 
           WeatherService.getCurrentConditions($scope.latitude, $scope.longitude).then(function(currentConditions) {
+            console.log('current', currentConditions);
             $scope.currentConditions = currentConditions;
           })
 

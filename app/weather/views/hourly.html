@@ -1,60 +1,32 @@
 <div class="page-wrap">
-<div class="mainCont">
+  <div class="mainCont">
     <div class="row">
-        <div class="col-sm-3 leftAside">
-           <div class="flexProfile">
-             <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
-             <h2>{{user.displayName}}</h2>
-             <nav class="sideNav">
-               <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
-               <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
-            </nav>
-            </div>
-      </div>
-
-        <div class="col-sm-9 weatherBar weatherDir weatherFlow">
-      <div class="flexBigBoxer">
-        <div class="flexBigBoxer">
-          <div class="col-sm-1">Time</div>
-            <div class="col-sm-2">Cond</div>
-              <div class="col-sm-2">Temp</div>
-            <div class="col-sm-2">Description</div>
-          <div class="col-sm-2">Precip</div>
-        <div class="col-sm-1">Humidity</div>
-      <div class="col-sm-2">Wind</div>
-    </div>
-<!--     <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
- -->
-       </div>
-    </div>
-  </div>
-
-  <div class="row">
       <div class="col-sm-3 leftAside">
          <div class="flexProfile">
            <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
-           <h2>{{user.displayName}}</h2>
-           <nav class="sideNav">
-             <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
-             <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
-          </nav>
-          </div>
+             <h2>{{user.displayName}}</h2>
+               <nav class="sideNav">
+                 <li><a class="btn btn-primary" href="#/weather">Weather</a></li>
+                 <li><a class="btn btn-primary" href="#/weather/tenday">Ten Day</a></li>
+              </nav>
+           </div>
+        </div>
+          <div class="col-sm-9 weatherBar flexWeatherDir">
+            <div class="col-sm-8 myReset">
+              <div class="flexWeather">
+                <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
+              </div>
+            </div>
+              <div class="col-sm-4 myReset">
+                <div class="flexSideWeather">
+                  <h2>{{weather.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h2>
+              </div>
+                <div class="flexSideWeatherSmall">Small</div>
+             </div>
+                <div>
+                  <tenday-directive ng-repeat="oneTenDayForecast in tenDayForecast" t="oneTenDayForecast" data-id="{{t.id}}"></tenday-directive>
+                </div>
+            </div>
+        </div>
     </div>
-
-      <div class="col-sm-9 weatherBar weatherDir weatherFlow">
-    <div class="flexBigBoxer">
-      <div class="flexSideWeatherSmall">
-        stuf
-      </div>
-      <div class="flexSideWeather">
-        stuff
-      </div>
-      <div class="flexWeather">
-        <h2>The City</h2>
-  </div>
-     </div>
-  </div>
-</div>
-
-</div>
 </div>
