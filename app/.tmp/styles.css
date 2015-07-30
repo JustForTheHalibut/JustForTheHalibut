@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #e4e7ec; }
+  background: #1D1F22; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
@@ -306,13 +306,37 @@ a {
 .flexBoxer {
   width: 32.1%;
   float: right;
-  background: lightgreen;
+  background-color: white;
   height: 40rem;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
   margin: 5px; }
+
+.flexBoxerLarge {
+  width: 90%;
+  float: right;
+  background-color: white;
+  height: 30rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto; }
+
+.flexBoxerRecipeDetail {
+  width: 100%;
+  float: right;
+  background-color: white;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto; }
 
 .flexProfile {
   width: 100%;
@@ -368,29 +392,61 @@ a {
 * Add Catch Style
 *********************/
 .addCatchStyle .addCatchForm {
+  height: 30rem;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   background-color: white; }
 .addCatchStyle h2 {
   text-align: center; }
+.addCatchStyle input {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+.addCatchStyle .inputTitle {
+  font-size: 2.3rem;
+  font-weight: bold; }
+.addCatchStyle li {
+  width: 100%;
+  list-style: none; }
 
 /*********************
 * Profile Style
 *********************/
 .profileStyle .fishListImg {
-  width: 70%;
-  height: 20rem;
+  width: 100%;
+  max-height: 19rem;
   margin-left: auto;
   margin-right: auto; }
+.profileStyle .profileOptions {
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }
+.profileStyle .trash {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
 
 /*********************
 * Recipes Style
 *********************/
 .recipesStyle .recipeListImg {
-  width: 70%;
+  width: 100%;
+  max-height: 19rem;
   margin-left: auto;
   margin-right: auto; }
+.recipesStyle .recipeOptions {
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }
+.recipesStyle .trash {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.recipesStyle .trash:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+.recipesStyle .foodToFork {
+  margin: .2rem; }
 
 /*********************
 * FlexBox Weather

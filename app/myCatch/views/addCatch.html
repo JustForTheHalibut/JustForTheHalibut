@@ -15,14 +15,26 @@
       <div class="addCatchForm">
         <h2>Add a new catch</h2>
       <form id="upload-form" enctype="multipart/form-data" ng-submit="submitCatch(catch)" >
-            <span>Kind:  </span><input type="text" name="kind" value="Catfish" ng-model="catch.kind"> <br>
-            <span>Weight:  </span><input type="text" name="weight" value="3 lbs" ng-model="catch.weight"><br>
-            <span>Length:  </span><input type="text" name="lenth" value="1 ft" ng-model="catch.length"><br>
-            <span>Location:  </span><input type="text" name="location" value="Charleston, SC" ng-model="catch.location"><br>
-            <span>Tackle:  </span><input type="text" name="tackle" value="Tackle" ng-model="catch.tackle"><br>
-            <span>Bait:  </span><input type="text" name="bait" value="Bait" ng-model="catch.bait"><br><br>
-            <input type="file" id="my_file" name="my_file" multiple="multiple" ng-model="catch.image"/><br><br>
-            <input type="submit" class="btn" value="Submit" ng-disabled="$isUploading">
+        <div class="col-sm-6">
+        <ul>
+            <li><h4>Kind:</h4><input type="text" name="kind" value="Catfish" ng-model="catch.kind"></li>
+            <li><h4>Weight:  </h4><input type="text" name="weight" value="3 lbs" ng-model="catch.weight"></li>
+            <li><h4>Length:  </h4><input type="text" name="lenth" value="1 ft" ng-model="catch.length"></li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+              <ul>
+            <li><h4>Location:</h4><input type="text" name="location" value="Charleston, SC" ng-model="catch.location"></li>
+            <li><h4>Tackle:  </h4><input type="text" name="tackle" value="Tackle" ng-model="catch.tackle"></li>
+            <li><h4>Bait:  </h4><input type="text" name="bait" value="Bait" ng-model="catch.bait"></li>
+          </ul>
+        </div>
+        <div class="col-sm-12">
+          <ul>
+            <li><input type="file" id="my_file" name="my_file" multiple="multiple" ng-model="catch.image"/></li>
+            <li><input type="submit" class="btn" value="Submit" ng-disabled="$isUploading"></li>
+          </ul>
+        </div>
       </form>
       </div>
     </div>
@@ -56,13 +68,10 @@
 
 
 
-         <div class="col-sm-9 weatherBar">
-        <div ng-controller="TabsController">
-        <tabset>
-          <tab heading="Add My Catch">
-
-
-
+         <!-- <div class="col-sm-9 weatherBar">
+                 <div ng-controller="TabsController">
+                 <tabset>
+          <tab heading="Add My Catch"> -->
 
 
                <!-- ng-click here -->
@@ -92,36 +101,108 @@
 // </script> -->
 
 
-
-
-              <div class="panel panel-default">
+          <!--     <div class="panel panel-default">
+                      <div class="panel-body">
+          <div class="panel panel-default"> ng-repeat here
             <div class="panel-body">
-              <div class="panel panel-default"> <!-- ng-repeat here -->
-                <div class="panel-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <img ng-src="http://placehold.it/100x100"><br><br>
-                    </div>
-                    <div class="col-sm-9">
-                    <strong> My Catch of Day!</strong> <br><br>
-                    <form id="upload-form" enctype="multipart/form-data" ng-submit="submitCatch(catch)" >
-                          <span>Kind:  </span><input type="text" name="kind" value="Catfish" ng-model="catch.kind"> <br>
-                          <span>Weight:  </span><input type="text" name="weight" value="3 lbs" ng-model="catch.weight"><br>
-                          <span>Length:  </span><input type="text" name="lenth" value="1 ft" ng-model="catch.length"><br>
-                          <span>Location:  </span><input type="text" name="location" value="Charleston, SC" ng-model="catch.location"><br>
-                          <span>Tackle:  </span><input type="text" name="tackle" value="Tackle" ng-model="catch.tackle"><br>
-                          <span>Bait:  </span><input type="text" name="bait" value="Bait" ng-model="catch.bait"><br><br>
-                          <input type="file" id="my_file" name="my_file" multiple="multiple" ng-model="catch.image"/><br><br>
-                          <input type="submit" class="btn" value="Submit" ng-disabled="$isUploading">
-                    </form>
-                    </div>
-                  </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <img ng-src="http://placehold.it/100x100"><br><br>
+                </div>
+                <div class="col-sm-9">
+                <strong> My Catch of Day!</strong> <br><br>
+                <form id="upload-form" enctype="multipart/form-data" ng-submit="submitCatch(catch)" >
+                      <span>Kind:  </span><input type="text" name="kind" value="Catfish" ng-model="catch.kind"> <br>
+                      <span>Weight:  </span><input type="text" name="weight" value="3 lbs" ng-model="catch.weight"><br>
+                      <span>Length:  </span><input type="text" name="lenth" value="1 ft" ng-model="catch.length"><br>
+                      <span>Location:  </span><input type="text" name="location" value="Charleston, SC" ng-model="catch.location"><br>
+                      <span>Tackle:  </span><input type="text" name="tackle" value="Tackle" ng-model="catch.tackle"><br>
+                      <span>Bait:  </span><input type="text" name="bait" value="Bait" ng-model="catch.bait"><br><br>
+                      <input type="file" id="my_file" name="my_file" multiple="multiple" ng-model="catch.image"/><br><br>
+                      <input type="submit" class="btn" value="Submit" ng-disabled="$isUploading">
+                </form>
                 </div>
               </div>
             </div>
           </div>
-           </tab>
-                  </tabset>
-                  </div>
-
+                      </div>
+                    </div>
+                     </tab>
+              </tabset>
               </div>
+
+          </div> -->
+
+
+
+
+<!-- ******** Building ********** -->
+
+<!-- <div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
+<div class="mainCont flexWeatherDir recipesStyle">
+  <div class="row">
+
+    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="insideWeather">
+
+    <div class="flexWeatherTides">
+      <div class="flexBoxerLarge">
+      <div class="col-sm-3">
+        <img width= "100" ng-src="{{catch.image || 'http://placehold.it/100x100'}}"><br><br>
+      </div>
+      <div class="col-sm-9">
+        <strong> Successfully added catch!!! </strong>
+        <ul class="catchSpecs">
+          <li><h5 class="catchTitle">Fish Kind: </h5>{{catch.kind}}</li>
+          <li><h5 class="catchTitle">Fish Weight: </h5>{{catch.weight}}</li>
+          <li><h5 class="catchTitle">Fish Length: </h5>{{catch.length}}</li>
+          <li><h5 class="catchTitle">Location Caught: </h5>{{catch.location}}</li>
+          <li><h5 class="catchTitle">Tackle Used: </h5>{{catch.tackle}}</li>
+          <li><h5 class="catchTitle">Bait Used: </h5>{{catch.bait}}</li>
+          <li><button type="button" name="button" ng-click="deleteCatch(catch._id)">Delete</button></li>
+        </ul>
+      </div>
+    </div>
+    <h4> Suggested Recipes for this Catch! </h4>
+    <div class="flexBoxer" ng-repeat= "recipe in recipes">
+      <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeListImg" src="{{recipe.image_url}}"></a><br><br>
+      <ul class="catchSpecs">
+        <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+        <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+        <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
+        <li><button type="button" name="button" ng-click="deleteRecipe(recipe._id)">Delete From Favorites</button></li>
+      </ul>
+    </div>
+    </div>
+    </div>
+  </div>
+
+    <div class="col-sm-3 myReset flexMap">
+       <div class="homeAside">
+         <div class="profileCard">
+           <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+             <h3>{{user.displayName}}</h3>
+             <h4>Fish Caught: 46</h4>
+             <h4>Species: 10</h4>
+         </div>
+           <div class="weatherDir homeWeather">
+             <div>
+               <div class="myButton">
+                 <a href="#/weather"><h3>Weather</h3></a>
+               </div>
+                 <div class="myButton">
+                   <a href="#/weather/tides"><h3>Tide Charts</h3></a>
+                </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ </div>
+ </div>

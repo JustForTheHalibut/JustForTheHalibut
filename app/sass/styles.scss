@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #e4e7ec;
+  background: #1D1F22;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -372,12 +372,36 @@ a {
 .flexBoxer {
   width: 32.1%;
   float: right;
-  background: lightgreen;
+  background-color: white;
   height: 40rem;
   padding: 1rem;
   box-sizing: border-box;
   transition: 0.4s;
   margin: 5px;
+}
+
+.flexBoxerLarge {
+  width: 90%;
+  float: right;
+  background-color: white;
+  height: 30rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flexBoxerRecipeDetail {
+  width: 100%;
+  float: right;
+  background-color: white;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flexProfile {
@@ -437,6 +461,7 @@ a {
 
 .addCatchStyle {
   .addCatchForm {
+    height: 30rem;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -445,6 +470,20 @@ a {
   h2 {
     text-align: center;
   }
+  input {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .inputTitle {
+    font-size: 2.3rem;
+    font-weight: bold;
+  }
+  li {
+    width: 100%;
+    list-style: none;
+  }
+
 }
 
 /*********************
@@ -453,10 +492,19 @@ a {
 
 .profileStyle {
   .fishListImg {
-    width: 70%;
-    height: 20rem;
+    width: 100%;
+    max-height: 19rem;
     margin-left: auto;
     margin-right: auto;
+  }
+  .profileOptions {
+    height: 5rem;
+    border-top: 2px solid #EAEAEA;
+  }
+  .trash {
+    float: right;
+    font-size: 2.8rem;
+    margin: 1rem;
   }
 }
 
@@ -466,9 +514,26 @@ a {
 
 .recipesStyle {
   .recipeListImg {
-    width: 70%;
+    width: 100%;
+    max-height: 19rem;
     margin-left: auto;
     margin-right: auto;
+  }
+  .recipeOptions {
+    height: 5rem;
+    border-top: 2px solid #EAEAEA;
+  }
+  .trash {
+    float: right;
+    font-size: 2.8rem;
+    margin: 1rem;
+  }
+  .trash:hover {
+    font-size: 3rem;
+    transition: .2s ease-in;
+  }
+  .foodToFork {
+    margin: .2rem;
   }
 }
 

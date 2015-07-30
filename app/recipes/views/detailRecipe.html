@@ -6,8 +6,30 @@
 <div class="col-sm-2 myReset lightBlueTop"></div>
 <div class="col-sm-2 myReset darkBlueTop"></div>
 </div>
-<div class="container mainCont">
-      <div class="row">
+<div class="mainCont flexWeatherDir recipesStyle">
+  <div class="row">
+    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="insideWeather">
+
+    <div class="flexWeatherTides">
+      <div class="flexBoxerRecipeDetail">
+      <div class="col-sm-3">
+        <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 150></a><br><br>
+        <button type="button" name="goBack" ng-click="goBack()">-Go Back-</button>
+
+      </div>
+      <div class="col-sm-9">
+        <ul class="catchSpecs">
+          <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+          <li><h5 class="catchTitle">Ingredients: </h5><div ng-repeat="item in recipe.ingredients"> <p>{{item}}</p></div></li>
+          <li><h5 class="catchTitle">View Recipe: </h5><a href="{{recipe.f2f_url}}">click here</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
         <div class="col-sm-3 myReset flexMap">
            <div class="homeAside">
              <div class="profileCard">
@@ -28,6 +50,9 @@
              </div>
          </div>
      </div>
+
+
+
         <div class="col-sm-9 weatherBar">
           <div ng-controller="TabsController">
           <tabset>

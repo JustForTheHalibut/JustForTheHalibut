@@ -1,33 +1,113 @@
-<div class="container mainCont">
-      <div class="row">
-        <div class="col-sm-3 leftAside">
-          <div class="panel panel-default">
-                <div class="panel-heading">Side Nav</div>
-            <div class="panel-body">
-              <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+<div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
+<div class="mainCont flexWeatherDir recipesStyle">
+  <div class="row">
 
-          <h2>{{user.displayName}}</h2>
-          <nav class="sideNav">
-            <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Achievements</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Weather</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Recipes</a></li>
-          </nav>
-          <div class="panel panel-default noShadow">
-            <div class="panel-body">
-              Fish Sightings
-            </div>
-          </div>
-        </div>
+    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="insideWeather">
+
+    <div class="flexWeatherTides">
+      <div class="flexBoxerLarge">
+      <div class="col-sm-3">
+        <img width= "100" ng-src="{{catch.image || 'http://placehold.it/100x100'}}"><br><br>
       </div>
-        </div>
+      <div class="col-sm-9">
+        <strong> Successfully added catch!!! </strong>
+        <ul class="catchSpecs">
+          <li><h5 class="catchTitle">Fish Kind: </h5>{{catch.kind}}</li>
+          <li><h5 class="catchTitle">Fish Weight: </h5>{{catch.weight}}</li>
+          <li><h5 class="catchTitle">Fish Length: </h5>{{catch.length}}</li>
+          <li><h5 class="catchTitle">Location Caught: </h5>{{catch.location}}</li>
+          <li><h5 class="catchTitle">Tackle Used: </h5>{{catch.tackle}}</li>
+          <li><h5 class="catchTitle">Bait Used: </h5>{{catch.bait}}</li>
+          <li><button type="button" name="button" ng-click="deleteCatch(catch._id)">Delete</button></li>
+        </ul>
+      </div>
+    </div>
+    <h4> Suggested Recipes for this Catch! </h4>
+    <div class="flexBoxer" ng-repeat= "recipe in recipes">
+      <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeListImg" src="{{recipe.image_url}}"></a><br><br>
+      <ul class="catchSpecs">
+        <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+        <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+        <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
+        <li><button type="button" name="button" ng-click="saveRecipe(recipe)">Add To Favorites</button></li>
+      </ul>
+    </div>
+    </div>
+    </div>
+  </div>
+
+    <div class="col-sm-3 myReset flexMap">
+       <div class="homeAside">
+         <div class="profileCard">
+           <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+             <h3>{{user.displayName}}</h3>
+             <h4>Fish Caught: 46</h4>
+             <h4>Species: 10</h4>
+         </div>
+           <div class="weatherDir homeWeather">
+             <div>
+               <div class="myButton">
+                 <a href="#/weather"><h3>Weather</h3></a>
+               </div>
+                 <div class="myButton">
+                   <a href="#/weather/tides"><h3>Tide Charts</h3></a>
+                </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ </div>
+ </div>
+
+
+
+
+
+<!-- <div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
+<div class="mainCont flexWeatherDir recipesStyle">
+  <div class="row">
+    <div class="col-sm-3 myReset flexMap">
+       <div class="homeAside">
+         <div class="profileCard">
+           <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+             <h3>{{user.displayName}}</h3>
+             <h4>Fish Caught: 46</h4>
+             <h4>Species: 10</h4>
+         </div>
+           <div class="weatherDir homeWeather">
+             <div>
+               <div class="myButton">
+                 <a href="#/weather"><h3>Weather</h3></a>
+               </div>
+                 <div class="myButton">
+                   <a href="#/weather/tides"><h3>Tide Charts</h3></a>
+                </div>
+             </div>
+         </div>
+     </div>
+ </div>
         <div class="col-sm-9 weatherBar">
           <div ng-controller="TabsController">
           <tabset>
-            <tab heading="My New Catch"> <!-- ng-click here -->
+            <tab heading="My New Catch"> ng-click here
               <div class="panel panel-default">
                 <div class="panel-body">
-                  <div class="panel panel-default"> <!-- ng-repeat here -->
+                  <div class="panel panel-default"> ng-repeat here
                     <div class="panel-body">
                       <div class="row">
                         <div class="col-sm-3">
@@ -47,7 +127,11 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
+
+
+
+
 <!--                   f2f_url: "http://food2fork.com/view/35144"
 publisher: "Closet Cooking"
 publisher_url: "http://closetcooking.com"
@@ -55,35 +139,40 @@ recipe_id: "35144"
 social_rank: 99.97622895864001
 source_url: "http://www.closetcooking.com/2012/04/blackened-catfish-tacos.html"
 title: "Blackened Catfish Tacos" -->
-                  <h4> Suggested Recipes for this Catch! </h4>
-                  <div class="panel panel-default" ng-repeat= "recipe in recipes"> <!-- Recipe Here -->
-                    <div class="panel-body">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 100></a><br><br>
-                        </div>
-                        <div class="col-sm-9">
-                          <ul class="catchSpecs">
-                            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
-                            <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
-                            <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
-                            <li><button type="button" name="button" ng-click="saveRecipe(recipe)">Add To Favorites</button></li>
-                          </ul>
-                        </div>
+
+
+
+
+                <!--   <h4> Suggested Recipes for this Catch! </h4>
+                <div class="panel panel-default" ng-repeat= "recipe in recipes"> Recipe Here
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 100></a><br><br>
+                      </div>
+                      <div class="col-sm-9">
+                        <ul class="catchSpecs">
+                          <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+                          <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+                          <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
+                          <li><button type="button" name="button" ng-click="saveRecipe(recipe)">Add To Favorites</button></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
-
-
-
-
-
                 </div>
-              </div>
-               </tab>
-        </tabset>
-        </div>
 
-    </div>
-  </div>
-</div>
+
+
+
+
+                                </div>
+                              </div>
+                               </tab>
+                        </tabset>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+                 -->
