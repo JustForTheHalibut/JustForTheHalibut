@@ -50,11 +50,18 @@ angular
       }
     }
 
+    var fishDeleted = function(){
+      catchService.getAllCatch($rootScope.user.displayName).then(function(data){
+        console.log("these are the fish: ", data.data);
+        $rootScope.fish = data.data;
+      });
+    }
+
 
     $scope.addCatch= function(){
       $location.path('/addCatch');
     }
-    
+
     $scope.deleteCatch = function(id){
       var user = $rootScope.user.displayName.toLowerCase();
       catchService.deleteCatch(user, id);
@@ -133,5 +140,6 @@ angular
 
     $scope.getProfile();
 
+    $scope.$on('catch:deleted', fishDeleted);
 
   });

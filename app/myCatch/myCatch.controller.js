@@ -3,7 +3,7 @@
 
   angular
     .module('catch')
-    .controller('catchController', function ($scope,$http, $geolocation, recipesService, catchService, Account, $rootScope, $location, Transloadit) {
+    .controller('catchController', function ($scope, $http, $geolocation, recipesService, catchService, Account, $rootScope, $location, Transloadit) {
 
     if($rootScope.user === undefined){
         Account.getProfile()
@@ -11,10 +11,10 @@
             $scope.user = data;
             $rootScope.user = data;
             console.log($rootScope.user);
-            // var user = 'Ginger';
-            // catchService.deleteCatch(user, '55b3cfaf9c2b1192286e704f');
-            // catchService.deleteCatch(user, '55b3cfaf9c2b1192286e704f');
-            // catchService.deleteCatch(user, '55b26faaec5596d4cd9a1a7c');
+            // var user = 'scott';
+            // catchService.deleteCatch(user, '55b7a4b540c55d1716593e20');
+            // catchService.deleteCatch(user, '55b79e76912935e60faba30b');
+            // catchService.deleteCatch(user, '55b78588498eb74ff709fae1');
             // catchService.deleteCatch(user, '55b1a1876386cd3abb4e82f7');
             // catchService.deleteCatch(user, '55b1a0e9c7848f8eba25aa8a');
             // catchService.deleteCatch(user, '55b50103e7d534593f1e0458');
@@ -69,41 +69,11 @@
         };
       }
 
-
-
-    // $scope.submitCatch = function(input){
-    //   console.log("this is what we need to submit: ", input);
-    //
-    //   var $el = $('#upload-form');
-    //     $el.transloadit({
-    //       wait: true
-    //   });
-    //   var uploader = $el.data('transloadit.uploader');
-    //   console.log("Files: ", uploader);
-    // };
-
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.latitude = position.coords.latitude;
       $scope.longitude = position.coords.longitude;
     });
 
-  // $scope.submitCatch = function(file) {
-  //     file.coord = {
-  //       latitude : $scope.latitude,
-  //       longitude : $scope.longitude
-  //     };
-  //     var now = new moment().format();
-  //     file.submitTime = now;
-  //     console.log("this is the time: ", file.submitTime);
-  //
-  //     file.displayName = $rootScope.user.displayName.toLowerCase();
-  //     console.log("displayName: ", file.displayName);
-  //     catchService.fishData(file);
-  //     catchService.createCatch(file).success(function(data){
-  //       $location.path('/catchAdded');
-  //     });
-  //
-  // }
 
   $scope.submitCatch = function(stuff){
     function getExpiryDate() {
@@ -130,9 +100,19 @@
     }
 
     var file = document.getElementById("my_file").files[0];
-    console.log("this is the image: ", file);
-    console.log("this is stuff: ", stuff);
+
+    stuff.coord = {
+      latitude : $scope.latitude,
+      longitude : $scope.longitude
+    };
+    var now = new moment().format();
+    stuff.submitTime = now;
+
+    stuff.displayName = $rootScope.user.displayName.toLowerCase();
+    catchService.fishData(stuff);
     $rootScope.catch = stuff;
+
+
     Transloadit.upload(file, {
       params: {
         auth: {
@@ -142,7 +122,6 @@
      },
 
       signature: function(callback) {
-        // ideally you would be generating this on the fly somewhere
         // we need to send the expiry date to the server, so that it can generate a correct signature
         return $http.post('/api/signature', {expiry: getExpiryDate() }).success(callback);
         console.log("callback: ", callback)
@@ -165,7 +144,7 @@
         console.log(error);
       }
 
-    });
+    })
   }
 
 
@@ -192,7 +171,14 @@
 
   };
 
+  var watchCallback = function () {
+          catchService.createCatch($rootScope.catch).success(function(data){
+            $location.path('/catchAdded');
+          });
+          };
 
+
+  $scope.$on('catchImage:added', watchCallback);
 
   });
 }());

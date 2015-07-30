@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 angular.module('MyApp', [
 'ngMessages',
 'ngRoute',
@@ -16,7 +15,6 @@ angular.module('MyApp', [
 'chart.js',
 'recipes',
 'geolocation',
-'leaflet-directive',
 'catch'
 ])
 
@@ -36,7 +34,7 @@ $routeProvider
 
 angular
   .module('ng-transloadit', [])
-  .factory('Transloadit', ['$http', '$rootScope', '$timeout', function($http, $rootScope, $timeout) {
+  .factory('Transloadit', ['$http', '$rootScope', '$timeout', function($http, $rootScope, $timeout, catchService) {
     $scope = $rootScope.$new();
 
     var TRANSLOADIT_API = 'https://api2-eu-west-1.transloadit.com/assemblies';
@@ -68,24 +66,25 @@ angular
         }
 
         options.signature(function(sigObject) {
-          console.log("sigValue: ", sigObject.signature);
           // this gets the same expiry that was generated on L144 in myCatch.controller.js
           options.params.auth.expires = sigObject.expires;
           var paramsValue = JSON.stringify(options.params);
-          console.log("paramsValue: ", paramsValue);
 
           var formData = new FormData();
           formData.append('params', paramsValue);
           formData.append('signature', sigObject.signature);
-          console.log("file ", file.name);
           formData.append(file.name, file);
 
 
           xhr.open('POST', TRANSLOADIT_API, true);
           xhr.onload = function(response) {
             var results = angular.fromJson(this.response);
-            options.processing();
-            console.log("results: ", results);
+            options.processing();;
+            $rootScope.catch.image = results.uploads[0].url;
+            if($rootScope.catch.image !== undefined){
+                $rootScope.$broadcast('catchImage:added');
+            }
+
             // check(results.assembly_ssl_url);
           };
 
@@ -115,7 +114,6 @@ angular
       },
 
       _validateOptions: function(options) {
-        console.log(options);
         // mandatory fields
         if (!options.signature) {
           throw new Error('must supply a signature function');
