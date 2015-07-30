@@ -285,12 +285,6 @@ a {
 /*********************
 * Login
 *********************/
-.backVideo {
-  margin-top: -5rem;
-  padding: 0;
-  z-index: -10;
-  position: absolute; }
-
 /*********************
 * FlexBox
 *********************/
@@ -390,47 +384,98 @@ a {
 
 .flexWeather {
   width: 100%;
-  height: 35rem;
+  height: 38rem;
   float: right;
-  background: blue;
+  background: white;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
-          transition: 0.4s; }
+          transition: 0.4s;
+  background-color: #E8E8E8; }
 
 .flexSideWeather {
   width: 100%;
   height: 25rem;
   float: right;
-  background: lightblue;
+  color: white;
+  background-color: #2D3337;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
 
 .flexSideWeatherSmall {
   width: 100%;
-  height: 10rem;
+  height: 13rem;
   float: right;
-  background: maroon;
+  background-color: #F07E40;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
 
+.insideWeather {
+  height: 60rem; }
+
 .flexWeatherOne {
   width: 14.28%;
-  height: 18rem;
+  height: 19rem;
   float: right;
-  background: grey;
+  background-color: white;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
-          transition: 0.4s; }
+          transition: 0.4s;
+  border-right: 2px solid #EAEAEA;
+  padding: 1rem; }
+
+.tenDayWrap {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%; }
+
+.tenInside {
+  width: 100%; }
+
+.myButton {
+  background-color: #0055A8; }
+  .myButton h3 {
+    text-decoration: none;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    color: white; }
+  .myButton a {
+    text-decoration: none; }
+
+.myButton:hover {
+  background-color: #00ABD8;
+  -webkit-transition: 0.3s ease-in;
+          transition: 0.3s ease-in; }
+  .myButton:hover h3 {
+    text-decoration: none;
+    color: white; }
+  .myButton:hover a {
+    text-decoration: none; }
+
+.mainSmall {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*********************
+* Home
+*********************/
+.currentTemp {
+  width: 100%; }
+  .currentTemp h1 {
+    margin-left: 2rem;
+    font-size: 5rem; }
 
 .flexWeatherDir {
   color: black; }
   .flexWeatherDir .icon {
     position: relative;
     left: 30%;
-    height: 10rem;
-    width: 10rem;
+    height: 7rem;
+    width: 7rem;
     margin-top: 2rem; }
   .flexWeatherDir .tides {
     padding: 3rem; }

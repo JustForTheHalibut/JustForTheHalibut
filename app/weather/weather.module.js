@@ -14,6 +14,10 @@
           templateUrl: 'weather/views/hourly.html',
           controller: 'WeatherController',
         })
+        .when('/weather/tides', {
+          templateUrl: 'weather/views/tides.html',
+          controller: 'WeatherController',
+        })
         .when('/weather/tenday', {
           templateUrl: 'weather/views/tenday.html',
           controller: 'WeatherController',

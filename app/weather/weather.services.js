@@ -138,7 +138,9 @@
               return {
                       conditions: obj.conditions,
                       month: obj.date.monthname,
+                      short: obj.date.weekday_short,
                       day: obj.date.day,
+                      icon: obj.icon,
                       iconUrl: obj.icon_url,
                       high: obj.high.fahrenheit,
                       low: obj.low.fahrenheit,
@@ -157,6 +159,7 @@
                 deferred.resolve(cache);
               }else{
                 $http.get('api/tendayforecast/' + latitude + '/' + longitude).then(function (tenDayForecast) {
+                  console.log(tenDayForecast);
                 var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday.slice(0,7);
                 cacheEngine.put('tenDayForecast', mapTenDayForecastToUrls(tenDayForecastArr));
                 deferred.resolve(mapTenDayForecastToUrls(tenDayForecastArr));
