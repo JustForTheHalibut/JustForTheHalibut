@@ -1,15 +1,20 @@
 (function() {
   angular
-        .module('maps')
-        .factory('LeafService', function($http) {
+    .module('maps')
+    .factory('LeafService', function($http) {
 
         var getProfile = function(user){
-        var name = user.toLowerCase();
-        return $http.get('/api/collections/' + name);
+            var name = user.toLowerCase();
+            return $http.get('/api/collections/' + name);
+        }
+
+        var getAllProfiles = function(){
+          return $http.get('/api/allUsers');
         }
 
         return {
-          getProfile: getProfile
+          getProfile: getProfile,
+          getAllProfiles: getAllProfiles
         }
-      })
+  })
 })();

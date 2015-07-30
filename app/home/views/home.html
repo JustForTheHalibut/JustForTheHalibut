@@ -7,34 +7,34 @@
 <div class="col-sm-2 myReset darkBlueTop"></div>
 </div>
 <div class="mainCont">
-<div class="row bump">
-<div class="col-sm-9 myReset flexMap">
-<div ng-controller="MapController">
-<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
-<ui-gmap-marker ng-repeat="marker in markers | filter:search:strict" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.idKey" userName="marker.userName">
-<ui-gmap-window isIconVisibleOnClick="true" coords="marker.coords">
-<p>{{marker.userName}}</p>
-</ui-gmap-window>
-</ui-gmap-marker>
-</ui-gmap-google-map>
-</div>
-</div>
-<div class="col-sm-3 myReset flexMap">
-  <div class="homeAside">
-    <div class="profileCard">
-  <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-  <h3>{{user.displayName}}</h3>
-  <h4>Fish Caught: 46</h4>
-  <h4>Species: 10</h4>
-</div>
-      <div class="weatherDir homeWeather">
-        <div ng-controller="WeatherController">
-          <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
-       </div>
-    </div>
+  <div class="row bump">
+      <div class="col-sm-9 myReset flexMap">
+        <div ng-controller="MapController">
+          <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+            <ui-gmap-marker ng-repeat="marker in markers | filter:search:strict" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.idKey" userName="marker.fish">
+              <ui-gmap-window isIconVisibleOnClick="true" coords="marker.coords">
+                <p>{{marker.fish}}</p>
+              </ui-gmap-window>
+            </ui-gmap-marker>
+          </ui-gmap-google-map>
+        </div>
+      </div>
+      <div class="col-sm-3 myReset flexMap">
+        <div class="homeAside">
+          <div class="profileCard">
+        <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+        <h3>{{user.displayName}}</h3>
+        <h4>Fish Caught: 46</h4>
+        <h4>Species: 10</h4>
+      </div>
+            <div class="weatherDir homeWeather">
+              <div ng-controller="WeatherController">
+                <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
+             </div>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
-</div>
 </div>
 
 
