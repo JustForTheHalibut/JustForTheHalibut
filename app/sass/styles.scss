@@ -545,15 +545,16 @@ a {
 
 }
 
+.city {
+  text-align: center;
+  font-size: 2rem;
+}
 /*********************
 * Weather Style
 *********************/
 
 .weatherView {
-  .city {
-    text-align: center;
-    font-size: 4rem;
-  }
+
   .icon {
     width: 18rem;
     height: 18rem;
@@ -611,6 +612,7 @@ a {
 
 .smalltint {
   color: #B1D2FB;
+  font-size: 2rem;
 }
 
 .humidity {
@@ -621,12 +623,23 @@ a {
   margin-right: 1rem;
 }
 
+.humiditySmall {
+  width: 2rem;
+  height: 2rem;
+}
+
 .feelsLike {
   margin-top: .5rem;
   color: #747577;
   font-weight: bold;
   text-align: center;
 }
+
+.smallIcon {
+  margin-left: 2rem;
+  margin-top: .5rem;
+}
+
 
 /*********************
 * Profile Style
@@ -652,6 +665,18 @@ a {
     font-size: 3rem;
     transition: .2s ease-in;
   }
+}
+
+.iconBox {
+  height: 6rem;
+  width: 6.1rem;
+  background-color: maroon;
+  margin: .5rem;
+}
+
+.sun {
+  font-size: 5rem;
+  padding-right: 2rem;
 }
 
 /*********************

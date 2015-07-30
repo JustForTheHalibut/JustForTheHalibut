@@ -460,12 +460,13 @@ a {
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
 
+.city {
+  text-align: center;
+  font-size: 2rem; }
+
 /*********************
 * Weather Style
 *********************/
-.weatherView .city {
-  text-align: center;
-  font-size: 4rem; }
 .weatherView .icon {
   width: 18rem;
   height: 18rem;
@@ -511,7 +512,8 @@ a {
   margin-right: 1rem; }
 
 .smalltint {
-  color: #B1D2FB; }
+  color: #B1D2FB;
+  font-size: 2rem; }
 
 .humidity {
   width: 3rem;
@@ -520,11 +522,19 @@ a {
   margin-left: 1rem;
   margin-right: 1rem; }
 
+.humiditySmall {
+  width: 2rem;
+  height: 2rem; }
+
 .feelsLike {
   margin-top: .5rem;
   color: #747577;
   font-weight: bold;
   text-align: center; }
+
+.smallIcon {
+  margin-left: 2rem;
+  margin-top: .5rem; }
 
 /*********************
 * Profile Style
@@ -545,6 +555,16 @@ a {
   font-size: 3rem;
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
+
+.iconBox {
+  height: 6rem;
+  width: 6.1rem;
+  background-color: maroon;
+  margin: .5rem; }
+
+.sun {
+  font-size: 5rem;
+  padding-right: 2rem; }
 
 /*********************
 * Recipes Style
