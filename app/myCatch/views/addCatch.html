@@ -138,7 +138,7 @@
 
 <!-- ******** Building ********** -->
 
-<!-- <div>
+ <div>
 <div class="col-sm-2 myReset redTop"></div>
 <div class="col-sm-2 myReset orangeTop"></div>
 <div class="col-sm-2 myReset yellowTop"></div>
@@ -146,18 +146,17 @@
 <div class="col-sm-2 myReset lightBlueTop"></div>
 <div class="col-sm-2 myReset darkBlueTop"></div>
 </div>
-<div class="mainCont flexWeatherDir recipesStyle">
+<div class="mainCont flexWeatherDir addCatchStyle">
   <div class="row">
 
     <div class="col-sm-9 myReset flexWeatherDir flexMap">
       <div class="insideWeather">
 
-    <div class="flexWeatherTides">
       <div class="flexBoxerLarge">
-      <div class="col-sm-3">
-        <img width= "100" ng-src="{{catch.image || 'http://placehold.it/100x100'}}"><br><br>
+      <div class="col-sm-4 myReset">
+        <img class="detailFish" ng-src="http://www.hammondfishing.com/james%20howard%20w%2045lb.jpg"><br><br>
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-8">
         <strong> Successfully added catch!!! </strong>
         <ul class="catchSpecs">
           <li><h5 class="catchTitle">Fish Kind: </h5>{{catch.kind}}</li>
@@ -166,11 +165,11 @@
           <li><h5 class="catchTitle">Location Caught: </h5>{{catch.location}}</li>
           <li><h5 class="catchTitle">Tackle Used: </h5>{{catch.tackle}}</li>
           <li><h5 class="catchTitle">Bait Used: </h5>{{catch.bait}}</li>
-          <li><button type="button" name="button" ng-click="deleteCatch(catch._id)">Delete</button></li>
+          <span name="button" ng-click="deleteCatch(catch._id)"><i class="fa fa-trash-o trash"></i></span>
         </ul>
       </div>
     </div>
-    <h4> Suggested Recipes for this Catch! </h4>
+    <h3 class="suggested"> Suggested Recipes for this Catch! </h3>
     <div class="flexBoxer" ng-repeat= "recipe in recipes">
       <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeListImg" src="{{recipe.image_url}}"></a><br><br>
       <ul class="catchSpecs">
@@ -179,7 +178,6 @@
         <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
         <li><button type="button" name="button" ng-click="deleteRecipe(recipe._id)">Delete From Favorites</button></li>
       </ul>
-    </div>
     </div>
     </div>
   </div>

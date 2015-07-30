@@ -315,16 +315,17 @@ a {
   margin: 5px; }
 
 .flexBoxerLarge {
-  width: 90%;
+  width: 100%;
   float: right;
   background-color: white;
-  height: 30rem;
+  height: 29rem;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 1rem; }
 
 .flexBoxerRecipeDetail {
   width: 100%;
@@ -391,12 +392,20 @@ a {
 /*********************
 * Add Catch Style
 *********************/
+.addCatchStyle .recipeListImg {
+  width: 100%;
+  max-height: 19rem;
+  margin-left: auto;
+  margin-right: auto; }
 .addCatchStyle .addCatchForm {
   height: 30rem;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   background-color: white; }
+.addCatchStyle .recipeOptions {
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }
 .addCatchStyle h2 {
   text-align: center; }
 .addCatchStyle input {
@@ -409,6 +418,32 @@ a {
 .addCatchStyle li {
   width: 100%;
   list-style: none; }
+.addCatchStyle .plus {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.addCatchStyle .plus:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+.addCatchStyle .suggested {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #DF1231; }
+.addCatchStyle .detailFish {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle; }
+.addCatchStyle .trash {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.addCatchStyle .trash:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
 
 /*********************
 * Profile Style
@@ -425,6 +460,10 @@ a {
   float: right;
   font-size: 2.8rem;
   margin: 1rem; }
+.profileStyle .trash:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
 
 /*********************
 * Recipes Style
