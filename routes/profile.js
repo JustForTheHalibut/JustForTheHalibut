@@ -14,8 +14,8 @@ var crypto = require('crypto');
 router.route('/signature')
   .post(function (req, res) {
 
-        var authKey    = TRANSLOADIT_KEY;
-        var authSecret = TRANSLOADIT_SECRET;
+        var authKey    = config.TRANSLOADIT_KEY;
+        var authSecret = config.TRANSLOADIT_SECRET;
 
         var params = {
           'auth': {
