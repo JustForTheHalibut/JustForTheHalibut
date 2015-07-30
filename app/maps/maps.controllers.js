@@ -23,28 +23,41 @@
       $scope.markers = [];
 
       $scope.createMarker = function(location) {
+        console.log("location: ", location);
         var marker = {
             idKey: location._id,
-            coords: {
-            latitude: location.coord.latitude,
-            longitude: location.coord.longitude
+              coords: {
+                latitude: location.coord.latitude,
+                longitude: location.coord.longitude
             },
             userName: location.displayName,
-            };
+            fish: location.kind
+        };
             return marker;
       };
 
       $scope.createMarkers = function(userData) {
-        for (var i = 0; i < userData.data.length; i++) {
-        var marker = $scope.createMarker(userData.data[i]);
+        for (var i = 0; i < userData.length; i++) {
+        var marker = $scope.createMarker(userData[i]);
             $scope.markers.push(marker);
             }
-            console.log($scope.markers);
       };
 
-      LeafService.getProfile('bob').then(function(userData){
-        $scope.createMarkers(userData);
-      })
+      // LeafService.getProfile('scott').then(function(userData){
+      //   $scope.createMarkers(userData);
+      // })
+
+      LeafService.getAllProfiles().then(function(data){
+        var markers= _.map(data.data, function(obj){
+          LeafService.getProfile(obj.displayName).then(function(data){
+           if(data.data !== undefined){
+             if(data.data.length !== 0){
+               $scope.createMarkers(data.data);
+             }
+           }
+            })
+          })
+        })
 
       uiGmapGoogleMapApi.then(function(maps) {
 
