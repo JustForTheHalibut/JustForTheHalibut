@@ -3,7 +3,7 @@
 
   angular
     .module('catch')
-    .controller('catchController', function ($scope,$http, $geolocation, recipesService, catchService, Account, $rootScope, $location, Transloadit) {
+    .controller('catchController', function ($scope, $http, $geolocation, recipesService, catchService, Account, $rootScope, $location, Transloadit) {
 
     if($rootScope.user === undefined){
         Account.getProfile()
@@ -11,10 +11,10 @@
             $scope.user = data;
             $rootScope.user = data;
             console.log($rootScope.user);
-            // var user = 'Ginger';
-            // catchService.deleteCatch(user, '55b3cfaf9c2b1192286e704f');
-            // catchService.deleteCatch(user, '55b3cfaf9c2b1192286e704f');
-            // catchService.deleteCatch(user, '55b26faaec5596d4cd9a1a7c');
+            // var user = 'scott';
+            // catchService.deleteCatch(user, '55b7a4b540c55d1716593e20');
+            // catchService.deleteCatch(user, '55b79e76912935e60faba30b');
+            // catchService.deleteCatch(user, '55b78588498eb74ff709fae1');
             // catchService.deleteCatch(user, '55b1a1876386cd3abb4e82f7');
             // catchService.deleteCatch(user, '55b1a0e9c7848f8eba25aa8a');
             // catchService.deleteCatch(user, '55b50103e7d534593f1e0458');
@@ -69,86 +69,82 @@
         };
       }
 
-
-
-    // $scope.submitCatch = function(input){
-    //   console.log("this is what we need to submit: ", input);
-    //
-    //   var $el = $('#upload-form');
-    //     $el.transloadit({
-    //       wait: true
-    //   });
-    //   var uploader = $el.data('transloadit.uploader');
-    //   console.log("Files: ", uploader);
-    // };
-
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.latitude = position.coords.latitude;
       $scope.longitude = position.coords.longitude;
     });
 
-  $scope.submitCatch = function(file) {
-      file.coord = {
-        latitude : $scope.latitude,
-        longitude : $scope.longitude
-      };
-      var now = new moment().format();
-      file.submitTime = now;
-      console.log("this is the time: ", file.submitTime);
 
-      file.displayName = $rootScope.user.displayName.toLowerCase();
-      console.log("displayName: ", file.displayName);
-      catchService.fishData(file);
-      catchService.createCatch(file).success(function(data){
-        $location.path('/catchAdded');
-      });
+  $scope.submitCatch = function(stuff){
+    function getExpiryDate() {
+      var date = new Date();
+      date.setHours(date.getHours() + 12);
+
+      var year = date.getUTCFullYear();
+      var month = zeroFill(date.getUTCMonth() + 1, 2);
+      var day = zeroFill(date.getUTCDate(), 2);
+      var hours = zeroFill(date.getUTCHours(), 2);
+      var minutes = zeroFill(date.getUTCMinutes(), 2);
+      var seconds = zeroFill(date.getUTCSeconds(), 2);
+
+      return year + '/' + month + '/' + day + ' ' + hours + ':' + minutes + ':' + seconds + '+00:00';
+    }
+
+    function zeroFill(number, width) {
+      width -= number.toString().length;
+      if (width > 0) {
+        return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;
+      }
+
+      return number + ""; // always return a string
+    }
+
+    var file = document.getElementById("my_file").files[0];
+
+    stuff.coord = {
+      latitude : $scope.latitude,
+      longitude : $scope.longitude
+    };
+    var now = new moment().format();
+    stuff.submitTime = now;
+
+    stuff.displayName = $rootScope.user.displayName.toLowerCase();
+    catchService.fishData(stuff);
+    $rootScope.catch = stuff;
 
 
+    Transloadit.upload(file, {
+      params: {
+        auth: {
+          key: 'fc73a980313e11e58e2a1d428cc06c07'
+        },
+        template_id: '4c370e3035fe11e58282c51c26a58cc0'
+     },
 
+      signature: function(callback) {
+        // we need to send the expiry date to the server, so that it can generate a correct signature
+        return $http.post('/api/signature', {expiry: getExpiryDate() }).success(callback);
+        console.log("callback: ", callback)
+      },
 
+      progress: function(loaded, total) {
+        console.log(loaded + 'bytes loaded');
+        console.log(total + ' bytes total');
+      },
 
-    // Transloadit.upload(file, {
-    //   params: {
-    //     auth: {
-    //       key: 'fc73a980313e11e58e2a1d428cc06c07'
-    //     },
-    //
-    //     steps: {
-    //      //Resizes the uploaded image to 100x100 px
-    //      resize_to_100: {
-    //        robot: "/image/resize",
-    //        use: ":original",
-    //        width: 100,
-    //        height: 100,
-    //        debug: true
-    //      },
-    //    }
-    //  },
-    //
-    //   signature: function(callback) {
-    //     // ideally you would be generating this on the fly somewhere
-    //     $http.get('/api/signature').success(callback);
-    //   },
-    //
-    //   progress: function(loaded, total) {
-    //     console.log(loaded + 'bytes loaded');
-    //     console.log(total + ' bytes total');
-    //   },
-    //
-    //   processing: function() {
-    //     console.log('done uploading, started processing');
-    //   },
-    //
-    //   uploaded: function(assemblyJson) {
-    //     console.log(assemblyJson);
-    //   },
-    //
-    //   error: function(error) {
-    //     console.log(error);
-    //   }
-    //
-    //
-    // });
+      processing: function() {
+        console.log('done uploading, started processing');
+      },
+
+      uploaded: function(assemblyJson) {
+        console.log("here it is: ", assemblyJson);
+      },
+
+      error: function(error) {
+        console.log(error);
+      }
+
+    })
   }
 
 
@@ -158,7 +154,31 @@
     $location.path("/profile/main");
   }
 
+  $scope.saveRecipe = function(recipe){
+    console.log("trying to save recipe");
+      var user =  $rootScope.user.displayName;
+      var recipe2save= {
+        f2f_url : recipe.f2f_url,
+        image_url : recipe.image_url,
+        recipe_id : recipe.recipe_id,
+        title : recipe.title
+      }
+      console.log("trying to save recipe");
+      recipesService.addToFavs(user, recipe2save).then(function(returned){
+        console.log("returned");
+      })
 
+
+  };
+
+  var watchCallback = function () {
+          catchService.createCatch($rootScope.catch).success(function(data){
+            $location.path('/catchAdded');
+          });
+          };
+
+
+  $scope.$on('catchImage:added', watchCallback);
 
   });
 }());

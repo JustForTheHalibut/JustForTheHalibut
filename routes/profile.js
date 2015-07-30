@@ -4,6 +4,7 @@ var User = require('../entities/User');
 var config = require('../config');
 var request = require('request');
 var ensureAuthenticated = require('./helpers').ensureAuthenticated;
+var crypto = require('crypto');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +12,30 @@ var ensureAuthenticated = require('./helpers').ensureAuthenticated;
  |--------------------------------------------------------------------------
  */
 router.route('/signature')
-  .get(function (req, res) {
-    res.send("Hello Tiffany");
+  .post(function (req, res) {
+
+        var authKey    = 'fc73a980313e11e58e2a1d428cc06c07';
+        var authSecret = '3f748c71a3f6530924e5f60b5269f44c8ec19bd2';
+
+        var params = {
+          'auth': {
+            'key': authKey,
+            'expires': req.body.expiry
+          },
+          template_id: '4c370e3035fe11e58282c51c26a58cc0'
+          // your other params like template_id, notify_url, etc.
+        };
+        var paramsString = JSON.stringify(params);
+
+        var signature = crypto
+            .createHmac('sha1', authSecret)
+            .update(new Buffer(paramsString, 'utf-8'))
+            .digest('hex');
+
+      console.log(signature);
+      res.send({signature: signature, expires: req.body.expiry});
   });
+
  router.route('/allUsers')
   .get(function (req, res) {
     User.find({}, function (err, users) {
@@ -70,7 +92,7 @@ router.route('/weather/:latitude/:longitude')
 
 router.route('/astronomy/:latitude/:longitude')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/7ec67d9215b3669e/astronomy/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+      var url = 'http://api.wunderground.com/api/4cafbeade14505cc/astronomy/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
       request.get({url: url}, function(err, response, data) {
         res.send(JSON.parse(response.body));
       })
@@ -78,7 +100,7 @@ router.route('/astronomy/:latitude/:longitude')
 
 router.route('/hourly/:latitude/:longitude')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/7ec67d9215b3669e/hourly/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+      var url = 'http://api.wunderground.com/api/4cafbeade14505cc/hourly/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
         request.get({url: url}, function(err, response, data) {
           res.send(JSON.parse(response.body));
         })
@@ -86,7 +108,7 @@ router.route('/hourly/:latitude/:longitude')
 
 router.route('/forecast/:latitude/:longitude')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/7ec67d9215b3669eforecast/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+      var url = 'http://api.wunderground.com/api/4cafbeade14505cc/forecast/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
         request.get({url: url}, function(err, response, data) {
           res.send(JSON.parse(response.body));
         })
@@ -94,7 +116,7 @@ router.route('/forecast/:latitude/:longitude')
 
 router.route('/tendayforecast/:latitude/:longitude')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/7ec67d9215b3669e/forecast10day/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+      var url = 'http://api.wunderground.com/api/4cafbeade14505cc/forecast10day/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
         request.get({url: url}, function(err, response, data) {
           res.send(JSON.parse(response.body));
         })
@@ -102,7 +124,7 @@ router.route('/tendayforecast/:latitude/:longitude')
 
 router.route('/alerts/:latitude/:longitude')
     .get(function(req,res,next) {
-      var url = 'http://api.wunderground.com/api/7ec67d9215b3669e/alerts/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
+      var url = 'http://api.wunderground.com/api/4cafbeade14505cc/alerts/q/' + req.params.latitude + ',' + req.params.longitude + '.json'
         request.get({url: url}, function(err, response, data) {
           res.send(JSON.parse(response.body));
         })
@@ -110,7 +132,7 @@ router.route('/alerts/:latitude/:longitude')
 
 router.route('/tide')
   .get(function(req,res,next) {
-    var url = 'http://api.wunderground.com/api/7ec67d9215b3669e/tide/q/29464.json'
+    var url = 'http://api.wunderground.com/api/4cafbeade14505cc/rawtide/q/29464.json'
       request.get({url: url}, function(err, response, data) {
         res.send(JSON.parse(response.body));
       })
