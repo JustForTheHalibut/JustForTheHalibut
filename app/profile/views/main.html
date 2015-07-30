@@ -1,64 +1,94 @@
-<div class="container mainCont">
-      <div class="row">
-        <div class="col-sm-3 leftAside">
-          <div class="panel panel-default">
-                <div class="panel-heading">Side Nav</div>
-            <div class="panel-body">
-              <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+<div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
+<div class="mainCont flexWeatherDir profileStyle">
+  <div class="row">
+    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="insideWeather">
 
-          <h2>{{user.displayName}}</h2>
-          <nav class="sideNav">
-            <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Achievements</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Weather</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Recipes</a></li>
-          </nav>
-          <div class="panel panel-default noShadow">
+        <div class="flexRower">
+          <div class="flexBoxer" ng-repeat= "one in fish">
+            <div>
+          <img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}">
+          <ul class="catchSpecs">
+            <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
+            <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
+            <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
+            <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>
+          </ul>
+        </div>
+          <div class="profileOptions">
+            <span type="button" name="button" ng-click="deleteCatch(one._id)"><i class="fa fa-trash-o trash"></i></span>
+       </div>
+           </div>
+           </div>
+    </div>
+  </div>
+        <div class="col-sm-3 myReset flexMap">
+           <div class="homeAside">
+             <div class="profileCard">
+               <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+                 <h3>{{user.displayName}}</h3>
+                 <h4>Fish Caught: 46</h4>
+                 <h4>Species: 10</h4>
+             </div>
+               <div class="weatherDir homeWeather">
+                 <div>
+                   <div class="myButton">
+                     <a href="#/addCatch"><h3>Add Catch</h3></a>
+                   </div>
+                   <div class="myButton">
+                     <a href="#/weather"><h3>Weather</h3></a>
+                   </div>
+                     <div class="myButton">
+                       <a href="#/weather/tides"><h3>Tide Charts</h3></a>
+                    </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="col-sm-9 weatherBar">
+  <div ng-controller="TabsController">
+  <tabset>
+    <tab heading="Fish Caught"> ng-click here
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <a class="btn btn-primary" href="#/addCatch">Add Catch</a><br><br>
+          <div class="panel panel-default" ng-repeat= "one in fish"> ng-repeat here
             <div class="panel-body">
-              Fish Sightings
+              <div class="row">
+                <div class="col-sm-3">
+                  <img width= "100" ng-src="{{one.image || 'http://placehold.it/100x100'}}"><br><br>
+                </div>
+                <div class="col-sm-9">
+                  <ul class="catchSpecs">
+                    <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
+                    <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
+                    <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
+                    <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>
+                    <li><h5 class="catchTitle">Tackle Used: </h5>{{one.tackle}}</li>
+                    <li><h5 class="catchTitle">Bait Used: </h5>{{one.bait}}</li>
+                    <li><button type="button" name="button" ng-click="deleteCatch(one._id)">Delete</button></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-        </div>
-        <div class="col-sm-9 weatherBar">
-          <div ng-controller="TabsController">
-          <tabset>
-            <tab heading="Fish Caught"> <!-- ng-click here -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <a class="btn btn-primary" href="#/addCatch">Add Catch</a><br><br>
-                  <div class="panel panel-default" ng-repeat= "one in fish"> <!-- ng-repeat here -->
-                    <div class="panel-body">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <img width= "100" ng-src="{{one.image || 'http://placehold.it/100x100'}}"><br><br>
-                        </div>
-                        <div class="col-sm-9">
-                          <ul class="catchSpecs">
-                            <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
-                            <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
-                            <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
-                            <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>
-                            <li><h5 class="catchTitle">Tackle Used: </h5>{{one.tackle}}</li>
-                            <li><h5 class="catchTitle">Bait Used: </h5>{{one.bait}}</li>
-                            <li><button type="button" name="button" ng-click="deleteCatch(one._id)">Delete</button></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-
-                </div>
-              </div>
-               </tab>
-        </tabset>
-        </div>
-
-    </div>
-  </div>
+       </tab>
+</tabset>
 </div>
+
+</div> -->

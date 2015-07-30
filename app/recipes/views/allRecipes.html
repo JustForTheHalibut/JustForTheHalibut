@@ -1,60 +1,54 @@
-<div class="container mainCont">
-      <div class="row">
-        <div class="col-sm-3 leftAside">
-          <div class="panel panel-default">
-                <div class="panel-heading">Side Nav</div>
-            <div class="panel-body">
-              <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
-
-          <h2>{{user.displayName}}</h2>
-          <nav class="sideNav">
-            <li><a class="btn btn-primary" href="#/profile/main">Profile</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Achievements</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Weather</a></li>
-            <li><a class="btn btn-primary" href="#/profile/main">Recipes</a></li>
-          </nav>
-          <div class="panel panel-default noShadow">
-            <div class="panel-body">
-              Fish Sightings
+<div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
+<div class="mainCont flexWeatherDir recipesStyle">
+  <div class="row">
+    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="insideWeather">
+        <div class="flexRower">
+          <div class="flexBoxer" ng-repeat= "recipe in Favorites">
+            <div>
+              <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeListImg" src="{{recipe.image_url}}"></a><br><br>
+                <ul class="catchSpecs">
+                  <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+                  <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+               </ul>
             </div>
-          </div>
+              <div class="recipeOptions">
+                <span class=""><a href="{{recipe.f2f_url}}"><img class="foodToFork" src="http://food2fork.com/F2F/static/images/webLogo.png" alt="" /></a></span>
+                <span type="button" name="button" ng-click="deleteRecipe(recipe._id)"><i class="fa fa-trash-o trash"></i></span>
+             </div>
+           </div>
         </div>
       </div>
-        </div>
-        <div class="col-sm-9 weatherBar">
-          <div ng-controller="TabsController">
-          <tabset>
-            <tab heading="Recipes"> <!-- ng-click here -->
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <div class="panel panel-default" ng-repeat= "recipe in Favorites"> <!-- Recipe Here -->
-                    <div class="panel-body">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 100></a><br><br>
-                        </div>
-                        <div class="col-sm-9">
-                          <ul class="catchSpecs">
-                            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
-                            <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
-                            <li><h5 class="catchTitle">View From Provide: </h5><a href="{{recipe.f2f_url}}">Food2Fork</a></li>
-                            <li><button type="button" name="button" ng-click="deleteRecipe(recipe._id)">Delete From Favorites</button></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
-
-                </div>
-              </div>
-               </tab>
-        </tabset>
-        </div>
-
     </div>
-  </div>
+      <div class="col-sm-3 myReset flexMap">
+        <div class="homeAside">
+          <div class="profileCard">
+            <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+              <h3>{{user.displayName}}</h3>
+              <h4>Fish Caught: 46</h4>
+              <h4>Species: 10</h4>
+           </div>
+             <div class="weatherDir homeWeather">
+               <div>
+                 <div class="myButton">
+                    <a href="#/profile/main"><h3>Profile</h3></a>
+                 </div>
+                  <div class="myButton">
+                     <a href="#/viewRecipes"><h3>Recipes</h3></a>
+                  </div>
+                    <div class="myButton">
+                      <a href="#/weather"><h3>Weather</h3></a>
+                    </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
 </div>

@@ -13,11 +13,8 @@
                     fahrenheit: currentConditions.data.current_observation.temp_f,
                     feelsLike: currentConditions.data.current_observation.feelslike_f,
                     icon: currentConditions.data.current_observation.icon,
-                    iconUrl: currentConditions.data.current_observation.icon_url,
                     city: currentConditions.data.current_observation.display_location.city,
-                    state: currentConditions.data.current_observation.display_location.state,
                     description: currentConditions.data.current_observation.weather,
-                    windGust: currentConditions.data.current_observation.wind_gust_mph,
                     wind: currentConditions.data.current_observation.wind_mph,
                     windDirection: currentConditions.data.current_observation.wind_dir,
                     visability: currentConditions.data.current_observation.visibility_mi,
@@ -138,7 +135,9 @@
               return {
                       conditions: obj.conditions,
                       month: obj.date.monthname,
+                      short: obj.date.weekday_short,
                       day: obj.date.day,
+                      icon: obj.icon,
                       iconUrl: obj.icon_url,
                       high: obj.high.fahrenheit,
                       low: obj.low.fahrenheit,
@@ -157,6 +156,7 @@
                 deferred.resolve(cache);
               }else{
                 $http.get('api/tendayforecast/' + latitude + '/' + longitude).then(function (tenDayForecast) {
+                  console.log(tenDayForecast);
                 var tenDayForecastArr = tenDayForecast.data.forecast.simpleforecast.forecastday.slice(0,7);
                 cacheEngine.put('tenDayForecast', mapTenDayForecastToUrls(tenDayForecastArr));
                 deferred.resolve(mapTenDayForecastToUrls(tenDayForecastArr));
@@ -198,7 +198,7 @@
 
            var getTide = function(){
                return $http.get('api/tide').then(function (tide) {
-                //  console.log("tide", tide)
+                 console.log("tide", tide)
                  var tideArr = tide.data.tide.tideSummary;
                  return mapTideToUrls(tideArr);
                  })

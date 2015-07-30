@@ -1,0 +1,44 @@
+<div>
+<div class="col-sm-2 myReset redTop"></div>
+<div class="col-sm-2 myReset orangeTop"></div>
+<div class="col-sm-2 myReset yellowTop"></div>
+<div class="col-sm-2 myReset greenTop"></div>
+<div class="col-sm-2 myReset lightBlueTop"></div>
+<div class="col-sm-2 myReset darkBlueTop"></div>
+</div>
+<div class="mainCont flexWeatherDir">
+  <div class="row">
+    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="insideWeather">
+
+    <div class="flexWeatherTides">
+      <div class="tides">
+      <h4>Tide Charts</h4>
+        <canvas id="line" class="chart chart-line" data="data" labels="labels" series="series"></canvas>
+      </div>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-3 myReset flexMap">
+      <div class="homeAside">
+        <div class="profileCard">
+      <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
+      <h3>{{user.displayName}}</h3>
+      <h4>Fish Caught: 46</h4>
+      <h4>Species: 10</h4>
+    </div>
+          <div class="weatherDir homeWeather">
+            <div>
+              <div class="myButton">
+                <a href="#/weather"><h3>Weather</h3></a>
+              </div>
+              <div class="myButton">
+<a href="#/weather/tides"><h3>Tide Charts</h3></a>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>

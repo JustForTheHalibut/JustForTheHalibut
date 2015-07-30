@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #e4e7ec; }
+  background: #1D1F22; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
@@ -285,12 +285,6 @@ a {
 /*********************
 * Login
 *********************/
-.backVideo {
-  margin-top: -5rem;
-  padding: 0;
-  z-index: -10;
-  position: absolute; }
-
 /*********************
 * FlexBox
 *********************/
@@ -312,13 +306,38 @@ a {
 .flexBoxer {
   width: 32.1%;
   float: right;
-  background: lightgreen;
-  height: 20rem;
+  background-color: white;
+  height: 40rem;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
   margin: 5px; }
+
+.flexBoxerLarge {
+  width: 100%;
+  float: right;
+  background-color: white;
+  height: 29rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem; }
+
+.flexBoxerRecipeDetail {
+  width: 100%;
+  float: right;
+  background-color: white;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto; }
 
 .flexProfile {
   width: 100%;
@@ -371,6 +390,205 @@ a {
           transition: 0.4s; }
 
 /*********************
+* Add Catch Style
+*********************/
+.addCatchStyle .recipeListImg {
+  width: 100%;
+  max-height: 19rem;
+  margin-left: auto;
+  margin-right: auto; }
+.addCatchStyle .addCatchForm {
+  height: 36rem;
+  width: 80%;
+  margin-top: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white; }
+.addCatchStyle .fishSubmit {
+  margin: 2rem;
+  background-color: #0057A2;
+  color: white;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto; }
+.addCatchStyle .fishSubmit:hover {
+  background-color: #00ABD8;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+.addCatchStyle .recipeOptions {
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }
+.addCatchStyle h2 {
+  padding: 1rem;
+  text-align: center;
+  background-color: #559E55;
+  color: white; }
+.addCatchStyle input {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+.addCatchStyle .inputTitle {
+  font-size: 2.3rem;
+  font-weight: bold; }
+.addCatchStyle li {
+  width: 100%;
+  list-style: none; }
+.addCatchStyle .plus {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.addCatchStyle .plus:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+.addCatchStyle .suggested {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #DF1231; }
+.addCatchStyle .detailFish {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle; }
+.addCatchStyle .trash {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.addCatchStyle .trash:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+
+.city {
+  text-align: center;
+  font-size: 2rem; }
+
+/*********************
+* Weather Style
+*********************/
+.weatherView .icon {
+  width: 18rem;
+  height: 18rem;
+  position: relative;
+  left: 35%; }
+
+.degrees {
+  font-size: 2rem;
+  vertical-align: top; }
+
+.tempNow {
+  padding-left: 8rem;
+  margin-top: 9rem;
+  vertical-align: middle; }
+
+.tenDayDir h3 {
+  margin-left: 2.8rem; }
+.tenDayDir .tenIcon {
+  margin-left: 2.8rem; }
+.tenDayDir .tempDay {
+  margin-left: 3rem;
+  font-size: 3rem; }
+.tenDayDir .degreesTen {
+  vertical-align: top;
+  font-size: 1.3rem; }
+
+.orangeWeather {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .orangeWeather h4 {
+    color: white;
+    font-size: 4rem; }
+  .orangeWeather .value {
+    margin-top: 3rem; }
+
+.tint {
+  color: white;
+  font-size: 4rem;
+  margin-left: 3.5rem;
+  margin-top: 4.3rem;
+  margin-right: 1rem; }
+
+.smalltint {
+  color: #B1D2FB;
+  font-size: 2rem; }
+
+.humidity {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 4.8rem;
+  margin-left: 1rem;
+  margin-right: 1rem; }
+
+.humiditySmall {
+  width: 2rem;
+  height: 2rem; }
+
+.feelsLike {
+  margin-top: .5rem;
+  color: #747577;
+  font-weight: bold;
+  text-align: center; }
+
+.smallIcon {
+  margin-left: 2rem;
+  margin-top: .5rem; }
+
+/*********************
+* Profile Style
+*********************/
+.profileStyle .fishListImg {
+  width: 100%;
+  max-height: 19rem;
+  margin-left: auto;
+  margin-right: auto; }
+.profileStyle .profileOptions {
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }
+.profileStyle .trash {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.profileStyle .trash:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+
+.iconBox {
+  height: 6rem;
+  width: 6.1rem;
+  background-color: maroon;
+  margin: .5rem; }
+
+.sun {
+  font-size: 5rem;
+  padding-right: 2rem; }
+
+/*********************
+* Recipes Style
+*********************/
+.recipesStyle .recipeListImg {
+  width: 100%;
+  max-height: 19rem;
+  margin-left: auto;
+  margin-right: auto; }
+.recipesStyle .recipeOptions {
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }
+.recipesStyle .trash {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+.recipesStyle .trash:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+.recipesStyle .foodToFork {
+  margin: .2rem; }
+
+/*********************
 * FlexBox Weather
 *********************/
 .myReset {
@@ -390,48 +608,93 @@ a {
 
 .flexWeather {
   width: 100%;
-  height: 35rem;
+  height: 38rem;
   float: right;
-  background: blue;
+  background: white;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
-          transition: 0.4s; }
+          transition: 0.4s;
+  background-color: #E8E8E8; }
 
 .flexSideWeather {
   width: 100%;
   height: 25rem;
   float: right;
-  background: lightblue;
+  color: white;
+  background-color: #2D3337;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
 
 .flexSideWeatherSmall {
   width: 100%;
-  height: 10rem;
+  height: 13rem;
   float: right;
-  background: maroon;
+  background-color: #F07E40;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
+
+.insideWeather {
+  height: 60rem; }
 
 .flexWeatherOne {
   width: 14.28%;
-  height: 18rem;
+  height: 19rem;
   float: right;
-  background: grey;
+  background-color: white;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
-          transition: 0.4s; }
+          transition: 0.4s;
+  border-right: 2px solid #EAEAEA;
+  padding: 1rem; }
+
+.tenDayWrap {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%; }
+
+.tenInside {
+  width: 100%; }
+
+.myButton {
+  background-color: #0055A8; }
+  .myButton h3 {
+    text-decoration: none;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    color: white; }
+  .myButton a {
+    text-decoration: none; }
+
+.myButton:hover {
+  background-color: #00ABD8;
+  -webkit-transition: 0.3s ease-in;
+          transition: 0.3s ease-in; }
+  .myButton:hover h3 {
+    text-decoration: none;
+    color: white; }
+  .myButton:hover a {
+    text-decoration: none; }
+
+.mainSmall {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*********************
+* Home
+*********************/
+.currentTemp {
+  width: 100%; }
+  .currentTemp h1 {
+    margin-left: 2rem;
+    font-size: 5rem; }
 
 .flexWeatherDir {
   color: black; }
-  .flexWeatherDir .icon {
-    position: relative;
-    left: 30%;
-    height: 10rem;
-    width: 10rem;
-    margin-top: 2rem; }
   .flexWeatherDir .tides {
     padding: 3rem; }
 
@@ -623,15 +886,6 @@ a {
     color: #639BB4; }
   .weatherDir .testingBox {
     color: black; }
-  .weatherDir .feelsLike {
-    margin-top: .5rem;
-    color: #747577;
-    font-weight: bold;
-    text-align: center;
-    padding: 0rem 1rem; }
-  .weatherDir .degrees {
-    font-size: 1.5rem;
-    vertical-align: top; }
   .weatherDir .degreesF {
     font-size: 2rem;
     vertical-align: top;
@@ -640,9 +894,6 @@ a {
   .weatherDir .degreesTiny {
     font-size: .5rem;
     vertical-align: top; }
-  .weatherDir .weatherDets {
-    margin: 0rem;
-    padding: 1rem; }
   .weatherDir .value {
     color: black;
     font-size: 1.5rem; }
@@ -676,17 +927,9 @@ a {
   .hourBox .low {
     font-size: 1rem; }
 
-.tint {
-  color: #4EB8DB;
-  margin: .2rem; }
-
 .wind {
   height: 2rem;
   width: 2rem; }
-
-.humidity {
-  width: 1.5rem;
-  height: 1.5rem; }
 
 .sunRise {
   height: 5rem;
