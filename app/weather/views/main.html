@@ -11,24 +11,44 @@
       <div class="col-sm-9 myReset flexWeatherDir flexMap">
         <div class="insideWeather">
           <div class="col-sm-8 myReset">
-            <div class="flexWeather">
-              <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
+            <div class="flexWeather weatherView">
+              <div data-id="{{currentConditions.id}}">
+                 <div class="col-sm-12">
+                   <img class="icon" ng-src="http://icons.wxug.com/i/c/i/{{currentConditions.icon}}.gif" alt="" />
+                   </div>
+
+
+            <!--    <div class="weatherPH">
+              <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /><span class="value"> {{currentConditions.windDirection}} {{currentConditions.wind}} mph</span>
+            </div> -->
+                   <!-- <div class="col-sm-6">
+                     <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
+                       <h5 class="sunRiseTitle">{{astronomy.sunRiseHour}}:{{astronomy.sunRiseMin}} am Sunrise</h5>
+                                    </div>
+                   <div class="col-sm-6">
+                     <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
+                       <h5 class="sunRiseTitle">{{astronomy.sunSetHour}}:{{astronomy.sunSetMin}} pm Sunset</h5>
+                                    </div> -->
+                                    <div data-id="{{tenDayForecast.id}}">
+                          <h5><span class="tempDay">{{tenDayForecast.high}}</span><span class="degreesTen"> o</span></h5>
+                        </div>
+
+             <h2 class="city">{{currentConditions.city}}</h2>
+
+             </div>
             </div>
           </div>
             <div class="col-sm-4 myReset">
               <div class="flexSideWeather">
                 <div class="currentTemp">
-                  <h1>{{currentConditions.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
+                  <h1 class="tempNow">{{currentConditions.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
+                  <div class="feelsLike">Feels Like {{currentConditions.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
                </div>
             </div>
-              <div class="flexSideWeatherSmall">
-                <div class="col-sm-6 myReset mainSmall">
-                   <i class="fa fa-tint tint"></i><span class="value"><h4>{{currentConditions.rain}}%  |</h4></span>
-               </div>
-                 <div class="col-sm-6 myReset">
+              <div class="flexSideWeatherSmall orangeWeather">
+                   <i class="fa fa-tint tint"></i><span class="value"> <h4>{{currentConditions.rain}}%|</h4></span>
                    <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
                     <span class="value"><h4>{{currentConditions.humidity}}</h4></span>
-                </div>
               </div>
             </div>
               <div>
