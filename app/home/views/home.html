@@ -27,8 +27,20 @@
         <h3>{{user.displayName}}</h3>
         <h4>Fish Caught: 46</h4>
         <h4>Species: 10</h4>
-
+  </div>
+  <div class="weatherDir homeWeather">
+    <div>
+      <div class="myButton">
+         <a href="#/profile/main"><h3>Profile</h3></a>
       </div>
+       <div class="myButton">
+          <a href="#/viewRecipes"><h3>Recipes</h3></a>
+       </div>
+         <div class="myButton">
+           <a href="#/weather"><h3>Weather</h3></a>
+         </div>
+        </div>
+    </div>
             <div class="weatherDir homeWeather">
               <div ng-controller="WeatherController">
                 <weather-directive w="currentConditions" data-id="{{w.id}}"></weather-directive>
