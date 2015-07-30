@@ -307,7 +307,7 @@ a {
   width: 32.1%;
   float: right;
   background: lightgreen;
-  height: 20rem;
+  height: 40rem;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
@@ -363,6 +363,34 @@ a {
   padding: 0;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
+
+/*********************
+* Add Catch Style
+*********************/
+.addCatchStyle .addCatchForm {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white; }
+.addCatchStyle h2 {
+  text-align: center; }
+
+/*********************
+* Profile Style
+*********************/
+.profileStyle .fishListImg {
+  width: 70%;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*********************
+* Recipes Style
+*********************/
+.recipesStyle .recipeListImg {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*********************
 * FlexBox Weather
