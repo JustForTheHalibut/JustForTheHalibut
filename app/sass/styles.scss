@@ -370,7 +370,7 @@ a {
 }
 
 .flexBoxer {
-  width: 32.1%;
+  width: 31.5%;
   float: right;
   background-color: white;
   height: 40rem;
@@ -901,6 +901,10 @@ transition: 0.3s ease-in;
     height: 60rem;
 }
 
+.burger {
+  display: none;
+}
+
 @media (max-width: 945px) {
 
   .page-wrap {
@@ -937,6 +941,17 @@ transition: 0.3s ease-in;
     transition: 0.4s;
   }
 
+  .burger {
+    font-size: 3rem;
+    float: right;
+    margin-right: 2rem;
+    display: inline;
+  }
+
+  .nav {
+    display: none;
+  }
+
 }
 @media (max-width: 500px) {
 
@@ -960,6 +975,13 @@ transition: 0.3s ease-in;
     height: 40rem;
     box-sizing: border-box;
   }
+
+.burger {
+  font-size: 3rem;
+  float: right;
+  margin-right: 2rem;
+  display: inline;
+}
 
 }
 
