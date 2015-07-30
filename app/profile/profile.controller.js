@@ -13,6 +13,11 @@ angular
     /**
      * Get user's profile information.
      */
+     $scope.isAuthenticated = function() {
+    return $auth.isAuthenticated();
+  };
+  console.log("are you logged in? ", $scope.isAuthenticated)
+  
     $scope.getProfile = function() {
       Account.getProfile()
         .success(function(data) {
