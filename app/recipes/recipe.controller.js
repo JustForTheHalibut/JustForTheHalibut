@@ -12,9 +12,20 @@
             $scope.user = data;
             $rootScope.user = data;
             console.log($rootScope.user);
+            recipesService.getFromFavs($rootScope.user.displayName).then(function(data){
+              console.log("these are the favorites: ", data);
+              $scope.Favorites = data.data;
+            });
+            recipesService.recipeDetails($routeParams.recipeId).then(function (recipe) {
+              $scope.recipe = recipe.data.recipe;
+              var ingredients = $scope.recipe.ingredients;
+              ingredients = _.uniq(ingredients);
+              $scope.recipe.ingredients = ingredients;
+              console.log("routeParams: ", $scope.recipe);
+            });
           });
     };
-
+    if($rootScope.user !== undefined){
       recipesService.getFromFavs($rootScope.user.displayName).then(function(data){
         console.log("these are the favorites: ", data);
         $scope.Favorites = data.data;
@@ -27,6 +38,8 @@
         $scope.recipe.ingredients = ingredients;
         console.log("routeParams: ", $scope.recipe);
       });
+
+    }
 
 
 
@@ -63,8 +76,13 @@
       $window.history.back();
     }
 
-
-
+    var watchCallback = function () {
+      recipesService.getFromFavs($rootScope.user.displayName).then(function(data){
+        console.log("these are the favorites: ", data);
+        $scope.Favorites = data.data;
+      });
+    };
+    $scope.$on('recipe:deleted', watchCallback);
 
   });
 }());
