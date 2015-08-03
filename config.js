@@ -11,6 +11,6 @@ module.exports = {
   TWITTER_SECRET: process.env.TWITTER_SECRET || 'Twitter Consumer Secret',
   TWITTER_CALLBACK: process.env.TWITTER_CALLBACK || 'Twitter Callback Url',
   YAHOO_SECRET: process.env.YAHOO_SECRET || 'Yahoo Client Secret',
-  TRANSLOADIT_KEY: process.env.TRANSLOADIT_KEY || 'fc73a980313e11e58e2a1d428cc06c07',
-  TRANSLOADIT_SECRET: process.env.TRANSLOADIT_SECRET || '3f748c71a3f6530924e5f60b5269f44c8ec19bd2'
+  TRANSLOADIT_KEY: process.env.TRANSLOADIT_KEY || 'Trans Key',
+  TRANSLOADIT_SECRET: process.env.TRANSLOADIT_SECRET || 'Trans Secret'
 };

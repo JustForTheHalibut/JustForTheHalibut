@@ -40,9 +40,9 @@ angular.module('auth', ['ngMessages', 'ngRoute', 'mgcrea.ngStrap', 'satellizer']
     });
 
     $authProvider.google({
-      clientId: '587791673437-u2c6ujn8ct3nihm0vaq9cb0f0ukd33f2.apps.googleusercontent.com'
+      clientId: '1035482434448-o6f4bp6e9lfmmv7fem6chore8iqd92ot.apps.googleusercontent.com'
     });
-    // 
+    //
     // $authProvider.github({
     //   clientId: '0ba2600b1dbdb756688b'
     // });

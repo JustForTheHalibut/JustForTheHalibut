@@ -12,7 +12,9 @@ var userSchema = new mongoose.Schema({
   google: String,
   achievement: String,
   achievementPicture: String,
-  location: String
+  location: String,
+  fishCaught: Number,
+  species: Array
 });
 
 userSchema.pre('save', function(next) {

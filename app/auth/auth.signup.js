@@ -7,7 +7,9 @@ angular.module('auth')
         password: $scope.password,
         location: $scope.cityLocation,
         achievement: 'Krill',
-        achievementPicture: 'http://www.supersmart.com/data/images/illustration/I0638.jpg'
+        achievementPicture: 'http://www.supersmart.com/data/images/illustration/I0638.jpg',
+        fishCaught: 0,
+        species: []
       }).catch(function(response) {
         if (typeof response.data.message === 'object') {
           angular.forEach(response.data.message, function(message) {

@@ -3,7 +3,7 @@
 
   angular
     .module('catch')
-    .controller('catchController', function ($scope, $http, $geolocation, recipesService, catchService, Account, $rootScope, $location, Transloadit) {
+    .controller('catchController', function ($scope, $http, $geolocation, $routeParams, recipesService, catchService, Account, $rootScope, $location, $window, Transloadit) {
 
     if($rootScope.user === undefined){
         Account.getProfile()
@@ -12,24 +12,16 @@
             $rootScope.user = data;
             console.log($rootScope.user);
             // var user = 'scott';
-            // catchService.deleteCatch(user, '55b7a4b540c55d1716593e20');
-            // catchService.deleteCatch(user, '55b79e76912935e60faba30b');
-            // catchService.deleteCatch(user, '55b78588498eb74ff709fae1');
-            // catchService.deleteCatch(user, '55b1a1876386cd3abb4e82f7');
-            // catchService.deleteCatch(user, '55b1a0e9c7848f8eba25aa8a');
-            // catchService.deleteCatch(user, '55b50103e7d534593f1e0458');
-            // catchService.deleteCatch(user, '55b503497d2bccec418b6f57');
-            // catchService.deleteCatch(user, '55b5039a8150892b4256cfd0');
-            // catchService.deleteCatch(user, '55b503e4a4fa6b7c427ad337');
-            // catchService.deleteCatch(user, '55b388446a715d41fc05e210');
-            // catchService.deleteCatch(user, '55b3881726119514fc598e2b');
-            // catchService.deleteCatch(user, '55b387c279892d3dfb8155b2');
-            // catchService.deleteCatch(user, '55b3874f79892d3dfb8155b1');
+            // catchService.deleteCatch(user, '55ba79b0bfc8df62e06bd45f');
           })
     }
 
+    catchService.getCatch($rootScope.user.displayName, $routeParams.catchId).then(function (aCatch) {
+        console.log("this is what we need to display: ", aCatch);
+        $scope.aCatch = aCatch.data;
+      });
+
     if($location.path() === '/addCatch'){
-      console.log("we are resetting the form!");
       $scope.catch = defaultCatch;
     }
 
@@ -37,7 +29,6 @@
       var fishType = $scope.catch.kind;
       var test = fishType.split(' ');
       fishType = test.join('');
-      console.log("we want recipes for: ", fishType);
       recipesService.getRecipes(fishType).then(function(returned){
         var recipes = returned.data.recipes;
         var fewRecipes = [];
@@ -46,8 +37,12 @@
           fewRecipes.push(next);
         }
         $scope.recipes = fewRecipes;
-        console.log("three: ", $scope.recipes.image_url);
-
+        $scope.recipes[0].class = 'class1';
+        $scope.recipes[0].class2 = 'class2';
+        $scope.recipes[1].class = 'class3';
+        $scope.recipes[1].class2 = 'class4';
+        $scope.recipes[2].class = 'class5';
+        $scope.recipes[2].class2 = 'class6';
       });
     }
 
@@ -74,8 +69,31 @@
       $scope.longitude = position.coords.longitude;
     });
 
+// $scope.submitCatch = function(stuff){
+//   $rootScope.catch = stuff;
+//   catchService.getFishStats($rootScope.user.displayName).then(function(data){
+//     $rootScope.user.fishCaught = data.data.length + 1;
+//     console.log("we will now have: ", $rootScope.user.fishCaught);
+//     var mapped = _.map(data.data, function(fish){
+//       var species = fish.kind
+//       return species;
+//     })
+//     mapped.push($rootScope.catch.kind);
+//     var species = _.unique(mapped);
+//     console.log("mapped: ", species);
+//     $rootScope.user.species = species;
+//     console.log("Account update: ", $rootScope.user)
+//     Account.updateProfile($rootScope.user);
+//   })
+// }
+
+$scope.class = "hide";
 
   $scope.submitCatch = function(stuff){
+
+    $scope.class = "show";
+
+
     function getExpiryDate() {
       var date = new Date();
       date.setHours(date.getHours() + 12);
@@ -112,6 +130,19 @@
     catchService.fishData(stuff);
     $rootScope.catch = stuff;
 
+    if(file === undefined){
+      var retVal = confirm("No image added! Do you want to continue without it? (Note: Harder to prove this catch is real without and image!)");
+       if( retVal == true ){
+          $scope.catch.image = 'http://www.vinsmoselle.lu/media/cache/397_resized_700_700_90_516407cbbe17d_placeholder.jpg';
+            $rootScope.$broadcast('catchImage:added');
+            return;
+       }
+       else{
+          $scope.class ="hide";
+          return false;
+       }
+    }
+
 
     Transloadit.upload(file, {
       params: {
@@ -124,7 +155,6 @@
       signature: function(callback) {
         // we need to send the expiry date to the server, so that it can generate a correct signature
         return $http.post('/api/signature', {expiry: getExpiryDate() }).success(callback);
-        console.log("callback: ", callback)
       },
 
       progress: function(loaded, total) {
@@ -141,6 +171,7 @@
       },
 
       error: function(error) {
+        $scope.class = "hide";
         console.log(error);
       }
 
@@ -150,12 +181,33 @@
 
   $scope.deleteCatch = function(id){
     var user = $rootScope.user.displayName.toLowerCase();
+    $rootScope.user.fishCaught = Number($rootScope.user.fishCaught) - 1;
+    Account.updateProfile($rootScope.user);
     catchService.deleteCatch(user, id);
     $location.path("/profile/main");
   }
 
-  $scope.saveRecipe = function(recipe){
-    console.log("trying to save recipe");
+
+  $scope.class1 = "show";
+  $scope.class2 ="hide";
+  $scope.class3 = "show";
+  $scope.class4 ="hide";
+  $scope.class5 = "show";
+  $scope.class6 ="hide";
+
+  $scope.saveRecipe = function(thisOne, recipe){
+    if(thisOne === 'class1'){
+      $scope.class1 = "hide";
+      $scope.class2 ="show";
+    }
+    else if(thisOne === 'class3'){
+      $scope.class3 = "hide";
+      $scope.class4 ="show";
+    }
+    else if(thisOne === 'class5'){
+      $scope.class5 = "hide";
+      $scope.class6 ="show";
+    }
       var user =  $rootScope.user.displayName;
       var recipe2save= {
         f2f_url : recipe.f2f_url,
@@ -163,18 +215,49 @@
         recipe_id : recipe.recipe_id,
         title : recipe.title
       }
-      console.log("trying to save recipe");
       recipesService.addToFavs(user, recipe2save).then(function(returned){
-        console.log("returned");
       })
-
-
   };
 
+  $scope.deleteRecipe = function(thisOne, id){
+    if(thisOne === 'class2'){
+      $scope.class2 = "hide";
+      $scope.class1 ="show";
+    }
+    else if(thisOne === 'class4'){
+      $scope.class4 = "hide";
+      $scope.class3 ="show";
+    }
+    else if(thisOne === 'class6'){
+      $scope.class6 = "hide";
+      $scope.class5 ="show";
+    }
+    var user =  $rootScope.user.displayName;
+    recipesService.deleteFromFavs(user, id);
+  }
+
+  $scope.goBack = function(){
+    $window.history.back();
+  }
+
   var watchCallback = function () {
+          $rootScope.user.fishCaught = Number($rootScope.user.fishCaught) + 1;
+          catchService.getFishStats($rootScope.user.displayName).then(function(data){
+
+            var mapped = _.map(data.data, function(fish){
+              var species = fish.kind.toLowerCase();
+              return species;
+            })
+            mapped.push($rootScope.catch.kind.toLowerCase());
+            var species = _.unique(mapped);
+            $rootScope.user.species = species;
+            Account.updateProfile($rootScope.user);
+          })
+
           catchService.createCatch($rootScope.catch).success(function(data){
             $location.path('/catchAdded');
           });
+
           };
 
 

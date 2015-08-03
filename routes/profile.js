@@ -14,8 +14,8 @@ var crypto = require('crypto');
 router.route('/signature')
   .post(function (req, res) {
 
-        var authKey    = 'fc73a980313e11e58e2a1d428cc06c07';
-        var authSecret = '3f748c71a3f6530924e5f60b5269f44c8ec19bd2';
+        var authKey    = config.TRANSLOADIT_KEY;
+        var authSecret = config.TRANSLOADIT_SECRET;
 
         var params = {
           'auth': {
@@ -61,6 +61,8 @@ router.route('/me')
       user.email = req.body.email || user.email;
       user.achievement = req.body.achievement || user.achievement;
       user.achievementPicture = req.body.achievementPicture || user.achievementPicture;
+      user.fishCaught = req.body.fishCaught || user.fishCaught;
+      user.species = req.body.species || user.species;
       user.save(function(err) {
         res.status(200).end();
       });
