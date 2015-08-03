@@ -1,7 +1,14 @@
 <div ng-controller="NavbarCtrl" class="navbar navbar-default">
  <div class="navbar-header">
-  <a class="navbar-brand" href="/#/"><i class="fa fa-anchor"></i> Just For The Halibut</a>
+  <a class="navbar-brand" href="/#/"><!-- <img class="fishLogo" src="assets/fish5.png" alt="" /> -->Just For The Halibut</a>
 </div>
+<ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+  <li><a href="/#/login"><i class="fa fa-sign-in"></i> Login</a></li>
+  <li><a href="/#/signup">Sign up</a></li>
+</ul>
+<ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+  <li><a href="/#/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
   <ul class="nav navbar-nav">
     <li><a class="mainAnchor" href="/#/profile/main">Profile</a></li>
     <li><a class="mainAnchor" href="/#/profile/achievements">Achievements</a></li>
@@ -9,13 +16,5 @@
     <li><a class="mainAnchor" href="/#/weather">Weather</a></li>
   </ul>
   <div class="burger"><i class="fa fa-bars"></i></div>
-  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/login"><i class="fa fa-sign-in"></i> Login</a></li>
-    <li><a href="/#/signup">Sign up</a></li>
-  </ul>
-  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-    <li><a href="/#/profile"><i class="fa fa-gear"></i> Profile Settings</a></li>
 
-  </ul>
 </div>

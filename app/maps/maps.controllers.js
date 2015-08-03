@@ -17,8 +17,11 @@
         latitude: 32.792447,
         longitude: -79.936134
         },
-        zoom: 8
+        zoom: 8,
       };
+
+
+
 
       $scope.markers = [];
 
@@ -29,6 +32,9 @@
               coords: {
                 latitude: location.coord.latitude,
                 longitude: location.coord.longitude
+            },
+            options: {
+              icon:'assets/fish.png'
             },
             userName: location.displayName,
             fish: location.kind
@@ -58,6 +64,138 @@
             })
           })
         })
+
+        var styleArray = [ //any style array defined in the google documentation you linked
+          {
+         featureType: "administrative",
+         elementType: "labels",
+         stylers: [
+           { visibility: "on" }
+         ]
+       },{
+         featureType: "poi",
+         elementType: "labels",
+         stylers: [
+           { visibility: "off" }
+         ]
+       },{
+         featureType: "road",
+         stylers: [
+           { "visibility": "off" }
+         ]
+       },{
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#3e606f"
+            },
+            {
+                "weight": 2
+            },
+            {
+                "gamma": 0.84
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "weight": 0.6
+            },
+            {
+                "color": "#1a3541"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2c5a71"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#406d80"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2c5a71"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#29768a"
+            },
+            {
+                "lightness": -37
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#406d80"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#193341"
+            }
+        ]
+    }
+];
+
+
+
+$scope.options = {
+
+   styles: styleArray
+};
 
       uiGmapGoogleMapApi.then(function(maps) {
 

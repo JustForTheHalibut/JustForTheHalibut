@@ -15,7 +15,8 @@ angular.module('MyApp', [
 'chart.js',
 'recipes',
 'geolocation',
-'catch'
+'catch',
+'moment'
 ])
 
 .config(function($routeProvider) {
@@ -31,6 +32,12 @@ $routeProvider
     redirectTo: '/404'
   });
 });
+
+angular
+      .module('moment', [])
+      .factory('moment', function ($window) {
+        return $window.moment;
+      });
 
 angular
   .module('ng-transloadit', [])

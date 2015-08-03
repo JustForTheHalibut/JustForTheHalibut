@@ -46,7 +46,10 @@
               return {
                       condition: obj.condition,
                       time: obj.FCTTIME.civil,
+                      ampm: obj.FCTTIME.ampm,
+                      hour: obj.FCTTIME.hour,
                       iconUrl: obj.icon_url,
+                      icon: obj.icon,
                       humidity: obj.humidity,
                       temp: obj.temp.english,
                       feels: obj.feelslike.english,
@@ -64,7 +67,8 @@
                 deferred.resolve(cache);
               }else{
                 $http.get('api/hourly/' + latitude + '/' + longitude).then(function (hourly) {
-                var hourlyArr = hourly.data.hourly_forecast.slice(0,12);
+                  console.log('hourly', hourly);
+                var hourlyArr = hourly.data.hourly_forecast.slice(0,21);
                   cacheEngine.put('hourly', mapHourlyToUrls(hourlyArr));
                   deferred.resolve(mapHourlyToUrls(hourlyArr));
                 });
@@ -138,7 +142,6 @@
                       short: obj.date.weekday_short,
                       day: obj.date.day,
                       icon: obj.icon,
-                      iconUrl: obj.icon_url,
                       high: obj.high.fahrenheit,
                       low: obj.low.fahrenheit,
                       pop: obj.pop,
@@ -191,7 +194,8 @@
              return _.map(collection, function (obj) {
                return {
                       height: obj.data.height,
-                      type: obj.data.type
+                      type: obj.data.type,
+                      epoch: obj.date.epoch
                       }
                   });
                }
