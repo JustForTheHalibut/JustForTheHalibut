@@ -16,7 +16,7 @@
             <div>
           <img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}">
           <ul class="catchSpecs">
-            <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
+            <li><a href="#/detail/{{one._id}}"><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</a></li>
             <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
             <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
             <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>

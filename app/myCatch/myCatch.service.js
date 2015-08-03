@@ -16,8 +16,13 @@
         return $http.get('api/collections/' + name +'/' + catchId);
       }
 
+      var getFishStats = function(user){
+        var name = user.toLowerCase();
+        return $http.get('api/collections/' + name);;
+      }
+
       var createCatch= function(newCatch) {
-        
+
         var combinedName = newCatch.displayName.replace(" ","_");
         var combinedName = combinedName.toLowerCase();
 
@@ -69,6 +74,7 @@
         fishData: fishData,
         getAllCatch: getAllCatch,
         getCatch: getCatch,
+        getFishStats: getFishStats,
         createCatch: createCatch,
         deleteCatch: deleteCatch
       };

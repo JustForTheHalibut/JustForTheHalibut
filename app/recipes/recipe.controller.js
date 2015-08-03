@@ -69,7 +69,6 @@
     $scope.deleteRecipe = function(id){
       var user =  $rootScope.user.displayName;
       recipesService.deleteFromFavs(user, id);
-
     }
 
     $scope.goBack = function(){

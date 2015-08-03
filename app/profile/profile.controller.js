@@ -13,6 +13,7 @@ angular
     /**
      * Get user's profile information.
      */
+
     $scope.getProfile = function() {
       Account.getProfile()
         .success(function(data) {
@@ -63,6 +64,8 @@ angular
     }
 
     $scope.deleteCatch = function(id){
+      $rootScope.user.fishCaught = Number($rootScope.user.fishCaught) - 1;
+      Account.updateProfile($rootScope.user);
       var user = $rootScope.user.displayName.toLowerCase();
       catchService.deleteCatch(user, id);
       $location.path("/profile/main");

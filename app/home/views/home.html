@@ -11,44 +11,19 @@
       <div class="col-sm-12 myReset flexMap">
         <div ng-controller="MapController">
           <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
-            <ui-gmap-marker ng-repeat="marker in markers | filter:search:strict" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.idKey" userName="marker.fish">
+            <ui-gmap-marker ng-repeat="marker in markers | filter:search:strict" coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.idKey" fish="marker.fish" weight= "marker.weight" length = "marker.length">
               <ui-gmap-window isIconVisibleOnClick="true" coords="marker.coords">
-                <p>{{marker.fish}}</p>
+              <p><strong>{{marker.fish}}</strong> <br> Weight: {{marker.weight}} <br> Length: {{marker.length}}</p>
               </ui-gmap-window>
             </ui-gmap-marker>
           </ui-gmap-google-map>
         </div>
       </div>
-    <!--   <div class="col-sm-3 myReset">
-      <div class="homeAside">
-        <div class="profileCard">
-          <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-            <h3>{{user.displayName}}</h3>
-        </div>
-          <div>
-            <div>
-              <div class="myButton">
-                <a href="#/profile/"><h4><i class="fa fa-user"></i>  Profile</h4></a>
-             </div>
-               <div class="myButton">
-                 <a href="#/profile/main"><h4><i class="fa fa-trophy"></i> My Catches</h4></a>
-              </div>
-                <div class="myButton">
-                  <a href="#/viewRecipes"><h4><i class="fa fa-cutlery"></i> Recipes</h4></a>
-               </div>
-                 <div class="myButton">
-                   <a href="#/weather"><h4><i class="fa fa-cloud"></i> Weather</h4></a>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div> -->
   </div>
 </div>
 <footer>
   footer here
 </footer>
-
 <!-- <div class="col-sm-3 myReset">
 <div class="weatherDir homeWeather">
   <div ng-controller="WeatherController">
