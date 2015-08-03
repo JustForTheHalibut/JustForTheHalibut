@@ -61,6 +61,8 @@ router.route('/me')
       user.email = req.body.email || user.email;
       user.achievement = req.body.achievement || user.achievement;
       user.achievementPicture = req.body.achievementPicture || user.achievementPicture;
+      user.fishCaught = req.body.fishCaught || user.fishCaught;
+      user.species = req.body.species || user.species;
       user.save(function(err) {
         res.status(200).end();
       });

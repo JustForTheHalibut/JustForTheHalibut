@@ -31,7 +31,9 @@
                 longitude: location.coord.longitude
             },
             userName: location.displayName,
-            fish: location.kind
+            fish: location.kind,
+            weight: location.weight,
+            length: location.length
         };
             return marker;
       };
