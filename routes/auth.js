@@ -67,7 +67,8 @@ router.route('/login')
         achievementPicture: req.body.achievementPicture,
         location: req.body.location,
         fishCaught: req.body.fishCaught,
-        species: req.body.species
+        species: req.body.species,
+        points: req.body.points
       });
       user.save(function() {
         res.send({ token: createToken(user) });
