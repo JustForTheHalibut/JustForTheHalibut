@@ -428,9 +428,10 @@ a {
 }
 
 .profile-picture-small {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  height: 4.5rem;
+  width: 4.5rem;
+  margin-top: .3rem;
+  padding: 0rem;
 }
 
 .flexBigBoxer {
@@ -448,6 +449,10 @@ a {
   margin: 0;
   padding: 0;
   transition: 0.4s;
+}
+
+.tabBox {
+  border-bottom: 3px solid blue;
 }
 
 /*********************
@@ -541,9 +546,15 @@ a {
 
 .city {
   text-align: center;
-  font-size: 4rem;
-  margin-top: 6rem;
-  color: white;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 3px solid #00ABD8;
+  margin-top: 0;
+}
+
+.tabby {
+  border-bottom: 3px solid #00ABD8;
 }
 /*********************
 * Weather Style
@@ -565,15 +576,15 @@ a {
 }
 
 .tempNow {
-  margin-top: 5rem;
+  margin-top: 8.5rem;
   text-align: center;
-  color: white;
+  color: #00ABD8;
+  font-size: 6rem;
 }
 
 .weatherDescription {
   text-align: center;
-  margin-top: 3rem;
-  color: white;
+  color: black;
 }
 
 .tenDayDir {
@@ -606,24 +617,63 @@ a {
 }
 
 .tint {
-  color: white;
-  font-size: 3rem;
-  margin-left: 3.5rem;
-  margin-top: 4.3rem;
-  margin-right: 1rem;
+  position: absolute;
+  top: .5rem;
+  right: 1.5rem;
 }
 
-.smalltint {
-  color: #B1D2FB;
-  font-size: 2rem;
+.tinty {
+  color: #00ABD8;
+}
+
+.degy {
+  color: #00ABD8;
+}
+
+.fully {
+  color: #00ABD8;
+}
+
+.firey {
+  color: #00ABD8;
+}
+
+.eye {
+  color: #00ABD8;
+}
+
+.sunny {
+  color: #00ABD8;
+}
+
+.tacher {
+  color: #00ABD8;
+}
+
+.sprinks {
+  color: #00ABD8;
+}
+
+.windy {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+}
+
+.dewy {
+  text-align: center;
 }
 
 .humidity {
-  width: 2rem;
-  height: 2rem;
-  margin-top: 4.8rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.moony {
+  position: absolute;
+  bottom: 1.5rem;
+  left: .5rem;
 }
 
 .humiditySmall {
@@ -631,11 +681,16 @@ a {
   height: 2rem;
 }
 
+.smalltint {
+  color: #B1D2FB;
+  font-size: 2rem;
+}
+
 .feelsLike {
   margin-top: .5rem;
   font-weight: bold;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .smallIcon {
@@ -753,21 +808,22 @@ font-weight: bold;
 }
 
 .flexWeather {
-  width: 100%;
-  height: 35rem;
+  width: 98.4%;
+  height: 32rem;
   float: right;
-  background-color: #00ABD8;
+  background-color: #F4F4F4;
   box-sizing: border-box;
   transition: 0.4s;
-  opacity: .6;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  border-bottom: 3px solid #00ABD8;
 }
 
 
 
 .weatherBackgrounder {
-  background-image: url('http://img.inspiringwallpapers.net/wp-content/uploads/2014/06/atlantic-ocean-sunrise.jpg');
-  background-size: cover;
-  opacity: .7;
+  background-image: url("http://wallpoper.com/images/00/44/66/90/aero-green-and-dark-blue_00446690.jpg");
 }
 
 .flexWeatherMoon {
@@ -781,24 +837,39 @@ font-weight: bold;
 
 .flexSideWeather {
   width: 100%;
-  height: 22rem;
+  height: 12rem;
   float: right;
   color: white;
-  background-color: black;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  background-color: #F4F4F4;
   box-sizing: border-box;
   transition: 0.4s;
-  opacity: .7;
+  border-bottom: 3px solid #00ABD8;
+}
+
+.flexSideWeatherSmallTop {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #00ABD8;
 }
 
 .flexSideWeatherSmall {
   width: 100%;
-  height: 13rem;
+  height: 9rem;
   float: right;
-  background-color: #F07E40;
+  background-color: #F4F4F4;
   box-sizing: border-box;
   transition: 0.4s;
-  opacity: .7;
   padding-top: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #00ABD8;
 }
 
 .insideWeather {
@@ -819,13 +890,13 @@ font-weight: bold;
 
 .flexWeatherTest {
   width: 14.28%;
-  height: 19rem;
+  height: 17rem;
   float: left;
   background-color: white;
   box-sizing: border-box;
   transition: 0.4s;
   border-right: 2px solid #EAEAEA;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .tenDayWrap {
@@ -883,7 +954,7 @@ font-weight: bold;
 
 .sunrise {
   font-size: 4rem;
-  color: yellow;
+  color: #00ABD8;
   text-align: center;
   margin: 1rem;
   margin-left: 3rem;
@@ -891,7 +962,7 @@ font-weight: bold;
 
 .sunset {
   font-size: 4rem;
-  color: yellow;
+  color: #00ABD8;
   text-align: center;
   margin: 1rem;
   margin-left: 3rem;
@@ -1060,7 +1131,7 @@ font-weight: bold;
 
 .overflowin {
   width: 100%;
-  height: 19.8rem;
+  height: 17rem;
   overflow-x: scroll;
 }
 
@@ -1103,6 +1174,7 @@ font-weight: bold;
     font-size: 3rem;
     float: right;
     margin-right: 2rem;
+    margin-top: .5rem;
     display: inline;
     color: black;
   }
@@ -1180,8 +1252,19 @@ font-weight: bold;
 .fidy {
   width: 50%;
   border-radius: 0px;
-  background-color: #777777;
+  background-color: #C8C8C8;
   text-align: center;
+  border-bottom: 3px solid #00ABD8;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.panel-title {
+  border-radius: 0px;
+}
+
+.nav-tabs {
+  border-radius: 0px;
 }
 
 .tab {
@@ -1341,7 +1424,6 @@ font-weight: bold;
   height: 5rem;
   width: 5rem;
   margin-left: 2.5rem;
-  margin-bottom: 0;
   margin-top: 3rem;
 }
 
@@ -1356,7 +1438,7 @@ font-weight: bold;
 }
 
 .sunRiseTitle {
-  color: white;
+  color: black;
   margin-top: 0;
 }
 
@@ -1417,7 +1499,7 @@ padding: 0;
 
 footer {
   width: 100%;
-  height: 7rem;
+  height: 5rem;
   background-color: white;
   position: absolute;
   bottom: 0;

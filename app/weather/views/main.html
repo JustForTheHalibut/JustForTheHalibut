@@ -9,24 +9,30 @@
     <div class="page-wrap">
     <div class="row">
       <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
+        <div class="col-sm-12 myReset">
+          <h2 class="city">{{currentConditions.city}}</h2>
+        </div>
+
         <div class="insideWeather">
           <div class="col-sm-8 myReset">
-            <div class="flexWeather weatherView faded">
-              <div data-id="{{currentConditions.id}}">
-                <h2 class="city">{{currentConditions.city}}</h2>
-            <!--    <div class="weatherPH">
-              <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /><span class="value"> {{currentConditions.windDirection}} {{currentConditions.wind}} mph</span>
-            </div> -->
+            <div class="flexWeather">
+
+            <div class="weatherPH">
+              <span class="value windy"><i class="wi wi-wind-default _15-deg degy"></i> {{currentConditions.windDirection}} {{currentConditions.wind}} mph</span>
+              <span class="value tint"><i class="fa fa-tint tinty"></i>{{currentConditions.rain}}% Chance of Precip.</span>
+              <span class="value humidity"><i class="fa fa-fire firey"></i>{{currentConditions.humidity}} Humidity</span>
+              <span class="value moony"><i class="wi wi-moon-full fully"></i> {{astronomy.phaseofMoon}}</span>
+            </div>
                 <div class="currentTemp">
                   <h1 class="tempNow">{{currentConditions.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
                     <div class="feelsLike">Feels Like {{currentConditions.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
                </div>
-                 <h2 class="weatherDescription">{{currentConditions.description}}</h2>
-             </div>
+               <h2 class="weatherDescription">{{currentConditions.description}}</h2>
+
            </div>
          </div>
            <div class="col-sm-4 myReset">
-              <div class="flexSideWeather faded">
+              <div class="flexSideWeather">
                  <div class="col-sm-6">
                    <span><i class="wi wi-sunrise sunrise"></i></span>
                      <h5 class="sunRiseTitle">{{astronomy.sunRiseHour}}:{{astronomy.sunRiseMin}} am Sunrise</h5>
@@ -35,19 +41,18 @@
                      <span><i class="wi wi-sunset sunset"></i></span>
                        <h5 class="sunRiseTitle">{{astronomy.sunSetHour}}:{{astronomy.sunSetMin}} pm Sunset</h5>
                   </div>
-                    <div class="col-sm-12 moonStuff">
-                      <div class="moon{{astronomy.ageOfMoon}} move"></div>
-                        <span class="moonStuffTitle">{{astronomy.phaseofMoon}}</span>
-                    </div>
                 </div>
-                  <div class="flexSideWeatherSmall orangeWeather faded">
-                     <i class="fa fa-tint tint"></i><span class="value"> <h4>{{currentConditions.rain}}% |</h4></span>
-                     <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
-                     <span class="value"><h4>{{currentConditions.humidity}}</h4></span>
+                  <div class="flexSideWeatherSmallTop orangeWeather">
+                    <span class="value"><i class="fa fa-eye eye"></i> {{currentConditions.visability}}% Visability |</span>
+                     <span class="value"><i class="fa fa-sun-o sunny"></i>{{currentConditions.UV}} UV Index</span>
+                  </div>
+                  <div class="flexSideWeatherSmall orangeWeather">
+                    <span class="value"><i class="fa fa-tachometer tacher"></i> {{currentConditions.pressure}}In. Pressure |</span>
+                     <span class="value"><i class="wi wi-sprinkles sprinks"></i> {{currentConditions.dew}} Dew Point</span>
                   </div>
               </div>
                 <div ng-controller="TabsController">
-                  <tabset>
+                  <tabset class="tabby">
                     <tab class="fidy" heading="Hourly">
                       <div class="overflowin">
                         <hourly-directive ng-repeat=" oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
@@ -62,30 +67,11 @@
               </div>
            </div>
          </div>
-    <!--        <div class="col-sm-3 myReset flexMap">
-       <div class="homeAside">
-         <div class="profileCard">
-           <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-             <h3>{{user.displayName}}</h3>
-         </div>
-           <div class="weatherDir homeWeather">
-             <div>
-               <div class="myButton">
-                  <a href="#/profile/main"><h4>Profile</h4></a>
-               </div>
-                <div class="myButton">
-                   <a href="#/viewRecipes"><h4>Recipes</h4></a>
-                </div>
-                  <div class="myButton">
-                    <a href="#/weather"><h4>Weather</h4></a>
-                  </div>
-                 <div class="myButton">
-                   <a href="#/weather/tides"><h4>Tide Charts</h4></a>
-                </div>
-             </div>
-         </div>
-     </div>
-            </div> -->
-    </div>
-  </div>
+      </div>
+   </div>
 </div>
+
+<!--   <div class="col-sm-12 moonStuff">
+  <div class="moon{{astronomy.ageOfMoon}} move"></div>
+    <span class="moonStuffTitle">{{astronomy.phaseofMoon}}</span>
+</div> -->
