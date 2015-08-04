@@ -9,7 +9,8 @@ angular.module('auth')
         achievement: 'Krill',
         achievementPicture: 'http://www.supersmart.com/data/images/illustration/I0638.jpg',
         fishCaught: 0,
-        species: []
+        species: [], 
+        points: 0
       }).catch(function(response) {
         if (typeof response.data.message === 'object') {
           angular.forEach(response.data.message, function(message) {

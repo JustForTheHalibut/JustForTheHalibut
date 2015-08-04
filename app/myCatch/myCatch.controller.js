@@ -10,10 +10,22 @@
           .success(function(data) {
             $scope.user = data;
             $rootScope.user = data;
-            console.log($rootScope.user);
             // var user = 'scott';
             // catchService.deleteCatch(user, '55ba79b0bfc8df62e06bd45f');
           })
+    }
+    else{
+      catchService.getAllCatch($rootScope.user.displayName).then(function(data){
+        $rootScope.fish = data.data;
+        if($rootScope.fish.length !== $rootScope.user.fishCaught){
+          $rootScope.user.fishCaught = $rootScope.fish.length;
+        }
+        if($rootScope.fish.length === 0){
+          $rootScope.user.points = 0;
+          $rootScope.user.species = [];
+          console.log("user: ", $rootScope.user);
+        }
+      });
     }
 
     catchService.getCatch($rootScope.user.displayName, $routeParams.catchId).then(function (aCatch) {
@@ -90,6 +102,11 @@
 $scope.class = "hide";
 
   $scope.submitCatch = function(stuff){
+    if($rootScope.user.points === null || $rootScope.user.points === undefined){
+      console.log("there were no points: ", $rootScope.user.points);
+      $rootScope.user.points = 0;
+      console.log("but now there is: ", $rootScope.user.points);
+    }
 
     $scope.class = "show";
 
@@ -130,9 +147,10 @@ $scope.class = "hide";
     catchService.fishData(stuff);
     $rootScope.catch = stuff;
 
-  // var weightPoints = $rootScope.catch.weight * .25;
-  // var lengthPoints = $rootScope.catch.length * .25;
-  // $rootScope.thesePoints = weightPoints + lengthPoints;
+    var weightPoints = $rootScope.catch.weight * .25;
+    var lengthPoints = $rootScope.catch.length * .25;
+    $rootScope.catch.points = weightPoints + lengthPoints;
+    $rootScope.user.points += weightPoints + lengthPoints;
 
     if(file === undefined){
       var retVal = confirm("No image added! Do you want to continue without it? (Note: Harder to prove this catch is real without and image!)");
@@ -183,11 +201,14 @@ $scope.class = "hide";
   }
 
 
-  $scope.deleteCatch = function(id){
-    var user = $rootScope.user.displayName.toLowerCase();
+  $scope.deleteCatch = function(id, thisFish){
+    console.log("this is what they are deleting: ", thisFish);
+    $rootScope.user.points = $rootScope.user.points - thisFish.points;
+    catchService.newAchievement($rootScope.user.points);
     $rootScope.user.fishCaught = Number($rootScope.user.fishCaught) - 1;
-    Account.updateProfile($rootScope.user);
+    var user = $rootScope.user.displayName.toLowerCase();
     catchService.deleteCatch(user, id);
+    Account.updateProfile($rootScope.user);
     $location.path("/profile/main");
   }
 
@@ -253,47 +274,19 @@ $scope.class = "hide";
               return species;
             })
 
-          // var isThere  _.exist($rootScope.catch.kind, species)
-          //
-          //   if(isThere !== true){
-          //     $rootScope.thesePoints += 2;
-          //   }
-
+          var isThere = _.contains(mapped, $rootScope.catch.kind.toLowerCase());
+          if(isThere !== true){
+            $rootScope.user.points += 2;
+          }
 
             mapped.push($rootScope.catch.kind.toLowerCase());
             var species = _.unique(mapped);
             $rootScope.user.species = species;
 
+            var totalPoints = $rootScope.user.points;
 
+            catchService.newAchievement(totalPoints);
             Account.updateProfile($rootScope.user);
-
-            //
-            // // if(points > 0 && points < 5){
-            //     $user.achievementLevel = 'krill';
-            //     $user.achievementPicture = /////
-            // // if(points > 5 && points < 10 ){
-            //     $user.achievementLevel = 'sardine';
-            // // if(points > 10 && points < 15){
-            //     $user.achievementLevel = 'achovy';
-            // // if(points > 15 && points < 20){
-            //     $user.achievementLevel = 'mackeral';
-            // // if(points > 20 && points < 25){
-            //     $user.achievementLevel = 'perch';
-            // //if(points > 25 && points < 30){
-            //     $user.achievementLevel = 'snapper';
-            // //if(points > 30 && points < 35){
-            //     $user.achievementLevel = 'red fish';
-            // //if(points > 35 && points < 40){
-            //     $user.acheivementLevel = 'salmon';
-            // //if(points > 40 && points < 45){
-            //   $user.acheivementLevel = 'grouper';
-            // //if(points > 45 && points < 50){
-            //   $user.achievementLevel = 'halibut';
-
-
-
-
-
           })
 
           catchService.createCatch($rootScope.catch).success(function(data){

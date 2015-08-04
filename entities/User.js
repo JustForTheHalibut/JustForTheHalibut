@@ -14,7 +14,7 @@ var userSchema = new mongoose.Schema({
   achievementPicture: String,
   location: String,
   fishCaught: Number,
-  species: Array, 
+  species: Array,
   points: Number
 });
 

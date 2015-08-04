@@ -36,17 +36,30 @@ angular
             .success(function(data) {
               $scope.user = data;
               $rootScope.user = data;
-              console.log($rootScope.user);
               catchService.getAllCatch($rootScope.user.displayName).then(function(data){
-                console.log("these are the fish: ", data.data);
                 $rootScope.fish = data.data;
+                if($rootScope.fish.length !== $rootScope.user.fishCaught){
+                  $rootScope.user.fishCaught = $rootScope.fish.length;
+                }
+                if($rootScope.fish.length === 0){
+                  $rootScope.user.points = 0;
+                  $rootScope.user.species = [];
+                  console.log("user: ", $rootScope.user);
+                }
               });
             })
       }
       else{
         catchService.getAllCatch($rootScope.user.displayName).then(function(data){
-          console.log("these are the fish: ", data.data);
           $rootScope.fish = data.data;
+          if($rootScope.fish.length !== $rootScope.user.fishCaught){
+            $rootScope.user.fishCaught = $rootScope.fish.length;
+          }
+          if($rootScope.fish.length === 0){
+            $rootScope.user.points = 0;
+            $rootScope.user.species = [];
+            console.log("user: ", $rootScope.user);
+          }
         });
       }
     }
@@ -63,11 +76,15 @@ angular
       $location.path('/addCatch');
     }
 
-    $scope.deleteCatch = function(id){
+    $scope.deleteCatch = function(id, thisFish){
+      console.log("this is what they are deleting: ", thisFish);
+      $rootScope.user.points = $rootScope.user.points - thisFish.points;
+      catchService.newAchievement($rootScope.user.points);
+      console.log("the user is now: ", $rootScope.user);
       $rootScope.user.fishCaught = Number($rootScope.user.fishCaught) - 1;
-      Account.updateProfile($rootScope.user);
       var user = $rootScope.user.displayName.toLowerCase();
       catchService.deleteCatch(user, id);
+      Account.updateProfile($rootScope.user);
       $location.path("/profile/main");
     }
 
