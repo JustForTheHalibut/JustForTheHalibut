@@ -41,6 +41,13 @@
 
     }
 
+    if($rootScope.latitude === undefined && $rootScope.longitude === undefined){
+      navigator.geolocation.getCurrentPosition(function(position){
+        $rootScope.latitude = position.coords.latitude;
+        $rootScope.longitude = position.coords.longitude;
+        console.log("maps setting root scope coords");
+      });
+    }
 
 
     $scope.getRecipes = function(fishType){

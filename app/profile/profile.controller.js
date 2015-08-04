@@ -163,6 +163,14 @@ angular
         });
     };
 
+    if($rootScope.latitude === undefined && $rootScope.longitude === undefined){
+      navigator.geolocation.getCurrentPosition(function(position){
+        $rootScope.latitude = position.coords.latitude;
+        $rootScope.longitude = position.coords.longitude;
+        console.log("profile setting root scope coords");
+      });
+    }
+
     $scope.getProfile();
 
     $scope.$on('catch:deleted', fishDeleted);

@@ -12,61 +12,63 @@
 
     })
 
-    .controller('WeatherController', function($scope, WeatherService, $routeParams, $geolocation){
+    .controller('WeatherController', function($scope, $rootScope, WeatherService, $routeParams, $geolocation){
       // localStorage.setItem('location',JSON.stringify(location))
       // $scope.latitude = location.latitude;
       // $scope.longitude = location.longitude;
+      if($rootScope.latitude === undefined && $rootScope.longitude === undefined){
+        navigator.geolocation.getCurrentPosition(function(position){
+          $rootScope.latitude = position.coords.latitude;
+          $rootScope.longitude = position.coords.longitude;
+          console.log("weather setting root scope coords");
+        });
+      }
 
-      navigator.geolocation.getCurrentPosition(function(position){
-        $scope.latitude = position.coords.latitude;
-        $scope.longitude = position.coords.longitude;
-
-
-          WeatherService.getCurrentConditions($scope.latitude, $scope.longitude).then(function(currentConditions) {
+          WeatherService.getCurrentConditions($rootScope.latitude, $rootScope.longitude).then(function(currentConditions) {
             console.log('current', currentConditions);
             $scope.currentConditions = currentConditions;
           })
 
-          WeatherService.getAstronomy($scope.latitude, $scope.longitude).then(function (astronomy) {
+          WeatherService.getAstronomy($rootScope.latitude, $rootScope.longitude).then(function (astronomy) {
             $scope.astronomy = astronomy;
           })
 
-          WeatherService.getHourly($scope.latitude, $scope.longitude).then(function (hourly){
+          WeatherService.getHourly($rootScope.latitude, $rootScope.longitude).then(function (hourly){
             $scope.hourly = hourly;
           })
 
           if($routeParams.oneHourlyId) {
-            WeatherService.getOneHourly($routeParams.oneHourlyId, $scope.latitude, $scope.longitude).then(function (oneHourly) {
+            WeatherService.getOneHourly($routeParams.oneHourlyId, $rootScope.latitude, $rootScope.longitude).then(function (oneHourly) {
              $scope.oneHourly = oneHourly;
            })
          }
 
-         WeatherService.getForecast($scope.latitude, $scope.longitude).then(function (forecast){
+         WeatherService.getForecast($rootScope.latitude, $rootScope.longitude).then(function (forecast){
            $scope.forecast = forecast;
          })
 
          if($routeParams.oneForecastId) {
-         WeatherService.getOneForecast($routeParams.oneForecastId, $scope.latitude, $scope.longitude).then(function (oneForecast) {
+         WeatherService.getOneForecast($routeParams.oneForecastId, $rootScope.latitude, $rootScope.longitude).then(function (oneForecast) {
           $scope.oneForecast = oneForecast;
         })
       }
 
-        WeatherService.getTenDayForecast($scope.latitude, $scope.longitude).then(function (tenDayForecast){
+        WeatherService.getTenDayForecast($rootScope.latitude, $rootScope.longitude).then(function (tenDayForecast){
           $scope.tenDayForecast = tenDayForecast;
         })
 
         if($routeParams.oneTenDayForecastId) {
-        WeatherService.getOneTenDayForecast($routeParams.oneTenDayForecastId, $scope.latitude, $scope.longitude).then(function (oneTenDayForecast) {
+        WeatherService.getOneTenDayForecast($routeParams.oneTenDayForecastId, $rootScope.latitude, $rootScope.longitude).then(function (oneTenDayForecast) {
          $scope.oneTenDayForecast = oneTenDayForecast;
        })
       }
 
-        WeatherService.getAlerts($scope.latitude, $scope.longitude).then(function (alerts){
+        WeatherService.getAlerts($rootScope.latitude, $rootScope.longitude).then(function (alerts){
           $scope.alerts = alerts;
         })
 
 
-      WeatherService.getTide($scope.latitude, $scope.longitude).then(function(tide){
+      WeatherService.getTide($rootScope.latitude, $rootScope.longitude).then(function(tide){
       console.log("tide chart from CONTROLLER", tide);
       var newTide = tide.filter(function (el) {
         return el.type === "High Tide" || el.type === "Low Tide";
@@ -86,7 +88,6 @@
       $scope.labels = newLabel;
       })
 
-    });
     });
 
 })();
