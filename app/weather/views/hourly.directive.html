@@ -1,24 +1,5 @@
-
-<div class="row hourBox" data-id="{{h.id}}">
-<div class="col-sm-1 dets">
-  <h5>{{h.time}}</h5>
-  </div>
-  <div class="col-sm-2 dets">
-    <img ng-src="{{h.iconUrl}}" alt="" />
-  </div>
-  <div class="col-sm-2 dets">
-  <h5><span class="temp">{{h.temp}}</span><span class="degrees"> o</span><span class="degreesF">F</span></h5>
-</div>
-<div class="col-sm-2 dets">
-  <h5>{{h.condition}}</h5>
-</div>
-<div class="col-sm-2 dets">
-  <h5><i class="fa fa-tint tint"></i>{{h.pop}}%</h5>
-</div>
-<div class="col-sm-1 dets">
-  <h5>{{h.humidity}}%</h5>
-</div>
-<div class="col-sm-2 dets">
-<h5>{{h.windDir}} {{h.windspeed}} mph</h5>
-</div>
+<div class="flexWeatherTest tenDayDir faded">
+  <h3>{{h.hour}} {{h.ampm}}</h3>
+    <img class="tenIcon" ng-src="http://icons.wxug.com/i/c/i/{{h.icon}}.gif" alt="" />
+  <h5><span class="tempDay">{{h.temp}}</span><span class="degreesTen"> o</span></h5>
 </div>

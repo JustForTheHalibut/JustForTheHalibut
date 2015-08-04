@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #1D1F22; }
+  background: #1E2023; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
@@ -39,14 +39,14 @@ a {
 
 .navbar-default {
   color: #fff;
-  background-color: #1E2023; }
+  background-color: white; }
 
 .mainAnchor {
   color: white; }
 
 .navbar-default .navbar-brand {
   color: #fff;
-  background-color: #639BB4; }
+  background-color: #16333F; }
 
 .navbar-default .navbar-brand:hover {
   color: #fff;
@@ -289,26 +289,19 @@ a {
 * FlexBox
 *********************/
 .page-wrap {
-  width: 95%;
-  background: white;
+  width: 80%;
   margin: 1rem auto;
   padding: 2rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
 
-.flexRower {
-  position: relative;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
 .flexBoxer {
-  width: 31.5%;
+  width: 32%;
   float: right;
   background-color: white;
   height: 40rem;
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
@@ -370,7 +363,18 @@ a {
   padding: 1rem; }
 
 .profile-picture-small {
-  width: 100%; }
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-top: .8rem;
+  padding: 0rem;
+  float: left; }
+
+.topBarName {
+  float: left;
+  color: #787878;
+  font-size: 1.5rem;
+  margin-top: 1.4rem;
+  margin-left: .5rem; }
 
 .flexBigBoxer {
   width: 100%;
@@ -388,6 +392,9 @@ a {
   padding: 0;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
+
+.tabBox {
+  border-bottom: 3px solid blue; }
 
 /*********************
 * Add Catch Style
@@ -462,25 +469,40 @@ a {
 
 .city {
   text-align: center;
-  font-size: 2rem; }
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 3px solid #00ABD8;
+  margin-top: 0; }
+
+.tabby {
+  border-bottom: 3px solid #00ABD8; }
 
 /*********************
 * Weather Style
 *********************/
+.greenBox {
+  border-bottom: 4px solid #559E55; }
+
 .weatherView .icon {
-  width: 18rem;
-  height: 18rem;
+  width: 10rem;
+  height: 10rem;
   position: relative;
-  left: 35%; }
+  left: 41%; }
 
 .degrees {
   font-size: 2rem;
   vertical-align: top; }
 
 .tempNow {
-  padding-left: 8rem;
-  margin-top: 9rem;
-  vertical-align: middle; }
+  margin-top: 8.5rem;
+  text-align: center;
+  color: #00ABD8;
+  font-size: 6rem; }
+
+.weatherDescription {
+  text-align: center;
+  color: black; }
 
 .tenDayDir h3 {
   margin-left: 2.8rem; }
@@ -497,44 +519,103 @@ a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  padding-left: 2rem; }
   .orangeWeather h4 {
     color: white;
-    font-size: 4rem; }
+    font-size: 3rem; }
   .orangeWeather .value {
     margin-top: 3rem; }
 
 .tint {
-  color: white;
-  font-size: 4rem;
-  margin-left: 3.5rem;
-  margin-top: 4.3rem;
-  margin-right: 1rem; }
+  position: absolute;
+  top: .5rem;
+  right: 1.5rem; }
 
-.smalltint {
-  color: #B1D2FB;
-  font-size: 2rem; }
+.tinty {
+  color: #00ABD8; }
+
+.degy {
+  color: #00ABD8; }
+
+.fully {
+  color: #00ABD8; }
+
+.firey {
+  color: #00ABD8; }
+
+.eye {
+  color: #00ABD8; }
+
+.sunny {
+  color: #00ABD8; }
+
+.tacher {
+  color: #00ABD8; }
+
+.sprinks {
+  color: #00ABD8; }
+
+.windy {
+  position: absolute;
+  top: .5rem;
+  left: .5rem; }
+
+.wavesButton {
+  text-align: center; }
+  .wavesButton a {
+    text-decoration: none; }
+
+.waves {
+  background-color: #00ABD8;
+  padding: .5rem;
+  font-size: 2rem;
+  color: white; }
+
+.dewy {
+  text-align: center; }
 
 .humidity {
-  width: 3rem;
-  height: 3rem;
-  margin-top: 4.8rem;
-  margin-left: 1rem;
-  margin-right: 1rem; }
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem; }
+
+.moony {
+  position: absolute;
+  bottom: 1.5rem;
+  left: .5rem; }
 
 .humiditySmall {
   width: 2rem;
   height: 2rem; }
 
+.smalltint {
+  color: #B1D2FB;
+  font-size: 2rem; }
+
 .feelsLike {
   margin-top: .5rem;
-  color: #747577;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  color: black; }
 
 .smallIcon {
   margin-left: 2rem;
   margin-top: .5rem; }
+
+.moonStuff {
+  color: white;
+  margin-top: 1.8rem;
+  margin-left: 7rem; }
+  .moonStuff .move {
+    margin-left: 2rem; }
+
+.moonStuffTitle {
+  font-weight: bold; }
+
+.fishDetailImg {
+  width: 100%;
+  height: 25rem; }
 
 /*********************
 * Profile Style
@@ -587,6 +668,15 @@ a {
           transition: .2s ease-in; }
 .recipesStyle .foodToFork {
   margin: .2rem; }
+.recipesStyle .recipeDetailImg {
+  width: 100%;
+  height: 25rem; }
+.recipesStyle .recipeBox {
+  border-bottom: 4px solid red; }
+.recipesStyle .recSquare {
+  font-size: 2rem; }
+.recipesStyle .recItem {
+  font-size: 1.9rem; }
 
 /*********************
 * FlexBox Weather
@@ -599,7 +689,11 @@ a {
   padding-top: 1rem; }
 
 .homeAside {
-  height: 60rem; }
+  height: 100%;
+  min-height: 60rem;
+  background-color: #e3e3e3;
+  padding: 1rem;
+  margin: 0; }
 
 .homeReset {
   padding-top: 1rem;
@@ -607,33 +701,66 @@ a {
   padding: 0; }
 
 .flexWeather {
-  width: 100%;
-  height: 38rem;
+  width: 98.4%;
+  height: 32rem;
   float: right;
-  background: white;
+  background-color: #F4F4F4;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
-  background-color: #E8E8E8; }
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  border-bottom: 3px solid #00ABD8; }
 
-.flexSideWeather {
-  width: 100%;
-  height: 25rem;
-  float: right;
-  color: white;
-  background-color: #2D3337;
-  box-sizing: border-box;
-  -webkit-transition: 0.4s;
-          transition: 0.4s; }
+.weatherBackgrounder {
+  background-image: url("http://wallpoper.com/images/00/44/66/90/aero-green-and-dark-blue_00446690.jpg"); }
 
-.flexSideWeatherSmall {
+.flexWeatherMoon {
   width: 100%;
   height: 13rem;
   float: right;
-  background-color: #F07E40;
+  background-color: black;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
+
+.flexSideWeather {
+  width: 100%;
+  height: 12rem;
+  float: right;
+  color: white;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border-bottom: 3px solid #00ABD8; }
+
+.flexSideWeatherSmallTop {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #00ABD8; }
+
+.flexSideWeatherSmall {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #00ABD8; }
 
 .insideWeather {
   height: 60rem; }
@@ -649,6 +776,17 @@ a {
   border-right: 2px solid #EAEAEA;
   padding: 1rem; }
 
+.flexWeatherTest {
+  width: 14.28%;
+  height: 17rem;
+  float: left;
+  background-color: white;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border-right: 2px solid #EAEAEA;
+  padding: .5rem; }
+
 .tenDayWrap {
   margin-left: auto;
   margin-right: auto;
@@ -657,26 +795,77 @@ a {
 .tenInside {
   width: 100%; }
 
-.myButton {
-  background-color: #0055A8; }
-  .myButton h3 {
-    text-decoration: none;
+.backButtonGreen {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+  .backButtonGreen h4 {
+    background-color: #559E55;
+    padding: .7rem;
+    color: white;
     text-align: center;
+    border: 1px solid #447E43; }
+  .backButtonGreen a {
+    text-decoration: none; }
+
+.backButtonGreen:hover h4 {
+  -webkit-transition: 0.3s ease-in;
+          transition: 0.3s ease-in;
+  text-decoration: none;
+  color: white;
+  background-color: #447E43; }
+.backButtonGreen:hover a {
+  text-decoration: none; }
+
+.backButton {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+  .backButton h4 {
+    background-color: #DA1A2E;
+    padding: .7rem;
+    color: white;
+    text-align: center;
+    border: 1px solid #B30D27; }
+  .backButton a {
+    text-decoration: none; }
+
+.backButton:hover h4 {
+  -webkit-transition: 0.3s ease-in;
+          transition: 0.3s ease-in;
+  text-decoration: none;
+  color: white;
+  background-color: #B30D27; }
+.backButton:hover a {
+  text-decoration: none; }
+
+.myButton {
+  padding: 0; }
+  .myButton h4 {
+    border: 1px solid white;
+    text-decoration: none;
+    padding: .5rem;
     margin: 1rem;
-    padding: 1rem;
-    color: white; }
+    color: black; }
   .myButton a {
     text-decoration: none; }
 
-.myButton:hover {
-  background-color: #00ABD8;
+.myButton:hover h4 {
   -webkit-transition: 0.3s ease-in;
-          transition: 0.3s ease-in; }
-  .myButton:hover h3 {
-    text-decoration: none;
-    color: white; }
-  .myButton:hover a {
-    text-decoration: none; }
+          transition: 0.3s ease-in;
+  text-decoration: none;
+  color: white; }
+.myButton:hover a {
+  text-decoration: none; }
+
+.fishLogo {
+  position: absolute;
+  top: -2.5rem;
+  left: .5rem;
+  height: 11rem;
+  width: 20rem;
+  margin: 0;
+  padding: 0; }
 
 .mainSmall {
   display: -webkit-box;
@@ -684,9 +873,38 @@ a {
   display: -ms-flexbox;
   display: flex; }
 
+.heading {
+  border-radius: 0px; }
+
+.sunrise {
+  font-size: 4rem;
+  color: #00ABD8;
+  text-align: center;
+  margin: 1rem;
+  margin-left: 3rem; }
+
+.sunset {
+  font-size: 4rem;
+  color: #00ABD8;
+  text-align: center;
+  margin: 1rem;
+  margin-left: 3rem; }
+
 /*********************
 * Home
 *********************/
+.trophyIcon {
+  color: #FFB55F; }
+
+.cutleryIcon {
+  color: #DC1230; }
+
+.userIcon {
+  color: #559E55; }
+
+.cloudIcon {
+  color: #0055A8; }
+
 .currentTemp {
   width: 100%; }
   .currentTemp h1 {
@@ -695,51 +913,119 @@ a {
 
 .flexWeatherDir {
   color: black; }
-  .flexWeatherDir .tides {
-    padding: 3rem; }
+
+.tides {
+  padding: 4rem; }
+
+.rainbow {
+  width: 100%;
+  margin-top: -2rem;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 .redTop {
+  width: 20%;
+  background-color: #DA1A2E;
+  height: 2rem; }
+
+.redTop2 {
+  width: 20%;
   background-color: #DA1A2E;
   height: 1rem; }
 
 .orangeTop {
+  width: 20%;
+  background-color: #FF8645;
+  height: 2rem; }
+
+.orangeTop2 {
+  width: 20%;
   background-color: #FF8645;
   height: 1rem; }
 
 .yellowTop {
+  width: 20%;
+  background-color: #FFB74D;
+  height: 2rem; }
+
+.yellowTop2 {
+  width: 20%;
   background-color: #FFB74D;
   height: 1rem; }
 
 .greenTop {
+  width: 20%;
+  background-color: #5B9F49;
+  height: 2rem; }
+
+.greenTop2 {
+  width: 20%;
   background-color: #5B9F49;
   height: 1rem; }
 
 .lightBlueTop {
+  width: 20%;
+  background-color: #15AADC;
+  height: 2rem; }
+
+.lightBlueTop2 {
+  width: 20%;
   background-color: #15AADC;
   height: 1rem; }
 
-.darkBlueTop {
-  background-color: #0055A8;
-  height: 1rem; }
-
 .profileCard {
-  background-color: white;
   padding: .5rem;
   margin-bottom: 1rem; }
 
+.fishy {
+  height: 3rem;
+  width: 3rem; }
+
 .homeWeather {
-  background-color: white; }
+  margin-top: 1rem;
+  border: 1px solid white; }
+
+.curCity {
+  margin-top: -1rem; }
 
 .flexWeatherTides {
   width: 100%;
-  height: 53rem;
+  min-height: 53rem;
   float: right;
-  background: grey;
+  border-bottom: 4px solid #00A2CD;
+  background: #F4F4F4;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s; }
+  .flexWeatherTides .tides h4 {
+    text-align: center; }
+
+.flexWeatherFish {
+  width: 100%;
+  min-height: 53rem;
+  float: right;
+  border-bottom: 3px solid #559E55;
+  background: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s; }
+  .flexWeatherFish .tides h4 {
+    text-align: center; }
 
 .flexMap {
+  padding: 0rem;
+  margin: 0;
+  height: 100%;
+  float: right;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  background-color: #1E2023; }
+
+.flexMainWeather {
   padding: 1rem;
   margin: 0;
   height: 100%;
@@ -755,17 +1041,22 @@ a {
 .burger {
   display: none; }
 
+.overflowin {
+  width: 100%;
+  height: 17rem;
+  overflow-x: scroll; }
+
 @media (max-width: 945px) {
   .page-wrap {
     box-sizing: border-box;
-    margin: 1rem auto;
+    margin: 2rem auto;
     padding: .5rem;
     width: 98%; }
 
   .flexMap {
     position: relative;
     width: 100%;
-    height: 50rem;
+    height: 100%;
     box-sizing: border-box;
     -webkit-transition: 0.4s;
             transition: 0.4s; } }
@@ -773,13 +1064,13 @@ a {
   .flexBoxer {
     box-sizing: border-box;
     margin: 5px;
-    padding: 0;
+    padding: 2rem;
     width: 48%; }
 
   .flexMap {
     position: relative;
     width: 100%;
-    height: 45rem;
+    height: 50rem;
     box-sizing: border-box;
     -webkit-transition: 0.4s;
             transition: 0.4s; }
@@ -788,21 +1079,23 @@ a {
     font-size: 3rem;
     float: right;
     margin-right: 2rem;
-    display: inline; }
+    margin-top: .5rem;
+    display: inline;
+    color: black; }
 
   .nav {
     display: none; } }
 @media (max-width: 500px) {
   .page-wrap {
-    margin: 1rem auto;
+    margin: 3rem auto;
     box-sizing: border-box; }
 
   .flexBoxer {
     box-sizing: border-box;
     margin: 5px;
-    padding: 0;
+    padding: 2rem;
     width: 100%;
-    height: 20rem; }
+    height: 100%; }
 
   .flexMap {
     position: relative;
@@ -813,8 +1106,10 @@ a {
   .burger {
     font-size: 3rem;
     float: right;
-    margin-right: 2rem;
-    display: inline; } }
+    padding-top: 0;
+    margin-right: 1rem;
+    display: inline;
+    color: black; } }
 /*********************
 * Home
 *********************/
@@ -838,6 +1133,27 @@ a {
   padding-left: .5rem;
   padding-right: .5rem;
   padding-bottom: 0rem; }
+
+.fidy {
+  width: 50%;
+  border-radius: 0px;
+  background-color: #C8C8C8;
+  text-align: center;
+  border-bottom: 3px solid #00ABD8;
+  font-size: 2rem;
+  font-weight: bold; }
+
+.panel-title {
+  border-radius: 0px; }
+
+.nav-tabs {
+  border-radius: 0px; }
+
+.tab {
+  border-radius: 0px; }
+
+.tabset {
+  border-radius: 0px; }
 
 /*********************
 * recentCatches
@@ -910,7 +1226,7 @@ a {
     margin-left: .1rem;
     font-weight: normal; }
   .weatherDir .degreesTiny {
-    font-size: .5rem;
+    font-size: .2rem;
     vertical-align: top; }
   .weatherDir .value {
     color: black;
@@ -953,7 +1269,7 @@ a {
   height: 5rem;
   width: 5rem;
   margin-left: 2.5rem;
-  margin-bottom: 0; }
+  margin-top: 3rem; }
 
 .weatherPH {
   color: black;
@@ -964,6 +1280,7 @@ a {
   height: 54rem; }
 
 .sunRiseTitle {
+  color: black;
   margin-top: 0; }
 
 .darrow {
@@ -1018,14 +1335,11 @@ a {
 *********************/
 footer {
   width: 100%;
-  background-color: black;
   height: 5rem;
+  background-color: white;
   position: absolute;
   bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  opacity: .7; }
+  margin: 0; }
 
 .footerNav {
   position: absolute;

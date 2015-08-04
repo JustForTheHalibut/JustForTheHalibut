@@ -1,173 +1,77 @@
-<div>
-<div class="col-sm-2 myReset redTop"></div>
-<div class="col-sm-2 myReset orangeTop"></div>
-<div class="col-sm-2 myReset yellowTop"></div>
-<div class="col-sm-2 myReset greenTop"></div>
-<div class="col-sm-2 myReset lightBlueTop"></div>
-<div class="col-sm-2 myReset darkBlueTop"></div>
+<div class="rainbow">
+<div class="redTop2"></div>
+<div class="orangeTop2"></div>
+<div class="yellowTop2"></div>
+<div class="greenTop2"></div>
+<div class="lightBlueTop2"></div>
 </div>
   <div class="mainCont">
+    <div class="page-wrap">
     <div class="row">
-      <div class="col-sm-9 myReset flexWeatherDir flexMap">
+      <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
+        <div class="col-sm-12 myReset curCity">
+          <h2 class="city">{{currentConditions.city}}</h2>
+        </div>
+
         <div class="insideWeather">
           <div class="col-sm-8 myReset">
-            <div class="flexWeather weatherView">
-              <div data-id="{{currentConditions.id}}">
-                 <div class="col-sm-12">
-                   <img class="icon" ng-src="http://icons.wxug.com/i/c/i/{{currentConditions.icon}}.gif" alt="" />
-                   </div>
+            <div class="flexWeather">
 
-
-            <!--    <div class="weatherPH">
-              <img class="wind" ng-src="http://images.clipartpanda.com/wind-clip-art-Kine4KjrT.png" alt="" /><span class="value"> {{currentConditions.windDirection}} {{currentConditions.wind}} mph</span>
-            </div> -->
-                   <!-- <div class="col-sm-6">
-                     <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
-                       <h5 class="sunRiseTitle">{{astronomy.sunRiseHour}}:{{astronomy.sunRiseMin}} am Sunrise</h5>
-                                    </div>
-                   <div class="col-sm-6">
-                     <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
-                       <h5 class="sunRiseTitle">{{astronomy.sunSetHour}}:{{astronomy.sunSetMin}} pm Sunset</h5>
-                                    </div> -->
-                                    <div data-id="{{tenDayForecast.id}}">
-                          <h5><span class="tempDay">{{tenDayForecast.high}}</span><span class="degreesTen"> o</span></h5>
-                        </div>
-
-             <h2 class="city">{{currentConditions.city}}</h2>
-
-             </div>
+            <div class="weatherPH">
+              <span class="value windy"><i class="wi wi-wind-default _15-deg degy"></i> {{currentConditions.windDirection}} {{currentConditions.wind}} mph</span>
+              <span class="value tint"><i class="fa fa-tint tinty"></i>{{currentConditions.rain}}% Chance of Precip.</span>
+              <span class="value humidity"><i class="fa fa-fire firey"></i>{{currentConditions.humidity}} Humidity</span>
+              <span class="value moony"><i class="wi wi-moon-full fully"></i> {{astronomy.phaseofMoon}}</span>
             </div>
-          </div>
-            <div class="col-sm-4 myReset">
-              <div class="flexSideWeather">
                 <div class="currentTemp">
                   <h1 class="tempNow">{{currentConditions.fahrenheit}}<span class="degrees"> o</span><span class="degreesF">F</span></h1>
-                  <div class="feelsLike">Feels Like {{currentConditions.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
+                    <div class="feelsLike">Feels Like {{currentConditions.feelsLike}}<span class="degreesTiny"> o</span><span>F</span></div>
                </div>
-            </div>
-              <div class="flexSideWeatherSmall orangeWeather">
-                   <i class="fa fa-tint tint"></i><span class="value"> <h4>{{currentConditions.rain}}%|</h4></span>
-                   <img class="humidity" src="http://www.clker.com/cliparts/n/Y/q/C/t/0/heat-symbol-hi.png" alt="" />
-                    <span class="value"><h4>{{currentConditions.humidity}}</h4></span>
-              </div>
-            </div>
-              <div>
-                <tenday-directive ng-repeat="oneTenDayForecast in tenDayForecast" t="oneTenDayForecast" data-id="{{t.id}}"></tenday-directive>
-             </div>
+               <h2 class="weatherDescription">{{currentConditions.description}}</h2>
+              <div class="wavesButton"><a href="#/weather/tides"><span class="waves">Tide Charts</span></a></div>
            </div>
          </div>
-           <div class="col-sm-3 myReset flexMap">
-              <div class="homeAside">
-                <div class="profileCard">
-                  <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-                    <h3>{{user.displayName}}</h3>
-                    <h4>Fish Caught: {{user.fishCaught}}</h4>
-                    <h4>Species: {{user.species.length}}</h4>
+           <div class="col-sm-4 myReset">
+              <div class="flexSideWeather">
+                 <div class="col-sm-6">
+                   <span><i class="wi wi-sunrise sunrise"></i></span>
+                     <h5 class="sunRiseTitle">{{astronomy.sunRiseHour}}:{{astronomy.sunRiseMin}} am Sunrise</h5>
+                 </div>
+                   <div class="col-sm-6">
+                     <span><i class="wi wi-sunset sunset"></i></span>
+                       <h5 class="sunRiseTitle">{{astronomy.sunSetHour}}:{{astronomy.sunSetMin}} pm Sunset</h5>
+                  </div>
                 </div>
-                  <div class="weatherDir homeWeather">
-                    <div>
-                      <div class="myButton">
-                         <a href="#/profile/main"><h3>Profile</h3></a>
+                  <div class="flexSideWeatherSmallTop orangeWeather">
+                    <span class="value"><i class="fa fa-eye eye"></i> {{currentConditions.visability}}% Visability |</span>
+                     <span class="value"><i class="fa fa-sun-o sunny"></i>{{currentConditions.UV}} UV Index</span>
+                  </div>
+                  <div class="flexSideWeatherSmall orangeWeather">
+                    <span class="value"><i class="fa fa-tachometer tacher"></i> {{currentConditions.pressure}}In. Pressure |</span>
+                     <span class="value"><i class="wi wi-sprinkles sprinks"></i> {{currentConditions.dew}} Dew Point</span>
+                  </div>
+              </div>
+                <div ng-controller="TabsController">
+                  <tabset class="tabby">
+                    <tab class="fidy" heading="Hourly">
+                      <div class="overflowin">
+                        <hourly-directive ng-repeat=" oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
+                     </div>
+                   </tab>
+                     <tab class="fidy" heading="Weekly">
+                       <div>
+                         <tenday-directive ng-repeat="oneTenDayForecast in tenDayForecast" t="oneTenDayForecast" data-id="{{t.id}}"></tenday-directive>
                       </div>
-                       <div class="myButton">
-                          <a href="#/viewRecipes"><h3>Recipes</h3></a>
-                       </div>
-                         <div class="myButton">
-                           <a href="#/weather"><h3>Weather</h3></a>
-                         </div>
-                        <div class="myButton">
-                          <a href="#/weather/tides"><h3>Tide Charts</h3></a>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </tab>
+                </tabset>
+              </div>
+           </div>
+         </div>
+      </div>
+   </div>
 </div>
 
-
-<!-- *********** Need This Still ************** -->
-
-
-<!--  <div class="container mainCont">
- <div class="row">
-       <div class="col-sm-9 weatherBar weatherDir">
-         <div ng-controller="TabsController">
-           <tabset>
-             <tab heading="Weather">
-               <div class="panel panel-default blackPanel tabBox">
-                   <div class="panel-body">
-                     <div class="col-sm-5 weatherBar">
-                       <alerts-directive a="alerts" data-id="{{a.id}}"></alerts-directive>
-
-
-                         <div class="row">
-                           <img class="darrow" src="http://cliparts.co/cliparts/8cx/KjE/8cxKjEdji.png" alt="" />
-                             <div class="col-sm-6">
-                               <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
-                                 <h5 class="sunRiseTitle">{{astronomy.sunRiseHour}}:{{astronomy.sunRiseMin}} am Sunrise</h5>
-                           </div>
-                             <div class="col-sm-6">
-                               <img class="sunRise" ng-src="https://cdn4.iconfinder.com/data/icons/iconsland-weather/PNG/256x256/Sunrise.png" alt="" /><br>
-                                 <h5 class="sunRiseTitle">{{astronomy.sunSetHour}}:{{astronomy.sunSetMin}} pm Sunset</h5>
-                           </div>
-                         </div>
-
-
-                           <div class="row">
-                             <div class="col-sm-4">
-                               <div class="moon{{astronomy.ageOfMoon}}"></div>
-                           </div>
-                             <div class="col-sm-8">
-                               {{astronomy.phaseofMoon}}
-                           </div>
-                         </div>
-                       </div>
-
-                     <div class="col-sm-7 weatherBar">
-
-                   </div>
-                 </div>
-               </div>
-             </tab>
-               <tab heading="Hourly">
-                 <div class="panel panel-default blackPanel tabBox">
-                   <div class="panel panel-default blackPanel inside">
-                   <div class="panel-body">
-                     <div class="row hourBoxLabel">
-                       <div class="col-sm-1">Time</div>
-                         <div class="col-sm-2">Cond</div>
-                           <div class="col-sm-2">Temp</div>
-                         <div class="col-sm-2">Description</div>
-                       <div class="col-sm-2">Precip</div>
-                     <div class="col-sm-1">Humidity</div>
-                   <div class="col-sm-2">Wind</div>
-                 </div>
-                   <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
-               </div>
-             </div>
-             </div>
-           </tab>
-             <tab heading="10 Hour">
-               <div class="panel panel-default blackPanel tabBox">
-                 <div class="panel panel-default blackPanel inside">
-                 <div class="panel-body">
-                   <div class="row hourBoxLabel">
-                     <div class="col-sm-1">Date</div>
-                       <div class="col-sm-2">Cond</div>
-                         <div class="col-sm-2">Temp</div>
-                       <div class="col-sm-2">Description</div>
-                     <div class="col-sm-2">Precip</div>
-                   <div class="col-sm-1">Humidity</div>
-                 <div class="col-sm-2">Wind</div>
-               </div>
-               <tenday-directive ng-repeat="oneTenDayForecast in tenDayForecast" t="oneTenDayForecast" data-id="{{t.id}}"></tenday-directive>
-                 </div>
-               </div>
-             </div>
-             </tab>
-           </tabset>
-         </div>
-       </div>
-   </div>
-</div>  -->
+<!--   <div class="col-sm-12 moonStuff">
+  <div class="moon{{astronomy.ageOfMoon}} move"></div>
+    <span class="moonStuffTitle">{{astronomy.phaseofMoon}}</span>
+</div> -->

@@ -15,7 +15,8 @@ angular.module('MyApp', [
 'chart.js',
 'recipes',
 'geolocation',
-'catch'
+'catch',
+'moment'
 ])
 
 .config(function($routeProvider) {
@@ -31,6 +32,12 @@ $routeProvider
     redirectTo: '/404'
   });
 });
+
+angular
+      .module('moment', [])
+      .factory('moment', function ($window) {
+        return $window.moment;
+      });
 
 angular
   .module('ng-transloadit', [])
@@ -80,9 +87,9 @@ angular
           xhr.onload = function(response) {
             var results = angular.fromJson(this.response);
             options.processing();;
-            $rootScope.catch.image = results.uploads[0].url;
+            // $rootScope.catch.image = results.uploads[0].url;
             //comment out above and uncomment below in order to run on localhost:3000
-            // $rootScope.catch.image = "http://www.placecage.com/g/200/300"
+            $rootScope.catch.image = "http://www.placecage.com/g/200/300"
             if($rootScope.catch.image !== undefined){
                 $rootScope.$broadcast('catchImage:added');
             }

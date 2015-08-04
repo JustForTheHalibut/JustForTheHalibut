@@ -1,21 +1,35 @@
 <div ng-controller="NavbarCtrl" class="navbar navbar-default">
  <div class="navbar-header">
-  <a class="navbar-brand" href="/#/"><i class="fa fa-anchor"></i> Just For The Halibut</a>
+  <a class="navbar-brand" href="/#/"><!-- <img class="fishLogo" src="assets/fish5.png" alt="" /> -->Just For The Halibut</a>
 </div>
+<ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
+  <li><a href="/#/login"><i class="fa fa-sign-in"></i> Login</a></li>
+  <li><a href="/#/signup">Sign up</a></li>
+</ul>
+<ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
+  <li><a href="/#/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
   <ul class="nav navbar-nav">
-    <li><a class="mainAnchor" href="/#/profile/main">Profile</a></li>
-    <li><a class="mainAnchor" href="/#/profile/achievements">Achievements</a></li>
-    <li><a class="mainAnchor" href="/#/viewRecipes">Recipes</a></li>
-    <li><a class="mainAnchor" href="/#/weather">Weather</a></li>
+    <a class="mainAnchor" href="/#/profile/"><img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}"><span class="topBarName"> {{user.displayName}}</span></a>
+    <li><a class="mainAnchor" href="/#/profile/main">My Catches</a></li>
+    <li><a class="mainAnchor" href="/#/profile/achievements"><i class="fa fa-trophy"></i> Achievements</a></li>
+    <li><a class="mainAnchor" href="/#/viewRecipes"><i class="fa fa-cutlery"></i> Recipes</a></li>
+    <li><a class="mainAnchor" href="/#/weather"><i class="fa fa-cloud"></i> Weather</a></li>
   </ul>
-  <div class="burger"><i class="fa fa-bars"></i></div>
-  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/login"><i class="fa fa-sign-in"></i> Login</a></li>
-    <li><a href="/#/signup">Sign up</a></li>
-  </ul>
-  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-    <li><a href="/#/profile"><i class="fa fa-gear"></i> Profile Settings</a></li>
+<div class="burger"><i class="fa fa-bars"></i></div>
+<!-- <div class="btn-group burger" dropdown is-open="status.isopen">
+      <div id="single-button" type="button" class="burger" dropdown-toggle ng-disabled="disabled">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+        <li role="menuitem"><a href="#">Action</a></li>
+        <li class="divider"></li>
+        <li role="menuitem"><a href="/#/profile/main">My Catches</a></li>
+        <li class="divider"></li>
+        <li role="menuitem"><a href="/#/viewRecipes">Recipes</a></li>
+        <li class="divider"></li>
+        <li role="menuitem"><a href="/#/weather">Weather</a></li>
+      </ul>
+    </div> -->
 
-  </ul>
 </div>

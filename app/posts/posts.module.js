@@ -27,6 +27,10 @@
             authenticated: checkAuth
           }
         })
+        .when('/posts/test', {
+          templateUrl: 'posts/views/test.html',
+          controller: 'postsController as postsCtl'
+        })
         .when('/posts/:postId', {
           templateUrl: 'posts/views/show.html',
           controller: 'postsController as postsCtl'
