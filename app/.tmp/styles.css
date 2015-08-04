@@ -150,11 +150,16 @@ a {
   display: inline-block; }
 
 .profile-picture {
-  width: 100%; }
+  width: 100%;
+  height: 20rem; }
 
 .profilePicBlock {
   display: inline-block;
   width: 40%; }
+
+.achievementPicture {
+  width: 100%;
+  height: 20rem; }
 
 .btn {
   font-weight: bold;
@@ -467,12 +472,58 @@ a {
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
 
+.topPageTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  margin-top: 0; }
+
+.weatherBorder {
+  border-bottom: 4px solid #00ABD8; }
+
+.recipeBorder {
+  border-bottom: 4px solid #DF1231; }
+
+.myCatchBorder {
+  border-bottom: 4px solid #559E55; }
+
+.myProfileBorder {
+  border-bottom: 4px solid #FF8451; }
+
+.achievementsBorder {
+  border-bottom: 4px solid #FFB55F; }
+
 .city {
   text-align: center;
   color: black;
   background-color: white;
   padding: .5rem;
   border-bottom: 3px solid #00ABD8;
+  margin-top: 0; }
+
+.recipeTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 4px solid #DF1231;
+  margin-top: 0; }
+
+.myCatchTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 4px solid #559E55;
+  margin-top: 0; }
+
+.myProfileTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 4px solid #FF8451;
   margin-top: 0; }
 
 .tabby {
@@ -795,6 +846,28 @@ a {
 .tenInside {
   width: 100%; }
 
+.buttonOrange {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+  .buttonOrange h4 {
+    background-color: #FF825A;
+    padding: .7rem;
+    color: white;
+    text-align: center;
+    border: 1px solid #B30D27; }
+  .buttonOrange a {
+    text-decoration: none; }
+
+.buttonOrange:hover h4 {
+  -webkit-transition: 0.3s ease-in;
+          transition: 0.3s ease-in;
+  text-decoration: none;
+  color: white;
+  background-color: #447E43; }
+.buttonOrange:hover a {
+  text-decoration: none; }
+
 .backButtonGreen {
   width: 80%;
   margin-left: auto;
@@ -1003,6 +1076,18 @@ a {
   .flexWeatherTides .tides h4 {
     text-align: center; }
 
+.flexWeatherProfile {
+  width: 100%;
+  min-height: 53rem;
+  float: right;
+  border-bottom: 4px solid #FF8645;
+  background: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s; }
+  .flexWeatherProfile .tides h4 {
+    text-align: center; }
+
 .flexWeatherFish {
   width: 100%;
   min-height: 53rem;
@@ -1036,7 +1121,7 @@ a {
   background-color: #1E2023; }
 
 .angular-google-map-container {
-  height: 60rem; }
+  min-height: 57rem; }
 
 .burger {
   display: none; }
@@ -1067,14 +1152,6 @@ a {
     padding: 2rem;
     width: 48%; }
 
-  .flexMap {
-    position: relative;
-    width: 100%;
-    height: 50rem;
-    box-sizing: border-box;
-    -webkit-transition: 0.4s;
-            transition: 0.4s; }
-
   .burger {
     font-size: 3rem;
     float: right;
@@ -1096,12 +1173,6 @@ a {
     padding: 2rem;
     width: 100%;
     height: 100%; }
-
-  .flexMap {
-    position: relative;
-    width: 100%;
-    height: 40rem;
-    box-sizing: border-box; }
 
   .burger {
     font-size: 3rem;
@@ -1337,7 +1408,7 @@ footer {
   width: 100%;
   height: 5rem;
   background-color: white;
-  position: absolute;
+  display: block;
   bottom: 0;
   margin: 0; }
 

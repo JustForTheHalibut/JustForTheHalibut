@@ -9,6 +9,19 @@
         .when('/weather', {
           templateUrl: 'weather/views/main.html',
           controller: 'WeatherController',
+          resolve: {
+              authenticated: function($q, $location, $auth) {
+                var deferred = $q.defer();
+
+                if (!$auth.isAuthenticated()) {
+                  $location.path('/login');
+                } else {
+                  deferred.resolve();
+                }
+
+                return deferred.promise;
+              }
+          }
           // resolve: {
           //   location: function ($q, $geolocation) {
           //     var dfd = $q.defer();

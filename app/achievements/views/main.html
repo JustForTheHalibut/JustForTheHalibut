@@ -1,0 +1,37 @@
+<div class="rainbow">
+<div class="redTop2"></div>
+<div class="orangeTop2"></div>
+<div class="yellowTop2"></div>
+<div class="greenTop2"></div>
+<div class="lightBlueTop2"></div>
+</div>
+<div class="mainCont flexWeatherDir profileStyle">
+  <div class="page-wrap">
+  <div class="row">
+    <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
+      <div class="col-sm-12 myReset">
+        <h2 class="topPageTitle achievementsBorder">My Achievements</h2>
+      </div>
+      <div class="insideWeather">
+
+        <div class="flexRower">
+          <div class="flexBoxer greenBox" ng-repeat= "one in fish">
+            <div>
+          <a href="#/detail/{{one._id}}"><img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}"></a>
+          <ul class="catchSpecs">
+            <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
+            <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
+            <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
+            <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>
+          </ul>
+        </div>
+          <div class="profileOptions">
+            <span type="button" name="button" ng-click="deleteCatch(one._id)"><i class="fa fa-trash-o trash"></i></span>
+       </div>
+           </div>
+           </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>

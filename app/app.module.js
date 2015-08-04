@@ -16,7 +16,8 @@ angular.module('MyApp', [
 'recipes',
 'geolocation',
 'catch',
-'moment'
+'moment',
+'achievements'
 ])
 
 .config(function($routeProvider) {
