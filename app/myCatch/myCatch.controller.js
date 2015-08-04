@@ -130,6 +130,10 @@ $scope.class = "hide";
     catchService.fishData(stuff);
     $rootScope.catch = stuff;
 
+  // var weightPoints = $rootScope.catch.weight * .25;
+  // var lengthPoints = $rootScope.catch.length * .25;
+  // $rootScope.thesePoints = weightPoints + lengthPoints;
+
     if(file === undefined){
       var retVal = confirm("No image added! Do you want to continue without it? (Note: Harder to prove this catch is real without and image!)");
        if( retVal == true ){
@@ -248,10 +252,48 @@ $scope.class = "hide";
               var species = fish.kind.toLowerCase();
               return species;
             })
+
+          // var isThere  _.exist($rootScope.catch.kind, species)
+          //
+          //   if(isThere !== true){
+          //     $rootScope.thesePoints += 2;
+          //   }
+
+
             mapped.push($rootScope.catch.kind.toLowerCase());
             var species = _.unique(mapped);
             $rootScope.user.species = species;
+
+
             Account.updateProfile($rootScope.user);
+
+            //
+            // // if(points > 0 && points < 5){
+            //     $user.achievementLevel = 'krill';
+            //     $user.achievementPicture = /////
+            // // if(points > 5 && points < 10 ){
+            //     $user.achievementLevel = 'sardine';
+            // // if(points > 10 && points < 15){
+            //     $user.achievementLevel = 'achovy';
+            // // if(points > 15 && points < 20){
+            //     $user.achievementLevel = 'mackeral';
+            // // if(points > 20 && points < 25){
+            //     $user.achievementLevel = 'perch';
+            // //if(points > 25 && points < 30){
+            //     $user.achievementLevel = 'snapper';
+            // //if(points > 30 && points < 35){
+            //     $user.achievementLevel = 'red fish';
+            // //if(points > 35 && points < 40){
+            //     $user.acheivementLevel = 'salmon';
+            // //if(points > 40 && points < 45){
+            //   $user.acheivementLevel = 'grouper';
+            // //if(points > 45 && points < 50){
+            //   $user.achievementLevel = 'halibut';
+
+
+
+
+
           })
 
           catchService.createCatch($rootScope.catch).success(function(data){
