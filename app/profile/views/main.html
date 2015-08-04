@@ -17,7 +17,7 @@
         <div class="flexRower">
           <div class="flexBoxer greenBox" ng-repeat= "one in fish">
             <div>
-          <a href="#/detail/{{one._id}}"><img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}"></a>
+          <a href="#/detail/{{one._id}}"><img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}"></a> <!-- {{one.image || 'http://placehold.it/100x100'}} -->
           <ul class="catchSpecs">
             <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
             <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>

@@ -5,26 +5,25 @@
 <div class="greenTop2"></div>
 <div class="lightBlueTop2"></div>
 </div>
-  <div class="mainCont flexWeatherDir profileStyle">
+  <div class="mainCont profileStyle">
     <div class="page-wrap">
       <div class="row">
-        <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
-          <div class="col-sm-12 myReset">
+        <div class="col-sm-12 myReset flexMainWeather">
+          <div class="col-sm-12 myReset curCity">
             <h2 class="myProfileTitle">My Profile</h2>
          </div>
            <div class="insideWeather">
-             <div class="flexWeatherProfile recipeBox">
-               <div class="flexBoxerRecipeDetail">
+               <div class="flexBoxerRecipeDetail myProfileBorder">
                  <div class="form-group profilePicBlock">
-                   <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+                   <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/557661_4189590051008_1567778097_n.jpg?oh=c9463335a46cce198aa468e50a80e247&oe=56403776'}}">
                    <label class="control-label">Profile Picture</label>
                 </div>
                   <div class="form-group profilePicBlock">
                     <img class="achievementPicture" ng-src="{{user.achievementPicture || 'http://static.comicvine.com/uploads/original/14/146991/4442938-7067438861-Great.jpg'}}">
                     <label class="control-label">Achievement Level: {{user.achievement || 'Shark'}}</label>
                  </div>
-                   <h2>{{user.displayName}}</h2>
-                   <h2>{{user.email}}</h2>
+                   <h2><label class="control-label"><i class="ion-person"></i> Display Name:</label>  {{user.displayName}}</h2>
+                   <h2><label class="control-label"><i class="ion-at"></i> Email Address:</label>  {{user.email}}</h2>
                     <div class="btn btn-lg" ng-click="isCollapsed = !isCollapsed">Edit Information</div>
 	                    <div collapse="!isCollapsed">
 		                    <div class="well well-lg">
@@ -54,12 +53,11 @@
                               <i class="ion-social-googleplus"></i> Link Google Account
                             </button>
                           </div>
-                        </div>
 	                   </div>
                   </div>
                </div>
             </div>
+          </div>
          </div>
       </div>
    </div>
-</div>
