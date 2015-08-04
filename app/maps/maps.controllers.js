@@ -39,7 +39,7 @@
             userName: location.displayName,
             fish: location.kind,
             weight: location.weight,
-            length: location.length
+            length: location.length,
         };
             return marker;
       };
