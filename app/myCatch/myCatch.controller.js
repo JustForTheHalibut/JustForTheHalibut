@@ -80,6 +80,8 @@
     navigator.geolocation.getCurrentPosition(function(position){
       $scope.latitude = position.coords.latitude;
       $scope.longitude = position.coords.longitude;
+      $rootScope.latitude = position.coords.latitude;
+      $rootScope.longitude = position.coords.longitude;
     });
 
 // $scope.submitCatch = function(stuff){
