@@ -77,7 +77,7 @@
       var newLabel = tide.filter(function (el) {
         return el.type === "High Tide" || el.type === "Low Tide"
       }).map(function(el) {
-        return new Date(+el.epoch * 1000);
+        return moment.unix(+el.epoch).format("MM/DD h:mm a");
       });
       console.log(newLabel);
       $scope.tide = tide;

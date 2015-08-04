@@ -203,7 +203,7 @@
            var getTide = function(){
                return $http.get('api/tide').then(function (tide) {
                  console.log("tide", tide)
-                 var tideArr = tide.data.tide.tideSummary;
+                 var tideArr = tide.data.tide.tideSummary.slice(0,24);
                  return mapTideToUrls(tideArr);
                  })
                }

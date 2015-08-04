@@ -5,68 +5,28 @@
 <div class="greenTop2"></div>
 <div class="lightBlueTop2"></div>
 </div>
-<div class="mainCont flexWeatherDir recipesStyle">
-  <div class="page-wrap">
-  <div class="row">
-    <div class="col-sm-12 myReset flexWeatherDir flexMap">
-      <div class="insideWeather">
-
-    <div class="flexWeatherTides">
-      <div class="flexBoxerRecipeDetail">
-      <div class="col-sm-3">
-        <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 150></a><br><br>
-        <button type="button" name="goBack" ng-click="goBack()">-Go Back-</button>
-
-      </div>
-      <div class="col-sm-9">
-        <ul class="catchSpecs">
-          <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
-          <li><h5 class="catchTitle">Ingredients: </h5><div ng-repeat="item in recipe.ingredients"> <p>{{item}}</p></div></li>
-          <li><h5 class="catchTitle">View Recipe: </h5><a href="{{recipe.f2f_url}}">click here</a></li>
-        </ul>
-      </div>
-    </div>
-    </div>
-    </div>
-  </div>
-   </div>
- </div>
- </div>
-
-
-
-        <!-- <div class="col-sm-9 weatherBar">
-          <div ng-controller="TabsController">
-          <tabset>
-            <tab heading="My New Catch"> ng-click here
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <div class="panel panel-default"> Recipe Here
-                    <div class="panel-body">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img src="{{recipe.image_url}}" width= 150></a><br><br>
-                          <button type="button" name="goBack" ng-click="goBack()">-Go Back-</button>
-                        </div>
-                        <div class="col-sm-9">
-                          <ul class="catchSpecs">
-                            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
-                            <li><h5 class="catchTitle">Ingredients: </h5><div ng-repeat="item in recipe.ingredients"> <p>{{item}}</p></div></li>
-                            <li><h5 class="catchTitle">View Recipe: </h5><a href="{{recipe.f2f_url}}">click here</a></li>
-                            <li><button type="button" name="button" ng-click="saveRecipe(recipe)">Add To Favorites</button></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
+  <div class="mainCont flexWeatherDir recipesStyle">
+    <div class="page-wrap">
+      <div class="row">
+        <div class="col-sm-12 myReset flexWeatherDir flexMap">
+          <div class="insideWeather">
+            <div class="flexWeatherTides recipeBox">
+              <div class="flexBoxerRecipeDetail">
+                <div class="col-sm-4">
+                  <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeDetailImg" src="{{recipe.image_url}}"></a><br><br>
+                  <div class="backButton" name="goBack" ng-click="goBack()"><h4>Go Back</h4></div>
+               </div>
+                <div class="col-sm-8">
+                  <ul class="catchSpecs">
+                    <li><h2>{{recipe.title}}</h2></li>
+                    <li><h4 class="catchTitle">Ingredients: </h4><div ng-repeat="item in recipe.ingredients"><p><i class="fa fa-square-o recSquare"></i><span class="recItem">  {{item}}</span></p></div></li>
+                    <li><h5 class="catchTitle">View Recipe: </h5><a href="{{recipe.f2f_url}}">click here</a></li>
+                 </ul>
+               </div>
               </div>
-               </tab>
-        </tabset>
-        </div>
-
             </div>
           </div>
         </div>
-         -->
+      </div>
+    </div>
+ </div>

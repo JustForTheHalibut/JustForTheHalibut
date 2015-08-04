@@ -12,11 +12,11 @@
       <div class="insideWeather">
 
         <div class="flexRower">
-          <div class="flexBoxer" ng-repeat= "one in fish">
+          <div class="flexBoxer greenBox" ng-repeat= "one in fish">
             <div>
-          <img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}">
+          <a href="#/detail/{{one._id}}"><img class="fishListImg" ng-src="{{one.image || 'http://placehold.it/100x100'}}"></a>
           <ul class="catchSpecs">
-            <li><a href="#/detail/{{one._id}}"><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</a></li>
+            <li><h5 class="catchTitle">Fish Kind: </h5>{{one.kind}}</li>
             <li><h5 class="catchTitle">Fish Weight: </h5>{{one.weight}}</li>
             <li><h5 class="catchTitle">Fish Length: </h5>{{one.length}}</li>
             <li><h5 class="catchTitle">Location Caught: </h5>{{one.location}}</li>
