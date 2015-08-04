@@ -23,6 +23,7 @@
         if($rootScope.fish.length === 0){
           $rootScope.user.points = 0;
           $rootScope.user.species = [];
+          Account.updateProfile($rootScope.user);
           console.log("user: ", $rootScope.user);
         }
       });

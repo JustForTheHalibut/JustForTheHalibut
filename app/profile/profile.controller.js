@@ -18,7 +18,6 @@ angular
       Account.getProfile()
         .success(function(data) {
           $rootScope.user = data;
-          console.log(data);
         })
         .error(function(error) {
           $alert({
@@ -40,10 +39,12 @@ angular
                 $rootScope.fish = data.data;
                 if($rootScope.fish.length !== $rootScope.user.fishCaught){
                   $rootScope.user.fishCaught = $rootScope.fish.length;
+                  Account.updateProfile($rootScope.user);
                 }
                 if($rootScope.fish.length === 0){
                   $rootScope.user.points = 0;
                   $rootScope.user.species = [];
+                  Account.updateProfile($rootScope.user);
                   console.log("user: ", $rootScope.user);
                 }
               });
@@ -54,10 +55,12 @@ angular
           $rootScope.fish = data.data;
           if($rootScope.fish.length !== $rootScope.user.fishCaught){
             $rootScope.user.fishCaught = $rootScope.fish.length;
+            Account.updateProfile($rootScope.user);
           }
           if($rootScope.fish.length === 0){
             $rootScope.user.points = 0;
             $rootScope.user.species = [];
+            Account.updateProfile($rootScope.user);
             console.log("user: ", $rootScope.user);
           }
         });
