@@ -13,51 +13,43 @@
             <h2 class="myProfileTitle">My Profile</h2>
          </div>
            <div class="insideWeather">
-               <div class="flexBoxerRecipeDetail myProfileBorder">
-                 <div class="form-group profilePicBlock">
-                   <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/557661_4189590051008_1567778097_n.jpg?oh=c9463335a46cce198aa468e50a80e247&oe=56403776'}}">
-                   <label class="control-label">Profile Picture</label>
+                 <div class="col-sm-6 myReset">
+                   <div class="userDetails">
+                     <div class="picWrap">
+                  <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/557661_4189590051008_1567778097_n.jpg?oh=c9463335a46cce198aa468e50a80e247&oe=56403776'}}">
                 </div>
-                  <div class="form-group profilePicBlock">
-                    <img class="achievementPicture" ng-src="{{user.achievementPicture || 'http://static.comicvine.com/uploads/original/14/146991/4442938-7067438861-Great.jpg'}}">
-                    <label class="control-label">Achievement Level: {{user.achievement || 'Shark'}}</label>
+                   <h5><i class="ion-person"></i> Display Name:</h5><h4>{{user.displayName}}</h4>
+                   <h5><i class="ion-at"></i> Email Address:</h5><h4>  {{user.email}}</h4>
+                   <div class="btn-group-vertical">
+                   <!--   <button class="btn btn-sm btn-danger" ng-if="user.facebook" ng-click="unlink('facebook')">
+                     <i class="ion-social-facebook"></i> Unlink Facebook Account
+                   </button>
+                   <button class="btn btn-sm btn-primary" ng-if="!user.facebook" ng-click="link('facebook')">
+                     <i class="ion-social-facebook"></i> Link Facebook Account
+                   </button> -->
+                     <button class="btn btn-sm btn-danger" ng-if="user.google" ng-click="unlink('google')">
+                       <i class="ion-social-googleplus"></i> Unlink Google Account
+                     </button>
+                     <button class="btn btn-sm btn-primary" ng-if="!user.google" ng-click="link('google')">
+                       <i class="ion-social-googleplus"></i> Link Google Account
+                     </button>
                  </div>
-                   <h2><label class="control-label"><i class="ion-person"></i> Display Name:</label>  {{user.displayName}}</h2>
-                   <h2><label class="control-label"><i class="ion-at"></i> Email Address:</label>  {{user.email}}</h2>
-                    <div class="btn btn-lg" ng-click="isCollapsed = !isCollapsed">Edit Information</div>
-	                    <div collapse="!isCollapsed">
-		                    <div class="well well-lg">
-                          <form method="post" ng-submit="updateProfile()">
-                            <div class="form-group">
-                              <label class="control-label"><i class="ion-person"></i> Display Name</label>
-                              <input type="text" class="form-control" ng-model="user.displayName" />
-                           </div>
-                             <div class="form-group">
-                               <label class="control-label"><i class="ion-at"></i> Email Address</label>
-                               <input type="email" class="form-control" ng-model="user.email" />
-                            </div>
-                              <button class="btn btn-lg btn-success buttonForm">Update Information</button>
-                          </form>
-                          <legend><i class="ion-link"></i> Linked Accounts</legend>
-                          <div class="btn-group-vertical">
-                          <!--   <button class="btn btn-sm btn-danger" ng-if="user.facebook" ng-click="unlink('facebook')">
-                            <i class="ion-social-facebook"></i> Unlink Facebook Account
-                          </button>
-                          <button class="btn btn-sm btn-primary" ng-if="!user.facebook" ng-click="link('facebook')">
-                            <i class="ion-social-facebook"></i> Link Facebook Account
-                          </button> -->
-                            <button class="btn btn-sm btn-danger" ng-if="user.google" ng-click="unlink('google')">
-                              <i class="ion-social-googleplus"></i> Unlink Google Account
-                            </button>
-                            <button class="btn btn-sm btn-primary" ng-if="!user.google" ng-click="link('google')">
-                              <i class="ion-social-googleplus"></i> Link Google Account
-                            </button>
-                          </div>
-	                   </div>
-                  </div>
                </div>
+               </div>
+                <div class="col-sm-6 myReset">
+                  <div class="achevDetails">
+                    <div class="picWrap">
+                    <img class="achievementPicture" ng-src="{{user.achievementPicture || 'http://static.comicvine.com/uploads/original/14/146991/4442938-7067438861-Great.jpg'}}">
+                  </div>
+                    <h5>Achievement Level:</h5><h4> {{user.achievement || 'Shark'}}</h4>
+                    <h5>Fish Caught:</h5><h4> {{user.fishCaught}}</h4>
+                    <h5>Species:<h5><h4> {{user.species.length}}</h4>
+                </div>
+                 </div>
             </div>
           </div>
          </div>
       </div>
    </div>
+
+   

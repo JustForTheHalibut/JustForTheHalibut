@@ -12,7 +12,7 @@
 
     })
 
-    .controller('WeatherController', function($scope, $rootScope, WeatherService, $routeParams, $geolocation){
+    .controller('WeatherController', function($scope, $rootScope, WeatherService, $routeParams, $geolocation, $window){
       // localStorage.setItem('location',JSON.stringify(location))
       // $scope.latitude = location.latitude;
       // $scope.longitude = location.longitude;
@@ -67,6 +67,9 @@
           $scope.alerts = alerts;
         })
 
+        $scope.goBack = function(){
+          $window.history.back();
+        }
 
       WeatherService.getTide($rootScope.latitude, $rootScope.longitude).then(function(tide){
       console.log("tide chart from CONTROLLER", tide);
