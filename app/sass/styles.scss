@@ -2020,3 +2020,42 @@ footer {
   .show{
     display:block;
   }
+
+  .achieveTitle, .achieveYou{
+    text-align: center;
+  }
+  .achieveImg{
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 80%;
+    height: 150px;
+  }
+
+  .progress {
+  margin-top: 5%;
+  height: 3em;
+  border: 1px solid black;
+  i { line-height: 3.5em; }
+}
+
+.progress-bar {
+  transition: width 1s ease-in-out;
+}
+
+.levelUp {
+  color: black;
+}
+
+.amount{
+  margin-top: 6%;
+  margin-right: 10%;
+}
+
+.toAdd{
+  margin-top: 5%;
+  height: 50%;
+}
+.quote{
+  margin-left: 7%;
+  margin-top: 5%;
+}

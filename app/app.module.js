@@ -16,6 +16,7 @@ angular.module('MyApp', [
 'recipes',
 'geolocation',
 'catch',
+'achieve',
 'moment'
 ])
 

@@ -1,0 +1,49 @@
+<div class="rainbow">
+<div class="redTop2"></div>
+<div class="orangeTop2"></div>
+<div class="yellowTop2"></div>
+<div class="greenTop2"></div>
+<div class="lightBlueTop2"></div>
+</div>
+  <div class="mainCont">
+    <div class="page-wrap">
+    <div class="row">
+      <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
+        <div class="insideWeather">
+          <div class="col-sm-8 myReset">
+            <div class="flexWeather">
+
+            <div class="weatherPH">
+                <h2 class="achieveTitle">Achievement Level</h2>
+                <p class="achieveYou">{{user.achievement}}</p>
+                <img class="achieveImg" ng-src="{{user.achievementPicture}}" />
+
+            </div>
+
+           </div>
+         </div>
+           <div class="col-sm-4 myReset">
+              <div class="flexSideWeather">
+                 <div class="col-sm-12">
+                   <h5 class="levelUp"> Level Up: </h5>
+                    <progressbar class="progress-striped active" animate="true" max="50" value="progressValue" type="success"><i><span count-to="{{countTo}}" duration="1" count-from="{{countFrom}}"></span> {{countTo}} / 50</i></progressbar>
+                 </div>
+
+                </div>
+                  <div class="flexSideWeatherSmallTop orangeWeather">
+                    <h5> Total Fish Caught: </h5><br>
+                    <p class="amount"> {{user.fishCaught}}  </p>
+                    <h5> Different Species: </h5>
+                    <p class ="amount"> {{user.species.length}} </p>
+                  </div>
+                  <div class="flexSideWeatherSmall orangeWeather">
+                    <button type="button" class="btn btn-primary toAdd" ng-click="addCatch()">Add Catch</button>
+                    <p class="quote"> A Reel Expert Can Tackle Anything!</p>
+                  </div>
+              </div>
+
+           </div>
+         </div>
+      </div>
+   </div>
+</div>
