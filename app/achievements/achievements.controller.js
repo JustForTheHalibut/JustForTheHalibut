@@ -26,6 +26,10 @@
         }, 200);
       }
 
+      $scope.addCatch= function(){
+        $location.path('/addCatch');
+      }
+
 
   });
 }());
