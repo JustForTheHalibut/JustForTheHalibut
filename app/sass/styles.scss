@@ -1,13 +1,16 @@
 @import "partials/auth";
+@import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
 
 body {
   font-family: 'Open Sans', sans-serif;
   background: #1E2023;
+  font-family: Comfortaa;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  font-family: Comfortaa;
 }
 
 a {
@@ -179,11 +182,46 @@ a {
 
 .profile-picture {
   width: 100%;
+  height: 32rem;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+}
+
+.picWrap {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.achievementPicture {
+  width: 100%;
+  padding: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 32rem;
+  border-radius: 2px;
 }
 
 .profilePicBlock{
   display:inline-block;
   width: 40%;
+}
+
+.userDetails {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  margin: 0px 10px 10px 0px;
+  height: 55rem;
+}
+
+.achevDetails {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  height: 55rem;
 }
 
 .btn {
@@ -347,7 +385,91 @@ a {
 * Login
 *********************/
 
+@import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
 
+h1 {
+  text-align: center;
+}
+
+svg {
+  border-radius: 50%;
+}
+
+
+#menu {
+  height: 30rem;
+  position: absolute;
+  left: 22%;
+  bottom: -2.25rem;
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+  text-decoration: none;
+}
+
+.homey {
+  background-color: #559E55;
+}
+
+.item .sector {
+  transition: all .1s linear;
+  fill: #D1D6D9;
+  stroke: #ddd;
+}
+.item:hover .sector {
+  fill: #559E55;
+}
+
+.menu-trigger {
+  fill: deepPink;
+  pointer-events:
+  auto;
+}
+.menu-trigger:hover {
+  cursor: pointer;
+ }
+.item use {
+  fill: #333;
+}
+.item:hover use {
+   fill: #fff;
+  }
+
+.newFooter {
+  height: 5rem;
+  background-color: #D1D6D9;
+  width: 100%;
+  position: absolute;
+  bottom: -2.8rem;
+}
+
+.try {
+  background-image: url('http://www.broomfield.org/images/pages/N1062/blue%20heading%20icons_fishing.png');
+  background-size: cover;
+  height: 18rem;
+  width: 39rem;
+  z-index: 10;
+  left: 37%;
+  bottom: 2.2rem;
+  position: absolute;
+  overflow: hidden;
+}
+
+.tinyFish {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.straight {
+  text-align: center;
+  color: blue;
+}
+
+.dropdown-menu {
+  margin-top: 1rem;
+  margin-right: 8rem;
+  padding-right: 5rem;
+}
 
 /*********************
 * FlexBox
@@ -365,12 +487,13 @@ a {
   width: 32%;
   float: right;
   background-color: white;
-  height: 40rem;
+  height: 41rem;
   padding: 2rem;
   box-sizing: border-box;
   transition: 0.4s;
   margin: 5px;
 }
+
 
 .flexBoxerLarge {
   width: 100%;
@@ -396,6 +519,7 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .flexProfile {
   width: 100%;
@@ -433,6 +557,8 @@ a {
   margin-top: .8rem;
   padding: 0rem;
   float: left;
+  border-radius: 2px;
+  border: 1px solid #E4E4E4;
 }
 
 .topBarName {
@@ -553,12 +679,67 @@ a {
 
 }
 
+.topPageTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  margin-top: 0;
+}
+
+.weatherBorder {
+  border-bottom: 4px solid #00ABD8;
+}
+
+.recipeBorder {
+  border-bottom: 4px solid #DF1231;
+}
+
+.myCatchBorder {
+  border-bottom: 4px solid #559E55;
+}
+
+.myProfileBorder {
+  border-bottom: 4px solid #FF8451;
+}
+
+.achievementsBorder {
+  border-bottom: 4px solid #FFB55F;
+}
+
 .city {
   text-align: center;
   color: black;
   background-color: white;
   padding: .5rem;
   border-bottom: 3px solid #00ABD8;
+  margin-top: 0;
+}
+
+.recipeTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 4px solid #DF1231;
+  margin-top: 0;
+}
+
+.myCatchTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 4px solid #559E55;
+  margin-top: 0;
+}
+
+.myProfileTitle {
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding: .5rem;
+  border-bottom: 4px solid #FF8451;
   margin-top: 0;
 }
 
@@ -862,7 +1043,20 @@ font-weight: bold;
   margin-bottom: 1rem;
   margin-right: 1rem;
   padding: 0;
-  border-bottom: 3px solid #00ABD8;
+  border-bottom: 4px solid #00ABD8;
+}
+
+.flexWeatherYellow {
+  width: 98.4%;
+  height: 32rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  transition: 0.4s;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  border-bottom: 4px solid #FFB74D;
 }
 
 
@@ -890,7 +1084,20 @@ font-weight: bold;
   background-color: #F4F4F4;
   box-sizing: border-box;
   transition: 0.4s;
-  border-bottom: 3px solid #00ABD8;
+  border-bottom: 4px solid #00ABD8;
+}
+
+.flexSideWeatherYellow {
+  width: 100%;
+  height: 12rem;
+  float: right;
+  color: white;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  transition: 0.4s;
+  border-bottom: 4px solid #FFB74D;
 }
 
 .flexSideWeatherSmallTop {
@@ -902,7 +1109,19 @@ font-weight: bold;
   transition: 0.4s;
   padding-top: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 3px solid #00ABD8;
+  border-bottom: 4px solid #00ABD8;
+}
+
+.flexSideWeatherSmallTopYellow {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #FFB74D;
 }
 
 .flexSideWeatherSmall {
@@ -914,7 +1133,19 @@ font-weight: bold;
   transition: 0.4s;
   padding-top: 1rem;
   margin-bottom: 2rem;
-  border-bottom: 3px solid #00ABD8;
+  border-bottom: 4px solid #00ABD8;
+}
+
+.flexSideWeatherSmallYellow {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #FFB74D;
 }
 
 .insideWeather {
@@ -952,6 +1183,34 @@ font-weight: bold;
 
 .tenInside {
   width: 100%;
+}
+
+.buttonOrange {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  h4 {
+    background-color: #FF825A;
+    padding: .7rem;
+    color: white;
+    text-align: center;
+    border: 1px solid #B30D27;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.buttonOrange:hover {
+  h4 {
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    color: white;
+    background-color: #447E43;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .backButtonGreen {
@@ -998,13 +1257,42 @@ font-weight: bold;
   }
 }
 
-
 .backButton:hover {
   h4 {
     transition: 0.3s ease-in;
     text-decoration: none;
     color: white;
     background-color: #B30D27;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.backButtonBlue {
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0rem;
+  h4 {
+    background-color: #00ABD8;
+    padding: .7rem;
+    color: white;
+    text-align: center;
+    border: 1px solid #0089AD;
+    margin-bottom: 0rem;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.backButtonBlue:hover {
+  h4 {
+    transition: 0.3s ease-in;
+    text-decoration: none;
+    color: white;
+    background-color: #0089AD;
   }
   a {
     text-decoration: none;
@@ -1034,6 +1322,10 @@ font-weight: bold;
   a {
     text-decoration: none;
   }
+}
+
+.highnlow {
+  margin-top: 0;
 }
 
 .fishLogo {
@@ -1106,12 +1398,18 @@ font-weight: bold;
 }
 
 .tides {
-  padding: 4rem;
+  padding: 0rem 3rem 2rem 3rem;
 }
 
 .rainbow {
   width: 100%;
   margin-top: -2rem;
+  padding: 0;
+  display: flex;
+}
+
+.rainbow2 {
+  width: 100%;
   padding: 0;
   display: flex;
 }
@@ -1210,6 +1508,21 @@ font-weight: bold;
    }
   }
 
+  .flexWeatherProfile {
+    width: 100%;
+    min-height: 53rem;
+    float: right;
+    border-bottom: 4px solid #FF8645;
+    background: #F4F4F4;
+    box-sizing: border-box;
+    transition: 0.4s;
+    .tides {
+      h4{
+        text-align: center;
+      }
+     }
+    }
+
   .flexWeatherFish {
     width: 100%;
     min-height: 53rem;
@@ -1246,7 +1559,7 @@ font-weight: bold;
       }
 
 .angular-google-map-container {
-    height: 60rem;
+    min-height: 59rem;
 }
 
 .burger {
@@ -1286,26 +1599,18 @@ font-weight: bold;
     width: 48%;
   }
 
-  .flexMap {
-    position: relative;
-    width: 100%;
-    height: 50rem;
-    box-sizing: border-box;
-    transition: 0.4s;
-  }
-
-  .burger {
+  /* .burger {
     font-size: 3rem;
     float: right;
     margin-right: 2rem;
     margin-top: .5rem;
     display: inline;
     color: black;
-  }
+  } */
 
-  .nav {
-    display: none;
-  }
+/*   .nav {
+  display: none;
+} */
 
 }
 @media (max-width: 500px) {
@@ -1323,22 +1628,14 @@ font-weight: bold;
     height: 100%;
   }
 
-
-  .flexMap {
-    position: relative;
-    width: 100%;
-    height: 40rem;
-    box-sizing: border-box;
-  }
-
-.burger {
+/* .burger {
   font-size: 3rem;
   float: right;
   padding-top: 0;
   margin-right: 1rem;
   display: inline;
   color: black;
-}
+} */
 
 }
 
@@ -1624,11 +1921,12 @@ padding: 0;
 
 footer {
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: white;
-  position: absolute;
-  bottom: 0;
+  bottom: -2;
   margin: 0;
+  position: absolute;
+  background-color: #D1D6D9;
 }
 
 .footerNav {
@@ -1914,11 +2212,17 @@ footer {
 
 .page-bg {
 		position: absolute;
+    height: 42rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
 		top: -20px;
 		left: -20px;
 		right: -20px;
 		bottom: -20px;
 		background: url('http://bouldermapgallery.com/catalog/images/fishing.jpg') center;
+    background-size: cover;
 		-webkit-filter: blur(0px);
 		z-index: 10;
 	}

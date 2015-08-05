@@ -10,6 +10,8 @@ angular
 
   .controller('ProfileController', function($scope, $auth, $alert, Account, $location, catchService, $rootScope) {
 
+    $scope.isCollapsed = false;
+
     /**
      * Get user's profile information.
      */

@@ -7,14 +7,15 @@
 <div class="col-sm-2 myReset darkBlueTop"></div>
 </div>
 <div class="mainCont flexWeatherDir addCatchStyle">
+  <div class="page-wrap">
   <div class="row">
 
-    <div class="col-sm-9 myReset flexWeatherDir flexMap">
+    <div class="col-sm-12 myReset flexWeatherDir flexMap">
       <div class="insideWeather">
 
         <div class="flexBoxerLarge">
         <div class="col-sm-4 myReset">
-          <img class="detailFish" ng-src="{{catch.image || 'http://placehold.it/100x100'}}"><br><br>
+          <img class="detailFish" ng-src="{{catch.image || 'http://placehold.it/'}}"><br><br>
         </div>
         <div class="col-sm-8">
           <strong> Successfully added catch!!! </strong>
@@ -47,25 +48,6 @@
     </div>
   </div>
 
-    <div class="col-sm-3 myReset flexMap">
-       <div class="homeAside">
-         <div class="profileCard">
-           <img class="profile-picture-small" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/284647_2032369281837_592659_n.jpg?oh=c7a28b2bf13274092cbe30d60ca1b560&oe=56133D79'}}">
-             <h3>{{user.displayName}}</h3>
-             <h4>Fish Caught: {{user.fishCaught}}</h4>
-             <h4>Species: {{user.species.length}}</h4>
-         </div>
-           <div class="weatherDir homeWeather">
-             <div>
-               <div class="myButton">
-                 <a href="#/weather"><h3>Weather</h3></a>
-               </div>
-                 <div class="myButton">
-                   <a href="#/weather/tides"><h3>Tide Charts</h3></a>
-                </div>
-             </div>
-         </div>
-     </div>
  </div>
  </div>
  </div>
