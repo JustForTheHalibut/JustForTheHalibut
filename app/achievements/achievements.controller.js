@@ -1,6 +1,5 @@
 (function() {
   'use strict';
-
   angular
     .module('achieve')
     .controller('achieveController', function ($scope, $http, Account, $rootScope, $location, $window, $timeout) {

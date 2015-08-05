@@ -11,8 +11,9 @@
       <div class="col-sm-12 myReset flexWeatherDir flexMap">
         <div class="insideWeather">
           <div class="flexWeatherTides">
+            <div class="backButtonBlue" name="goBack" ng-click="goBack()"><h4>Go Back</h4></div>
             <div class="tides">
-              <h4>High And Low Tide(ft)</h4>
+              <h4 class="hightnlow">High And Low Tide(ft)</h4>
               <canvas id="line" class="chart chart-line" data="data" labels="labels" series="series"></canvas>
           </div>
         </div>

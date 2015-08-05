@@ -1,12 +1,15 @@
 (function() {
   'use strict';
-
-  angular
-    .module('achieve', [
+    angular
+      .module('achieve', [
       'ngRoute',
     ])
     .config(function($routeProvider){
       $routeProvider
+        .when('/profile/achievements', {
+          templateUrl: 'achievements/views/main.html',
+          controller: 'WeatherController',
+        })
         .when('/achievement', {
           templateUrl: 'achievements/views/achievementsPage.html',
           controller: 'achieveController',
@@ -23,7 +26,6 @@
                 return deferred.promise;
               }
           }
-        });
-
+        })
     });
 }());
