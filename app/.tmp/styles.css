@@ -326,8 +326,8 @@ svg {
 #menu {
   height: 30rem;
   position: absolute;
-  bottom: -2rem;
   left: 25%;
+  bottom: -2rem;
   display: block;
   margin: 0 auto;
   overflow: visible; }
