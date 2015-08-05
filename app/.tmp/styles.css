@@ -1,11 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
 body {
   font-family: 'Open Sans', sans-serif;
-  background: #1E2023; }
+  background: #1E2023;
+  font-family: Comfortaa; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: Comfortaa; }
 
 a {
   color: #000; }
@@ -326,20 +329,24 @@ svg {
 #menu {
   height: 30rem;
   position: absolute;
-  left: 25%;
-  bottom: -2rem;
+  left: 22%;
+  bottom: -2.25rem;
   display: block;
   margin: 0 auto;
-  overflow: visible; }
+  overflow: visible;
+  text-decoration: none; }
+
+.homey {
+  background-color: #559E55; }
 
 .item .sector {
   -webkit-transition: all .1s linear;
           transition: all .1s linear;
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #D1D6D9;
   stroke: #ddd; }
 
 .item:hover .sector {
-  fill: #333; }
+  fill: #559E55; }
 
 .menu-trigger {
   fill: deepPink;
@@ -356,10 +363,34 @@ svg {
 
 .newFooter {
   height: 5rem;
-  background-color: #D2D2D3;
+  background-color: #D1D6D9;
   width: 100%;
   position: absolute;
-  bottom: -3.5rem; }
+  bottom: -2.8rem; }
+
+.try {
+  background-image: url("http://www.broomfield.org/images/pages/N1062/blue%20heading%20icons_fishing.png");
+  background-size: cover;
+  height: 18rem;
+  width: 39rem;
+  z-index: 10;
+  left: 37%;
+  bottom: 2.2rem;
+  position: absolute;
+  overflow: hidden; }
+
+.tinyFish {
+  height: 1.5rem;
+  width: 1.5rem; }
+
+.straight {
+  text-align: center;
+  color: blue; }
+
+.dropdown-menu {
+  margin-top: 1rem;
+  margin-right: 8rem;
+  padding-right: 5rem; }
 
 /*********************
 * FlexBox
@@ -835,7 +866,20 @@ svg {
   margin-bottom: 1rem;
   margin-right: 1rem;
   padding: 0;
-  border-bottom: 3px solid #00ABD8; }
+  border-bottom: 4px solid #00ABD8; }
+
+.flexWeatherYellow {
+  width: 98.4%;
+  height: 32rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  padding: 0;
+  border-bottom: 4px solid #FFB74D; }
 
 .weatherBackgrounder {
   background-image: url("http://wallpoper.com/images/00/44/66/90/aero-green-and-dark-blue_00446690.jpg"); }
@@ -860,7 +904,20 @@ svg {
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
-  border-bottom: 3px solid #00ABD8; }
+  border-bottom: 4px solid #00ABD8; }
+
+.flexSideWeatherYellow {
+  width: 100%;
+  height: 12rem;
+  float: right;
+  color: white;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border-bottom: 4px solid #FFB74D; }
 
 .flexSideWeatherSmallTop {
   width: 100%;
@@ -872,7 +929,19 @@ svg {
           transition: 0.4s;
   padding-top: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 3px solid #00ABD8; }
+  border-bottom: 4px solid #00ABD8; }
+
+.flexSideWeatherSmallTopYellow {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #FFB74D; }
 
 .flexSideWeatherSmall {
   width: 100%;
@@ -884,7 +953,19 @@ svg {
           transition: 0.4s;
   padding-top: 1rem;
   margin-bottom: 2rem;
-  border-bottom: 3px solid #00ABD8; }
+  border-bottom: 4px solid #00ABD8; }
+
+.flexSideWeatherSmallYellow {
+  width: 100%;
+  height: 9rem;
+  float: right;
+  background-color: #F4F4F4;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 4px solid #FFB74D; }
 
 .insideWeather {
   height: 60rem; }
@@ -1099,6 +1180,14 @@ svg {
   display: -ms-flexbox;
   display: flex; }
 
+.rainbow2 {
+  width: 100%;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
 .redTop {
   width: 20%;
   background-color: #DA1A2E;
@@ -1221,7 +1310,7 @@ svg {
   background-color: #1E2023; }
 
 .angular-google-map-container {
-  min-height: 57rem; }
+  min-height: 59rem; }
 
 .burger {
   display: none; }
@@ -1252,16 +1341,17 @@ svg {
     padding: 2rem;
     width: 48%; }
 
-  .burger {
+  /* .burger {
     font-size: 3rem;
     float: right;
     margin-right: 2rem;
     margin-top: .5rem;
     display: inline;
-    color: black; }
-
-  .nav {
-    display: none; } }
+    color: black;
+  } */
+  /*   .nav {
+    display: none;
+  } */ }
 @media (max-width: 500px) {
   .page-wrap {
     margin: 3rem auto;
@@ -1274,13 +1364,14 @@ svg {
     width: 100%;
     height: 100%; }
 
-  .burger {
+  /* .burger {
     font-size: 3rem;
     float: right;
     padding-top: 0;
     margin-right: 1rem;
     display: inline;
-    color: black; } }
+    color: black;
+  } */ }
 /*********************
 * Home
 *********************/
@@ -1506,11 +1597,12 @@ svg {
 *********************/
 footer {
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   background-color: white;
-  display: block;
-  bottom: 0;
-  margin: 0; }
+  bottom: -2;
+  margin: 0;
+  position: absolute;
+  background-color: #D1D6D9; }
 
 .footerNav {
   position: absolute;
@@ -1845,3 +1937,38 @@ footer {
 
 .show {
   display: block; }
+
+.achieveTitle, .achieveYou {
+  text-align: center; }
+
+.achieveImg {
+  margin-left: 10%;
+  margin-top: 5%;
+  width: 80%;
+  height: 150px; }
+
+.progress {
+  margin-top: 5%;
+  height: 3em;
+  border: 1px solid black; }
+  .progress i {
+    line-height: 3.5em; }
+
+.progress-bar {
+  -webkit-transition: width 1s ease-in-out;
+          transition: width 1s ease-in-out; }
+
+.levelUp {
+  color: black; }
+
+.amount {
+  margin-top: 6%;
+  margin-right: 10%; }
+
+.toAdd {
+  margin-top: 5%;
+  height: 50%; }
+
+.quote {
+  margin-left: 7%;
+  margin-top: 5%; }

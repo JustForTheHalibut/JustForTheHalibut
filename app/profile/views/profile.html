@@ -14,9 +14,9 @@
          </div>
            <div class="insideWeather">
                  <div class="col-sm-6 myReset">
-                   <div class="userDetails">
+                   <div class="userDetails myProfileBorder">
                      <div class="picWrap">
-                  <img class="profile-picture" ng-src="{{user.picture || 'https://scontent-mia1-1.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/557661_4189590051008_1567778097_n.jpg?oh=c9463335a46cce198aa468e50a80e247&oe=56403776'}}">
+                  <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
                 </div>
                    <h5><i class="ion-person"></i> Display Name:</h5><h4>{{user.displayName}}</h4>
                    <h5><i class="ion-at"></i> Email Address:</h5><h4>  {{user.email}}</h4>
@@ -37,7 +37,7 @@
                </div>
                </div>
                 <div class="col-sm-6 myReset">
-                  <div class="achevDetails">
+                  <div class="achevDetails myProfileBorder">
                     <div class="picWrap">
                     <img class="achievementPicture" ng-src="{{user.achievementPicture || 'http://static.comicvine.com/uploads/original/14/146991/4442938-7067438861-Great.jpg'}}">
                   </div>
@@ -51,5 +51,3 @@
          </div>
       </div>
    </div>
-
-   
