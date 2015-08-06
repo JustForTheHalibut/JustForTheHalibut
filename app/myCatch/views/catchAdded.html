@@ -13,11 +13,12 @@
         <div class="col-sm-8">
           <ul class="catchSpecs">
             <li><a href="#/detail/{{catch._id}}"><h5 class="catchTitle">Fish Kind: </h5>{{catch.kind}} </a></li>
-            <li><h5 class="catchTitle">Fish Weight: </h5>{{catch.weight}}</li>
-            <li><h5 class="catchTitle">Fish Length: </h5>{{catch.length}}</li>
-            <li><h5 class="catchTitle">Location Caught: </h5>{{catch.location}}</li>
-            <li><h5 class="catchTitle">Tackle Used: </h5>{{catch.tackle}}</li>
-            <li><h5 class="catchTitle">Bait Used: </h5>{{catch.bait}}</li>
+            <li><h5 class="catchTitle">Fish Weight: </h5> {{catch.weight}}</li>
+            <li><h5 class="catchTitle">Fish Length: </h5> {{catch.length}}</li>
+            <li><h5 class="catchTitle">Location Caught: </h5> {{catch.location}}</li>
+            <li><h5 class="catchTitle">Tackle Used: </h5> {{catch.tackle}}</li>
+            <li><h5 class="catchTitle">Bait Used: </h5> {{catch.bait}}</li>
+            <span name="button" ng-click="deleteCatch(catch._id, catch)"><i class="fa fa-trash-o trash"></i></span>
           </ul>
         </div>
       </div>
@@ -29,8 +30,8 @@
         <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="goodRatio" src="{{recipe.image_url}}"></a><br><br>
       </div>
           <ul class="catchSpecs">
-            <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
-            <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+            <li><h5 class="catchTitle">Recipe Name: </h5> {{recipe.title}}</li>
+            <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}"> View</a> </li>
          </ul>
         <div class="addCatchOptions">
            <span class=""><a href="{{recipe.f2f_url}}"><img class="foodToFork" src="http://food2fork.com/F2F/static/images/webLogo.png" alt="" /></a></span>

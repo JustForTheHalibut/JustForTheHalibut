@@ -31,6 +31,7 @@ angular
         });
     };
 
+
     if($location.path() === '/profile/main'){
       if($rootScope.user === undefined){
           Account.getProfile()
@@ -49,6 +50,7 @@ angular
                   Account.updateProfile($rootScope.user);
                   console.log("user: ", $rootScope.user);
                 }
+
               });
             })
       }
