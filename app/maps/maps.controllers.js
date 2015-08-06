@@ -3,12 +3,17 @@
     .module('maps')
 
       .controller("MapController", function($scope, uiGmapGoogleMapApi, Account, LeafService, $rootScope, $http, $window, $location) {
+
+
         if($rootScope.user === undefined){
           Account.getProfile()
             .success(function(data) {
               $scope.user = data;
               $rootScope.user = data;
               console.log(data);
+              // $rootScope.user.points = "0";
+              // $rootScope.user.fishCaught = "0";
+              // Account.updateProfile($rootScope.user);
             })
       }
 
@@ -27,6 +32,8 @@
           console.log("maps setting root scope coords");
         });
       }
+
+
 
 
       $scope.markers = [];
@@ -62,6 +69,29 @@
       // })
 
       LeafService.getAllProfiles().then(function(data){
+        //This calculates the top three leveled memebers
+        var sortArray = [];
+        _.forEach(data.data, function(entry){
+          if(entry.points === undefined || entry.points === null){
+            console.log("no points");
+          }
+          else{
+            sortArray.push(entry);
+          }
+        })
+        sortArray.sort(function(a,b) {
+          return b.points - a.points;
+        } );
+        $rootScope.topThree = [];
+
+        for(var i = 0; i < 3; i++){
+          $rootScope.topThree.push(sortArray[i]);
+        }
+
+        // End of top three leveled memebers
+
+
+        console.log("sorted Array: ", sortArray);
         var markers= _.map(data.data, function(obj){
           LeafService.getProfile(obj.displayName).then(function(data){
            if(data.data !== undefined){
