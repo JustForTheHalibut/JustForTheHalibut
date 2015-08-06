@@ -42,6 +42,27 @@
                   </div>
               </div>
 
+              <div class="flexRower">
+                <div class="flexBoxer greenBox" ng-repeat= "person in topThree">
+                  <div>
+                <img class="fishListImg" width= "100" height= "100" ng-src="{{person.picture || 'http://images.clipartpanda.com/bass-fish-clip-art-black-and-white-AR-OTHER-SPORTS-14-R.png'}}">
+                <img class="fishListImg" width= "100" height= "100" ng-src="{{person.achievementPicture || 'http://placehold.it/100x100'}}">
+                <ul class="catchSpecs">
+                  <li><h5 class="catchTitle">User: </h5> {{person.displayName}}</li>
+                  <li><h5 class="catchTitle">Achievement Level: </h5> {{person.achievement}}</li>
+                  <li><h5 class="catchTitle">Points Earned: </h5> {{person.points}}</li>
+                  <li><h5 class="catchTitle">Total Fish Caught: </h5> {{person.fishCaught}}</li>
+                  <li><h5 class="catchTitle">Different Species: </h5> {{person.species.length}}</li>
+                  <li ng-click="viewTheirCatch(person.displayName, person.catch._id)"><h5 class="catchTitle" >Biggest Catch: </h5> {{person.catch.kind}}</li>
+                </ul>
+              </div>
+              <div class="profileOptions">
+                  <span type="button" name="button" ><i class="fa fa-trash-o trash"></i></span>
+              </div>
+                 </div>
+                 </div>
+
+
            </div>
          </div>
       </div>

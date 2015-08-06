@@ -29,14 +29,22 @@
       });
     }
 
+
     catchService.getCatch($rootScope.user.displayName, $routeParams.catchId).then(function (aCatch) {
         console.log("this is what we need to display: ", aCatch);
         $scope.aCatch = aCatch.data;
+        if($scope.aCatch === ""){
+          catchService.getCatch($rootScope.someUser, $routeParams.catchId). then(function(aCatch){
+            $scope.aCatch = aCatch.data;
+          });
+        }
       });
 
     if($location.path() === '/addCatch'){
       $scope.catch = defaultCatch;
     }
+
+
 
     if($location.path() === '/catchAdded'){
       var fishType = $scope.catch.kind;
@@ -45,10 +53,25 @@
       recipesService.getRecipes(fishType).then(function(returned){
         var recipes = returned.data.recipes;
         var fewRecipes = [];
-        for (var i = 0; i < 3; i++) { //add a random number generator to pick random recipes
-          var next = recipes[i];
-          fewRecipes.push(next);
+        var one =   Math.floor(Math.random() * (recipes.length - 0));
+        var two =   Math.floor(Math.random() * (recipes.length - 0));
+        if(one === two){
+          var two =   Math.floor(Math.random() * (recipes.length - 0));
         }
+        var three =   Math.floor(Math.random() * (recipes.length - 0));
+        if(three === one || three === two){
+          var three =   Math.floor(Math.random() * (recipes.length - 0));
+        }
+        console.log("numbers: ", one, two, three);
+        // for (var i = 0; i < 3; i++) { //add a random number generator to pick random recipes
+        //   var next = recipes[i];
+        //   fewRecipes.push(next);
+        // }
+        fewRecipes.push(recipes[one]);
+        fewRecipes.push(recipes[two]);
+        fewRecipes.push(recipes[three]);
+        console.log("few Recipes: ", fewRecipes);
+
         $scope.recipes = fewRecipes;
         $scope.recipes[0].class = 'class1';
         $scope.recipes[0].class2 = 'class2';
