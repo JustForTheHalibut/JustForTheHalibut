@@ -6,10 +6,6 @@
     ])
     .config(function($routeProvider){
       $routeProvider
-        .when('/profile/achievements', {
-          templateUrl: 'achievements/views/main.html',
-          controller: 'WeatherController',
-        })
         .when('/achievement', {
           templateUrl: 'achievements/views/achievementsPage.html',
           controller: 'achieveController',

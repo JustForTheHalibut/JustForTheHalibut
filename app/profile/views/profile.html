@@ -1,22 +1,15 @@
-<div class="rainbow">
-<div class="redTop2"></div>
-<div class="orangeTop2"></div>
-<div class="yellowTop2"></div>
-<div class="greenTop2"></div>
-<div class="lightBlueTop2"></div>
-</div>
   <div class="mainCont profileStyle">
     <div class="page-wrap">
       <div class="row">
         <div class="col-sm-12 myReset flexMainWeather">
           <div class="col-sm-12 myReset curCity">
-            <h2 class="myProfileTitle">My Profile</h2>
+            <h2 class="profileTop">My Profile</h2>
          </div>
            <div class="insideWeather">
                  <div class="col-sm-6 myReset">
                    <div class="userDetails myProfileBorder">
                      <div class="picWrap">
-                  <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
+                  <img class="profPageImg" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
                 </div>
                    <h5><i class="ion-person"></i> Display Name:</h5><h4>{{user.displayName}}</h4>
                    <h5><i class="ion-at"></i> Email Address:</h5><h4>  {{user.email}}</h4>
@@ -39,7 +32,7 @@
                 <div class="col-sm-6 myReset">
                   <div class="achevDetails myProfileBorder">
                     <div class="picWrap">
-                    <img class="achievementPicture" ng-src="{{user.achievementPicture || 'http://static.comicvine.com/uploads/original/14/146991/4442938-7067438861-Great.jpg'}}">
+                    <img class="profPageImg" ng-src="{{user.achievementPicture || 'http://static.comicvine.com/uploads/original/14/146991/4442938-7067438861-Great.jpg'}}">
                   </div>
                     <h5>Achievement Level:</h5><h4> {{user.achievement || 'Shark'}}</h4>
                     <h5>Fish Caught:</h5><h4> {{user.fishCaught}}</h4>

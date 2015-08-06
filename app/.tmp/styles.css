@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
 @import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
-body {
+html, body {
   font-family: 'Open Sans', sans-serif;
   background: #1E2023;
-  font-family: Comfortaa; }
+  font-family: Comfortaa;
+  height: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
@@ -166,6 +167,13 @@ a {
   margin-left: auto;
   margin-right: auto; }
 
+.achievementTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #FFB74D; }
+
 .achievementPicture {
   width: 100%;
   padding: 2rem;
@@ -326,14 +334,18 @@ h1 {
 svg {
   border-radius: 50%; }
 
+.svgWrap {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto; }
+
 #menu {
   height: 30rem;
   position: absolute;
-  left: 22%;
-  bottom: -2.25rem;
+  bottom: 0rem;
   display: block;
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
   text-decoration: none; }
 
 .homey {
@@ -395,8 +407,82 @@ svg {
 /*********************
 * FlexBox
 *********************/
+.backVideo {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: -2rem;
+  position: absolute; }
+
+.blackGradient {
+  height: 100%;
+  width: 100%;
+  margin-top: -2rem;
+  position: absolute;
+  background-size: cover;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#a6000000',GradientType=0 );
+  /* IE6-9 */
+  z-index: 10; }
+
+.whiteGradient {
+  background-size: cover;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.65)), color-stop(100%, rgba(255, 255, 255, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6ffffff', endColorstr='#a6ffffff',GradientType=0 );
+  /* IE6-9 */ }
+
+.loginBoxWrap {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s; }
+
+.loginBox {
+  width: 100%;
+  z-index: 15;
+  position: absolute;
+  margin-top: 4rem;
+  padding: 1rem; }
+  .loginBox .button {
+    width: 100%;
+    margin: 2rem 0rem; }
+  .loginBox .loginWrap {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; }
+
+.loginPanel {
+  width: 100%;
+  float: right;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border: 2px solid white;
+  border-radius: 2px; }
+
+/*********************
+* FlexBox
+*********************/
 .page-wrap {
-  width: 80%;
+  width: 85%;
   margin: 1rem auto;
   padding: 2rem;
   box-sizing: border-box;
@@ -405,10 +491,11 @@ svg {
 
 .flexBoxer {
   width: 32%;
-  float: right;
+  float: left;
   background-color: white;
-  height: 41rem;
-  padding: 2rem;
+  min-height: 43rem;
+  max-height: 43rem;
+  padding: 2.5rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
@@ -418,14 +505,13 @@ svg {
   width: 100%;
   float: right;
   background-color: white;
-  height: 29rem;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem; }
+  margin-bottom: 5rem; }
 
 .flexBoxerRecipeDetail {
   width: 100%;
@@ -508,6 +594,44 @@ svg {
 /*********************
 * Add Catch Style
 *********************/
+.addCatchBoxWrap {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s; }
+
+.catchAddedTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #5B9F49; }
+
+.addCatchBox {
+  width: 100%;
+  z-index: 15;
+  position: absolute;
+  margin-top: 4rem;
+  padding: 1rem; }
+  .addCatchBox .button {
+    width: 100%;
+    margin: 2rem 0rem; }
+  .addCatchBox .addCatchWrap {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+
+.addCatchPanel {
+  width: 100%;
+  float: right;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border: 2px solid white;
+  border-radius: 2px; }
+
 .addCatchStyle .recipeListImg {
   width: 100%;
   max-height: 19rem;
@@ -532,6 +656,11 @@ svg {
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
 .addCatchStyle .recipeOptions {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
   height: 5rem;
   border-top: 2px solid #EAEAEA; }
 .addCatchStyle h2 {
@@ -539,34 +668,22 @@ svg {
   text-align: center;
   background-color: #559E55;
   color: white; }
-.addCatchStyle input {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto; }
-.addCatchStyle .inputTitle {
-  font-size: 2.3rem;
-  font-weight: bold; }
 .addCatchStyle li {
   width: 100%;
   list-style: none; }
-.addCatchStyle .plus {
-  float: right;
-  font-size: 2.8rem;
-  margin: 1rem; }
-.addCatchStyle .plus:hover {
-  font-size: 3rem;
-  -webkit-transition: .2s ease-in;
-          transition: .2s ease-in; }
 .addCatchStyle .suggested {
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
   color: white;
   border-bottom: 2px solid #DF1231; }
+.addCatchStyle .detailFishWrap {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
 .addCatchStyle .detailFish {
-  height: 100%;
   width: 100%;
-  vertical-align: middle; }
+  height: 23rem; }
 .addCatchStyle .trash {
   float: right;
   font-size: 2.8rem;
@@ -606,14 +723,6 @@ svg {
   border-bottom: 3px solid #00ABD8;
   margin-top: 0; }
 
-.recipeTitle {
-  text-align: center;
-  color: black;
-  background-color: white;
-  padding: .5rem;
-  border-bottom: 4px solid #DF1231;
-  margin-top: 0; }
-
 .myCatchTitle {
   text-align: center;
   color: black;
@@ -636,6 +745,23 @@ svg {
 /*********************
 * Weather Style
 *********************/
+.plus {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem; }
+
+.plus:hover {
+  font-size: 3rem;
+  -webkit-transition: .2s ease-in;
+          transition: .2s ease-in; }
+
+.weatherTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #00ABD8; }
+
 .greenBox {
   border-bottom: 4px solid #559E55; }
 
@@ -776,10 +902,10 @@ svg {
 * Profile Style
 *********************/
 .profileStyle .fishListImg {
-  width: 100%;
-  max-height: 19rem;
-  margin-left: auto;
-  margin-right: auto; }
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  min-width: 100%; }
 .profileStyle .profileOptions {
   height: 5rem;
   border-top: 2px solid #EAEAEA; }
@@ -791,6 +917,23 @@ svg {
   font-size: 3rem;
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
+
+.profPageImg {
+  width: 25rem;
+  height: 25rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  border: 4px solid black;
+  border-radius: 180px;
+  -webkit-filter: drop-shadow(10px 10px 10px gray);
+          filter: drop-shadow(10px 10px 10px gray); }
+
+.profileTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #FF8645; }
 
 .iconBox {
   height: 6rem;
@@ -833,6 +976,13 @@ svg {
 .recipesStyle .recItem {
   font-size: 1.9rem; }
 
+.recipeTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #DF1231; }
+
 /*********************
 * FlexBox Weather
 *********************/
@@ -870,7 +1020,7 @@ svg {
 
 .flexWeatherYellow {
   width: 98.4%;
-  height: 32rem;
+  height: 36rem;
   float: right;
   background-color: #F4F4F4;
   box-sizing: border-box;
@@ -931,9 +1081,9 @@ svg {
   margin-bottom: 1rem;
   border-bottom: 4px solid #00ABD8; }
 
-.flexSideWeatherSmallTopYellow {
+.achieveSmall {
   width: 100%;
-  height: 9rem;
+  height: 13rem;
   float: right;
   background-color: #F4F4F4;
   box-sizing: border-box;
@@ -1173,7 +1323,6 @@ svg {
 
 .rainbow {
   width: 100%;
-  margin-top: -2rem;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1196,7 +1345,7 @@ svg {
 .redTop2 {
   width: 20%;
   background-color: #DA1A2E;
-  height: 1rem; }
+  height: .5rem; }
 
 .orangeTop {
   width: 20%;
@@ -1206,7 +1355,7 @@ svg {
 .orangeTop2 {
   width: 20%;
   background-color: #FF8645;
-  height: 1rem; }
+  height: .5rem; }
 
 .yellowTop {
   width: 20%;
@@ -1216,7 +1365,7 @@ svg {
 .yellowTop2 {
   width: 20%;
   background-color: #FFB74D;
-  height: 1rem; }
+  height: .5rem; }
 
 .greenTop {
   width: 20%;
@@ -1226,7 +1375,7 @@ svg {
 .greenTop2 {
   width: 20%;
   background-color: #5B9F49;
-  height: 1rem; }
+  height: .5rem; }
 
 .lightBlueTop {
   width: 20%;
@@ -1236,7 +1385,7 @@ svg {
 .lightBlueTop2 {
   width: 20%;
   background-color: #15AADC;
-  height: 1rem; }
+  height: .5rem; }
 
 .profileCard {
   padding: .5rem;
@@ -1289,16 +1438,15 @@ svg {
   .flexWeatherFish .tides h4 {
     text-align: center; }
 
-.flexMap {
+/* .flexMap {
   padding: 0rem;
   margin: 0;
   height: 100%;
   float: right;
   box-sizing: border-box;
-  -webkit-transition: 0.4s;
-          transition: 0.4s;
-  background-color: #1E2023; }
-
+  transition: 0.4s;
+  background-color: #1E2023;
+  } */
 .flexMainWeather {
   padding: 1rem;
   margin: 0;
@@ -1309,8 +1457,20 @@ svg {
           transition: 0.4s;
   background-color: #1E2023; }
 
+#map_canvas {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+
 .angular-google-map-container {
-  min-height: 59rem; }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+.fourHuns {
+  height: 400px; }
 
 .burger {
   display: none; }
@@ -1327,6 +1487,14 @@ svg {
     padding: .5rem;
     width: 98%; }
 
+  .loginBoxWrap {
+    width: 70%;
+    margin: 1rem auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    -webkit-transition: 0.4s;
+            transition: 0.4s; }
+
   .flexMap {
     position: relative;
     width: 100%;
@@ -1341,17 +1509,8 @@ svg {
     padding: 2rem;
     width: 48%; }
 
-  /* .burger {
-    font-size: 3rem;
-    float: right;
-    margin-right: 2rem;
-    margin-top: .5rem;
-    display: inline;
-    color: black;
-  } */
-  /*   .nav {
-    display: none;
-  } */ }
+  .loginBox {
+    margin-top: 1rem; } }
 @media (max-width: 500px) {
   .page-wrap {
     margin: 3rem auto;
@@ -1361,17 +1520,17 @@ svg {
     box-sizing: border-box;
     margin: 5px;
     padding: 2rem;
-    width: 100%;
+    width: 95%;
     height: 100%; }
 
-  /* .burger {
-    font-size: 3rem;
-    float: right;
-    padding-top: 0;
-    margin-right: 1rem;
-    display: inline;
-    color: black;
-  } */ }
+  .loginBoxWrap {
+    width: 95%; }
+
+  .loginBox {
+    margin-top: 0rem; }
+
+  .flexWeather {
+    margin: 1rem 0rem; } }
 /*********************
 * Home
 *********************/
@@ -1597,9 +1756,10 @@ svg {
 *********************/
 footer {
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   background-color: white;
-  bottom: -2;
+  bottom: 0;
+  left: 0;
   margin: 0;
   position: absolute;
   background-color: #D1D6D9; }
@@ -1841,11 +2001,10 @@ footer {
 
 .page-bg {
   position: absolute;
-  height: 42rem;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10rem;
+  margin-top: 2rem;
   top: -20px;
   left: -20px;
   right: -20px;
@@ -1860,7 +2019,7 @@ footer {
   top: 0px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: -20px;
   background: -webkit-radial-gradient(transparent 50%, rgba(0, 0, 0, 0.8));
   z-index: 10; }
 
@@ -1941,11 +2100,46 @@ footer {
 .achieveTitle, .achieveYou {
   text-align: center; }
 
+.achieveImgWrap {
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto; }
+
 .achieveImg {
-  margin-left: 10%;
-  margin-top: 5%;
-  width: 80%;
-  height: 150px; }
+  min-width: 20rem;
+  max-width: 20rem;
+  min-height: 20rem;
+  max-height: 20rem;
+  border: 4px solid black;
+  border-radius: 180px;
+  -webkit-filter: drop-shadow(10px 10px 10px gray);
+          filter: drop-shadow(10px 10px 10px gray); }
+
+.hex:before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #6C6;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  position: absolute;
+  top: -30px; }
+
+.hex {
+  margin-top: 30px;
+  width: 104px;
+  height: 60px;
+  background-color: #6C6;
+  position: relative; }
+
+.hex:after {
+  content: "";
+  width: 0;
+  position: absolute;
+  bottom: -30px;
+  border-top: 30px solid #6C6;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent; }
 
 .progress {
   margin-top: 5%;
@@ -1963,7 +2157,15 @@ footer {
 
 .amount {
   margin-top: 6%;
-  margin-right: 10%; }
+  margin-right: 10%;
+  font-size: 4rem;
+  text-align: center;
+  -webkit-filter: drop-shadow(3px 3px 3px gray);
+          filter: drop-shadow(3px 3px 3px gray); }
+
+.statTitle {
+  font-size: 1.5rem;
+  text-align: center; }
 
 .toAdd {
   margin-top: 5%;
@@ -1972,3 +2174,26 @@ footer {
 .quote {
   margin-left: 7%;
   margin-top: 5%; }
+
+.goodRatioWrap {
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+      -ms-flex: auto;
+          flex: auto;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto; }
+
+.goodRatio {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%; }
+
+.addCatchOptions {
+  width: 100%;
+  margin: 0;
+  height: 5rem;
+  border-top: 2px solid #EAEAEA; }

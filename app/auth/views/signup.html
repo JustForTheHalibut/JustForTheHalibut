@@ -1,8 +1,15 @@
-<div class="container">
-  <div class="row">
-    <div class="center-form panel">
-      <div class="panel-body">
+<div class="blackGradient"></div>
+<video class="backVideo" autoplay loop poster="http://mazwai.com/system/posts/videos/000/000/167/preview_mp4/mark_romano--nantucket_docks.mp4?1426427378" id="bgvid">
+    <source src="http://mazwai.com/system/posts/videos/000/000/167/preview_mp4/mark_romano--nantucket_docks.mp4?1426427378" type="video/webm">
+    <source src="http://mazwai.com/system/posts/videos/000/000/167/preview_mp4/mark_romano--nantucket_docks.mp4?1426427378" type="video/mp4">
+</video>
+<div class="loginBox">
+  <div class="loginBoxWrap">
+    <div class="row">
+      <div class="col-sm-12 myReset">
+        <div class="loginPanel whiteGradient">
         <h2 class="text-center">Sign up</h2>
+        <div class="loginWrap">
         <form method="post" ng-submit="signup()" name="signupForm">
           <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
             <input class="form-control input-lg" type="text" name="displayName" ng-model="displayName" placeholder="Name" required autofocus>
@@ -45,13 +52,16 @@
           </div>
 
           <p class="text-center text-muted"><small>By clicking on Sign up, you agree to <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></small></p>
-
+          <div class="loginWrap">
           <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">Sign up</button>
+          </div>
           <br/>
 
           <p class="text-center text-muted">Already have an account? <a href="/#/login">Log in now</a></p>
         </form>
       </div>
+      </div>
     </div>
   </div>
+</div>
 </div>

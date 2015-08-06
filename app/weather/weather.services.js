@@ -184,6 +184,7 @@
 
           var getAlerts = function(latitude,longitude) {
             return $http.get('api/alerts/' + latitude + '/' + longitude).then(function(alerts){
+              console.log('alerts', alerts);
               return {
                       alert: alerts.data.alerts.data
                      }

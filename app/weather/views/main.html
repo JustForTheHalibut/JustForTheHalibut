@@ -1,16 +1,9 @@
-<div class="rainbow">
-<div class="redTop2"></div>
-<div class="orangeTop2"></div>
-<div class="yellowTop2"></div>
-<div class="greenTop2"></div>
-<div class="lightBlueTop2"></div>
-</div>
   <div class="mainCont">
     <div class="page-wrap">
     <div class="row">
       <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
         <div class="col-sm-12 myReset curCity">
-          <h2 class="city">{{currentConditions.city}}</h2>
+          <h2 class="weatherTop">{{currentConditions.city}}</h2>
         </div>
 
         <div class="insideWeather">
@@ -55,7 +48,7 @@
                   <tabset class="tabby">
                     <tab class="fidy" heading="Hourly">
                       <div class="overflowin">
-                        <hourly-directive ng-repeat=" oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
+                        <hourly-directive ng-repeat="oneHourly in hourly" h="oneHourly" data-id="{{h.id}}"></hourly-directive>
                      </div>
                    </tab>
                      <tab class="fidy" heading="Weekly">
