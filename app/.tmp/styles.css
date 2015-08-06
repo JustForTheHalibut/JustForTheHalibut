@@ -1,9 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
 @import url(http://fonts.googleapis.com/css?family=Varela+Round|Comfortaa:400,700,300);
-body {
+html, body {
   font-family: 'Open Sans', sans-serif;
   background: #1E2023;
-  font-family: Comfortaa; }
+  font-family: Comfortaa;
+  height: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
@@ -166,6 +167,13 @@ a {
   margin-left: auto;
   margin-right: auto; }
 
+.achievementTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #FFB74D; }
+
 .achievementPicture {
   width: 100%;
   padding: 2rem;
@@ -326,14 +334,18 @@ h1 {
 svg {
   border-radius: 50%; }
 
+.svgWrap {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto; }
+
 #menu {
   height: 30rem;
   position: absolute;
-  left: 22%;
-  bottom: -2.25rem;
+  bottom: 0rem;
   display: block;
   margin: 0 auto;
-  overflow: visible;
+  overflow: hidden;
   text-decoration: none; }
 
 .homey {
@@ -395,8 +407,82 @@ svg {
 /*********************
 * FlexBox
 *********************/
+.backVideo {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin-top: -2rem;
+  position: absolute; }
+
+.blackGradient {
+  height: 100%;
+  width: 100%;
+  margin-top: -2rem;
+  position: absolute;
+  background-size: cover;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#a6000000',GradientType=0 );
+  /* IE6-9 */
+  z-index: 10; }
+
+.whiteGradient {
+  background-size: cover;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.65)), color-stop(100%, rgba(255, 255, 255, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6ffffff', endColorstr='#a6ffffff',GradientType=0 );
+  /* IE6-9 */ }
+
+.loginBoxWrap {
+  width: 50%;
+  margin: 1rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s; }
+
+.loginBox {
+  width: 100%;
+  z-index: 15;
+  position: absolute;
+  margin-top: 4rem;
+  padding: 1rem; }
+  .loginBox .button {
+    width: 100%;
+    margin: 2rem 0rem; }
+  .loginBox .loginWrap {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; }
+
+.loginPanel {
+  width: 100%;
+  float: right;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border: 2px solid white;
+  border-radius: 2px; }
+
+/*********************
+* FlexBox
+*********************/
 .page-wrap {
-  width: 80%;
+  width: 85%;
   margin: 1rem auto;
   padding: 2rem;
   box-sizing: border-box;
@@ -418,14 +504,13 @@ svg {
   width: 100%;
   float: right;
   background-color: white;
-  height: 29rem;
   padding: 1rem;
   box-sizing: border-box;
   -webkit-transition: 0.4s;
           transition: 0.4s;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem; }
+  margin-bottom: 5rem; }
 
 .flexBoxerRecipeDetail {
   width: 100%;
@@ -508,6 +593,44 @@ svg {
 /*********************
 * Add Catch Style
 *********************/
+.addCatchBoxWrap {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s; }
+
+.catchAddedTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #5B9F49; }
+
+.addCatchBox {
+  width: 100%;
+  z-index: 15;
+  position: absolute;
+  margin-top: 4rem;
+  padding: 1rem; }
+  .addCatchBox .button {
+    width: 100%;
+    margin: 2rem 0rem; }
+  .addCatchBox .addCatchWrap {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+
+.addCatchPanel {
+  width: 100%;
+  float: right;
+  box-sizing: border-box;
+  -webkit-transition: 0.4s;
+          transition: 0.4s;
+  border: 2px solid white;
+  border-radius: 2px; }
+
 .addCatchStyle .recipeListImg {
   width: 100%;
   max-height: 19rem;
@@ -532,6 +655,11 @@ svg {
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
 .addCatchStyle .recipeOptions {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
   height: 5rem;
   border-top: 2px solid #EAEAEA; }
 .addCatchStyle h2 {
@@ -539,13 +667,6 @@ svg {
   text-align: center;
   background-color: #559E55;
   color: white; }
-.addCatchStyle input {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto; }
-.addCatchStyle .inputTitle {
-  font-size: 2.3rem;
-  font-weight: bold; }
 .addCatchStyle li {
   width: 100%;
   list-style: none; }
@@ -563,10 +684,13 @@ svg {
   margin-top: 3rem;
   color: white;
   border-bottom: 2px solid #DF1231; }
+.addCatchStyle .detailFishWrap {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
 .addCatchStyle .detailFish {
-  height: 100%;
   width: 100%;
-  vertical-align: middle; }
+  height: 23rem; }
 .addCatchStyle .trash {
   float: right;
   font-size: 2.8rem;
@@ -606,14 +730,6 @@ svg {
   border-bottom: 3px solid #00ABD8;
   margin-top: 0; }
 
-.recipeTitle {
-  text-align: center;
-  color: black;
-  background-color: white;
-  padding: .5rem;
-  border-bottom: 4px solid #DF1231;
-  margin-top: 0; }
-
 .myCatchTitle {
   text-align: center;
   color: black;
@@ -636,6 +752,13 @@ svg {
 /*********************
 * Weather Style
 *********************/
+.weatherTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #00ABD8; }
+
 .greenBox {
   border-bottom: 4px solid #559E55; }
 
@@ -792,6 +915,13 @@ svg {
   -webkit-transition: .2s ease-in;
           transition: .2s ease-in; }
 
+.profileTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #FF8645; }
+
 .iconBox {
   height: 6rem;
   width: 6.1rem;
@@ -832,6 +962,13 @@ svg {
   font-size: 2rem; }
 .recipesStyle .recItem {
   font-size: 1.9rem; }
+
+.recipeTop {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  color: white;
+  border-bottom: 2px solid #DF1231; }
 
 /*********************
 * FlexBox Weather
@@ -1173,7 +1310,6 @@ svg {
 
 .rainbow {
   width: 100%;
-  margin-top: -2rem;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1196,7 +1332,7 @@ svg {
 .redTop2 {
   width: 20%;
   background-color: #DA1A2E;
-  height: 1rem; }
+  height: .5rem; }
 
 .orangeTop {
   width: 20%;
@@ -1206,7 +1342,7 @@ svg {
 .orangeTop2 {
   width: 20%;
   background-color: #FF8645;
-  height: 1rem; }
+  height: .5rem; }
 
 .yellowTop {
   width: 20%;
@@ -1216,7 +1352,7 @@ svg {
 .yellowTop2 {
   width: 20%;
   background-color: #FFB74D;
-  height: 1rem; }
+  height: .5rem; }
 
 .greenTop {
   width: 20%;
@@ -1226,7 +1362,7 @@ svg {
 .greenTop2 {
   width: 20%;
   background-color: #5B9F49;
-  height: 1rem; }
+  height: .5rem; }
 
 .lightBlueTop {
   width: 20%;
@@ -1236,7 +1372,7 @@ svg {
 .lightBlueTop2 {
   width: 20%;
   background-color: #15AADC;
-  height: 1rem; }
+  height: .5rem; }
 
 .profileCard {
   padding: .5rem;
@@ -1289,16 +1425,15 @@ svg {
   .flexWeatherFish .tides h4 {
     text-align: center; }
 
-.flexMap {
+/* .flexMap {
   padding: 0rem;
   margin: 0;
   height: 100%;
   float: right;
   box-sizing: border-box;
-  -webkit-transition: 0.4s;
-          transition: 0.4s;
-  background-color: #1E2023; }
-
+  transition: 0.4s;
+  background-color: #1E2023;
+  } */
 .flexMainWeather {
   padding: 1rem;
   margin: 0;
@@ -1309,8 +1444,17 @@ svg {
           transition: 0.4s;
   background-color: #1E2023; }
 
+#map_canvas {
+  height: 100%;
+  width: 100%;
+  position: relative; }
+
 .angular-google-map-container {
-  min-height: 59rem; }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; }
 
 .burger {
   display: none; }
@@ -1327,6 +1471,14 @@ svg {
     padding: .5rem;
     width: 98%; }
 
+  .loginBoxWrap {
+    width: 70%;
+    margin: 1rem auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    -webkit-transition: 0.4s;
+            transition: 0.4s; }
+
   .flexMap {
     position: relative;
     width: 100%;
@@ -1341,17 +1493,8 @@ svg {
     padding: 2rem;
     width: 48%; }
 
-  /* .burger {
-    font-size: 3rem;
-    float: right;
-    margin-right: 2rem;
-    margin-top: .5rem;
-    display: inline;
-    color: black;
-  } */
-  /*   .nav {
-    display: none;
-  } */ }
+  .loginBox {
+    margin-top: 1rem; } }
 @media (max-width: 500px) {
   .page-wrap {
     margin: 3rem auto;
@@ -1364,14 +1507,11 @@ svg {
     width: 100%;
     height: 100%; }
 
-  /* .burger {
-    font-size: 3rem;
-    float: right;
-    padding-top: 0;
-    margin-right: 1rem;
-    display: inline;
-    color: black;
-  } */ }
+  .loginBoxWrap {
+    width: 95%; }
+
+  .loginBox {
+    margin-top: 0rem; } }
 /*********************
 * Home
 *********************/
@@ -1597,9 +1737,10 @@ svg {
 *********************/
 footer {
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   background-color: white;
-  bottom: -2;
+  bottom: 0;
+  left: 0;
   margin: 0;
   position: absolute;
   background-color: #D1D6D9; }
@@ -1841,11 +1982,10 @@ footer {
 
 .page-bg {
   position: absolute;
-  height: 42rem;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10rem;
+  margin-top: 2rem;
   top: -20px;
   left: -20px;
   right: -20px;
@@ -1860,7 +2000,7 @@ footer {
   top: 0px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: -20px;
   background: -webkit-radial-gradient(transparent 50%, rgba(0, 0, 0, 0.8));
   z-index: 10; }
 

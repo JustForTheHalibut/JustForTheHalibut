@@ -1,24 +1,16 @@
-<div>
-<div class="col-sm-2 myReset redTop"></div>
-<div class="col-sm-2 myReset orangeTop"></div>
-<div class="col-sm-2 myReset yellowTop"></div>
-<div class="col-sm-2 myReset greenTop"></div>
-<div class="col-sm-2 myReset lightBlueTop"></div>
-<div class="col-sm-2 myReset darkBlueTop"></div>
-</div>
-<div class="mainCont flexWeatherDir addCatchStyle">
+<div class="mainCont addCatchStyle">
   <div class="page-wrap">
   <div class="row">
-
-    <div class="col-sm-12 myReset flexWeatherDir flexMap">
+    <div class="col-sm-12 myReset">
       <div class="insideWeather">
-
+        <h3 class="catchAddedTop"> Successfully added catch!!! </h3>
         <div class="flexBoxerLarge">
         <div class="col-sm-4 myReset">
-          <img class="detailFish" ng-src="{{catch.image || 'http://placehold.it/'}}"><br><br>
+          <div class="detailFishWrap">
+          <img class="detailFish" ng-src="{{catch.image || 'http://placehold.it/'}}">
+        </div>
         </div>
         <div class="col-sm-8">
-          <strong> Successfully added catch!!! </strong>
           <ul class="catchSpecs">
             <li><a href="#/detail/{{catch._id}}"><h5 class="catchTitle">Fish Kind: </h5>{{catch.kind}} </a></li>
             <li><h5 class="catchTitle">Fish Weight: </h5>{{catch.weight}}</li>
@@ -30,6 +22,8 @@
           </ul>
         </div>
       </div>
+
+
       <h3 class="suggested"> Suggested Recipes for this Catch! </h3>
     <div class="flexBoxer" ng-repeat= "recipe in recipes">
       <div>
