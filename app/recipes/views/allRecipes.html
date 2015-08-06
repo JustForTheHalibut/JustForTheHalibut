@@ -1,21 +1,20 @@
-  <div class="mainCont flexWeatherDir recipesStyle">
+  <div class="mainCont recipesStyle">
     <div class="page-wrap">
       <div class="row">
-        <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
-          <div class="col-sm-12 myReset curCity theFix">
+        <div class="col-sm-12 myReset">
+          <div class="col-sm-12 myReset curCity">
             <h2 class="recipeTop">My Recipes</h2>
           </div>
-
           <div class="insideWeather">
             <div class="flexRower">
               <div class="flexBoxer recipeBox" ng-repeat= "recipe in Favorites">
                 <div>
-                  <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeListImg" src="{{recipe.image_url}}"></a><br><br>
-                  <ul class="catchSpecs">
-                    <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
-                    <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
-                 </ul>
-              </div>
+                  <div class="goodRatioWrap"><a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="goodRatio" src="{{recipe.image_url}}"></a></div>
+                    <ul class="catchSpecs">
+                      <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
+                      <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
+                   </ul>
+                </div>
                 <div class="recipeOptions">
                   <span class=""><a href="{{recipe.f2f_url}}"><img class="foodToFork" src="http://food2fork.com/F2F/static/images/webLogo.png" alt="" /></a></span>
                   <span type="button" name="button" ng-click="deleteRecipe(recipe._id)"><i class="fa fa-trash-o trash"></i></span>

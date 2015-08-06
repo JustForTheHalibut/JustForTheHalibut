@@ -1,4 +1,4 @@
-<div class="mainCont addCatchStyle">
+<div class="mainCont recipeStyle">
   <div class="page-wrap">
   <div class="row">
     <div class="col-sm-12 myReset">
@@ -6,8 +6,8 @@
         <h3 class="catchAddedTop"> Successfully added catch!!! </h3>
         <div class="flexBoxerLarge">
         <div class="col-sm-4 myReset">
-          <div class="detailFishWrap">
-          <img class="detailFish" ng-src="{{catch.image || 'http://placehold.it/'}}">
+          <div class="goodRatioWrap">
+          <img class="goodRatio" ng-src="{{catch.image || 'http://placehold.it/'}}">
         </div>
         </div>
         <div class="col-sm-8">
@@ -18,28 +18,29 @@
             <li><h5 class="catchTitle">Location Caught: </h5>{{catch.location}}</li>
             <li><h5 class="catchTitle">Tackle Used: </h5>{{catch.tackle}}</li>
             <li><h5 class="catchTitle">Bait Used: </h5>{{catch.bait}}</li>
-            <span name="button" ng-click="deleteCatch(catch._id, catch)"><i class="fa fa-trash-o trash"></i></span>
           </ul>
         </div>
       </div>
-
-
-      <h3 class="suggested"> Suggested Recipes for this Catch! </h3>
-    <div class="flexBoxer" ng-repeat= "recipe in recipes">
+      <h3 class="recipeTop"> Suggested Recipes for this Catch! </h3>
+      <div class="flexRower">
+    <div class="flexBoxer recipeBox" ng-repeat= "recipe in recipes">
       <div>
-        <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="recipeListImg" src="{{recipe.image_url}}"></a><br><br>
+        <div class="goodRatioWrap">
+        <a href="/#/viewRecipes/{{recipe.recipe_id}}"><img class="goodRatio" src="{{recipe.image_url}}"></a><br><br>
+      </div>
           <ul class="catchSpecs">
             <li><h5 class="catchTitle">Recipe Name: </h5>{{recipe.title}}</li>
             <li><h5 class="catchTitle">ingredients: </h5><a href="/#/viewRecipes/{{recipe.recipe_id}}">View</a> </li>
          </ul>
+        <div class="addCatchOptions">
+           <span class=""><a href="{{recipe.f2f_url}}"><img class="foodToFork" src="http://food2fork.com/F2F/static/images/webLogo.png" alt="" /></a></span>
+           <span type="button" name="button" ng-class="{{recipe.class}}" ng-click="saveRecipe(recipe.class, recipe)"><i class="fa fa-plus-square-o plus"></i></span>
+           <span type="button" name="button" ng-class="{{recipe.class2}}"><i class="fa fa-check-square-o plus"></i></span>
+        </div>
       </div>
-        <div class="recipeOptions">
-          <span class=""><a href="{{recipe.f2f_url}}"><img class="foodToFork" src="http://food2fork.com/F2F/static/images/webLogo.png" alt="" /></a></span>
-          <span type="button" name="button" ng-class="{{recipe.class}}" ng-click="saveRecipe(recipe.class, recipe)"><i class="fa fa-plus-square-o plus"></i></span>
-          <span type="button" name="button" ng-class="{{recipe.class2}}"><i class="fa fa-check-square-o plus"></i></span>
-       </div>
     </div>
     </div>
+  </div>
   </div>
 
  </div>

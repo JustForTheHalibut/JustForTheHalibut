@@ -572,10 +572,11 @@ svg {
 
 .flexBoxer {
   width: 32%;
-  float: right;
+  float: left;
   background-color: white;
-  height: 41rem;
-  padding: 2rem;
+  min-height: 43rem;
+  max-height: 43rem;
+  padding: 2.5rem;
   box-sizing: border-box;
   transition: 0.4s;
   margin: 5px;
@@ -771,15 +772,7 @@ svg {
     width: 100%;
     list-style: none;
   }
-  .plus {
-    float: right;
-    font-size: 2.8rem;
-    margin: 1rem;
-  }
-  .plus:hover {
-    font-size: 3rem;
-    transition: .2s ease-in;
-  }
+
   .suggested {
     text-align: center;
     padding: 1rem;
@@ -870,6 +863,16 @@ svg {
 /*********************
 * Weather Style
 *********************/
+
+.plus {
+  float: right;
+  font-size: 2.8rem;
+  margin: 1rem;
+}
+.plus:hover {
+  font-size: 3rem;
+  transition: .2s ease-in;
+}
 
 .weatherTop {
   text-align: center;
@@ -1059,10 +1062,10 @@ font-weight: bold;
 
 .profileStyle {
   .fishListImg {
-    width: 100%;
-    max-height: 19rem;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    min-width: 100%;
   }
   .profileOptions {
     height: 5rem;
@@ -1078,6 +1081,16 @@ font-weight: bold;
     transition: .2s ease-in;
   }
 }
+
+.profPageImg{
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    border: 4px solid black;
+    border-radius: 180px;
+    filter: drop-shadow(10px 10px 10px gray);
+  }
 
 .profileTop {
   text-align: center;
@@ -1193,7 +1206,7 @@ font-weight: bold;
 
 .flexWeatherYellow {
   width: 98.4%;
-  height: 32rem;
+  height: 36rem;
   float: right;
   background-color: #F4F4F4;
   box-sizing: border-box;
@@ -1203,7 +1216,6 @@ font-weight: bold;
   padding: 0;
   border-bottom: 4px solid #FFB74D;
 }
-
 
 
 .weatherBackgrounder {
@@ -1257,9 +1269,9 @@ font-weight: bold;
   border-bottom: 4px solid #00ABD8;
 }
 
-.flexSideWeatherSmallTopYellow {
+.achieveSmall {
   width: 100%;
-  height: 9rem;
+  height: 13rem;
   float: right;
   background-color: #F4F4F4;
   box-sizing: border-box;
@@ -1717,6 +1729,10 @@ font-weight: bold;
                   left: 0;
               }
 
+.fourHuns {
+  height: 400px;
+}
+
 .burger {
   display: none;
 }
@@ -1778,7 +1794,7 @@ font-weight: bold;
     box-sizing: border-box;
     margin: 5px;
     padding: 2rem;
-    width: 100%;
+    width: 95%;
     height: 100%;
   }
 
@@ -1788,6 +1804,10 @@ font-weight: bold;
 
   .loginBox {
     margin-top: 0rem;
+  }
+
+  .flexWeather {
+    margin: 1rem 0rem;
   }
 
 }
@@ -2483,12 +2503,50 @@ footer {
   .achieveTitle, .achieveYou{
     text-align: center;
   }
-  .achieveImg{
-    margin-left: 10%;
-    margin-top: 5%;
-    width: 80%;
-    height: 150px;
+
+  .achieveImgWrap {
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .achieveImg{
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 20rem;
+    max-height: 20rem;
+    border: 4px solid black;
+    border-radius: 180px;
+    filter: drop-shadow(10px 10px 10px gray);
+  }
+
+  .hex:before {
+    content: " ";
+    width: 0; height: 0;
+    border-bottom: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+    position: absolute;
+    top: -30px;
+}
+
+.hex {
+    margin-top: 30px;
+    width: 104px;
+    height: 60px;
+    background-color: #6C6;
+    position: relative;
+}
+
+.hex:after {
+    content: "";
+    width: 0;
+    position: absolute;
+    bottom: -30px;
+    border-top: 30px solid #6C6;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+}
 
   .progress {
   margin-top: 5%;
@@ -2508,6 +2566,14 @@ footer {
 .amount{
   margin-top: 6%;
   margin-right: 10%;
+  font-size: 4rem;
+  text-align: center;
+  filter: drop-shadow(3px 3px 3px gray);
+}
+
+.statTitle {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .toAdd{
@@ -2517,4 +2583,27 @@ footer {
 .quote{
   margin-left: 7%;
   margin-top: 5%;
+}
+
+.goodRatioWrap {
+  flex: auto;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.goodRatio {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.addCatchOptions {
+  width: 100%;
+  margin: 0;
+  height: 5rem;
+  border-top: 2px solid #EAEAEA;
 }

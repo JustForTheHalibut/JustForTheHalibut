@@ -1,8 +1,8 @@
   <div class="mainCont">
     <div class="page-wrap">
     <div class="row">
-      <div class="col-sm-12 myReset flexWeatherDir flexMainWeather">
-        <div class="col-sm-12 myReset curCity theFix">
+      <div class="col-sm-12 myReset">
+        <div class="col-sm-12 myReset curCity">
           <h2 class="achievementTop">My Achievements</h2>
         </div>
         <div class="insideWeather">
@@ -12,8 +12,11 @@
             <div class="weatherPH">
                 <h2 class="achieveTitle">Achievement Level</h2>
                 <p class="achieveYou">{{user.achievement}}</p>
+                <div class="achieveImgWrap">
                 <img class="achieveImg" ng-src="{{user.achievementPicture}}" />
-
+              </div>
+            <!--   <div class="hex">
+            </div> -->
             </div>
 
            </div>
@@ -26,12 +29,16 @@
                  </div>
 
                 </div>
-                  <div class="flexSideWeatherSmallTopYellow orangeWeather">
-                    <h5> Total Fish Caught: </h5><br>
+                  <div class="achieveSmall orangeWeather">
+                    <div class="col-sm-6 myReset">
+                    <h5 class="statTitle"> Total Fish Caught: </h5>
                     <p class="amount"> {{user.fishCaught}}  </p>
-                    <h5> Different Species: </h5>
+                  </div>
+                  <div class="col-sm-6 myReset">
+                    <h5 class="statTitle"> Different Species: </h5>
                     <p class ="amount"> {{user.species.length}} </p>
                   </div>
+                </div>
                   <div class="flexSideWeatherSmallYellow orangeWeather">
                     <button type="button" class="btn btn-primary toAdd" ng-click="addCatch()">Add Catch</button>
                     <p class="quote"> A Reel Expert Can Tackle Anything!</p>
