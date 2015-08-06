@@ -29,6 +29,8 @@
         $location.path('/addCatch');
       }
 
+      console.log("top Three: ", $rootScope.topThree);
+      console.log("big catches: ", $rootScope.threeBigCatches);
 
       if($rootScope.topThree === undefined){
         $rootScope.threeBigCatches = [];
@@ -65,6 +67,7 @@
           // End of top three leveled memebers
         });
       }
+
       else if($rootScope.topThree[0].catch === undefined && $rootScope.threeBigCatches === undefined){
         for(var i = 0; i < 3; i++){
           catchService.getAllCatch($rootScope.topThree[i].displayName).then(function(data){
