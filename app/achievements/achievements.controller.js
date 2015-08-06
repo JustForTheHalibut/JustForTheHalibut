@@ -67,8 +67,24 @@
           // End of top three leveled memebers
         });
       }
-
+      else if($rootScope.threeBigCatches === undefined){
+        $rootScope.threeBigCatches = [];
+        for(var i = 0; i < 3; i++){
+          catchService.getAllCatch($rootScope.topThree[i].displayName).then(function(data){
+            var sortCatches = data.data;
+            console.log("sort Catches: ", sortCatches);
+            sortCatches.sort(function(a,b){
+              return b.points - a.points;
+            });
+            $rootScope.threeBigCatches.push(sortCatches[0]);
+            $rootScope.topThree[$rootScope.threeBigCatches.length - 1].catch = $rootScope.threeBigCatches[$rootScope.threeBigCatches.length - 1]
+            console.log("three big id: ", $rootScope.threeBigCatches);
+          })
+        }
+        console.log("topThree: ", $rootScope.threeBigCatches);
+      }
       else if($rootScope.topThree[0].catch === undefined && $rootScope.threeBigCatches === undefined){
+          $rootScope.threeBigCatches = [];
         for(var i = 0; i < 3; i++){
           catchService.getAllCatch($rootScope.topThree[i].displayName).then(function(data){
             var sortCatches = data.data;
