@@ -721,6 +721,7 @@ svg {
   transition: 0.4s;
   border: 2px solid white;
   border-radius: 2px;
+  background: #e3e3e3;
   }
 
 .addCatchStyle {
@@ -859,6 +860,7 @@ svg {
 
 .tabby {
   border-bottom: 3px solid #00ABD8;
+  margin-bottom: 1rem;
 }
 /*********************
 * Weather Style
@@ -2606,4 +2608,93 @@ footer {
   margin: 0;
   height: 5rem;
   border-top: 2px solid #EAEAEA;
+}
+
+.sideDets {
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.backWrap {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fullButton {
+  height:80px;
+   width:190px;
+  -webkit-border-radius: 300px 300px 0 0;
+  background-color: #559E55;
+  position: relative;
+  bottom: 3.5rem;
+  left: 11rem;
+  margin-left: 16.2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 1px solid #447E43;
+}
+
+.trigs {
+  background-color: red;
+}
+
+.spani {
+  margin-left: 32rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  z-index: 5;
+  bottom: 0;
+  position: absolute;
+  color: white;
+}
+
+.fullButton:hover {
+  height:80px;
+   width:190px;
+  -webkit-border-radius: 300px 300px 0 0;
+  background-color: #447E43;
+  position: relative;
+  bottom: 3.5rem;
+  left: 11rem;
+  margin-left: 16.2rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.yellow {
+  border-bottom: 4px solid #FFB74D;
+}
+
+.wrapIt {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.greener {
+  background-color: #5B9F49;
+  border-color: #447E43;
+}
+
+.greener:hover {
+  background-color: #447E43;
+}
+
+.flexBoxerClear {
+  width: 100%;
+  float: right;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: 0.4s;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+}
+
+.daWrap {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -7,8 +7,18 @@
     <div class="flexWeatherFish">
       <div class="flexBoxerRecipeDetail">
       <div class="col-sm-5">
-        <img class="fishDetailImg" src="{{aCatch.image}}" width= 150><br><br>
-        <div class="backButtonGreen" name="goBack" ng-click="goBack()"><h4>Go Back</h4></div>
+        <div class="goodRatioWrap">
+        <img class="goodRatio" src="{{aCatch.image}}">
+      </div>
+
+      <ul class="catchSpecs">
+        <li><h4 class="catchTitle">Kind of Fish: </h4><span> {{aCatch.kind}}</span></li>
+        <li><h4 class="catchTitle">Fish Weight: </h4><span> {{aCatch.weight}}</span></li>
+        <li><h4 class="catchTitle">Fish Length: </h4><span> {{aCatch.length}}</span></li>
+    <li><h4 class="catchTitle">Location Caught: </h4><span> {{aCatch.location}}</span></li>
+    <li><h4 class="catchTitle">Tackle Used: </h4><span> {{aCatch.tackle}}</span></li>
+    <li><h4 class="catchTitle">Bait Used: </h4><span> {{aCatch.bait}}</span></li>
+  </ul>
 
       </div>
       <div class="col-sm-7 myReset">
@@ -22,17 +32,10 @@
             </ui-gmap-google-map>
         </div>
       </div>
-      <div class="col-sm-6 myReset">
-        <ul class="catchSpecs">
-          <li><h5 class="catchTitle">Kind of Fish: </h5> {{aCatch.kind}}</li>
-          <li><h5 class="catchTitle">Fish Weight: </h5> {{aCatch.weight}}</li>
-          <li><h5 class="catchTitle">Fish Length: </h5> {{aCatch.length}}</li>
-        </ul>
-    </div>
-    <div class="col-sm-6 myReset">
-      <li><h5 class="catchTitle">Location Caught: </h5> {{aCatch.location}}</li>
-      <li><h5 class="catchTitle">Tackle Used: </h5> {{aCatch.tackle}}</li>
-      <li><h5 class="catchTitle">Bait Used: </h5> {{aCatch.bait}}</li>
+      <div class="col-sm-12 myReset">
+        <div class="backWrap">
+        <div class="backButtonGreen" name="goBack" ng-click="goBack()"><h4>Go Back</h4></div>
+      </div>
 </div>
     </div>
     </div>
