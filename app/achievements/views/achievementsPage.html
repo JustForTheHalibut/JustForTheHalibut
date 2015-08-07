@@ -40,13 +40,15 @@
                   </div>
                 </div>
                   <div class="flexSideWeatherSmallYellow orangeWeather">
-                    <button type="button" class="btn btn-primary toAdd" ng-click="addCatch()">Add Catch</button>
+                    <button type="button" class="btn btn-primary toAdd greener" ng-click="addCatch()">Add Catch</button>
                     <p class="quote"> A Reel Expert Can Tackle Anything!</p>
                   </div>
               </div>
-
+              <div class="col-sm-12 myReset curCity">
+                <h2 class="achievementTop">Top 3 Fishermen</h2>
+              </div>
               <div class="flexRower">
-                <div class="flexBoxer greenBox" ng-repeat= "person in topThree">
+                <div class="flexBoxer yellow" ng-repeat= "person in topThree">
                   <div>
                 <h4> Top Fisher: </h4>
                 <img class="fishListImg" width= "100" height= "100" ng-src="{{person.picture || 'http://images.clipartpanda.com/bass-fish-clip-art-black-and-white-AR-OTHER-SPORTS-14-R.png'}}">

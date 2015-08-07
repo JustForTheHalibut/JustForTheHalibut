@@ -4,7 +4,12 @@
     <div class="col-sm-12 myReset">
       <div class="insideWeather">
         <h3 class="catchAddedTop"> Successfully added catch!!! </h3>
-        <div class="flexBoxerLarge">
+        <div class="flexBoxerClear">
+          <div class="col-sm-12 myReset">
+            <div class="col-sm-2 myReset">
+</div>
+<div class="daWrap">
+            <div class="col-sm-8 myReset addCatchPanel">
         <div class="col-sm-4 myReset">
           <div class="goodRatioWrap">
           <img class="goodRatio" ng-src="{{catch.image || 'http://placehold.it/'}}">
@@ -18,10 +23,14 @@
             <li><h5 class="catchTitle">Location Caught: </h5> {{catch.location}}</li>
             <li><h5 class="catchTitle">Tackle Used: </h5> {{catch.tackle}}</li>
             <li><h5 class="catchTitle">Bait Used: </h5> {{catch.bait}}</li>
-            <span name="button" ng-click="deleteCatch(catch._id, catch)"><i class="fa fa-trash-o trash"></i></span>
           </ul>
         </div>
       </div>
+    </div>
+      <div class="col-sm-2 myReset">
+</div>
+    </div>
+    </div>
       <h3 class="recipeTop"> Suggested Recipes for this Catch! </h3>
       <div class="flexRower">
     <div class="flexBoxer recipeBox" ng-repeat= "recipe in recipes">
